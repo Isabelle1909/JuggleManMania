@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://effsrxenqkmr"]
 
-[ext_resource type="PackedScene" uid="uid://dnvo7ick37jdw" path="res://scenes/UI.tscn" id="1_h858l"]
+[ext_resource type="PackedScene" uid="uid://dnvo7ick37jdw" path="res://scenes/ui_scenes/UI.tscn" id="1_h858l"]
 
 [node name="text_ui" type="CanvasLayer" unique_id=1281821818]
 
