@@ -1,0 +1,74 @@
+{
+	"wardrobe": {
+
+		"morning_1_b4": {
+			"1": "Time to get this show on the road"
+		},
+
+		"morning_1_neutral": {
+			"1": "My clothes are in here.",
+			"2": "Should probably do some laundry soon.",
+			"3": "Nothing more to see here..."
+		},
+		
+		"evening_1_b4": {
+			"1": "Let's see what I got here",
+			"2": "Hmm this looks good",
+			"3": "I'll just grab this"
+		},
+
+		"evening_1_neutral":{
+			"1": "I haven't worn a lot of this stuff in a while.",
+			"2": "I don't need to change clothes.",
+			"3": "Its just my wardrobe... same as always."
+		},
+
+		"evening_1_good":{
+			"1": "It's nice getting something comfy on.",
+			"2": "I'm already wearing what I want.",
+			"3": "Its just my wardrobe... Lots of old favorites here."
+		},
+
+		"evening_1_bad":{
+			"1": "It's all so bothersome.",
+			"2": "I don't want to change clothes right now.",
+			"3": "Its just my wardrobe... full of random crap."
+		}
+	},
+
+	"mirror": {
+
+		"morning_1_b4": {
+				"1": "Alright time to get my make-up on."
+			},
+
+		"morning_1_neutral": {
+				"1": "Phew, those dark circles are getting bad.",
+			  "2": "Guess i'll give my hair a comb.",
+			  "3": "It's just me..."
+			}
+
+
+	},
+
+	"Tv": {
+
+	  "morning_1_neutral": {
+			"1": "Hmmm... looks like nothing good is on.",
+			"2": "Boring.",
+			"3": "Better not.. Don't wanna be late."
+		}
+ 
+	},
+	
+	"Bed": {
+
+		"morning_1_neutral": {
+				"1": "God, I wish.",
+			  "2": "I have to go to work.",
+			  "3": "Must resist.... The call of the cosy.."
+			}
+
+	}
+		
+}
