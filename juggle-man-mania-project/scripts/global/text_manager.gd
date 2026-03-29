@@ -30,14 +30,15 @@ func load_json_file():
 	#Store the parsed data in the content dictionary
 	all_text = json_object.data
 
+#called on interaction with object, which passes it's name
 func display_text(ob_name):
 	#increments the objects talk_to number
 	talked_to_nums[ob_name] += 1
-		#gets the correct text from the json file depending on object, time/day and number of 
+	#gets the correct text from the json file depending on object, time/day and number of 
 	#times it's been spoken to
 	var path_string = str(SystemManager.time,"_",SystemManager.day,"_",SystemManager.mood)
 	var text = all_text[ob_name][path_string][str(talked_to_nums[ob_name])]
 	print(text)
-
+	#will use text box UI to display later for now prints to console
 	
 	pass
