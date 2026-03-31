@@ -35,39 +35,36 @@ visible = false
 
 [node name="key_interactables" type="Node2D" parent="." unique_id=279575357]
 
-[node name="mirror" parent="key_interactables" unique_id=557428342 instance=ExtResource("4_3bgk5")]
-position = Vector2(163.715, 0)
+[node name="mirror" parent="key_interactables" unique_id=1406826812 instance=ExtResource("4_3bgk5")]
+position = Vector2(264, 500)
 title = "mirror"
 
-[node name="Sprite2D" parent="key_interactables/mirror" index="0" unique_id=403400776]
-position = Vector2(-188.715, 795)
-
 [node name="CollisionShape2D" parent="key_interactables/mirror" index="1" unique_id=203169812]
-position = Vector2(-189.43, 795)
+position = Vector2(7, 4)
 
-[node name="bed" parent="key_interactables" unique_id=1155819551 instance=ExtResource("4_3bgk5")]
-position = Vector2(-26, 271)
+[node name="bed" parent="key_interactables" unique_id=1265703226 instance=ExtResource("4_3bgk5")]
+position = Vector2(-20, 266)
 title = "bed"
 
-[node name="wardrobe" parent="key_interactables" unique_id=233140510 instance=ExtResource("4_3bgk5")]
-position = Vector2(273, -25)
+[node name="wardrobe" parent="key_interactables" unique_id=244664781 instance=ExtResource("4_3bgk5")]
+position = Vector2(246, 258)
 title = "wardrobe"
 
-[node name="computor" parent="key_interactables" unique_id=566412030 instance=ExtResource("4_3bgk5")]
-position = Vector2(1155, 12)
-title = "computor"
+[node name="computer" parent="key_interactables" unique_id=662879841 instance=ExtResource("4_3bgk5")]
+position = Vector2(1146, 22)
+title = "computer"
 
-[node name="front_door" parent="key_interactables" unique_id=561183489 instance=ExtResource("4_3bgk5")]
-position = Vector2(724, 861)
+[node name="front_door" parent="key_interactables" unique_id=1715739860 instance=ExtResource("4_3bgk5")]
+position = Vector2(725, 865)
 title = "front_door"
 
-[node name="back_door" parent="key_interactables" unique_id=632025299 instance=ExtResource("4_3bgk5")]
-position = Vector2(725, -97)
+[node name="back_door" parent="key_interactables" unique_id=1488391012 instance=ExtResource("4_3bgk5")]
+position = Vector2(720, -88)
 title = "back_door"
 
 [editable path="key_interactables/mirror"]
 [editable path="key_interactables/bed"]
 [editable path="key_interactables/wardrobe"]
-[editable path="key_interactables/computor"]
+[editable path="key_interactables/computer"]
 [editable path="key_interactables/front_door"]
 [editable path="key_interactables/back_door"]
