@@ -2,6 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://dmt30scjkk0fc" path="res://tilesets/game_tile_set.tres" id="1_rk7hg"]
 [ext_resource type="PackedScene" uid="uid://dksw6vohgomcm" path="res://scenes/player.tscn" id="3_3bgk5"]
+[ext_resource type="PackedScene" uid="uid://i5ot6tbllc4l" path="res://scenes/interactable.tscn" id="4_3bgk5"]
 [ext_resource type="PackedScene" uid="uid://effsrxenqkmr" path="res://scenes/ui_scenes/text_ui.tscn" id="4_se78b"]
 
 [node name="house" type="Node2D" unique_id=626814677]
@@ -30,3 +31,43 @@ position_smoothing_enabled = true
 position_smoothing_speed = 16.0
 
 [node name="text_ui" parent="." unique_id=1281821818 instance=ExtResource("4_se78b")]
+visible = false
+
+[node name="key_interactables" type="Node2D" parent="." unique_id=279575357]
+
+[node name="mirror" parent="key_interactables" unique_id=557428342 instance=ExtResource("4_3bgk5")]
+position = Vector2(163.715, 0)
+title = "mirror"
+
+[node name="Sprite2D" parent="key_interactables/mirror" index="0" unique_id=403400776]
+position = Vector2(-188.715, 795)
+
+[node name="CollisionShape2D" parent="key_interactables/mirror" index="1" unique_id=203169812]
+position = Vector2(-189.43, 795)
+
+[node name="bed" parent="key_interactables" unique_id=1155819551 instance=ExtResource("4_3bgk5")]
+position = Vector2(-26, 271)
+title = "bed"
+
+[node name="wardrobe" parent="key_interactables" unique_id=233140510 instance=ExtResource("4_3bgk5")]
+position = Vector2(273, -25)
+title = "wardrobe"
+
+[node name="computor" parent="key_interactables" unique_id=566412030 instance=ExtResource("4_3bgk5")]
+position = Vector2(1155, 12)
+title = "computor"
+
+[node name="front_door" parent="key_interactables" unique_id=561183489 instance=ExtResource("4_3bgk5")]
+position = Vector2(724, 861)
+title = "front_door"
+
+[node name="back_door" parent="key_interactables" unique_id=632025299 instance=ExtResource("4_3bgk5")]
+position = Vector2(725, -97)
+title = "back_door"
+
+[editable path="key_interactables/mirror"]
+[editable path="key_interactables/bed"]
+[editable path="key_interactables/wardrobe"]
+[editable path="key_interactables/computor"]
+[editable path="key_interactables/front_door"]
+[editable path="key_interactables/back_door"]
