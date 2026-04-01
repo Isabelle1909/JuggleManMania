@@ -33,7 +33,6 @@ position_smoothing_enabled = true
 position_smoothing_speed = 16.0
 
 [node name="text_ui" parent="." unique_id=1281821818 instance=ExtResource("4_se78b")]
-visible = false
 
 [node name="key_interactables" type="Node2D" parent="." unique_id=279575357]
 

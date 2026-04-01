@@ -4,6 +4,7 @@ const tile_size: Vector2 = Vector2(48, 48)
 var sprite_node_pos_tween: Tween 
 var facing_ray
 var item_near
+var disabled = false
 
 func _physics_process(delta: float) -> void:
 	if !sprite_node_pos_tween or !sprite_node_pos_tween.is_running():
@@ -23,6 +24,9 @@ func _physics_process(delta: float) -> void:
 		if facing_ray != null:
 			if facing_ray.is_colliding():
 				item_near = facing_ray.get_collider().name
+				#check if its a door
+				#TextManager.display_text(name)
+				print(item_near)
 	
 
 func _move(dir: Vector2):
