@@ -19,3 +19,4 @@ func increment_time():
 
 func increment_day():
 	day += 1
+	

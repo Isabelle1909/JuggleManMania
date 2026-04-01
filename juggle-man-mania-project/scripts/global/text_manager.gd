@@ -1,6 +1,7 @@
 extends Node
 
 var json_path = "res://data/test_json.json"
+var last_called
 
 var talked_to_nums = {
 	"wardrobe": 0,
@@ -32,13 +33,16 @@ func load_json_file():
 
 #called on interaction with object, which passes it's name
 func display_text(ob_name):
-	#increments the objects talk_to number
-	talked_to_nums[ob_name] += 1
-	#gets the correct text from the json file depending on object, time/day and number of 
-	#times it's been spoken to
-	var path_string = str(SystemManager.time,"_",SystemManager.day,"_",SystemManager.mood)
-	var text = all_text[ob_name][path_string][str(talked_to_nums[ob_name])]
-	print(text)
-	#will use text box UI to display later for now prints to console
 	
-	pass
+	#increments the objects talk_to number
+	if last_called != ob_name:
+		talked_to_nums[ob_name] += 1
+		#gets the correct text from the json file depending on object, time/day and number of 
+		#times it's been spoken to
+		var path_string = str(SystemManager.time,"_",SystemManager.day,"_",SystemManager.mood)
+		var text = all_text[ob_name][path_string][str(talked_to_nums[ob_name])]
+		print(text)
+		#will use text box UI to display later for now prints to console
+	
+	last_called = ob_name
+	
