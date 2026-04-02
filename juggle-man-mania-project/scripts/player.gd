@@ -32,8 +32,7 @@ func _physics_process(delta: float) -> void:
 			if TextManager.tb.visible:
 				TextManager.close_text(item_near)
 				item_near = "none"
-				
-			else:
+			elif !item_near.contains("none"):
 				TextManager.display_text(item_near)
 	
 

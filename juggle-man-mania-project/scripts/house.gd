@@ -1,12 +1,14 @@
 extends Node2D
 
-@onready var text_box = $text_ui/Control/Panel/RichTextLabel
+@onready var ui_scr = $text_ui
+@onready var text_box = $text_ui/Control
 
 var inst
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
 	TextManager.tb = text_box
 
 
