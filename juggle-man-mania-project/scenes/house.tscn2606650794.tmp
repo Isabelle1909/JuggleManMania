@@ -47,15 +47,9 @@ position = Vector2(7, 4)
 position = Vector2(-20, 266)
 title = "bed"
 
-[node name="CollisionShape2D" parent="key_interactables/bed" index="1" unique_id=203169812]
-position = Vector2(1, -0.5)
-
 [node name="wardrobe" parent="key_interactables" unique_id=244664781 instance=ExtResource("4_3bgk5")]
 position = Vector2(246, 258)
 title = "wardrobe"
-
-[node name="CollisionShape2D" parent="key_interactables/wardrobe" index="1" unique_id=203169812]
-position = Vector2(17, -0.5)
 
 [node name="computer" parent="key_interactables" unique_id=662879841 instance=ExtResource("4_3bgk5")]
 position = Vector2(1146, 22)

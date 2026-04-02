@@ -5,7 +5,7 @@ var day = "1"
 var mood = "neutral"
 var current_jp = 0
 var total_jp = 0
-var juggleMan = preload("res://scenes/juggling_scene.tscn")
+var juggleMan = load("res://scenes/juggling_scene.tscn")
 
 
 func calculate_mood():
@@ -23,7 +23,6 @@ func increment_day():
 	day += 1
 
 
-func inst(pos):
+func inst():
 	var instance = juggleMan.instantiate()
-	#instance.position = pos
 	return(instance)
