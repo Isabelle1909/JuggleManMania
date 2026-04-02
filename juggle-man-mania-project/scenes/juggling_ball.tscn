@@ -1,22 +1,26 @@
 [gd_scene format=3 uid="uid://5l23rwaq0rqb"]
 
+[ext_resource type="Script" uid="uid://ek0kb2jxt42o" path="res://scenes/juggling_ball.gd" id="1_065ld"]
 [ext_resource type="Texture2D" uid="uid://ca1mnxii2w5cm" path="res://assets/game/tilesets/FloorTest.png" id="1_u4mkh"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_u4mkh"]
+bounce = 0.53
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_065ld"]
-size = Vector2(56, 57)
+size = Vector2(31, 28)
 
 [node name="juggling_ball" type="RigidBody2D" unique_id=249419388]
+collision_layer = 32
+collision_mask = 64
 mass = 0.25
 physics_material_override = SubResource("PhysicsMaterial_u4mkh")
-gravity_scale = 0.9
+script = ExtResource("1_065ld")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1847186674]
-position = Vector2(-0.5000012, -9.536743e-07)
-scale = Vector2(0.13348944, 0.13452658)
+position = Vector2(-1.000001, 9.536743e-07)
+scale = Vector2(0.07494145, 0.06495382)
 texture = ExtResource("1_u4mkh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=578165218]
-position = Vector2(0, -0.5)
+position = Vector2(-1.5, 0)
 shape = SubResource("RectangleShape2D_065ld")

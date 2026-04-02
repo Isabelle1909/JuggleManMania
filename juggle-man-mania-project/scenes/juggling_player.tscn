@@ -1,21 +1,29 @@
 [gd_scene format=3 uid="uid://d0twvx4mn4o62"]
 
-[ext_resource type="Texture2D" uid="uid://d3i4sqhx8wrdo" path="res://icon.svg" id="1_8kxmk"]
 [ext_resource type="Script" uid="uid://bv5ow5ifgrgp0" path="res://scenes/juggling_playerMovement.gd" id="1_22j5a"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_22j5a"]
-atlas = ExtResource("1_8kxmk")
-region = Rect2(0, 0, 128, 128)
+[ext_resource type="Texture2D" uid="uid://6orbrko1v3fr" path="res://assets/placeholder_assets/test jugglespr.png" id="2_22j5a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fjldn"]
-atlas = ExtResource("1_8kxmk")
-region = Rect2(0, 0, 128, 128)
+atlas = ExtResource("2_22j5a")
+region = Rect2(640, 0, 640, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfhsj"]
+atlas = ExtResource("2_22j5a")
+region = Rect2(640, 0, 640, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xo2qw"]
+atlas = ExtResource("2_22j5a")
+region = Rect2(1280, 0, 640, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcc3c"]
+atlas = ExtResource("2_22j5a")
+region = Rect2(0, 0, 640, 1080)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fjldn"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_22j5a")
+"texture": SubResource("AtlasTexture_fjldn")
 }],
 "loop": true,
 "name": &"Idle",
@@ -23,25 +31,141 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fjldn")
+"texture": SubResource("AtlasTexture_tfhsj")
 }],
 "loop": true,
 "name": &"Walking",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xo2qw")
+}],
+"loop": false,
+"name": &"hit_left",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcc3c")
+}],
+"loop": false,
+"name": &"hit_right",
+"speed": 4.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8kxmk"]
-radius = 47.0
-height = 124.0
+radius = 135.0
+height = 356.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22j5a"]
+size = Vector2(77.5, 23.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fjldn"]
+size = Vector2(77, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tfhsj"]
+size = Vector2(75, 21.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xo2qw"]
+size = Vector2(73, 39)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rcc3c"]
+size = Vector2(74, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5mi46"]
+size = Vector2(72.75, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_310rx"]
+size = Vector2(81, 10)
 
 [node name="juggling_player" type="CharacterBody2D" unique_id=1964283372]
+collision_layer = 16
+collision_mask = 16
 script = ExtResource("1_22j5a")
 
 [node name="sprite" type="AnimatedSprite2D" parent="." unique_id=1543978175]
 unique_name_in_owner = true
+position = Vector2(-0.99999994, -35.999996)
+scale = Vector2(0.45195314, 0.4519532)
 sprite_frames = SubResource("SpriteFrames_fjldn")
-animation = &"Walking"
+animation = &"hit_left"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1233205852]
+position = Vector2(3, -5)
 shape = SubResource("CapsuleShape2D_8kxmk")
+
+[node name="hit_areas" type="Node2D" parent="." unique_id=1988722638]
+
+[node name="early_left" type="Area2D" parent="hit_areas" unique_id=378337614]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/early_left" unique_id=1270791091]
+position = Vector2(-107, -56.625)
+shape = SubResource("RectangleShape2D_22j5a")
+
+[node name="perfect_left" type="Area2D" parent="hit_areas" unique_id=647849357]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/perfect_left" unique_id=1116100008]
+position = Vector2(-107, -33.5)
+shape = SubResource("RectangleShape2D_fjldn")
+
+[node name="late_left" type="Area2D" parent="hit_areas" unique_id=1929758645]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/late_left" unique_id=1840191518]
+position = Vector2(-109, -10.125)
+shape = SubResource("RectangleShape2D_tfhsj")
+
+[node name="early_right" type="Area2D" parent="hit_areas" unique_id=164673866]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/early_right" unique_id=839524202]
+position = Vector2(102, -50)
+shape = SubResource("RectangleShape2D_xo2qw")
+
+[node name="perfect_right" type="Area2D" parent="hit_areas" unique_id=1454771069]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/perfect_right" unique_id=1638707171]
+position = Vector2(102, -13)
+shape = SubResource("RectangleShape2D_rcc3c")
+
+[node name="late_right" type="Area2D" parent="hit_areas" unique_id=1637234712]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/late_right" unique_id=1256911201]
+position = Vector2(102, 21)
+shape = SubResource("RectangleShape2D_5mi46")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=442497802]
+collision_layer = 64
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1480277747]
+position = Vector2(-107, 4)
+shape = SubResource("RectangleShape2D_310rx")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1106023771]
+collision_layer = 64
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=749672484]
+position = Vector2(101, 39)
+shape = SubResource("RectangleShape2D_310rx")
+
+[connection signal="animation_finished" from="sprite" to="." method="_on_sprite_animation_finished"]
+[connection signal="body_entered" from="hit_areas/early_left" to="." method="_on_early_left_body_entered"]
+[connection signal="body_exited" from="hit_areas/early_left" to="." method="_on_early_left_body_exited"]
+[connection signal="body_entered" from="hit_areas/perfect_left" to="." method="_on_perfect_left_body_entered"]
+[connection signal="body_exited" from="hit_areas/perfect_left" to="." method="_on_perfect_left_body_exited"]
+[connection signal="body_entered" from="hit_areas/late_left" to="." method="_on_late_left_body_entered"]
+[connection signal="body_exited" from="hit_areas/late_left" to="." method="_on_late_left_body_exited"]
