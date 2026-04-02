@@ -5,7 +5,7 @@ var day = "1"
 var mood = "neutral"
 var current_jp = 0
 var total_jp = 0
-var juggleMan = preload("res://juggling_scene.tscn")
+var juggleMan = preload("res://scenes/juggling_scene.tscn")
 
 
 func calculate_mood():
