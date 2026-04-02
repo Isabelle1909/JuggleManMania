@@ -39,6 +39,8 @@ func left_check():
 	if early_left_zone.size() > 0:
 		
 		var imp = early_impulse + left_impulse
+		if imp.y < -400:
+			imp.y = -400
 		
 		for i in range(early_left_zone.size()):
 			early_left_zone[i].apply_impulse(imp)
@@ -52,7 +54,8 @@ func left_check():
 	if perfect_left_zone.size() > 0:
 		
 		var imp = perfect_impulse + left_impulse
-		
+		if imp.y < -400:
+			imp.y = -400
 		for i in range(perfect_left_zone.size()):
 			perfect_left_zone[i].apply_impulse(imp)
 			if late_left_zone.has(perfect_left_zone[i]):
@@ -63,7 +66,8 @@ func left_check():
 	if late_left_zone.size() > 0:
 		
 		var imp = late_impulse + left_impulse
-		
+		if imp.y < -400:
+			imp.y = -400
 		for i in range(late_left_zone.size()):
 			late_left_zone[i].apply_impulse(imp)
 		
