@@ -76,7 +76,12 @@ size = Vector2(74, 34)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5mi46"]
 size = Vector2(72.75, 34)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_310rx"]
+size = Vector2(81, 10)
+
 [node name="juggling_player" type="CharacterBody2D" unique_id=1964283372]
+collision_layer = 16
+collision_mask = 16
 script = ExtResource("1_22j5a")
 
 [node name="sprite" type="AnimatedSprite2D" parent="." unique_id=1543978175]
@@ -140,6 +145,22 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/late_right" unique_id=1256911201]
 position = Vector2(102, 21)
 shape = SubResource("RectangleShape2D_5mi46")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=442497802]
+collision_layer = 64
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1480277747]
+position = Vector2(-107, 4)
+shape = SubResource("RectangleShape2D_310rx")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1106023771]
+collision_layer = 64
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=749672484]
+position = Vector2(101, 39)
+shape = SubResource("RectangleShape2D_310rx")
 
 [connection signal="animation_finished" from="sprite" to="." method="_on_sprite_animation_finished"]
 [connection signal="body_entered" from="hit_areas/early_left" to="." method="_on_early_left_body_entered"]

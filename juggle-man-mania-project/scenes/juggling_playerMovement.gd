@@ -19,13 +19,14 @@ var perfect_impulse = Vector2(0,-350)
 var late_impulse = Vector2(0,-300)
 
 #whether the ball is hit slighty one way or the other depending on hand
-var left_impulse = Vector2(10,0)
+var left_impulse = Vector2(0,0)
 var right_impulse = Vector2(0,0)
 
 func _physics_process(delta):
 	movement_and_sprites()
 	
 	if Input.is_action_just_pressed("interact"):
+		remove_dupes(early_left_zone,perfect_left_zone,late_left_zone)
 		left_check()
 		
 
@@ -35,43 +36,35 @@ func left_check():
 	print(early_left_zone)
 	print(perfect_left_zone)
 	print(late_left_zone)
-	
-	if early_left_zone.size() > 0:
+	var imp = early_impulse + left_impulse
+	check_zone(early_left_zone,imp)
+	imp = perfect_impulse + left_impulse
+	check_zone(perfect_left_zone,imp)
+	imp = late_impulse + left_impulse
+	check_zone(late_left_zone,imp)
+
+
+func remove_dupes(A1,A2,A3):
+	for i in range(A1.size()):
+		if A2.has(A1[i]):
+			A2.erase(A1[i])
+		if A3.has(A1[i]):
+			A3.erase(A1[i])
+	for i in range(A2.size()):
+		if A3.has(A2[i]):
+			A3.erase(A2[i])
+
+func check_zone(zone,imp):
+	if zone.size() > 0:
 		
-		var imp = early_impulse + left_impulse
 		if imp.y < -400:
 			imp.y = -400
 		
-		for i in range(early_left_zone.size()):
-			early_left_zone[i].apply_impulse(imp)
-			if perfect_left_zone.has(early_left_zone[i]):
-				perfect_left_zone.erase(early_left_zone[i])
-			elif late_left_zone.has(early_left_zone[i]):
-				late_left_zone.erase(early_left_zone[i])
+		for i in range(zone.size()):
+			zone[i].apply_impulse(imp)
 			
-			early_left_zone.clear()
-			
-	if perfect_left_zone.size() > 0:
 		
-		var imp = perfect_impulse + left_impulse
-		if imp.y < -400:
-			imp.y = -400
-		for i in range(perfect_left_zone.size()):
-			perfect_left_zone[i].apply_impulse(imp)
-			if late_left_zone.has(perfect_left_zone[i]):
-				late_left_zone.erase(perfect_left_zone[i])
-		
-		perfect_left_zone.clear()
-		
-	if late_left_zone.size() > 0:
-		
-		var imp = late_impulse + left_impulse
-		if imp.y < -400:
-			imp.y = -400
-		for i in range(late_left_zone.size()):
-			late_left_zone[i].apply_impulse(imp)
-		
-		late_left_zone.clear()
+		zone.clear()
 
 
 
