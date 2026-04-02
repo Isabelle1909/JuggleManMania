@@ -3,7 +3,7 @@ extends CharacterBody2D
 const tile_size: Vector2 = Vector2(48, 48)
 var sprite_node_pos_tween: Tween 
 var facing_ray
-var item_near
+var item_near = "none"
 var disabled = false
 
 func _physics_process(delta: float) -> void:
@@ -24,9 +24,17 @@ func _physics_process(delta: float) -> void:
 		if facing_ray != null:
 			if facing_ray.is_colliding():
 				item_near = facing_ray.get_collider().name
-				#check if its a door
-				#TextManager.display_text(name)
-				print(item_near)
+				#TextManager.display_text(item_near)
+				
+				
+		
+		if Input.is_action_just_pressed("interact"):
+			if TextManager.tb.visible:
+				TextManager.close_text(item_near)
+				item_near = "none"
+				
+			else:
+				TextManager.display_text(item_near)
 	
 
 func _move(dir: Vector2):

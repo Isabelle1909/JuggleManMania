@@ -1,10 +1,13 @@
 extends Node2D
 
+@onready var text_box = $text_ui/Control/Panel/RichTextLabel
+
 var inst
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	TextManager.tb = text_box
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

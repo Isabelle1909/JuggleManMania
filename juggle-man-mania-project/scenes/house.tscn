@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://bxhptscenb5ve"]
 
-[ext_resource type="Script" uid="uid://cl3usunub6e5h" path="res://scenes/house.gd" id="1_3bgk5"]
+[ext_resource type="Script" uid="uid://cl3usunub6e5h" path="res://scripts/house.gd" id="1_3bgk5"]
 [ext_resource type="TileSet" uid="uid://dmt30scjkk0fc" path="res://tilesets/game_tile_set.tres" id="1_rk7hg"]
 [ext_resource type="PackedScene" uid="uid://dksw6vohgomcm" path="res://scenes/player.tscn" id="3_3bgk5"]
 [ext_resource type="PackedScene" uid="uid://i5ot6tbllc4l" path="res://scenes/interactable.tscn" id="4_3bgk5"]
