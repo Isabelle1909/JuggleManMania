@@ -1,10 +1,42 @@
 [gd_scene format=3 uid="uid://crg68wfwpt836"]
 
 [ext_resource type="Texture2D" uid="uid://d3i4sqhx8wrdo" path="res://icon.svg" id="1_1xanm"]
+[ext_resource type="PackedScene" uid="uid://d0twvx4mn4o62" path="res://scenes/juggling_player.tscn" id="2_a6ydb"]
+[ext_resource type="PackedScene" uid="uid://5l23rwaq0rqb" path="res://scenes/juggling_ball.tscn" id="3_5haue"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_a6ydb"]
+normal = Vector2(0.99997133, 0.0075755403)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5haue"]
+normal = Vector2(-1, 0)
 
 [node name="juggling_scene" type="Node2D" unique_id=1394213028]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1107217740]
+[node name="Background" type="Sprite2D" parent="." unique_id=1107217740]
 position = Vector2(578.5, 322.5)
 scale = Vector2(9.0390625, 4.9921875)
 texture = ExtResource("1_1xanm")
+
+[node name="juggling_player" parent="." unique_id=1964283372 instance=ExtResource("2_a6ydb")]
+position = Vector2(600, 429)
+
+[node name="Boundaries" type="Node2D" parent="." unique_id=715281043]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Boundaries" unique_id=1794051764]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/StaticBody2D" unique_id=757958884]
+shape = SubResource("WorldBoundaryShape2D_a6ydb")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Boundaries" unique_id=421159997]
+position = Vector2(1152, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/StaticBody2D2" unique_id=1208527868]
+shape = SubResource("WorldBoundaryShape2D_5haue")
+
+[node name="juggling_ball" parent="." unique_id=249419388 instance=ExtResource("3_5haue")]
+position = Vector2(501, 52)
+collision_mask = 4
+
+[node name="juggling_ball2" parent="." unique_id=334047494 instance=ExtResource("3_5haue")]
+position = Vector2(504, 209)
+collision_mask = 4

@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://0xk7d817esvt"]
+[gd_scene format=3 uid="uid://bbceekk16team"]
 
 [ext_resource type="Texture2D" uid="uid://6orbrko1v3fr" path="res://assets/placeholder_assets/test jugglespr.png" id="1_a84lk"]
-[ext_resource type="Script" uid="uid://b1sulltcyu3hy" path="res://scenes/player_juggling.gd" id="1_qjpms"]
+[ext_resource type="Script" uid="uid://b1sulltcyu3hy" path="res://scripts/player_juggling.gd" id="1_qjpms"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3rewq"]
 atlas = ExtResource("1_a84lk")

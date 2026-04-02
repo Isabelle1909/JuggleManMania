@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var A1 = $Area2D
+
 
 var ball_impulse_1 = Vector2(0.0,-500.0)
 
