@@ -25,5 +25,5 @@ func increment_day():
 
 func inst(pos):
 	var instance = juggleMan.instantiate()
-	#instance.position = pos
+	instance.position = pos
 	return(instance)

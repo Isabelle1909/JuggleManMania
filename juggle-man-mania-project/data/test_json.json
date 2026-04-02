@@ -61,7 +61,7 @@
  
 	},
 	
-	"Bed": {
+	"bed": {
 
 		"morning_1_neutral": {
 				"1": "God, I wish.",
@@ -70,5 +70,7 @@
 			}
 
 	}
+
+	
 		
 }
