@@ -36,8 +36,10 @@ func open_juggling():
 func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("test input 1"):
-		inst = SystemManager.inst()
-		add_child(inst)
+		pass
+		#inst = SystemManager.inst()
+		#add_child(inst)
 	if Input.is_action_just_pressed("test input 2"):
-		if is_instance_valid(inst):
-			inst.free()
+		pass
+		#if is_instance_valid(inst):
+		#	inst.free()

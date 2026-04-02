@@ -39,7 +39,8 @@ func _physics_process(delta: float) -> void:
 			disabled = true
 			get_parent().open_juggling()
 			instanced = true
-		elif !item_near.contains("none")&&!instanced:
+		elif !item_near.contains("none")&&!item_near.contains("Wall")&&!instanced:
+			print(item_near)
 			disabled = true
 			TextManager.display_text(item_near)
 	
