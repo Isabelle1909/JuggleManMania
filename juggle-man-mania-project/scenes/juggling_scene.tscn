@@ -5,6 +5,6 @@
 [node name="juggling_scene" type="Node2D" unique_id=1394213028]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1107217740]
-position = Vector2(956.00006, 879.50006)
-scale = Vector2(15.937501, 14.742188)
+position = Vector2(578.5, 322.5)
+scale = Vector2(9.0390625, 4.9921875)
 texture = ExtResource("1_1xanm")

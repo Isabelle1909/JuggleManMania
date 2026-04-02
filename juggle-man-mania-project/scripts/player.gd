@@ -6,7 +6,8 @@ var facing_ray
 var item_near = "none"
 var disabled = false
 var instanced = false
-var adjustment 
+
+
 
 
 func _physics_process(delta: float) -> void:
@@ -39,8 +40,7 @@ func _physics_process(delta: float) -> void:
 			disabled = false
 		elif item_near.contains("door")&&!instanced:
 			disabled = true
-			var house = get_parent()
-			house.add_child(SystemManager.inst(position+adjustment))
+			get_parent().open_juggling()
 			instanced = true
 		elif !item_near.contains("none")&&!instanced:
 			disabled = true
