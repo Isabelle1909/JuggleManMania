@@ -11,7 +11,7 @@ var talked_to_nums = {
 	"wardrobe": 0,
 	"mirror": 0,
 	"bed": 0,
-	"tv": 0
+	"computer": 0
 }
 
 var all_text = {}

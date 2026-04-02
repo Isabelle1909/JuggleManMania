@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://d3i4sqhx8wrdo" path="res://icon.svg" id="1_b3bc3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3b2b5"]
-bg_color = Color(0, 0, 0, 0.003921569)
+bg_color = Color(0.24181473, 0.3569458, 0.43117952, 0.78431374)
 
 [node name="Control" type="Control" unique_id=1675855857]
 layout_mode = 3
@@ -18,7 +18,7 @@ layout_mode = 0
 offset_left = 2.0
 offset_top = 1.0
 offset_right = 1153.0
-offset_bottom = 649.0
+offset_bottom = 275.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_3b2b5")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Panel" unique_id=1856592714]
