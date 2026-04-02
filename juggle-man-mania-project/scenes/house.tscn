@@ -3,8 +3,12 @@
 [ext_resource type="Script" uid="uid://cl3usunub6e5h" path="res://scripts/house.gd" id="1_3bgk5"]
 [ext_resource type="TileSet" uid="uid://dmt30scjkk0fc" path="res://tilesets/game_tile_set.tres" id="1_rk7hg"]
 [ext_resource type="PackedScene" uid="uid://dksw6vohgomcm" path="res://scenes/player.tscn" id="3_3bgk5"]
-[ext_resource type="PackedScene" uid="uid://i5ot6tbllc4l" path="res://scenes/interactable.tscn" id="4_3bgk5"]
 [ext_resource type="PackedScene" uid="uid://effsrxenqkmr" path="res://scenes/ui_scenes/text_ui.tscn" id="4_se78b"]
+[ext_resource type="Script" uid="uid://c2521k6budvog" path="res://scripts/Interactable.gd" id="5_f74lx"]
+[ext_resource type="Texture2D" uid="uid://d3i4sqhx8wrdo" path="res://icon.svg" id="6_ptc3g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w4xns"]
+size = Vector2(132, 123)
 
 [node name="house" type="Node2D" unique_id=626814677]
 script = ExtResource("1_3bgk5")
@@ -36,42 +40,74 @@ position_smoothing_speed = 16.0
 
 [node name="key_interactables" type="Node2D" parent="." unique_id=279575357]
 
-[node name="mirror" parent="key_interactables" unique_id=1406826812 instance=ExtResource("4_3bgk5")]
+[node name="mirror" type="StaticBody2D" parent="key_interactables" unique_id=1406826812]
 position = Vector2(264, 500)
+script = ExtResource("5_f74lx")
 title = "mirror"
 
-[node name="CollisionShape2D" parent="key_interactables/mirror" index="1" unique_id=203169812]
-position = Vector2(7, 4)
+[node name="Sprite2D" type="Sprite2D" parent="key_interactables/mirror" unique_id=403400776]
+texture = ExtResource("6_ptc3g")
 
-[node name="bed" parent="key_interactables" unique_id=1265703226 instance=ExtResource("4_3bgk5")]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="key_interactables/mirror" unique_id=203169812]
+position = Vector2(7, 4)
+shape = SubResource("RectangleShape2D_w4xns")
+
+[node name="bed" type="StaticBody2D" parent="key_interactables" unique_id=1265703226]
 position = Vector2(-20, 266)
+script = ExtResource("5_f74lx")
 title = "bed"
 
-[node name="CollisionShape2D" parent="key_interactables/bed" index="1" unique_id=203169812]
-position = Vector2(1, -0.5)
+[node name="Sprite2D" type="Sprite2D" parent="key_interactables/bed" unique_id=859110776]
+texture = ExtResource("6_ptc3g")
 
-[node name="wardrobe" parent="key_interactables" unique_id=244664781 instance=ExtResource("4_3bgk5")]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="key_interactables/bed" unique_id=987536330]
+position = Vector2(1, -0.5)
+shape = SubResource("RectangleShape2D_w4xns")
+
+[node name="wardrobe" type="StaticBody2D" parent="key_interactables" unique_id=244664781]
 position = Vector2(246, 258)
+script = ExtResource("5_f74lx")
 title = "wardrobe"
 
-[node name="CollisionShape2D" parent="key_interactables/wardrobe" index="1" unique_id=203169812]
-position = Vector2(17, -0.5)
+[node name="Sprite2D" type="Sprite2D" parent="key_interactables/wardrobe" unique_id=448882874]
+texture = ExtResource("6_ptc3g")
 
-[node name="computer" parent="key_interactables" unique_id=662879841 instance=ExtResource("4_3bgk5")]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="key_interactables/wardrobe" unique_id=1801611570]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_w4xns")
+
+[node name="computer" type="StaticBody2D" parent="key_interactables" unique_id=662879841]
 position = Vector2(1146, 22)
+script = ExtResource("5_f74lx")
 title = "computer"
 
-[node name="front_door" parent="key_interactables" unique_id=1715739860 instance=ExtResource("4_3bgk5")]
+[node name="Sprite2D" type="Sprite2D" parent="key_interactables/computer" unique_id=575539642]
+texture = ExtResource("6_ptc3g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="key_interactables/computer" unique_id=571972320]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_w4xns")
+
+[node name="front_door" type="StaticBody2D" parent="key_interactables" unique_id=1715739860]
 position = Vector2(725, 865)
+script = ExtResource("5_f74lx")
 title = "front_door"
 
-[node name="back_door" parent="key_interactables" unique_id=1488391012 instance=ExtResource("4_3bgk5")]
+[node name="Sprite2D" type="Sprite2D" parent="key_interactables/front_door" unique_id=431918467]
+texture = ExtResource("6_ptc3g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="key_interactables/front_door" unique_id=764416197]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_w4xns")
+
+[node name="back_door" type="StaticBody2D" parent="key_interactables" unique_id=1488391012]
 position = Vector2(720, -88)
+script = ExtResource("5_f74lx")
 title = "back_door"
 
-[editable path="key_interactables/mirror"]
-[editable path="key_interactables/bed"]
-[editable path="key_interactables/wardrobe"]
-[editable path="key_interactables/computer"]
-[editable path="key_interactables/front_door"]
-[editable path="key_interactables/back_door"]
+[node name="Sprite2D" type="Sprite2D" parent="key_interactables/back_door" unique_id=343310845]
+texture = ExtResource("6_ptc3g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="key_interactables/back_door" unique_id=789565538]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_w4xns")
