@@ -5,7 +5,8 @@ var last_called
 
 
 var tb
-
+var hm
+var rs
 
 var talked_to_nums = {
 	"wardrobe": 0,
@@ -38,9 +39,11 @@ func load_json_file():
 #called on interaction with object, which passes it's name
 func display_text(ob_name):
 	
-	if tb == null :
+	if tb == null || hm ==null:
 		return
-		
+	
+	if hm.visible:
+		return
 	tb.visible = true
 	#increments the objects talk_to number
 	

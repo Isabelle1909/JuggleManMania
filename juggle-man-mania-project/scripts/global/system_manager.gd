@@ -39,6 +39,6 @@ func open_juggling(pos):
 	print("house pos ", house_position)
 	get_tree().change_scene_to_packed(juggle_level)
 
-func finish_juggling(juggle_score):
+func open_house(juggle_score):
 	update_scores(juggle_score)
 	get_tree().change_scene_to_packed(house_level)

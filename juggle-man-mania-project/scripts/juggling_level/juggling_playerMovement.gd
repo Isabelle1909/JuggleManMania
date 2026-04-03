@@ -16,8 +16,8 @@ var late_right_zone = []
 
 #how much force the balls are hit up with depending on timing
 var early_impulse = Vector2(0,-400)
-var perfect_impulse = Vector2(0,-0)
-var late_impulse = Vector2(0,-0)
+var perfect_impulse = Vector2(0,-200)
+var late_impulse = Vector2(0,-50)
 
 #whether the ball is hit slighty one way or the other depending on hand
 var left_impulse = Vector2(0,0)
@@ -60,12 +60,12 @@ func check_zone(zone,imp):
 		
 		if imp.y < -400:
 			imp.y = -400
-		
+		print(imp)
 		for i in range(zone.size()):
 			zone[i].apply_impulse(imp)
 			score += 10
 		
-		zone.clear()
+		
 
 
 

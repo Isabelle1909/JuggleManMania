@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://effsrxenqkmr"]
 
 [ext_resource type="PackedScene" uid="uid://dnvo7ick37jdw" path="res://scenes/ui_scenes/UI.tscn" id="1_h858l"]
+[ext_resource type="PackedScene" uid="uid://dkp2lcwdqvm8v" path="res://scenes/ui_scenes/HelpScreen.tscn" id="2_vbm1y"]
+[ext_resource type="PackedScene" uid="uid://gihcivwsnrx7" path="res://scenes/ui_scenes/ResultsScreenUI.tscn" id="3_vnrby"]
 
 [node name="text_ui" type="CanvasLayer" unique_id=1281821818]
 
@@ -12,3 +14,8 @@ offset_bottom = 390.0
 size_flags_horizontal = 8
 size_flags_vertical = 8
 metadata/_edit_use_anchors_ = true
+
+[node name="Control2" parent="." unique_id=645237815 instance=ExtResource("2_vbm1y")]
+
+[node name="Control3" parent="." unique_id=583211371 instance=ExtResource("3_vnrby")]
+visible = false

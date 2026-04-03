@@ -31,7 +31,9 @@ func _physics_process(delta: float) -> void:
 			item_near = facing_ray.get_collider().name
 		
 	if Input.is_action_just_pressed("interact"):
-		if TextManager.tb.visible:
+		if TextManager.hm.visible:
+			TextManager.hm.visible = false
+		elif TextManager.tb.visible :
 			TextManager.close_text(item_near)
 			item_near = "none"
 			disabled = false

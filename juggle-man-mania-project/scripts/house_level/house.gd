@@ -2,6 +2,8 @@ extends Node2D
 
 @onready var ui_scr = $text_ui
 @onready var text_box = $text_ui/Control
+@onready var help_menu = $text_ui/Control2
+@onready var result_scr = $text_ui/Control3
 @onready var player = $player
 @onready var camera = $Camera2D
 @onready var adjustment = get_viewport_rect().size/2
@@ -13,13 +15,18 @@ func _ready() -> void:
 	if !on_entered_done:
 		on_entered()
 		on_entered_done = true
+	
 	if text_box.visible:
 		player.disabled = true
 	TextManager.tb = text_box
+	TextManager.hm = help_menu
+	TextManager.rs = result_scr
 
 func on_entered():
 	if SystemManager.house_position != null:
 		text_box.visible = false
+		help_menu.visible = false
+		result_scr.visible = true
 		player.position = SystemManager.house_position
 	else:
 		print("house_pos ", SystemManager.house_position)

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="JuggleManMania"
-run/main_scene="uid://bxhptscenb5ve"
+run/main_scene="uid://60s214ud27j5"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
