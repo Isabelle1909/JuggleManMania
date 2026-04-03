@@ -76,9 +76,9 @@ func movement_and_sprites():
 	if Input.is_action_just_pressed("interact"):
 		%sprite.animation = "hit_left"
 		done = false
-	if Input.is_action_just_pressed("back"):
-		%sprite.animation = "hit_right"
-		done = false
+	#if Input.is_action_just_pressed("back"):
+		#%sprite.animation = "hit_right"
+		#done = false
 	if done:
 		if character_direction :
 			velocity = character_direction * movement_speed
