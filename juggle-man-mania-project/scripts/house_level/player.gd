@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 const tile_size: Vector2 = Vector2(48, 48)
+@onready var spr = $Sprite2D
 var sprite_node_pos_tween: Tween 
 var facing_ray
 var item_near = "none"
@@ -11,6 +12,8 @@ var instanced = false
 
 
 func _physics_process(delta: float) -> void:
+
+	
 	if !disabled :
 		if !sprite_node_pos_tween or !sprite_node_pos_tween.is_running():
 			if Input.is_action_pressed("ui_up") and !$up.is_colliding():
@@ -58,6 +61,16 @@ func _move(dir: Vector2):
 	global_position += dir * tile_size
 	$Sprite2D.global_position -= dir * tile_size
 	
+	if dir.x > 0 && dir.y == 0:
+		spr.frame = 2
+	elif dir.x < 0 && dir.y == 0:
+		spr.frame = 0
+	elif dir.x == 0 && dir.y > 0:
+		spr.frame = 1
+	elif dir.x == 0 && dir.y < 0:
+		spr.frame = 3
+	else:
+		spr.frame = 1
 	
 	if sprite_node_pos_tween:
 		sprite_node_pos_tween.kill()

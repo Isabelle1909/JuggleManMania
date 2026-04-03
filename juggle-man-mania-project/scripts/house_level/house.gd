@@ -26,7 +26,8 @@ func on_entered():
 	if SystemManager.house_position != null:
 		text_box.visible = false
 		help_menu.visible = false
-		results_screen(SystemManager.last_score,SystemManager.last_bonus_1)
+		if SystemManager.last_score != null:
+			results_screen(SystemManager.last_score,SystemManager.last_bonus_1)
 		player.position = SystemManager.house_position
 	else:
 		print("house_pos ", SystemManager.house_position)

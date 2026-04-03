@@ -28,21 +28,26 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("interact"):
 		remove_dupes(early_left_zone,perfect_left_zone,late_left_zone)
-		left_check()
+		check(early_left_zone,perfect_left_zone,late_left_zone,left_impulse)
 		print(score)
+	if Input.is_action_just_pressed("back"):
+		remove_dupes(early_right_zone,perfect_right_zone,late_right_zone)
+		check(early_right_zone,perfect_right_zone,late_right_zone,right_impulse)
 
 
-func left_check():
+
+func check(A1,A2,A3,d_imp):
 	
-	print(early_left_zone)
-	print(perfect_left_zone)
-	print(late_left_zone)
-	var imp = early_impulse + left_impulse
-	check_zone(early_left_zone,imp)
+	print(A1)
+	print(A2)
+	print(A3)
+	var imp = early_impulse + d_imp
+	check_zone(A1,imp)
 	imp = perfect_impulse + left_impulse
-	check_zone(perfect_left_zone,imp)
+	check_zone(A2,imp)
 	imp = late_impulse + left_impulse
-	check_zone(late_left_zone,imp)
+	check_zone(A3,imp)
+	
 
 
 func remove_dupes(A1,A2,A3):
@@ -56,6 +61,7 @@ func remove_dupes(A1,A2,A3):
 			A3.erase(A2[i])
 
 func check_zone(zone,imp):
+	
 	if zone.size() > 0:
 		
 		if imp.y < -400:
@@ -76,9 +82,9 @@ func movement_and_sprites():
 	if Input.is_action_just_pressed("interact"):
 		%sprite.animation = "hit_left"
 		done = false
-	#if Input.is_action_just_pressed("back"):
-		#%sprite.animation = "hit_right"
-		#done = false
+	if Input.is_action_just_pressed("back"):
+		%sprite.animation = "hit_right"
+		done = false
 	if done:
 		if character_direction :
 			velocity = character_direction * movement_speed
@@ -128,3 +134,33 @@ func _on_late_left_body_exited(body: Node2D) -> void:
 	if body.name.contains("ball"):
 		if late_left_zone.has(body):
 			late_left_zone.erase(body)
+
+func _on_early_right_body_entered(body: Node2D) -> void:
+	if body.name.contains("ball"):
+		if !early_right_zone.has(body):
+			early_right_zone.append(body)
+
+func _on_early_right_body_exited(body: Node2D) -> void:
+	if body.name.contains("ball"):
+		if early_right_zone.has(body):
+			early_right_zone.erase(body)
+
+func _on_perfect_right_body_entered(body: Node2D) -> void:
+	if body.name.contains("ball"):
+		if !perfect_right_zone.has(body):
+			perfect_right_zone.append(body)
+
+func _on_perfect_right_body_exited(body: Node2D) -> void:
+	if body.name.contains("ball"):
+		if perfect_right_zone.has(body):
+			perfect_right_zone.erase(body)
+
+func _on_late_right_body_entered(body: Node2D) -> void:
+	if body.name.contains("ball"):
+		if !late_right_zone.has(body):
+			late_right_zone.append(body)
+
+func _on_late_right_body_exited(body: Node2D) -> void:
+	if body.name.contains("ball"):
+		if late_right_zone.has(body):
+			late_right_zone.erase(body)

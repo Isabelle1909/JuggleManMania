@@ -39,10 +39,10 @@ func load_json_file():
 #called on interaction with object, which passes it's name
 func display_text(ob_name):
 	
-	if tb == null || hm ==null:
+	if tb == null || hm ==null|| rs == null:
 		return
 	
-	if hm.visible:
+	if hm.visible || rs.visible:
 		return
 	tb.visible = true
 	#increments the objects talk_to number

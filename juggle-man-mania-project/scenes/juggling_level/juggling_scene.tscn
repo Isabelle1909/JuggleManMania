@@ -73,7 +73,7 @@ vertical_alignment = 1
 [node name="juggling_items" type="Node2D" parent="." unique_id=1382858004]
 
 [node name="juggling_ball" parent="juggling_items" unique_id=249419388 groups=["ball", "juggling_item"] instance=ExtResource("4_dmc83")]
-position = Vector2(499, 127)
+position = Vector2(503, 118)
 
 [connection signal="body_entered" from="Boundaries/dampener" to="." method="_on_dampener_body_entered"]
 [connection signal="body_exited" from="Boundaries/dampener" to="." method="_on_dampener_body_exited"]

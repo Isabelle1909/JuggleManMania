@@ -69,13 +69,13 @@ size = Vector2(79.5, 21)
 size = Vector2(75, 21.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xo2qw"]
-size = Vector2(73, 39)
+size = Vector2(84.75, 21.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rcc3c"]
-size = Vector2(74, 34)
+size = Vector2(79, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5mi46"]
-size = Vector2(72.75, 34)
+size = Vector2(72.75, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_310rx"]
 size = Vector2(81, 10)
@@ -128,7 +128,7 @@ collision_layer = 96
 collision_mask = 96
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/early_right" unique_id=839524202]
-position = Vector2(102, -50)
+position = Vector2(111, -39)
 shape = SubResource("RectangleShape2D_xo2qw")
 
 [node name="perfect_right" type="Area2D" parent="hit_areas" unique_id=1454771069]
@@ -136,7 +136,7 @@ collision_layer = 96
 collision_mask = 96
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/perfect_right" unique_id=1638707171]
-position = Vector2(102, -13)
+position = Vector2(110, -12)
 shape = SubResource("RectangleShape2D_rcc3c")
 
 [node name="late_right" type="Area2D" parent="hit_areas" unique_id=1637234712]
@@ -144,7 +144,7 @@ collision_layer = 96
 collision_mask = 96
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/late_right" unique_id=1256911201]
-position = Vector2(102, 21)
+position = Vector2(106, 17)
 shape = SubResource("RectangleShape2D_5mi46")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=442497802]
@@ -162,7 +162,7 @@ collision_mask = 64
 physics_material_override = ExtResource("3_fjldn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=749672484]
-position = Vector2(101, 39)
+position = Vector2(110, 37)
 shape = SubResource("RectangleShape2D_310rx")
 
 [connection signal="animation_finished" from="sprite" to="." method="_on_sprite_animation_finished"]
@@ -172,3 +172,9 @@ shape = SubResource("RectangleShape2D_310rx")
 [connection signal="body_exited" from="hit_areas/perfect_left" to="." method="_on_perfect_left_body_exited"]
 [connection signal="body_entered" from="hit_areas/late_left" to="." method="_on_late_left_body_entered"]
 [connection signal="body_exited" from="hit_areas/late_left" to="." method="_on_late_left_body_exited"]
+[connection signal="body_entered" from="hit_areas/early_right" to="." method="_on_early_right_body_entered"]
+[connection signal="body_exited" from="hit_areas/early_right" to="." method="_on_early_right_body_exited"]
+[connection signal="body_entered" from="hit_areas/perfect_right" to="." method="_on_perfect_right_body_entered"]
+[connection signal="body_exited" from="hit_areas/perfect_right" to="." method="_on_perfect_right_body_exited"]
+[connection signal="body_entered" from="hit_areas/late_right" to="." method="_on_late_right_body_entered"]
+[connection signal="body_exited" from="hit_areas/late_right" to="." method="_on_late_right_body_exited"]

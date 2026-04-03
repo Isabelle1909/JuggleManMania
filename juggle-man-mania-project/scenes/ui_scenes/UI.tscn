@@ -28,7 +28,7 @@ offset_top = 20.0
 offset_right = 1124.0
 offset_bottom = 132.0
 theme_override_font_sizes/normal_font_size = 27
-text = "If only i was a video game character... who could use WASD to walk, J to confirm/interact, and L to go back.."
+text = "I'm so sleepy... But I gotta work to eat."
 
 [node name="TextureRect" type="TextureRect" parent="Panel" unique_id=1685211513]
 layout_mode = 0
