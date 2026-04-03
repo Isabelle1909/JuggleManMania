@@ -31,7 +31,9 @@ func _physics_process(delta: float) -> void:
 			item_near = facing_ray.get_collider().name
 		
 	if Input.is_action_just_pressed("interact"):
-		if TextManager.hm.visible:
+		if TextManager.rs.visible:
+			TextManager.rs.visible = false
+		elif TextManager.hm.visible:
 			TextManager.hm.visible = false
 		elif TextManager.tb.visible :
 			TextManager.close_text(item_near)
@@ -44,6 +46,12 @@ func _physics_process(delta: float) -> void:
 			print(item_near)
 			disabled = true
 			TextManager.display_text(item_near)
+			
+	if Input.is_action_just_pressed("back"):
+		if TextManager.rs.visible:
+			TextManager.rs.visible = false
+		elif TextManager.hm.visible:
+			TextManager.hm.visible = false
 	
 
 func _move(dir: Vector2):

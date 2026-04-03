@@ -15,7 +15,7 @@ var perfect_right_zone = []
 var late_right_zone = []
 
 #how much force the balls are hit up with depending on timing
-var early_impulse = Vector2(0,-400)
+var early_impulse = Vector2(0,-300)
 var perfect_impulse = Vector2(0,-200)
 var late_impulse = Vector2(0,-50)
 

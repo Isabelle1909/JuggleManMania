@@ -20,7 +20,7 @@ func _physics_process(delta: float) -> void:
 	if timer > 0 && active_juggling_items.size() > 0:
 		timer -= delta
 	else:
-		SystemManager.open_house(score)
+		SystemManager.open_house(score,active_juggling_items.size())
 		finish = true
 		print("TIMEOUT")
 	

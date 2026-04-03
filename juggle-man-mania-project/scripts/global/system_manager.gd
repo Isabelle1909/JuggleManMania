@@ -6,6 +6,8 @@ var mood = "neutral"
 
 var current_jp = 0
 var total_jp = 0
+var last_score
+var last_bonus_1
 
 var house_level = load("res://scenes/house_level/house.tscn")
 var juggle_level = load("res://scenes/juggling_level/juggling_scene.tscn")
@@ -26,6 +28,7 @@ func increment_time():
 		time = "evening"
 	else:
 		time = "morning"
+		#increment_day()
 
 func increment_day():
 	day += 1
@@ -39,6 +42,10 @@ func open_juggling(pos):
 	print("house pos ", house_position)
 	get_tree().change_scene_to_packed(juggle_level)
 
-func open_house(juggle_score):
-	update_scores(juggle_score)
+func open_house(juggle_score,items_left):
+	increment_time()
+	last_score = juggle_score
+	last_bonus_1 = items_left * 10
+	update_scores(last_score)
+	update_scores(last_bonus_1)
 	get_tree().change_scene_to_packed(house_level)
