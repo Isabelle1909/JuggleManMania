@@ -63,7 +63,7 @@ func display_text(ob_name):
 	
 
 func close_text(ob_name):
-		print("butt")
+		print("close_text")
 		tb.visible = false
 		
 	

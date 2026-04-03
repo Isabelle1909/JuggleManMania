@@ -12,8 +12,10 @@ func _physics_process(delta: float) -> void:
 	if timer > 0:
 		timer -= delta
 	else:
+		SystemManager.finish_juggling(score)
 		finish = true
 		print("TIMEOUT")
+	
 	if score != player.score:
 		score = player.score
 		update_score_display()
