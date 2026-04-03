@@ -1,10 +1,7 @@
 [gd_scene format=3 uid="uid://5l23rwaq0rqb"]
 
-[ext_resource type="Script" uid="uid://ek0kb2jxt42o" path="res://scenes/juggling_ball.gd" id="1_065ld"]
-[ext_resource type="Texture2D" uid="uid://ca1mnxii2w5cm" path="res://assets/game/tilesets/FloorTest.png" id="1_u4mkh"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_u4mkh"]
-bounce = 0.53
+[ext_resource type="PhysicsMaterial" uid="uid://dcxf5g4w1q37s" path="res://physics_materials/ball_juggle.tres" id="1_0026i"]
+[ext_resource type="Texture2D" uid="uid://ca1mnxii2w5cm" path="res://assets/placeholder_assets/tilesets/FloorTest.png" id="1_u4mkh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_065ld"]
 size = Vector2(31, 28)
@@ -13,8 +10,7 @@ size = Vector2(31, 28)
 collision_layer = 32
 collision_mask = 64
 mass = 0.25
-physics_material_override = SubResource("PhysicsMaterial_u4mkh")
-script = ExtResource("1_065ld")
+physics_material_override = ExtResource("1_0026i")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1847186674]
 position = Vector2(-1.000001, 9.536743e-07)

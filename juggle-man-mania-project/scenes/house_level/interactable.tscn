@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://i5ot6tbllc4l"]
 
-[ext_resource type="Script" uid="uid://c2521k6budvog" path="res://scripts/Interactable.gd" id="1_ij5l6"]
-[ext_resource type="Texture2D" uid="uid://d3i4sqhx8wrdo" path="res://icon.svg" id="2_8o6w2"]
+[ext_resource type="Script" uid="uid://c2521k6budvog" path="res://scripts/house_level/Interactable.gd" id="1_wub2b"]
+[ext_resource type="Texture2D" uid="uid://d3i4sqhx8wrdo" path="res://icon.svg" id="2_mcl1u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w4xns"]
 size = Vector2(132, 123)
 
 [node name="Interactable" type="StaticBody2D" unique_id=1406826812]
-script = ExtResource("1_ij5l6")
+script = ExtResource("1_wub2b")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=403400776]
-texture = ExtResource("2_8o6w2")
+texture = ExtResource("2_mcl1u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=203169812]
 position = Vector2(0.5, -0.5)

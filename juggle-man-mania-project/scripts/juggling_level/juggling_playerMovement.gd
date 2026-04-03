@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var movement_speed : float = 300
 var character_direction : Vector2
 var done = true
+var score = 0
 
 #keeps track of the balls currently hitable
 var early_left_zone = []
@@ -15,8 +16,8 @@ var late_right_zone = []
 
 #how much force the balls are hit up with depending on timing
 var early_impulse = Vector2(0,-400)
-var perfect_impulse = Vector2(0,-350)
-var late_impulse = Vector2(0,-300)
+var perfect_impulse = Vector2(0,-0)
+var late_impulse = Vector2(0,-0)
 
 #whether the ball is hit slighty one way or the other depending on hand
 var left_impulse = Vector2(0,0)
@@ -28,7 +29,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("interact"):
 		remove_dupes(early_left_zone,perfect_left_zone,late_left_zone)
 		left_check()
-		
+		print(score)
 
 
 func left_check():
@@ -62,7 +63,7 @@ func check_zone(zone,imp):
 		
 		for i in range(zone.size()):
 			zone[i].apply_impulse(imp)
-			
+			score += 10
 		
 		zone.clear()
 

@@ -5,8 +5,8 @@ var day = "1"
 var mood = "neutral"
 var current_jp = 0
 var total_jp = 0
-var juggleMan = load("res://scenes/juggling_scene.tscn")
-
+var juggleMan = load("res://scenes/juggling_level/juggling_scene.tscn")
+var menu = load("res://scenes/ui_scenes/ResultsScreenUI.tscn")
 
 func calculate_mood():
 	#use total JP / potential JP to figure out mood

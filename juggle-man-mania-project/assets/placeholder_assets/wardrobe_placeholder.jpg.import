@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca1mnxii2w5cm"
-path="res://.godot/imported/FloorTest.png-b936dd2987ad39a62cc0d11a7356c67c.ctex"
+uid="uid://daxl1na6kmgje"
+path="res://.godot/imported/wardrobe_placeholder.jpg-0183df07b630e88348468d5b317c2948.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/game/tilesets/FloorTest.png"
-dest_files=["res://.godot/imported/FloorTest.png-b936dd2987ad39a62cc0d11a7356c67c.ctex"]
+source_file="res://assets/placeholder_assets/wardrobe_placeholder.jpg"
+dest_files=["res://.godot/imported/wardrobe_placeholder.jpg-0183df07b630e88348468d5b317c2948.ctex"]
 
 [params]
 

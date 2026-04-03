@@ -1,0 +1,4 @@
+[gd_resource type="PhysicsMaterial" format=3 uid="uid://c2to4k8odqbfh"]
+
+[resource]
+absorbent = true
