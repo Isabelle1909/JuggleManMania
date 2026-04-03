@@ -31,18 +31,27 @@ func _physics_process(delta: float) -> void:
 			item_near = facing_ray.get_collider().name
 		
 	if Input.is_action_just_pressed("interact"):
-		if TextManager.tb.visible&&!instanced:
+		if TextManager.rs.visible:
+			TextManager.rs.visible = false
+		elif TextManager.hm.visible:
+			TextManager.hm.visible = false
+		elif TextManager.tb.visible :
 			TextManager.close_text(item_near)
 			item_near = "none"
 			disabled = false
-		elif item_near.contains("door")&&!instanced:
-			disabled = true
-			get_parent().open_juggling()
-			instanced = true
-		elif !item_near.contains("none")&&!item_near.contains("Wall")&&!instanced:
+		elif item_near.contains("door"):
+			get_parent().on_entered_done = false
+			SystemManager.open_juggling(position)
+		elif !item_near.contains("none")&&!item_near.contains("Wall"):
 			print(item_near)
 			disabled = true
 			TextManager.display_text(item_near)
+			
+	if Input.is_action_just_pressed("back"):
+		if TextManager.rs.visible:
+			TextManager.rs.visible = false
+		elif TextManager.hm.visible:
+			TextManager.hm.visible = false
 	
 
 func _move(dir: Vector2):

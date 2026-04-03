@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://qpjdx14qr7yq"]
 
-[ext_resource type="PackedScene" uid="uid://5l23rwaq0rqb" path="res://scenes/juggling_ball.tscn" id="1_0mxyy"]
-[ext_resource type="Script" uid="uid://7in51kdngce3" path="res://scenes/test_scenes/test_juggle_area.gd" id="1_g14vl"]
+[ext_resource type="PackedScene" uid="uid://5l23rwaq0rqb" path="res://scenes/juggling_level/juggling_ball.tscn" id="1_0mxyy"]
+[ext_resource type="Script" uid="uid://7in51kdngce3" path="res://scripts/test_scripts/test_juggle_area.gd" id="1_g14vl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g14vl"]
 size = Vector2(1155, 57)

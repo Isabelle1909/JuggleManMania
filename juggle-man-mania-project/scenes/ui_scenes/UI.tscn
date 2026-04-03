@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dnvo7ick37jdw"]
 
-[ext_resource type="Texture2D" uid="uid://d3i4sqhx8wrdo" path="res://icon.svg" id="1_b3bc3"]
+[ext_resource type="Texture2D" uid="uid://cx26f2tr2h6ik" path="res://assets/placeholder_assets/OIP-3375155517.jpg" id="1_2rs5t"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3b2b5"]
 bg_color = Color(0.24181473, 0.3569458, 0.43117952, 0.78431374)
@@ -28,7 +28,7 @@ offset_top = 20.0
 offset_right = 1124.0
 offset_bottom = 132.0
 theme_override_font_sizes/normal_font_size = 27
-text = "121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212122222"
+text = "If only i was a video game character... who could use WASD to walk, J to confirm/interact, and L to go back.."
 
 [node name="TextureRect" type="TextureRect" parent="Panel" unique_id=1685211513]
 layout_mode = 0
@@ -36,7 +36,8 @@ offset_left = 42.0
 offset_top = 19.0
 offset_right = 170.0
 offset_bottom = 147.0
-texture = ExtResource("1_b3bc3")
+texture = ExtResource("1_2rs5t")
+expand_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=672412360]
 layout_mode = 0
