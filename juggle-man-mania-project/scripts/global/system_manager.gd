@@ -6,7 +6,8 @@ var mood = "neutral"
 var current_jp = 0
 var total_jp = 0
 var juggleMan = load("res://scenes/juggling_level/juggling_scene.tscn")
-var menu = load("res://scenes/ui_scenes/ResultsScreenUI.tscn")
+var results_scr = load("res://scenes/ui_scenes/ResultsScreenUI.tscn")
+var help_scr = load("res://scenes/ui_scenes/HelpScreen.tscn")
 
 func calculate_mood():
 	#use total JP / potential JP to figure out mood
@@ -22,7 +23,14 @@ func increment_time():
 func increment_day():
 	day += 1
 
+func update_scores(to_add):
+	total_jp += to_add
+	current_jp += to_add
 
-func inst():
+func instj():
 	var instance = juggleMan.instantiate()
+	return(instance)
+
+func instr():
+	var instance = results_scr.instantiate()
 	return(instance)

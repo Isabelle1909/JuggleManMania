@@ -12,7 +12,7 @@ normal = Vector2(0.99997133, 0.0075755403)
 normal = Vector2(-1, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gq0ih"]
-size = Vector2(1170, 133)
+size = Vector2(1603, 133)
 
 [node name="juggling_scene" type="Node2D" unique_id=1394213028]
 script = ExtResource("1_ho08g")
@@ -45,7 +45,7 @@ shape = SubResource("WorldBoundaryShape2D_5haue")
 [node name="dampener" type="Area2D" parent="Boundaries" unique_id=1006477699]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/dampener" unique_id=921140774]
-position = Vector2(575, 26.5)
+position = Vector2(595.5, 26.5)
 shape = SubResource("RectangleShape2D_gq0ih")
 
 [node name="juggling_ball" parent="." unique_id=249419388 groups=["ball", "juggling_item"] instance=ExtResource("4_dmc83")]

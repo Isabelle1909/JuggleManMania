@@ -37,7 +37,7 @@ func _physics_process(delta: float) -> void:
 			disabled = false
 		elif item_near.contains("door")&&!instanced:
 			disabled = true
-			get_parent().open_juggling()
+			get_parent().open_instance(SystemManager.instj())
 			instanced = true
 		elif !item_near.contains("none")&&!item_near.contains("Wall")&&!instanced:
 			print(item_near)

@@ -14,14 +14,10 @@ func _ready() -> void:
 		player.disabled = true
 	TextManager.tb = text_box
 
-func open_juggling():
-	print(adjustment)
-	inst = SystemManager.inst()
+func open_instance(instance):
+	inst = instance
 	inst.position.x = (player.position.x - get_viewport_rect().size.x / 2)
 	inst.position.y = (player.position.y - get_viewport_rect().size.y / 2)
-	
-
-	
 	if inst.position.y > 910 - get_viewport_rect().size.y:
 		inst.position.y = 910 - get_viewport_rect().size.y
 	elif inst.position.y < -190:
@@ -29,17 +25,25 @@ func open_juggling():
 	
 	add_child(inst)
 
+func close_juggling():
+	if inst != null:
+		SystemManager.update_scores(inst.score)
+		inst.free()
+		open_instance(SystemManager.instr())
+		print(SystemManager.total_jp)
+		
+		
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 @warning_ignore("unused_parameter")
 
 func _physics_process(delta: float) -> void:
+	if inst != null:
+		print(inst.name)
+		if inst.finish :
+			if inst.name.contains("juggling"):
+				close_juggling()
+			
 	
-	if Input.is_action_just_pressed("test input 1"):
-		pass
-		#inst = SystemManager.inst()
-		#add_child(inst)
-	if Input.is_action_just_pressed("test input 2"):
-		pass
-		#if is_instance_valid(inst):
-		#	inst.free()
+	

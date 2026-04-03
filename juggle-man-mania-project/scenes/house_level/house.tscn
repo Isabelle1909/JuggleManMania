@@ -43,13 +43,13 @@ tile_map_data = PackedByteArray("AAACAPz/AAAAAAAAAAACAP3/AAAAAAAAAAADAP3/AAAAAAA
 tile_set = ExtResource("2_qf7xi")
 
 [node name="player" parent="." unique_id=1271940088 instance=ExtResource("3_cyy7t")]
-position = Vector2(7, 210)
+position = Vector2(710, 106)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="player" unique_id=1791628829]
 remote_path = NodePath("../../Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=423019317]
-position = Vector2(7, 210)
+position = Vector2(710, 106)
 limit_left = -145
 limit_top = -190
 limit_right = 1390
