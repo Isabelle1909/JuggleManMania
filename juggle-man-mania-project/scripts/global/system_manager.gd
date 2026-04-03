@@ -43,7 +43,7 @@ func open_juggling(pos):
 	get_tree().change_scene_to_packed(juggle_level)
 
 func open_house(juggle_score,items_left):
-	increment_time()
+	#increment_time()
 	last_score = juggle_score
 	last_bonus_1 = items_left * 10
 	update_scores(last_score)
