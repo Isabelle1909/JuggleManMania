@@ -12,7 +12,6 @@ var instanced = false
 
 
 func _physics_process(delta: float) -> void:
-
 	
 	if !disabled :
 		if !sprite_node_pos_tween or !sprite_node_pos_tween.is_running():

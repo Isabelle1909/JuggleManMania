@@ -15,13 +15,13 @@ var perfect_right_zone = []
 var late_right_zone = []
 
 #how much force the balls are hit up with depending on timing
-var early_impulse = Vector2(0,-300)
-var perfect_impulse = Vector2(0,-200)
+var early_impulse = Vector2(0,-200)
+var perfect_impulse = Vector2(0,-100)
 var late_impulse = Vector2(0,-50)
 
 #whether the ball is hit slighty one way or the other depending on hand
-var left_impulse = Vector2(0,0)
-var right_impulse = Vector2(0,0)
+var left_impulse = Vector2(10,0)
+var right_impulse = Vector2(-10,0)
 
 func _physics_process(delta):
 	movement_and_sprites()
