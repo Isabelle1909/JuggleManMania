@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bkchw"]
 size = Vector2(33, 34)
 
-[node name="manual_physics_ball" type="CharacterBody2D" unique_id=728813730]
+[node name="manual_physics_ball" type="CharacterBody2D" unique_id=728813730 groups=["ball", "juggling_items"]]
 script = ExtResource("1_odxty")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=171633382]
