@@ -3,11 +3,16 @@ extends Node
 var json_path = "res://data/test_json.json"
 var last_called
 
+
+var tb
+var hm
+var rs
+
 var talked_to_nums = {
 	"wardrobe": 0,
 	"mirror": 0,
 	"bed": 0,
-	"tv": 0
+	"computer": 0
 }
 
 var all_text = {}
@@ -34,15 +39,34 @@ func load_json_file():
 #called on interaction with object, which passes it's name
 func display_text(ob_name):
 	
+	if tb == null || hm ==null|| rs == null:
+		return
+	
+	if hm.visible || rs.visible:
+		return
+	tb.visible = true
 	#increments the objects talk_to number
-	if last_called != ob_name:
-		talked_to_nums[ob_name] += 1
+	
+	
+	#print(ob_name)
+	#print(talked_to_nums.has(ob_name))
+	if talked_to_nums.has(ob_name):
+		if talked_to_nums[ob_name] < 3:
+			talked_to_nums[ob_name] += 1
+			print(talked_to_nums[ob_name])
+	
 		#gets the correct text from the json file depending on object, time/day and number of 
 		#times it's been spoken to
 		var path_string = str(SystemManager.time,"_",SystemManager.day,"_",SystemManager.mood)
 		var text = all_text[ob_name][path_string][str(talked_to_nums[ob_name])]
 		print(text)
+		tb.get_node("Panel/RichTextLabel").text = text
 		#will use text box UI to display later for now prints to console
 	
-	last_called = ob_name
+	
+
+func close_text(ob_name):
+		print("close_text")
+		tb.visible = false
+		
 	

@@ -1,4 +1,10 @@
-[gd_scene format=3 uid="uid://bn0jm11oytl5n"]
+[gd_scene format=3 uid="uid://dkp2lcwdqvm8v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m2kmj"]
+bg_color = Color(0.18039216, 0.18039216, 0.18039216, 0.78431374)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_40th0"]
+bg_color = Color(0.14406255, 0.14406255, 0.14406249, 1)
 
 [node name="Control" type="Control" unique_id=645237815]
 layout_mode = 3
@@ -12,6 +18,22 @@ grow_vertical = 2
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_m2kmj")
+
+[node name="Panel2" type="Panel" parent="." unique_id=461083351]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -244.0
+offset_top = -245.0
+offset_right = 232.0
+offset_bottom = 204.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_40th0")
 
 [node name="Label_Title" type="Label" parent="." unique_id=2061589588]
 layout_mode = 1
@@ -55,16 +77,15 @@ text = "
 
 [node name="Button" type="Button" parent="." unique_id=1149788523]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -185.0
-offset_top = -113.0
-offset_right = -41.0
-offset_bottom = -26.0
-grow_horizontal = 0
+offset_left = -133.5
+offset_top = -87.0
+offset_right = 133.5
+grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 29
-text = "BACK"
+text = "Press J to continue"

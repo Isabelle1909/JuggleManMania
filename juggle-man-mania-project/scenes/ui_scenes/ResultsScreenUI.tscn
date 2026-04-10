@@ -71,11 +71,12 @@ text = "Total
 
 [node name="Button_Next" type="Button" parent="Panel" unique_id=132439977]
 layout_mode = 0
-offset_left = 992.0
-offset_top = 555.0
-offset_right = 1103.0
-offset_bottom = 608.0
-text = "Next →"
+offset_left = 499.0
+offset_top = 539.0
+offset_right = 661.0
+offset_bottom = 609.0
+theme_override_font_sizes/font_size = 28
+text = "Press J →"
 
 [node name="VBoxContainer_Right" type="VBoxContainer" parent="Panel" unique_id=716169518]
 layout_mode = 0

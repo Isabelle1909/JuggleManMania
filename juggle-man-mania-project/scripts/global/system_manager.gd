@@ -3,9 +3,19 @@ extends Node
 var time = "morning"
 var day = "1"
 var mood = "neutral"
+
 var current_jp = 0
 var total_jp = 0
-var juggleMan = preload("res://juggling_scene.tscn")
+var last_score
+var last_bonus_1
+
+var house_level = load("res://scenes/house_level/house.tscn")
+var juggle_level = load("res://scenes/juggling_level/juggling_scene.tscn")
+var results_scr = load("res://scenes/ui_scenes/ResultsScreenUI.tscn")
+var help_scr = load("res://scenes/ui_scenes/HelpScreen.tscn")
+
+
+var house_position
 
 
 func calculate_mood():
@@ -18,12 +28,24 @@ func increment_time():
 		time = "evening"
 	else:
 		time = "morning"
+		#increment_day()
 
 func increment_day():
 	day += 1
 
+func update_scores(to_add):
+	total_jp += to_add
+	current_jp += to_add
 
-func inst(pos):
-	var instance = juggleMan.instantiate()
-	#instance.position = pos
-	return(instance)
+func open_juggling(pos):
+	house_position = pos
+	print("house pos ", house_position)
+	get_tree().change_scene_to_packed(juggle_level)
+
+func open_house(juggle_score,items_left):
+	#increment_time()
+	last_score = juggle_score
+	last_bonus_1 = items_left * 10
+	update_scores(last_score)
+	update_scores(last_bonus_1)
+	get_tree().change_scene_to_packed(house_level)

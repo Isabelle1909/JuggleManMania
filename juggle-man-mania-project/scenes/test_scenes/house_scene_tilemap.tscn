@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://dj7jdeqtnuib3"]
 
 [ext_resource type="TileSet" uid="uid://dmt30scjkk0fc" path="res://tilesets/game_tile_set.tres" id="1_xtypq"]
-[ext_resource type="PackedScene" uid="uid://dksw6vohgomcm" path="res://scenes/player.tscn" id="2_8imf2"]
+[ext_resource type="PackedScene" uid="uid://dksw6vohgomcm" path="res://scenes/house_level/player.tscn" id="2_8imf2"]
 
 [node name="HouseSceneTilemap" type="Node2D" unique_id=1911118488]
 position = Vector2(1, 5)

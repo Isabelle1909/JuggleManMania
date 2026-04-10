@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://crg68wfwpt836"]
+
+[ext_resource type="Script" uid="uid://dju7bj665jynp" path="res://scripts/juggling_level/juggling_scene.gd" id="1_ho08g"]
+[ext_resource type="Texture2D" uid="uid://d3i4sqhx8wrdo" path="res://icon.svg" id="2_miqb6"]
+[ext_resource type="PackedScene" uid="uid://d0twvx4mn4o62" path="res://scenes/juggling_level/juggling_player.tscn" id="3_sywdt"]
+[ext_resource type="PackedScene" uid="uid://5l23rwaq0rqb" path="res://scenes/juggling_level/juggling_ball.tscn" id="4_dmc83"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_a6ydb"]
+normal = Vector2(0.99997133, 0.0075755403)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5haue"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gq0ih"]
+size = Vector2(1603, 133)
+
+[node name="juggling_scene" type="Node2D" unique_id=1394213028]
+script = ExtResource("1_ho08g")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1107217740]
+position = Vector2(578.5, 322.5)
+scale = Vector2(9.0390625, 4.9921875)
+texture = ExtResource("2_miqb6")
+
+[node name="juggling_player" parent="." unique_id=1964283372 instance=ExtResource("3_sywdt")]
+position = Vector2(600, 429)
+
+[node name="Boundaries" type="Node2D" parent="." unique_id=715281043]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Boundaries" unique_id=1794051764]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/StaticBody2D" unique_id=757958884]
+shape = SubResource("WorldBoundaryShape2D_a6ydb")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Boundaries" unique_id=421159997]
+position = Vector2(1152, 4)
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/StaticBody2D2" unique_id=1208527868]
+shape = SubResource("WorldBoundaryShape2D_5haue")
+
+[node name="dampener" type="Area2D" parent="Boundaries" unique_id=1006477699]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/dampener" unique_id=921140774]
+position = Vector2(595.5, 26.5)
+shape = SubResource("RectangleShape2D_gq0ih")
+
+[node name="out_bound_detector" type="Area2D" parent="Boundaries" unique_id=1767283251]
+collision_layer = 96
+collision_mask = 96
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boundaries/out_bound_detector" unique_id=540565830]
+polygon = PackedVector2Array(-203, -38, -267, 674, -273, 777, 1300, 749, 1302, 644, 1373, -35, 1195, -23, 1184, 644, -14, 666, -38, -46)
+
+[node name="score_display" type="Panel" parent="." unique_id=693193099]
+offset_left = 861.0
+offset_top = 525.0
+offset_right = 1096.0
+offset_bottom = 600.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="score_display" unique_id=70743172]
+layout_mode = 0
+offset_right = 231.0
+offset_bottom = 75.0
+theme_override_font_sizes/normal_font_size = 35
+text = "score:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="juggling_items" type="Node2D" parent="." unique_id=1382858004]
+
+[node name="juggling_ball" parent="juggling_items" unique_id=249419388 groups=["ball", "juggling_item"] instance=ExtResource("4_dmc83")]
+position = Vector2(503, 118)
+
+[connection signal="body_entered" from="Boundaries/dampener" to="." method="_on_dampener_body_entered"]
+[connection signal="body_exited" from="Boundaries/dampener" to="." method="_on_dampener_body_exited"]
+[connection signal="body_entered" from="Boundaries/out_bound_detector" to="." method="_on_out_bound_detector_body_entered"]
