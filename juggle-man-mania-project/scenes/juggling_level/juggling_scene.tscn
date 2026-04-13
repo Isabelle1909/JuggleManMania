@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dju7bj665jynp" path="res://scripts/juggling_level/juggling_scene.gd" id="1_ho08g"]
 [ext_resource type="Texture2D" uid="uid://d3i4sqhx8wrdo" path="res://icon.svg" id="2_miqb6"]
 [ext_resource type="PackedScene" uid="uid://d0twvx4mn4o62" path="res://scenes/juggling_level/juggling_player.tscn" id="3_sywdt"]
-[ext_resource type="PackedScene" uid="uid://5l23rwaq0rqb" path="res://scenes/juggling_level/juggling_ball.tscn" id="4_dmc83"]
+[ext_resource type="PackedScene" uid="uid://byuw47dct35aj" path="res://scenes/juggling_level/juggling_items/manual_physics_ball.tscn" id="5_miqb6"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_a6ydb"]
 normal = Vector2(0.99997133, 0.0075755403)
@@ -45,7 +45,7 @@ shape = SubResource("WorldBoundaryShape2D_5haue")
 [node name="dampener" type="Area2D" parent="Boundaries" unique_id=1006477699]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/dampener" unique_id=921140774]
-position = Vector2(595.5, 26.5)
+position = Vector2(546, 850)
 shape = SubResource("RectangleShape2D_gq0ih")
 
 [node name="out_bound_detector" type="Area2D" parent="Boundaries" unique_id=1767283251]
@@ -72,8 +72,8 @@ vertical_alignment = 1
 
 [node name="juggling_items" type="Node2D" parent="." unique_id=1382858004]
 
-[node name="juggling_ball" parent="juggling_items" unique_id=249419388 groups=["ball", "juggling_item"] instance=ExtResource("4_dmc83")]
-position = Vector2(503, 118)
+[node name="manual_physics_ball" parent="juggling_items" unique_id=728813730 instance=ExtResource("5_miqb6")]
+position = Vector2(500, 206)
 
 [connection signal="body_entered" from="Boundaries/dampener" to="." method="_on_dampener_body_entered"]
 [connection signal="body_exited" from="Boundaries/dampener" to="." method="_on_dampener_body_exited"]

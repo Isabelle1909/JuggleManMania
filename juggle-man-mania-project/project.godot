@@ -20,6 +20,11 @@ config/icon="res://icon.svg"
 TextManager="*uid://ddavw5ssvui0f"
 SystemManager="*uid://fys5rxccs45x"
 
+[global_group]
+
+juggling_items=""
+ball=""
+
 [input]
 
 ui_left={
