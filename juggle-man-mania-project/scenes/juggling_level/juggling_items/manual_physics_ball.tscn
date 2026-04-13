@@ -7,6 +7,8 @@
 size = Vector2(33, 34)
 
 [node name="manual_physics_ball" type="CharacterBody2D" unique_id=728813730 groups=["ball", "juggling_items"]]
+collision_layer = 96
+collision_mask = 96
 script = ExtResource("1_odxty")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=171633382]

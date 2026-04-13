@@ -21,8 +21,28 @@ func add_gravity(time):
 
 func _physics_process(delta: float) -> void:
 	add_gravity(delta)
-	if Input.is_action_just_pressed("test input 1"):
-		add_impulse()
+	if Input.is_action_just_pressed("interact"):
+		#add_impulse("left")
+		pass
+	elif Input.is_action_just_pressed("back"):
+		#add_impulse("right")
+		pass
 
-func add_impulse():
-	velocity.y += -2000
+func add_impulse(dir,title):
+	print(title)
+	if dir.contains("left"):
+		velocity.x += 100
+	elif dir.contains("right"):
+		velocity.x += -100
+	if velocity.y >= gravity.y/mass:
+		velocity.y = 0
+	
+	if title.contains("early"):
+		velocity.y += -1500
+	elif title.contains("perfect"):
+		velocity.y += -1000
+	elif title.contains("late"):
+		velocity.y += -500
+	
+#make an add impulse for late/early/perfect
+#get it triggered by the juggling

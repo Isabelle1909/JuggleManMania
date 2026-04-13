@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://dju7bj665jynp" path="res://scripts/juggling_level/juggling_scene.gd" id="1_ho08g"]
 [ext_resource type="Texture2D" uid="uid://d3i4sqhx8wrdo" path="res://icon.svg" id="2_miqb6"]
 [ext_resource type="PackedScene" uid="uid://d0twvx4mn4o62" path="res://scenes/juggling_level/juggling_player.tscn" id="3_sywdt"]
-[ext_resource type="PackedScene" uid="uid://5l23rwaq0rqb" path="res://scenes/juggling_level/juggling_items/juggling_ball.tscn" id="4_dmc83"]
 [ext_resource type="PackedScene" uid="uid://byuw47dct35aj" path="res://scenes/juggling_level/juggling_items/manual_physics_ball.tscn" id="5_miqb6"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_a6ydb"]
@@ -75,10 +74,6 @@ vertical_alignment = 1
 
 [node name="manual_physics_ball" parent="juggling_items" unique_id=728813730 instance=ExtResource("5_miqb6")]
 position = Vector2(500, 206)
-
-[node name="juggling_ball" parent="juggling_items" unique_id=249419388 groups=["juggling_items"] instance=ExtResource("4_dmc83")]
-position = Vector2(-588, 158)
-gravity_scale = 0.0
 
 [connection signal="body_entered" from="Boundaries/dampener" to="." method="_on_dampener_body_entered"]
 [connection signal="body_exited" from="Boundaries/dampener" to="." method="_on_dampener_body_exited"]
