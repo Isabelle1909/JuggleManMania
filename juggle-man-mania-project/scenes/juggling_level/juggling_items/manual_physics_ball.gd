@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var gravity = Vector2(0,8.5)
+var gravity = Vector2(0,7)
 var mass = 0.25
 var vi
 var vf
@@ -10,7 +10,7 @@ var dis_y
 var maxV = 2500
 
 func _ready() -> void:
-	velocity = Vector2(0,-1000)
+	velocity = Vector2(0,-100)
 
 func add_gravity(time):
 	dis_y = (velocity.y * time) + (0.5 * gravity.y * (time * time))

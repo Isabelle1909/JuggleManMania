@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var movement_speed : float = 400
+@export var movement_speed : float = 500
 var character_direction : Vector2
 var done = true
 var score = 0

@@ -36,20 +36,17 @@ func update_score_display():
 
 
 func _on_dampener_body_entered(body: Node2D) -> void:
-	pass
-	#if body.is_in_group("juggling_items"):
-		#if body.is_in_group("ball"):
-			#body.linear_damp = 1000.0
-			#body.angular_damp = 1000.0
-	
+	if body.is_in_group("juggling_items"):
+		if body.is_in_group("ball"):
+			body.velocity.y = 0
+		
 	
 
 func _on_dampener_body_exited(body: Node2D) -> void:
 	pass
 	#if body.is_in_group("juggling_items"):
 		#if body.is_in_group("ball"):
-			#body.linear_damp = 0.0
-			#body.angular_damp = 0.0
+		#	body.gravity = Vector2(0,8.5)
 
 
 
