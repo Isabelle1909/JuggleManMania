@@ -1,13 +1,13 @@
 extends CharacterBody2D
 
-var gravity = Vector2(0,9.0)
+var gravity = Vector2(0,8.5)
 var mass = 0.25
 var vi
 var vf
 var acceleration
 var dis_x
 var dis_y
-var maxV = 3000
+var maxV = 2500
 
 func _ready() -> void:
 	velocity = Vector2(0,-1000)
@@ -21,12 +21,6 @@ func add_gravity(time):
 
 func _physics_process(delta: float) -> void:
 	add_gravity(delta)
-	if Input.is_action_just_pressed("interact"):
-		#add_impulse("left")
-		pass
-	elif Input.is_action_just_pressed("back"):
-		#add_impulse("right")
-		pass
 
 func add_impulse(dir,title):
 	print(title)
@@ -44,5 +38,7 @@ func add_impulse(dir,title):
 	elif title.contains("late"):
 		velocity.y += -500
 	
+	if abs(velocity.y) > abs(maxV):
+		velocity.y = (velocity.y/velocity.y) * maxV
 #make an add impulse for late/early/perfect
 #get it triggered by the juggling
