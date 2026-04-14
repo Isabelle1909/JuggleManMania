@@ -1,12 +1,15 @@
 [gd_scene format=3 uid="uid://dcrix2nxbwg1r"]
 
-[node name="[Load]" type="Control" unique_id=1860916958]
+[ext_resource type="Script" uid="uid://cflvtp86viu48" path="res://scenes/ui_scenes/save_menu.gd" id="1_y552w"]
+
+[node name="Load" type="Control" unique_id=1860916958]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_y552w")
 
 [node name="Panel" type="Panel" parent="." unique_id=462600059]
 layout_mode = 0
@@ -50,31 +53,22 @@ offset_top = 232.0
 offset_right = 297.0
 offset_bottom = 538.80005
 
-[node name="Label_Item1" type="Label" parent="Panel/VBoxContainer_Left" unique_id=1095940128]
+[node name="day" type="Label" parent="Panel/VBoxContainer_Left" unique_id=1095940128]
 layout_mode = 2
 text = "Day
 "
 
-[node name="Label_Item2" type="Label" parent="Panel/VBoxContainer_Left" unique_id=1949093084]
+[node name="jp" type="Label" parent="Panel/VBoxContainer_Left" unique_id=1949093084]
 layout_mode = 2
 text = "JP
 
 "
 
-[node name="Label_Item3" type="Label" parent="Panel/VBoxContainer_Left" unique_id=987436667]
+[node name="score" type="Label" parent="Panel/VBoxContainer_Left" unique_id=987436667]
 layout_mode = 2
 text = "Score
 
 "
-
-[node name="Button_Next" type="Button" parent="Panel" unique_id=1925953485]
-layout_mode = 0
-offset_left = 879.0
-offset_top = 539.0
-offset_right = 1041.0
-offset_bottom = 609.0
-theme_override_font_sizes/font_size = 28
-text = "Next →"
 
 [node name="VBoxContainer_Right" type="VBoxContainer" parent="Panel" unique_id=1750928520]
 layout_mode = 0
@@ -83,19 +77,19 @@ offset_top = 231.0
 offset_right = 912.0
 offset_bottom = 537.80005
 
-[node name="Label_Item1" type="Label" parent="Panel/VBoxContainer_Right" unique_id=906787687]
+[node name="day_number" type="Label" parent="Panel/VBoxContainer_Right" unique_id=906787687]
 layout_mode = 2
 text = "xxxx
 
 "
 
-[node name="Label_Item2" type="Label" parent="Panel/VBoxContainer_Right" unique_id=1214259975]
+[node name="current_jp_number" type="Label" parent="Panel/VBoxContainer_Right" unique_id=1214259975]
 layout_mode = 2
 text = "xxxx
 
 "
 
-[node name="Label_Item3" type="Label" parent="Panel/VBoxContainer_Right" unique_id=1438199172]
+[node name="total_score_number" type="Label" parent="Panel/VBoxContainer_Right" unique_id=1438199172]
 layout_mode = 2
 text = "xxxx
 
@@ -110,25 +104,34 @@ offset_bottom = 74.0
 theme_override_font_sizes/font_size = 32
 text = "Save Slot 1 "
 
-[node name="Button_Next2" type="Button" parent="Panel" unique_id=224536242]
+[node name="Button_Delete" type="Button" parent="Panel" unique_id=224536242]
 layout_mode = 0
-offset_left = 554.0
+offset_left = 472.0
 offset_top = 464.0
-offset_right = 716.0
+offset_right = 634.0
 offset_bottom = 534.0
 theme_override_font_sizes/font_size = 28
 text = "DELETE"
 
-[node name="Button_Next3" type="Button" parent="Panel" unique_id=1752916761]
+[node name="Button_Close" type="Button" parent="Panel" unique_id=322385550]
 layout_mode = 0
-offset_left = 392.0
+offset_left = 960.0
+offset_top = 24.0
+offset_right = 1122.0
+offset_bottom = 94.0
+theme_override_font_sizes/font_size = 28
+text = "CLOSE"
+
+[node name="Button_Load" type="Button" parent="Panel" unique_id=1752916761]
+layout_mode = 0
+offset_left = 304.0
 offset_top = 464.0
-offset_right = 554.0
+offset_right = 466.0
 offset_bottom = 534.0
 theme_override_font_sizes/font_size = 28
 text = "LOAD"
 
-[node name="Button_Next4" type="Button" parent="Panel" unique_id=2067161858]
+[node name="Button_Back" type="Button" parent="Panel" unique_id=2067161858]
 layout_mode = 0
 offset_left = 114.0
 offset_top = 534.0
@@ -136,3 +139,28 @@ offset_right = 276.0
 offset_bottom = 604.0
 theme_override_font_sizes/font_size = 28
 text = "← Back"
+
+[node name="Button_Next" type="Button" parent="Panel" unique_id=1925953485]
+layout_mode = 0
+offset_left = 879.0
+offset_top = 539.0
+offset_right = 1041.0
+offset_bottom = 609.0
+theme_override_font_sizes/font_size = 28
+text = "Next →"
+
+[node name="Button_Save" type="Button" parent="Panel" unique_id=1251355196]
+layout_mode = 0
+offset_left = 648.0
+offset_top = 464.0
+offset_right = 810.0
+offset_bottom = 534.0
+theme_override_font_sizes/font_size = 28
+text = "SAVE"
+
+[connection signal="pressed" from="Panel/Button_Delete" to="." method="_delete"]
+[connection signal="pressed" from="Panel/Button_Close" to="." method="_close"]
+[connection signal="pressed" from="Panel/Button_Load" to="." method="_load"]
+[connection signal="pressed" from="Panel/Button_Back" to="." method="_back"]
+[connection signal="pressed" from="Panel/Button_Next" to="." method="_next"]
+[connection signal="pressed" from="Panel/Button_Save" to="." method="_save"]
