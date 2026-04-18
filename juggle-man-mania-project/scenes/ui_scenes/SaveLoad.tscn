@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bb85ng78smubc"]
 
-[ext_resource type="Script" uid="uid://bur2sft6lmr88" path="res://scripts/UI/save_load.gd" id="1_pf3wb"]
-[ext_resource type="Script" uid="uid://inrmngjtoj23" path="res://scripts/UI/line_edit.gd" id="2_p6khk"]
-[ext_resource type="Script" uid="uid://blpllskdcq4mc" path="res://scripts/UI/spin_box.gd" id="3_ah7yp"]
+[ext_resource type="Script" uid="uid://bur2sft6lmr88" path="res://scenes/ui_scenes/save_load.gd" id="1_pf3wb"]
+[ext_resource type="Script" uid="uid://inrmngjtoj23" path="res://scenes/ui_scenes/line_edit.gd" id="2_p6khk"]
+[ext_resource type="Script" uid="uid://blpllskdcq4mc" path="res://scenes/ui_scenes/spin_box.gd" id="3_ah7yp"]
 
 [node name="SaveLoad" type="Control" unique_id=1488243692]
 layout_mode = 3
