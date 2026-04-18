@@ -41,7 +41,7 @@ func _physics_process(delta: float) -> void:
 			TextManager.close_text(item_near)
 			item_near = "none"
 			disabled = false
-		elif item_near.contains("front_door"):
+		elif item_near.contains("door"):
 			get_parent().on_entered_done = false
 			SystemManager.open_juggling(position)
 		elif !item_near.contains("none")&&!item_near.contains("Wall"):
