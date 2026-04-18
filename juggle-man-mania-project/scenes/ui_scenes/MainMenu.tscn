@@ -56,4 +56,3 @@ theme_override_font_sizes/font_size = 27
 text = "QUIT"
 
 [connection signal="pressed" from="button_new_game" to="." method="_on_button_new_game_pressed"]
-[connection signal="pressed" from="button_load_game" to="." method="_load"]

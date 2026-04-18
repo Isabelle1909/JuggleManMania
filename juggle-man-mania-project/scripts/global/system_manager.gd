@@ -8,13 +8,12 @@ var current_jp = 0
 var total_jp = 0
 var last_score
 var last_bonus_1
-var just_juggling = false
 
 var house_level = load("res://scenes/house_level/house.tscn")
 var juggle_level = load("res://scenes/juggling_level/juggling_scene.tscn")
 var results_scr = load("res://scenes/ui_scenes/ResultsScreenUI.tscn")
 var help_scr = load("res://scenes/ui_scenes/HelpScreen.tscn")
-var save_scr = load("res://scenes/ui_scenes/SaveMenu.tscn")
+
 
 var house_position
 
@@ -42,7 +41,6 @@ func open_juggling(pos):
 	house_position = pos
 	print("house pos ", house_position)
 	get_tree().change_scene_to_packed(juggle_level)
-	just_juggling = true
 
 func open_house(juggle_score,items_left):
 	#increment_time()
@@ -51,7 +49,3 @@ func open_house(juggle_score,items_left):
 	update_scores(last_score)
 	update_scores(last_bonus_1)
 	get_tree().change_scene_to_packed(house_level)
-
-func open_save_menu(pos) -> void:
-	house_position = pos
-	get_tree().change_scene_to_packed(save_scr)
