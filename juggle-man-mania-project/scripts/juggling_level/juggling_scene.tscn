@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://crg68wfwpt836"]
+[gd_scene format=3 uid="uid://d0bhx8xvmpi25"]
 
 [ext_resource type="Script" uid="uid://dju7bj665jynp" path="res://scripts/juggling_level/juggling_scene.gd" id="1_ho08g"]
 [ext_resource type="Texture2D" uid="uid://d3i4sqhx8wrdo" path="res://icon.svg" id="2_miqb6"]
