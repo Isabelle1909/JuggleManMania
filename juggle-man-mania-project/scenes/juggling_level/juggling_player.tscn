@@ -56,29 +56,29 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8kxmk"]
-radius = 135.0
-height = 356.0
+radius = 81.0
+height = 176.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22j5a"]
-size = Vector2(86.75, 23.25)
+size = Vector2(124, 26.40625)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fjldn"]
-size = Vector2(79.5, 21)
+size = Vector2(123.1875, 25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tfhsj"]
-size = Vector2(75, 21.75)
+size = Vector2(132, 26.96875)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xo2qw"]
-size = Vector2(84.75, 21.5)
+size = Vector2(131.6875, 29.875)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rcc3c"]
-size = Vector2(79, 20)
+size = Vector2(124, 23.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5mi46"]
-size = Vector2(72.75, 22)
+size = Vector2(127.421875, 29)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_310rx"]
-size = Vector2(81, 10)
+size = Vector2(39.59375, 4)
 
 [node name="juggling_player" type="CharacterBody2D" unique_id=1964283372]
 collision_layer = 16
@@ -88,13 +88,13 @@ script = ExtResource("1_22j5a")
 [node name="sprite" type="AnimatedSprite2D" parent="." unique_id=1543978175]
 unique_name_in_owner = true
 position = Vector2(-0.99999994, -35.999996)
-scale = Vector2(0.45195314, 0.4519532)
+scale = Vector2(0.2684725, 0.2647967)
 sprite_frames = SubResource("SpriteFrames_fjldn")
 animation = &"hit_left"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1233205852]
-position = Vector2(3, -5)
+position = Vector2(0, -3)
 shape = SubResource("CapsuleShape2D_8kxmk")
 
 [node name="hit_areas" type="Node2D" parent="." unique_id=1988722638]
@@ -104,7 +104,7 @@ collision_layer = 96
 collision_mask = 96
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/early_left" unique_id=1270791091]
-position = Vector2(-101.375, -58)
+position = Vector2(-42, -90)
 shape = SubResource("RectangleShape2D_22j5a")
 
 [node name="perfect_left" type="Area2D" parent="hit_areas" unique_id=647849357]
@@ -112,7 +112,7 @@ collision_layer = 96
 collision_mask = 96
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/perfect_left" unique_id=1116100008]
-position = Vector2(-104.75, -29)
+position = Vector2(-42.59375, -55)
 shape = SubResource("RectangleShape2D_fjldn")
 
 [node name="late_left" type="Area2D" parent="hit_areas" unique_id=1929758645]
@@ -120,7 +120,7 @@ collision_layer = 96
 collision_mask = 96
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/late_left" unique_id=1840191518]
-position = Vector2(-107, 0)
+position = Vector2(-38, -22)
 shape = SubResource("RectangleShape2D_tfhsj")
 
 [node name="early_right" type="Area2D" parent="hit_areas" unique_id=164673866]
@@ -128,7 +128,7 @@ collision_layer = 96
 collision_mask = 96
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/early_right" unique_id=839524202]
-position = Vector2(111, -39)
+position = Vector2(50.84375, -88)
 shape = SubResource("RectangleShape2D_xo2qw")
 
 [node name="perfect_right" type="Area2D" parent="hit_areas" unique_id=1454771069]
@@ -136,7 +136,7 @@ collision_layer = 96
 collision_mask = 96
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/perfect_right" unique_id=1638707171]
-position = Vector2(110, -12)
+position = Vector2(55, -54)
 shape = SubResource("RectangleShape2D_rcc3c")
 
 [node name="late_right" type="Area2D" parent="hit_areas" unique_id=1637234712]
@@ -144,26 +144,40 @@ collision_layer = 96
 collision_mask = 96
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/late_right" unique_id=1256911201]
-position = Vector2(106, 17)
+position = Vector2(53.710938, -21.5)
 shape = SubResource("RectangleShape2D_5mi46")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=442497802]
+[node name="StaticBody2D" type="StaticBody2D" parent="hit_areas" unique_id=442497802]
 collision_layer = 64
 collision_mask = 64
 physics_material_override = ExtResource("3_fjldn")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1480277747]
-position = Vector2(-106, 19)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/StaticBody2D" unique_id=1480277747]
+position = Vector2(-62, -11)
 shape = SubResource("RectangleShape2D_310rx")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1106023771]
+[node name="StaticBody2D2" type="StaticBody2D" parent="hit_areas" unique_id=1106023771]
 collision_layer = 64
 collision_mask = 64
 physics_material_override = ExtResource("3_fjldn")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=749672484]
-position = Vector2(110, 37)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/StaticBody2D2" unique_id=749672484]
+position = Vector2(62, -10)
 shape = SubResource("RectangleShape2D_310rx")
+
+[node name="left_feedback" type="RichTextLabel" parent="." unique_id=1308238523]
+offset_left = -135.0
+offset_top = -93.0
+offset_right = -47.0
+offset_bottom = -53.0
+text = "Perfect!"
+
+[node name="right_feedback" type="RichTextLabel" parent="." unique_id=1217882336]
+offset_left = 62.0
+offset_top = -91.0
+offset_right = 150.0
+offset_bottom = -51.0
+text = "Perfect!"
 
 [connection signal="animation_finished" from="sprite" to="." method="_on_sprite_animation_finished"]
 [connection signal="body_entered" from="hit_areas/early_left" to="." method="_on_early_left_body_entered"]

@@ -10,6 +10,8 @@ var timer = 10
 var finish = false
 
 func _ready() -> void:
+	TextManager.jfl = player.get_node("left_feedback")
+	TextManager.jfr = player.get_node("right_feedback")
 	for child: Node in juggling_items.get_children():
 		if child.is_in_group("juggling_items"):
 			active_juggling_items.push_back(child)
@@ -36,20 +38,17 @@ func update_score_display():
 
 
 func _on_dampener_body_entered(body: Node2D) -> void:
-	pass
-	#if body.is_in_group("juggling_items"):
-		#if body.is_in_group("ball"):
-			#body.linear_damp = 1000.0
-			#body.angular_damp = 1000.0
-	
+	if body.is_in_group("juggling_items"):
+		if body.is_in_group("ball"):
+			body.velocity.y = 0
+		
 	
 
 func _on_dampener_body_exited(body: Node2D) -> void:
 	pass
 	#if body.is_in_group("juggling_items"):
 		#if body.is_in_group("ball"):
-			#body.linear_damp = 0.0
-			#body.angular_damp = 0.0
+		#	body.gravity = Vector2(0,8.5)
 
 
 

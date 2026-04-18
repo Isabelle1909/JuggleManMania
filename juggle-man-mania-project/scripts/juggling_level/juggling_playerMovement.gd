@@ -1,6 +1,10 @@
 extends CharacterBody2D
 
-@export var movement_speed : float = 400
+@export var movement_speed : float = 500
+
+@onready var left_text = $left_feedback
+@onready var right_text = $right_feedback
+
 var character_direction : Vector2
 var done = true
 var score = 0
@@ -22,6 +26,10 @@ var late_impulse = Vector2(0,-50)
 #whether the ball is hit slighty one way or the other depending on hand
 var left_impulse = Vector2(50,0)
 var right_impulse = Vector2(-50,0)
+
+func _ready() -> void:
+	left_text.visible = false
+	right_text.visible = false
 
 func _physics_process(delta):
 	movement_and_sprites()
@@ -94,6 +102,7 @@ func _on_sprite_animation_finished() -> void:
 	done = true
 	%sprite.play("Idle")
 	print("done")
+	TextManager.hide_juggling_feedback()
 
 #hit area signals
 func _on_early_left_body_entered(body: Node2D) -> void:
