@@ -10,6 +10,8 @@ var timer = 10
 var finish = false
 
 func _ready() -> void:
+	TextManager.jfl = player.get_node("left_feedback")
+	TextManager.jfr = player.get_node("right_feedback")
 	for child: Node in juggling_items.get_children():
 		if child.is_in_group("juggling_items"):
 			active_juggling_items.push_back(child)
