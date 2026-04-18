@@ -61,6 +61,7 @@ func _preload() -> void:
 		update_text()
 	else:
 		printerr("ruhroh")
+		#a
 
 
 func _close() -> void:
