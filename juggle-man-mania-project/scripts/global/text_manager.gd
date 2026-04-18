@@ -7,8 +7,6 @@ var last_called
 var tb
 var hm
 var rs
-var jfl
-var jfr
 
 var talked_to_nums = {
 	"wardrobe": 0,
@@ -64,37 +62,11 @@ func display_text(ob_name):
 		print(text)
 		tb.get_node("Panel/RichTextLabel").text = text
 		#will use text box UI to display later for now prints to console
-
+	
+	
 
 func close_text(ob_name):
 		print("close_text")
 		tb.visible = false
-
-
-func show_juggling_feedback(timing,side):
-	var box
+		
 	
-	if jfl == null || jfr == null:
-		return
-	
-	if side.contains("left"):
-		box = jfl
-	elif side.contains("right"):
-		box = jfr
-	
-	if timing.contains("early"):
-		box.visible = true
-		box.text = "Early!"
-	elif timing.contains("perfect"):
-		box.visible = true
-		box.text = "Perfect!"
-	elif timing.contains("late"):
-		box.visible = true
-		box.text = "Late!"
-	
-
-func hide_juggling_feedback():
-	if jfl == null || jfr == null:
-		return
-	jfl.visible = false
-	jfr.visible = false

@@ -7,6 +7,7 @@ extends Node2D
 @onready var player = $player
 @onready var camera = $Camera2D
 @onready var adjustment = get_viewport_rect().size/2
+@onready var saveMenu = $text_ui/Load
 
 var on_entered_done
 
@@ -26,11 +27,13 @@ func on_entered():
 	if SystemManager.house_position != null:
 		text_box.visible = false
 		help_menu.visible = false
-		if SystemManager.last_score != null:
+		if SystemManager.just_juggling == true:
 			results_screen(SystemManager.last_score,SystemManager.last_bonus_1)
+			SystemManager.just_juggling = false
 		player.position = SystemManager.house_position
 	else:
 		print("house_pos ", SystemManager.house_position)
+		SystemManager.house_position = player.position
 
 
 func results_screen(score,bonus_1):
@@ -39,3 +42,7 @@ func results_screen(score,bonus_1):
 	var bs1 = result_scr.get_node("Panel/VBoxContainer_Right/Label_Item1")
 	sc.text = str(score)
 	bs1.text = str(bonus_1)
+
+func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("ui_open_menu"):
+		SystemManager.open_save_menu(player.position)

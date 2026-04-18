@@ -23,31 +23,29 @@ scale = Vector2(9.0390625, 4.9921875)
 texture = ExtResource("2_miqb6")
 
 [node name="juggling_player" parent="." unique_id=1964283372 instance=ExtResource("3_sywdt")]
-position = Vector2(600, 470)
+position = Vector2(600, 429)
 
 [node name="Boundaries" type="Node2D" parent="." unique_id=715281043]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Boundaries" unique_id=1794051764]
-collision_layer = 112
-collision_mask = 112
+collision_layer = 16
+collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/StaticBody2D" unique_id=757958884]
 shape = SubResource("WorldBoundaryShape2D_a6ydb")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Boundaries" unique_id=421159997]
 position = Vector2(1152, 4)
-collision_layer = 112
-collision_mask = 112
+collision_layer = 16
+collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/StaticBody2D2" unique_id=1208527868]
 shape = SubResource("WorldBoundaryShape2D_5haue")
 
 [node name="dampener" type="Area2D" parent="Boundaries" unique_id=1006477699]
-collision_layer = 96
-collision_mask = 96
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/dampener" unique_id=921140774]
-position = Vector2(582, -61)
+position = Vector2(546, 850)
 shape = SubResource("RectangleShape2D_gq0ih")
 
 [node name="out_bound_detector" type="Area2D" parent="Boundaries" unique_id=1767283251]
@@ -75,7 +73,7 @@ vertical_alignment = 1
 [node name="juggling_items" type="Node2D" parent="." unique_id=1382858004]
 
 [node name="manual_physics_ball" parent="juggling_items" unique_id=728813730 instance=ExtResource("5_miqb6")]
-position = Vector2(599, 211)
+position = Vector2(500, 206)
 
 [connection signal="body_entered" from="Boundaries/dampener" to="." method="_on_dampener_body_entered"]
 [connection signal="body_exited" from="Boundaries/dampener" to="." method="_on_dampener_body_exited"]
