@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://bbceekk16team"]
+
+[ext_resource type="Texture2D" uid="uid://6orbrko1v3fr" path="res://assets/placeholder_assets/test jugglespr.png" id="1_a84lk"]
+[ext_resource type="Script" uid="uid://b1sulltcyu3hy" path="res://scripts/juggling_level/player_juggling.gd" id="1_qjpms"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rewq"]
+atlas = ExtResource("1_a84lk")
+region = Rect2(640, 0, 640, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03ur2"]
+atlas = ExtResource("1_a84lk")
+region = Rect2(1280, 0, 640, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_upksm"]
+atlas = ExtResource("1_a84lk")
+region = Rect2(0, 0, 640, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0hf8r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3rewq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_03ur2")
+}],
+"loop": true,
+"name": &"left_hand",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_upksm")
+}],
+"loop": true,
+"name": &"right_hand",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q116t"]
+size = Vector2(172, 360)
+
+[node name="player_juggling" type="CharacterBody2D" unique_id=1312630112]
+script = ExtResource("1_qjpms")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1202398767]
+position = Vector2(0.99998474, -35.000015)
+scale = Vector2(0.5671875, 0.5671875)
+sprite_frames = SubResource("SpriteFrames_0hf8r")
+animation = &"right_hand"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=813873473]
+position = Vector2(9, 25)
+shape = SubResource("RectangleShape2D_q116t")
