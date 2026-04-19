@@ -7,6 +7,8 @@ var last_called
 var tb
 var hm
 var rs
+var jfl
+var jfr
 
 var talked_to_nums = {
 	"wardrobe": 0,
@@ -70,3 +72,31 @@ func close_text(ob_name):
 		tb.visible = false
 		
 	
+
+func show_juggling_feedback(timing,side):
+	var box
+	
+	if jfl == null || jfr == null:
+		return
+	
+	if side.contains("left"):
+		box = jfl
+	elif side.contains("right"):
+		box = jfr
+	
+	if timing.contains("early"):
+		box.visible = true
+		box.text = "Early!"
+	elif timing.contains("perfect"):
+		box.visible = true
+		box.text = "Perfect!"
+	elif timing.contains("late"):
+		box.visible = true
+		box.text = "Late!"
+	
+
+func hide_juggling_feedback():
+	if jfl == null || jfr == null:
+		return
+	jfl.visible = false
+	jfr.visible = false
