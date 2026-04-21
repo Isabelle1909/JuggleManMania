@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://18bbo870jgqk"]
+
+[ext_resource type="TileSet" uid="uid://bhw3ra2uh0fnt" path="res://tilesets/balcony_tileset.tres" id="1_6g3yx"]
+
+[node name="Balcony_Scene" type="Node2D" unique_id=1986828564]
+
+[node name="Game_Tilemap" type="Node2D" parent="." unique_id=540432398]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Game_Tilemap" unique_id=315777156]
+tile_set = ExtResource("1_6g3yx")
