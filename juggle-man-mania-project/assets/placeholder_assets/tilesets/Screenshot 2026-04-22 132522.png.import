@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://valt1khfb81k"
-path="res://.godot/imported/light-brown-cartoon-wood-texture-pattern-wallpaper-background-free-vector.jpg-f8c2d0d3206f5fb65ba820bc492b52ff.ctex"
+uid="uid://hdmcsxmhxx"
+path="res://.godot/imported/Screenshot 2026-04-22 132522.png-3616f9d8249d9cd3c66c027814d1335a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tilesets/light-brown-cartoon-wood-texture-pattern-wallpaper-background-free-vector.jpg"
-dest_files=["res://.godot/imported/light-brown-cartoon-wood-texture-pattern-wallpaper-background-free-vector.jpg-f8c2d0d3206f5fb65ba820bc492b52ff.ctex"]
+source_file="res://assets/placeholder_assets/tilesets/Screenshot 2026-04-22 132522.png"
+dest_files=["res://.godot/imported/Screenshot 2026-04-22 132522.png-3616f9d8249d9cd3c66c027814d1335a.ctex"]
 
 [params]
 
