@@ -23,11 +23,15 @@
             "2": "I'm already wearing what I want.",
             "3": "Its just my wardrobe... Lots of old favorites here."
         },
-        "evening_1_bad": {
-            "1": "It's all so bothersome.",
-            "2": "I don't want to change clothes right now.",
-            "3": "Its just my wardrobe... full of random crap."
-        }
+      "evening_1_bad": {
+        "1": "It's all so bothersome.",
+        "2": "I don't want to change clothes right now.",
+        "3": "Its just my wardrobe... full of random crap."
+      },
+      "morning_2_neutral": {
+        "1": "Test"
+
+      }
     },
     "mirror": {
         "morning_1_b4": {
