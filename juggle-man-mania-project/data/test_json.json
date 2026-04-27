@@ -16,45 +16,127 @@
 		"evening_1_neutral": {
             "1": "I haven't worn a lot of this stuff in a while.",
             "2": "I don't need to change clothes.",
-            "3": "Its just my wardrobe... same as always."
-        },
+      "3": "Its just my wardrobe... same as always."
+
+		},
         "evening_1_good": {
             "1": "It's nice getting something comfy on.",
             "2": "I'm already wearing what I want.",
-            "3": "Its just my wardrobe... Lots of old favorites here."
+          "3": "Its just my wardrobe... Lots of old favorites here."
+
         },
       "evening_1_bad": {
         "1": "It's all so bothersome.",
         "2": "I don't want to change clothes right now.",
         "3": "Its just my wardrobe... full of random crap."
+
       },
       "morning_2_neutral": {
-        "1": "Test"
+        "1": "Same clothes, different day.",
+        "2": "I should probably throw some of this out... but I won't.",
+        "3": "Does it matter what I wear? Not really."
 
       }
     },
-    "mirror": {
-        "morning_1_b4": {
-            "1": "Alright time to get my make-up on."
-        },
-        "morning_1_neutral": {
-            "1": "Phew, those dark circles are getting bad.",
-            "2": "Guess i'll give my hair a comb.",
-            "3": "It's just me..."
-        }
-	},
-	"computer": {
-        "morning_1_neutral": {
-            "1": "Hmmm... looks like there's no internet.",
-            "2": "Nothing to do.",
-            "3": "I'm sure if I look again later, it will be working."
-        }
-	},
-	"bed": {
-        "morning_1_neutral": {
-            "1": "God, I wish.",
-            "2": "I have to go to work.",
-            "3": "Must resist.... The call of the cosy.."
-        }
-	}
+  "mirror": {
+    "morning_1_b4": {
+      "1": "Alright time to get my make-up on."
+
+    },
+    "morning_1_neutral": {
+      "1": "Phew, those dark circles are getting bad.",
+      "2": "Guess i'll give my hair a comb.",
+      "3": "It's just me..."
+
+    },
+    "evening_1_good": {
+      "1": "You did alright today.",
+      "2": "Crowd liked you. That counts for something.",
+      "3": "Still looks like me... but not the worst version."
+
+    },
+    "evening_1_neutral": {
+      "1": "Same face, same routine.",
+      "2": "Wash it off, put it back on tomorrow.",
+      "3": "It's just me... as usual."
+
+    },
+    "evening_1_bad": {
+      "1": "Couldn't even fake it today.",
+      "2": "They can tell. I'm sure they can tell.",
+      "3": "Hard to look at yourself after that."
+
+    },
+    "morning_2_neutral": {
+      "1": "Still me. Unfortunate.",
+      "2": "You'd think I'd get used to this face by now.",
+      "3": "Smiles looks better painted on anyway."
+
+    }
+
+  },
+  "computer": {
+    "morning_1_neutral": {
+      "1": "Hmmm... looks like there's no internet.",
+      "2": "Nothing to do.",
+      "3": "I'm sure if I look again later, it will be working."
+
+    },
+    "evening_1_good": {
+      "1": "Could check something... ride the feeling a bit.",
+      "2": "Maybe someone's out there tonight.",
+      "3": "Haven't felt like this in a while."
+
+    },
+    "evening_1_neutral": {
+      "1": "Nothing new here.",
+      "2": "Same old distractions.",
+      "3": "Not really in the mood."
+
+    },
+    "evening_1_bad": {
+      "1": "Don't feel like seeing anything right now.",
+      "2": "Nothing here that's going to help.",
+      "3": "Just more noise."
+    },
+
+    "morning_2_neutral": {
+      "1": "Still nothing. Figures.",
+      "2": "Could check messages... if anyone actually sent any.",
+      "3": "Guess the world can wait. It usually does."
+    }
+
+  },
+  "bed": {
+    "morning_1_neutral": {
+      "1": "God, I wish.",
+      "2": "I have to go to work.",
+      "3": "Must resist.... The call of the cosy.."
+
+    },
+    "evening_1_good": {
+      "1": "I'm tired... but it's a good kind, I think.",
+      "2": "Might actually sleep tonight.",
+      "3": "Tomorrow might not be so bad."
+
+    },
+    "evening_1_neutral": {
+      "1": "Another day done.",
+      "2": "Sleep, wake up, repeat.",
+      "3": "At least the day is over."
+
+    },
+    "evening_1_bad": {
+      "1": "I don't even feel tired. Just... empty.",
+      "2": "Not looking forward to doing that again.",
+      "3": "Sleep won't fix this."
+    },
+
+    "morning_2_neutral": {
+      "1": "Getting up didn't fix anything. Shocker.",
+      "2": "I could crawl back in... but I know how that goes.",
+      "3": "Maybe tonight will feel different. Probably not."
+    }
+
+  }
 }
