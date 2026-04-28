@@ -11,6 +11,7 @@ var last_bonus_1
 var just_juggling = false
 
 var house_level = load("res://scenes/house_level/house.tscn")
+
 var juggle_level = load("res://scenes/juggling_level/juggling_scene.tscn")
 var results_scr = load("res://scenes/ui_scenes/ResultsScreenUI.tscn")
 var help_scr = load("res://scenes/ui_scenes/HelpScreen.tscn")
@@ -25,11 +26,12 @@ func calculate_mood():
 
 func increment_time():
 	#if the time is morning change it to evening, if its not morning make it morning
+	print(time," ",day)
 	if time.contains("morning"):
 		time = "evening"
 	else:
 		time = "morning"
-		#increment_day()
+		increment_day()
 
 func increment_day():
 	day += 1
@@ -43,6 +45,9 @@ func open_juggling(pos):
 	print("house pos ", house_position)
 	get_tree().change_scene_to_packed(juggle_level)
 	just_juggling = true
+
+func open_balcony():
+	print("opening_balcony")
 
 func open_house(juggle_score,items_left):
 	#increment_time()

@@ -13,6 +13,7 @@ var on_entered_done
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	help_menu.visible = true
 	if !on_entered_done:
 		on_entered()
 		on_entered_done = true
