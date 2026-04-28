@@ -17,6 +17,7 @@ size_flags_vertical = 8
 metadata/_edit_use_anchors_ = true
 
 [node name="Control2" parent="." unique_id=645237815 instance=ExtResource("2_vbm1y")]
+visible = false
 
 [node name="Control3" parent="." unique_id=583211371 instance=ExtResource("3_vnrby")]
 visible = false
