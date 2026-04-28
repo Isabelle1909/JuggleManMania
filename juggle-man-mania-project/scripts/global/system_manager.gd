@@ -55,3 +55,4 @@ func open_house(juggle_score,items_left):
 func open_save_menu(pos) -> void:
 	house_position = pos
 	get_tree().change_scene_to_packed(save_scr)
+	print("house pos ", house_position)
