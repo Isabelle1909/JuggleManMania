@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://d0twvx4mn4o62"]
+[gd_scene format=3 uid="uid://0bj0hox2j6k3"]
 
 [ext_resource type="Script" uid="uid://bv5ow5ifgrgp0" path="res://scripts/juggling_level/juggling_playerMovement.gd" id="1_22j5a"]
 [ext_resource type="Texture2D" uid="uid://6orbrko1v3fr" path="res://assets/placeholder_assets/test jugglespr.png" id="2_22j5a"]

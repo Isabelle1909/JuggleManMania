@@ -1,9 +1,9 @@
-[gd_scene format=3 uid="uid://crg68wfwpt836"]
+[gd_scene format=3 uid="uid://d0bhx8xvmpi25"]
 
 [ext_resource type="Script" uid="uid://dju7bj665jynp" path="res://scripts/juggling_level/juggling_scene.gd" id="1_ho08g"]
 [ext_resource type="Texture2D" uid="uid://d3i4sqhx8wrdo" path="res://icon.svg" id="2_miqb6"]
-[ext_resource type="PackedScene" uid="uid://d0twvx4mn4o62" path="res://scenes/juggling_level/juggling_player.tscn" id="3_sywdt"]
-[ext_resource type="PackedScene" uid="uid://byuw47dct35aj" path="res://scripts/juggling_level/juggling_items/manual_physics_ball.tscn" id="5_miqb6"]
+[ext_resource type="PackedScene" uid="uid://0bj0hox2j6k3" path="res://scenes/juggling_level/juggling_player.tscn" id="3_sywdt"]
+[ext_resource type="PackedScene" uid="uid://byuw47dct35aj" path="res://scenes/juggling_level/juggling_items/manual_physics_ball.tscn" id="5_miqb6"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_a6ydb"]
 normal = Vector2(0.99997133, 0.0075755403)
@@ -74,8 +74,8 @@ vertical_alignment = 1
 
 [node name="juggling_items" type="Node2D" parent="." unique_id=1382858004]
 
-[node name="manual_physics_ball2" parent="juggling_items" unique_id=728813730 instance=ExtResource("5_miqb6")]
-position = Vector2(519, 124)
+[node name="manual_physics_ball" parent="juggling_items" unique_id=728813730 instance=ExtResource("5_miqb6")]
+position = Vector2(599, 211)
 
 [connection signal="body_entered" from="Boundaries/dampener" to="." method="_on_dampener_body_entered"]
 [connection signal="body_exited" from="Boundaries/dampener" to="." method="_on_dampener_body_exited"]
