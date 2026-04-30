@@ -1,7 +1,7 @@
 extends Node
 
 var time = "morning"
-var day = "1"
+var day = 1
 var mood = "neutral"
 
 var current_jp = 0

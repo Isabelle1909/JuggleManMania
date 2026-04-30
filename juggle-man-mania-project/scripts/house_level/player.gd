@@ -7,7 +7,7 @@ var facing_ray
 var item_near = "none"
 var disabled = false
 var instanced = false
-
+var dir
 
 
 
@@ -15,22 +15,30 @@ func _physics_process(delta: float) -> void:
 	
 	if !disabled :
 		if !sprite_node_pos_tween or !sprite_node_pos_tween.is_running():
-			if Input.is_action_pressed("ui_up") and !$up.is_colliding():
-				_move(Vector2(0, -1))
+			
+			if Input.is_action_pressed("ui_up"):
 				facing_ray = $up
-			elif Input.is_action_pressed("ui_down") and !$down.is_colliding():
-				_move(Vector2(0, 1))
+				dir = Vector2(0,-1)
+			elif Input.is_action_pressed("ui_down"):
 				facing_ray = $down
-			elif Input.is_action_pressed("ui_left") and !$left.is_colliding():
-				_move(Vector2(-1, 0))
+				dir = Vector2(0,1)
+			elif Input.is_action_pressed("ui_left"):
 				facing_ray = $left
-			elif Input.is_action_pressed("ui_right") and !$right.is_colliding():
+				dir = Vector2(-1,0)
+			elif Input.is_action_pressed("ui_right"):
 				facing_ray = $right
-				_move(Vector2(1, 0))
-		
-	if facing_ray != null:
-		if facing_ray.is_colliding():
-			item_near = facing_ray.get_collider().name
+				dir = Vector2(1,0)
+			else:
+				dir = Vector2(0,0)
+			
+			if facing_ray != null && dir != null:
+				animation_manager(dir)
+				if !facing_ray.is_colliding():
+						_move(dir)
+						item_near = "none"
+				else:
+					item_near = facing_ray.get_collider().name
+					
 		
 	if Input.is_action_just_pressed("interact"):
 		if TextManager.rs.visible:
@@ -58,10 +66,7 @@ func _physics_process(delta: float) -> void:
 			TextManager.hm.visible = false
 	
 
-func _move(dir: Vector2):
-	global_position += dir * tile_size
-	$Sprite2D.global_position -= dir * tile_size
-	
+func animation_manager(dir):
 	if dir.x > 0 && dir.y == 0:
 		spr.frame = 2
 	elif dir.x < 0 && dir.y == 0:
@@ -70,8 +75,11 @@ func _move(dir: Vector2):
 		spr.frame = 1
 	elif dir.x == 0 && dir.y < 0:
 		spr.frame = 3
-	else:
-		spr.frame = 1
+
+
+func _move(dir: Vector2):
+	global_position += dir * tile_size
+	$Sprite2D.global_position -= dir * tile_size
 	
 	if sprite_node_pos_tween:
 		sprite_node_pos_tween.kill()

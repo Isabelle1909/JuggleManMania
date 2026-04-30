@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bbceekk16team"]
+[gd_scene format=3 uid="uid://dhdux2dvj87i6"]
 
 [ext_resource type="Texture2D" uid="uid://6orbrko1v3fr" path="res://assets/placeholder_assets/test jugglespr.png" id="1_a84lk"]
 [ext_resource type="Script" uid="uid://b1sulltcyu3hy" path="res://scripts/juggling_level/player_juggling.gd" id="1_qjpms"]
