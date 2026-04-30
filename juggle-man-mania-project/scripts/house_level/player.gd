@@ -35,6 +35,7 @@ func _physics_process(delta: float) -> void:
 				animation_manager(dir)
 				if !facing_ray.is_colliding():
 						_move(dir)
+						item_near = "none"
 				else:
 					item_near = facing_ray.get_collider().name
 					
