@@ -18,6 +18,14 @@ var talked_to_nums = {
 	"tutorial": 0
 }
 
+var talked_cutscene_nums = {
+	"HANDS" : 0,
+	"NMBALL1": 0,
+	"MBALL1": 0,
+	"MBALL2": 0
+	
+}
+
 var all_text = {}
 
 func _ready():
@@ -39,11 +47,11 @@ func load_json_file():
 	#Store the parsed data in the content dictionary
 	all_text = json_object.data
 
+
 #called on interaction with object, which passes it's name
 func display_text(ob_name):
 	if tb == null || hm ==null|| rs == null:
 		return
-	
 	if hm.visible || rs.visible:
 		return
 	tb.visible = true
@@ -52,30 +60,36 @@ func display_text(ob_name):
 	if talked_to_nums.has(ob_name):
 		#gets the correct text from the json file depending on object, time/day and number of 
 		#times it's been spoken to
-		if ob_name.contains("tutorial"):
-			pass
-		else:
-			var path_string = str(SystemManager.time,"_",SystemManager.day,"_",SystemManager.mood)
-			print(talked_to_nums[ob_name], " ", ob_name)
-			talked_to_nums[ob_name] += 1
-			if !check_valid(ob_name,path_string):
-				talked_to_nums[ob_name] -= 1
-				check_valid(ob_name,path_string)
+		var path_string = str(SystemManager.time,"_",SystemManager.day,"_",SystemManager.mood)
+		print(talked_to_nums[ob_name], " ", ob_name)
+		talked_to_nums[ob_name] += 1
+		if !check_valid(ob_name,path_string,str(talked_to_nums[ob_name])):
+			talked_to_nums[ob_name] -= 1
+			check_valid(ob_name,path_string,str(talked_to_nums[ob_name]))
 		
 		#will use text box UI to display later for now prints to console
 
-func check_valid(ob_name, path_string) -> bool:
+func check_valid(ob_name, path_string,line) -> bool:
 	if all_text.has(ob_name):
 		if all_text[ob_name].has(path_string):
-			if all_text[ob_name][path_string].has(str(talked_to_nums[ob_name])):
-				var text = all_text[ob_name][path_string][str(talked_to_nums[ob_name])]
+			if all_text[ob_name][path_string].has(line):
+				var text = all_text[ob_name][path_string][line]
 				print(text)
 				tb.get_node("Panel/RichTextLabel").text = text
 				return true
 	return false
 
-func display_cutscene_text(scene_name):
-	pass
+func display_cutscene_text(scene_name,section,line):
+	if tb == null || hm ==null|| rs == null:
+		return
+	if hm.visible || rs.visible:
+		return
+	tb.visible = true
+	if talked_cutscene_nums.has(section):
+		check_valid(scene_name,section,line)
+
+
+	
 
 
 func close_text(ob_name):

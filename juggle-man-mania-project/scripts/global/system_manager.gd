@@ -11,7 +11,7 @@ var last_bonus_1
 var just_juggling = false
 
 var house_level = load("res://scenes/house_level/house.tscn")
-
+var balcony_level = preload("res://scenes/balcony_scene/balcony_scene.tscn")
 var juggle_level = load("res://scenes/juggling_level/juggling_scene.tscn")
 var results_scr = load("res://scenes/ui_scenes/ResultsScreenUI.tscn")
 var help_scr = load("res://scenes/ui_scenes/HelpScreen.tscn")
@@ -47,7 +47,7 @@ func open_juggling(pos):
 	just_juggling = true
 
 func open_balcony():
-	print("opening_balcony")
+	pass
 
 func open_house(juggle_score,items_left):
 	#increment_time()

@@ -6,13 +6,15 @@ var sprite_node_pos_tween: Tween
 var facing_ray
 var item_near = "none"
 var disabled = false
+var true_disabled = false
 var instanced = false
 var dir
 
 
 
 func _physics_process(delta: float) -> void:
-	
+	if true_disabled:
+		return
 	if !disabled :
 		if !sprite_node_pos_tween or !sprite_node_pos_tween.is_running():
 			
