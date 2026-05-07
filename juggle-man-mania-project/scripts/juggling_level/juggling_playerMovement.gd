@@ -5,6 +5,8 @@ extends CharacterBody2D
 @onready var left_text = $left_feedback
 @onready var right_text = $right_feedback
 
+var disabled = false
+
 var character_direction : Vector2
 var done = true
 var score = 0
@@ -32,6 +34,8 @@ func _ready() -> void:
 	right_text.visible = false
 
 func _physics_process(delta):
+	if disabled:
+		return
 	movement_and_sprites()
 	
 	if Input.is_action_just_pressed("interact"):

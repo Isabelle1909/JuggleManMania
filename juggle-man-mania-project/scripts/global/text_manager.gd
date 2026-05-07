@@ -19,10 +19,10 @@ var talked_to_nums = {
 }
 
 var talked_cutscene_nums = {
-	"HANDS" : 0,
-	"NMBALL1": 0,
-	"MBALL1": 0,
-	"MBALL2": 0
+	"0" : 2,
+	"1": 1,
+	"2": 1,
+	"3": 1
 	
 }
 
@@ -63,38 +63,43 @@ func display_text(ob_name):
 		var path_string = str(SystemManager.time,"_",SystemManager.day,"_",SystemManager.mood)
 		print(talked_to_nums[ob_name], " ", ob_name)
 		talked_to_nums[ob_name] += 1
-		if !check_valid(ob_name,path_string,str(talked_to_nums[ob_name])):
+		if !check_valid(ob_name,path_string,str(talked_to_nums[ob_name]),tb):
 			talked_to_nums[ob_name] -= 1
-			check_valid(ob_name,path_string,str(talked_to_nums[ob_name]))
+			check_valid(ob_name,path_string,str(talked_to_nums[ob_name]),tb)
 		
 		#will use text box UI to display later for now prints to console
 
-func check_valid(ob_name, path_string,line) -> bool:
+func check_valid(ob_name, path_string,line,bx) -> bool:
 	if all_text.has(ob_name):
 		if all_text[ob_name].has(path_string):
 			if all_text[ob_name][path_string].has(line):
 				var text = all_text[ob_name][path_string][line]
-				print(text)
-				tb.get_node("Panel/RichTextLabel").text = text
+				print("found ", text)
+				bx.get_node("Panel/RichTextLabel").text = text
 				return true
+			else:
+				print("line not found")
+		else:
+			print("section not found")
+	else:
+		print("object not found")
 	return false
-
-func display_cutscene_text(scene_name,section,line):
-	if tb == null || hm ==null|| rs == null:
-		return
-	if hm.visible || rs.visible:
-		return
-	tb.visible = true
-	if talked_cutscene_nums.has(section):
-		check_valid(scene_name,section,line)
-
-
 	
 
+func display_cutscene_text(scene_name,section,line,box):
+	if box == null:
+		print("dont exist")
+		return
+	box.visible = true
+	if talked_cutscene_nums.has(section):
+		check_valid(scene_name,section,line,box)
+		
 
-func close_text(ob_name):
+
+
+func close_text(ob_name, bx):
 		print("close_text")
-		tb.visible = false
+		bx.visible = false
 		
 
 

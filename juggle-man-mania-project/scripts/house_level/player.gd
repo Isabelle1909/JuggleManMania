@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 const tile_size: Vector2 = Vector2(48, 48)
 @onready var spr = $Sprite2D
+@onready var housecam = get_parent().get_node("Camera2D")
 var sprite_node_pos_tween: Tween 
 var facing_ray
 var item_near = "none"
@@ -42,19 +43,25 @@ func _physics_process(delta: float) -> void:
 					item_near = facing_ray.get_collider().name
 					
 		
+	interaction_manager()
+	
+
+func interaction_manager():
 	if Input.is_action_just_pressed("interact"):
 		if TextManager.rs.visible:
 			TextManager.rs.visible = false
 		elif TextManager.hm.visible:
 			TextManager.hm.visible = false
 		elif TextManager.tb.visible :
-			TextManager.close_text(item_near)
+			TextManager.close_text(item_near,TextManager.tb)
 			item_near = "none"
 			disabled = false
 		elif item_near.contains("front_door"):
 			get_parent().on_entered_done = false
 			SystemManager.open_juggling(position)
 		elif item_near.contains("back_door"):
+			housecam.enabled = false
+			disabled = true
 			SystemManager.open_balcony()
 		elif !item_near.contains("none")&&!item_near.contains("Wall"):
 			print(item_near)
@@ -66,7 +73,8 @@ func _physics_process(delta: float) -> void:
 			TextManager.rs.visible = false
 		elif TextManager.hm.visible:
 			TextManager.hm.visible = false
-	
+
+
 
 func animation_manager(dir):
 	if dir.x > 0 && dir.y == 0:
@@ -88,3 +96,4 @@ func _move(dir: Vector2):
 	sprite_node_pos_tween = create_tween()
 	sprite_node_pos_tween.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
 	sprite_node_pos_tween.tween_property($Sprite2D, "global_position", global_position, 0.285).set_trans(Tween.TRANS_LINEAR)
+	

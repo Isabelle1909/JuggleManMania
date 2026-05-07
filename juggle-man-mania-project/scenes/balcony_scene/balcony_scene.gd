@@ -8,4 +8,4 @@ var position_set = false
 
 
 func _ready() -> void:
-	pass #Text
+	pass

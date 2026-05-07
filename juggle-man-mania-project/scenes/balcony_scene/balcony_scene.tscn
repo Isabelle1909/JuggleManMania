@@ -2,7 +2,6 @@
 
 [ext_resource type="TileSet" uid="uid://bhw3ra2uh0fnt" path="res://tilesets/balcony_tileset.tres" id="1_6g3yx"]
 [ext_resource type="PackedScene" uid="uid://dksw6vohgomcm" path="res://scenes/house_level/player.tscn" id="2_w2pqt"]
-[ext_resource type="PackedScene" uid="uid://effsrxenqkmr" path="res://scenes/ui_scenes/text_ui.tscn" id="3_i84ml"]
 
 [node name="Balcony_Scene" type="Node2D" unique_id=1986828564]
 
@@ -25,4 +24,8 @@ position = Vector2(552, 447)
 collision_layer = 2
 collision_mask = 2
 
-[node name="text_ui" parent="." unique_id=1281821818 instance=ExtResource("3_i84ml")]
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="player" unique_id=1131499087]
+remote_path = NodePath("../../Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1589915115]
+position = Vector2(552, 447)
