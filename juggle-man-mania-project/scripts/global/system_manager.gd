@@ -18,7 +18,7 @@ var help_scr = load("res://scenes/ui_scenes/HelpScreen.tscn")
 var save_scr = load("res://scenes/ui_scenes/SaveMenu.tscn")
 
 var house_position
-
+var in_costume = false
 
 func calculate_mood():
 	#use total JP / potential JP to figure out mood

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const tile_size: Vector2 = Vector2(48, 48)
-@onready var spr = $Sprite2D
+@onready var animated_sprite = $AnimatedSprite2D
 @onready var housecam = get_parent().get_node("Camera2D")
 var sprite_node_pos_tween: Tween 
 var facing_ray
@@ -10,6 +10,7 @@ var disabled = false
 var true_disabled = false
 var instanced = false
 var dir
+var ani = "idle_"
 
 
 
@@ -22,20 +23,25 @@ func _physics_process(delta: float) -> void:
 			if Input.is_action_pressed("ui_up"):
 				facing_ray = $up
 				dir = Vector2(0,-1)
+				ani = "walk_"
 			elif Input.is_action_pressed("ui_down"):
 				facing_ray = $down
 				dir = Vector2(0,1)
+				ani = "walk_"
 			elif Input.is_action_pressed("ui_left"):
 				facing_ray = $left
 				dir = Vector2(-1,0)
+				ani = "walk_"
 			elif Input.is_action_pressed("ui_right"):
 				facing_ray = $right
 				dir = Vector2(1,0)
+				ani = "walk_"
 			else:
 				dir = Vector2(0,0)
+				ani = "idle_"
 			
 			if facing_ray != null && dir != null:
-				animation_manager(dir)
+				animation_manager()
 				if !facing_ray.is_colliding():
 						_move(dir)
 						item_near = "none"
@@ -76,24 +82,34 @@ func interaction_manager():
 
 
 
-func animation_manager(dir):
-	if dir.x > 0 && dir.y == 0:
-		spr.frame = 2
-	elif dir.x < 0 && dir.y == 0:
-		spr.frame = 0
-	elif dir.x == 0 && dir.y > 0:
-		spr.frame = 1
-	elif dir.x == 0 && dir.y < 0:
-		spr.frame = 3
+func animation_manager():
+	var cos
+	var face
+	if SystemManager.in_costume:
+		cos = "clown_"
+	else:
+		cos = "normal_"
+	if facing_ray.name.contains("up"):
+		face = "back"
+	elif facing_ray.name.contains("down"):
+		face = "front"
+	elif facing_ray.name.contains("left"):
+		face = "left"
+	elif facing_ray.name.contains("right"):
+		face = "right"
+	
+	var animation = str(cos,ani,face)
+	animated_sprite.play(animation)
 
 
 func _move(dir: Vector2):
+	
 	global_position += dir * tile_size
-	$Sprite2D.global_position -= dir * tile_size
+	animated_sprite.global_position -= dir * tile_size
 	
 	if sprite_node_pos_tween:
 		sprite_node_pos_tween.kill()
 	sprite_node_pos_tween = create_tween()
 	sprite_node_pos_tween.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
-	sprite_node_pos_tween.tween_property($Sprite2D, "global_position", global_position, 0.285).set_trans(Tween.TRANS_LINEAR)
+	sprite_node_pos_tween.tween_property(animated_sprite, "global_position", global_position, 0.285).set_trans(Tween.TRANS_LINEAR)
 	
