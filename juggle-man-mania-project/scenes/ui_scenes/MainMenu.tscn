@@ -28,6 +28,8 @@ offset_left = 484.0
 offset_top = 203.0
 offset_right = 652.8889
 offset_bottom = 248.0
+focus_neighbor_top = NodePath("../button_quit")
+focus_neighbor_bottom = NodePath("../button_load_game")
 theme_override_font_sizes/font_size = 27
 text = "New Game"
 
@@ -36,6 +38,8 @@ offset_left = 484.0
 offset_top = 306.0
 offset_right = 652.8889
 offset_bottom = 351.0
+focus_neighbor_top = NodePath("../button_new_game")
+focus_neighbor_bottom = NodePath("../button_help")
 theme_override_font_sizes/font_size = 27
 text = "Load Game"
 
@@ -44,6 +48,8 @@ offset_left = 484.0
 offset_top = 403.0
 offset_right = 652.8889
 offset_bottom = 448.0
+focus_neighbor_top = NodePath("../button_load_game")
+focus_neighbor_bottom = NodePath("../button_quit")
 theme_override_font_sizes/font_size = 27
 text = "HELP"
 
@@ -52,6 +58,8 @@ offset_left = 484.0
 offset_top = 509.0
 offset_right = 652.8889
 offset_bottom = 554.0
+focus_neighbor_top = NodePath("../button_help")
+focus_neighbor_bottom = NodePath("../button_new_game")
 theme_override_font_sizes/font_size = 27
 text = "QUIT"
 

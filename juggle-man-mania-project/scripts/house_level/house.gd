@@ -1,12 +1,15 @@
 extends Node2D
 
 @onready var ui_scr = $text_ui
-@onready var text_box = $text_ui/Control
-@onready var help_menu = $text_ui/Control2
-@onready var result_scr = $text_ui/Control3
+@onready var text_box = $text_ui/text_box
+@onready var help_menu = $text_ui/help_menu
+@onready var result_scr = $text_ui/results_screen
+@onready var saveMenu = $text_ui/save_menu
+@onready var y_n_box = $text_ui/y_n_box
+
 @onready var player = $player
 @onready var adjustment = get_viewport_rect().size/2
-@onready var saveMenu = $text_ui/Load
+
 
 var on_entered_done
 

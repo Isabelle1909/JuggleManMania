@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cuqn5ygrelpfh"]
 
-[ext_resource type="PackedScene" uid="uid://effsrxenqkmr" path="res://scenes/ui_scenes/text_ui.tscn" id="1_bhp72"]
+[ext_resource type="Script" uid="uid://dbur23y8cp2qt" path="res://scripts/UI/y_n_box.gd" id="1_bhp72"]
 
 [node name="y_n_box" type="Control" unique_id=1882826195]
 layout_mode = 3
@@ -9,5 +9,27 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_bhp72")
 
-[node name="text_ui" parent="." unique_id=1281821818 instance=ExtResource("1_bhp72")]
+[node name="Panel" type="Panel" parent="." unique_id=1291670833]
+layout_mode = 0
+offset_left = 984.0
+offset_top = 178.0
+offset_right = 1149.0
+offset_bottom = 391.0
+
+[node name="yes_button" type="Button" parent="Panel" unique_id=301932116]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 27.0
+offset_right = 148.0
+offset_bottom = 90.0
+text = "YES"
+
+[node name="no_button" type="Button" parent="Panel" unique_id=878702148]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 119.0
+offset_right = 149.0
+offset_bottom = 182.0
+text = "NO"

@@ -143,6 +143,7 @@ func update_text() -> void:
 	currentTotalScore.text = str(SystemManager.total_jp)
 
 func _ready() -> void:
+	$Panel/Buttons/Button_Save.grab_focus.call_deferred()
 	slot = 0
 	_save()
 	slot = 1
