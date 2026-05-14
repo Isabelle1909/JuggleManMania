@@ -13,7 +13,9 @@ var instanced = false
 var dir
 var ani = "idle_"
 
-
+func _ready() -> void:
+		facing_ray = $down
+		animation_manager()
 
 func _physics_process(delta: float) -> void:
 	if true_disabled:
@@ -63,13 +65,32 @@ func interaction_manager():
 			TextManager.close_text(item_near,TextManager.tb)
 			item_near = "none"
 			disabled = false
+			
+		elif item_near.contains("wardrobe"):
+			if SystemManager.time.contains("morning") && !SystemManager.in_costume:
+				SystemManager.in_costume = true
+			elif SystemManager.time.contains("evening") && SystemManager.in_costume:
+				SystemManager.in_costume = false
+		elif item_near.contains("bed"):
+			if SystemManager.time.contains("evening") && SystemManager.in_costume:
+				print("need to get ready for bed first")
+			elif SystemManager.time.contains("evening") && !SystemManager.in_costume:
+				print("night night")
+				SystemManager.increment_time()
 		elif item_near.contains("front_door"):
-			get_parent().on_entered_done = false
-			SystemManager.open_juggling(position)
+			if SystemManager.time.contains("morning") && SystemManager.in_costume == true:
+				get_parent().on_entered_done = false
+				SystemManager.open_juggling(position)
+			elif SystemManager.time.contains("morning"):
+				print("I need to get dressed")
+			elif SystemManager.time.contains("evening"):
+				print("i dont want to go anywhere now")
+				
 		elif item_near.contains("back_door"):
 			camera.enabled = false
 			true_disabled = true
 			SystemManager.open_balcony()
+			
 		elif !item_near.contains("none")&&!item_near.contains("Wall"):
 			print(item_near)
 			disabled = true

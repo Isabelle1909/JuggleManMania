@@ -22,6 +22,7 @@ func _ready() -> void:
 	TextManager.tb = text_box
 	TextManager.hm = help_menu
 	TextManager.rs = result_scr
+	
 
 func on_entered():
 	if SystemManager.house_position != null:
