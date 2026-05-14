@@ -11,14 +11,14 @@ var last_bonus_1
 var just_juggling = false
 
 var house_level = load("res://scenes/house_level/house.tscn")
-
+var balcony_level = preload("res://scenes/balcony_scene/balcony_scene.tscn")
 var juggle_level = load("res://scenes/juggling_level/juggling_scene.tscn")
 var results_scr = load("res://scenes/ui_scenes/ResultsScreenUI.tscn")
 var help_scr = load("res://scenes/ui_scenes/HelpScreen.tscn")
 var save_scr = load("res://scenes/ui_scenes/SaveMenu.tscn")
 
 var house_position
-
+var in_costume = false
 
 func calculate_mood():
 	#use total JP / potential JP to figure out mood
@@ -47,7 +47,10 @@ func open_juggling(pos):
 	just_juggling = true
 
 func open_balcony():
-	print("opening_balcony")
+	var balc = balcony_level.instantiate()
+	balc.position = Vector2(-10000,-10000)
+	get_tree().root.add_child(balc)
+	TextManager.tb = balc.get_node("text_ui/Control")
 
 func open_house(juggle_score,items_left):
 	#increment_time()

@@ -12,7 +12,7 @@
             "1": "Let's see what I got here",
             "2": "Hmm this looks good",
             "3": "I'll just grab this"
-		},
+		    },
 		"evening_1_neutral": {
             "1": "I haven't worn a lot of this stuff in a while.",
             "2": "I don't need to change clothes.",
@@ -138,5 +138,28 @@
       "3": "Maybe tonight will feel different. Probably not."
     }
 
+  },
+  "tutorial": {
+    "0":{
+      "1": "Alright time to stretch",
+      "2": "One arm and then the other.",
+      "3": "Ahh.. that's better" 
+    },
+    "1": {
+      "1": "Now let's start by tossing a ball up and down",
+      "2": "guess i'm a bit rusty",
+      "3": "There we go, got a feel for the timing"
+    },
+    "2": {
+      "1": "alright time to get some more movement going",
+      "2": "oops",
+      "3": "Alright, I still got it!"
+    },
+    "3": {
+      "1": "Now, it's time to step up the game, and get juggling for real",
+      "2": "I just need a little more warming up",
+      "3": "They don't call me juggle man for nothing!"
+    }
   }
 }
+
