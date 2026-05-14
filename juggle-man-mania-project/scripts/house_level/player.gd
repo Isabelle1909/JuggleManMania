@@ -2,8 +2,9 @@ extends CharacterBody2D
 
 const tile_size: Vector2 = Vector2(48, 48)
 @onready var animated_sprite = $AnimatedSprite2D
-@onready var housecam = get_parent().get_node("Camera2D")
+@onready var camera = $Camera2D
 var sprite_node_pos_tween: Tween 
+var camera_node_pos_tween: Tween
 var facing_ray
 var item_near = "none"
 var disabled = false
@@ -66,8 +67,8 @@ func interaction_manager():
 			get_parent().on_entered_done = false
 			SystemManager.open_juggling(position)
 		elif item_near.contains("back_door"):
-			housecam.enabled = false
-			disabled = true
+			camera.enabled = false
+			true_disabled = true
 			SystemManager.open_balcony()
 		elif !item_near.contains("none")&&!item_near.contains("Wall"):
 			print(item_near)
@@ -83,12 +84,12 @@ func interaction_manager():
 
 
 func animation_manager():
-	var cos
+	var costume
 	var face
 	if SystemManager.in_costume:
-		cos = "clown_"
+		costume = "clown_"
 	else:
-		cos = "normal_"
+		costume = "normal_"
 	if facing_ray.name.contains("up"):
 		face = "back"
 	elif facing_ray.name.contains("down"):
@@ -98,7 +99,7 @@ func animation_manager():
 	elif facing_ray.name.contains("right"):
 		face = "right"
 	
-	var animation = str(cos,ani,face)
+	var animation = str(costume,ani,face)
 	animated_sprite.play(animation)
 
 
@@ -106,10 +107,18 @@ func _move(dir: Vector2):
 	
 	global_position += dir * tile_size
 	animated_sprite.global_position -= dir * tile_size
+	camera.global_position -= dir  *tile_size
 	
 	if sprite_node_pos_tween:
 		sprite_node_pos_tween.kill()
 	sprite_node_pos_tween = create_tween()
 	sprite_node_pos_tween.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
 	sprite_node_pos_tween.tween_property(animated_sprite, "global_position", global_position, 0.285).set_trans(Tween.TRANS_LINEAR)
+	
+	#tween camera
+	if camera_node_pos_tween:
+		camera_node_pos_tween.kill()
+	camera_node_pos_tween = create_tween()
+	camera_node_pos_tween.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
+	camera_node_pos_tween.tween_property(camera, "global_position", global_position, 0.285).set_trans(Tween.TRANS_LINEAR)
 	

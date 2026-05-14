@@ -5,7 +5,6 @@ extends Node2D
 @onready var help_menu = $text_ui/Control2
 @onready var result_scr = $text_ui/Control3
 @onready var player = $player
-@onready var camera = $Camera2D
 @onready var adjustment = get_viewport_rect().size/2
 @onready var saveMenu = $text_ui/Load
 

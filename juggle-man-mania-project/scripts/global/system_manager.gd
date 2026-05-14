@@ -50,6 +50,7 @@ func open_balcony():
 	var balc = balcony_level.instantiate()
 	balc.position = Vector2(-10000,-10000)
 	get_tree().root.add_child(balc)
+	TextManager.tb = balc.get_node("text_ui/Control")
 
 func open_house(juggle_score,items_left):
 	#increment_time()
