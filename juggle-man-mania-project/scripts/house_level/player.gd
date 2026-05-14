@@ -73,6 +73,7 @@ func interaction_manager():
 				SystemManager.in_costume = false
 		elif item_near.contains("bed"):
 			if SystemManager.time.contains("evening") && SystemManager.in_costume:
+				
 				print("need to get ready for bed first")
 			elif SystemManager.time.contains("evening") && !SystemManager.in_costume:
 				print("night night")

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cuqn5ygrelpfh"]
+
+[ext_resource type="PackedScene" uid="uid://effsrxenqkmr" path="res://scenes/ui_scenes/text_ui.tscn" id="1_bhp72"]
+
+[node name="y_n_box" type="Control" unique_id=1882826195]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="text_ui" parent="." unique_id=1281821818 instance=ExtResource("1_bhp72")]
