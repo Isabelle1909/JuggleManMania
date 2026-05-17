@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dretwn43xudoa" path="res://scripts/house_level/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://2yuknp36n85a" path="res://assets/player assets/IMG_0249.png" id="2_hhlhx"]
 [ext_resource type="Texture2D" uid="uid://c5mu2dp0cd8fg" path="res://assets/player assets/IMG_0236.png" id="3_bbfi4"]
+[ext_resource type="AudioStream" uid="uid://d1xhctdngc8c6" path="res://assets/sound effect/footsteps on wood.wav" id="4_bbfi4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hhlhx"]
 atlas = ExtResource("2_hhlhx")
@@ -404,3 +405,7 @@ target_position = Vector2(48, 0)
 hit_from_inside = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=987387589]
+
+[node name="FootstepPlayer" type="AudioStreamPlayer" parent="." unique_id=684393312]
+stream = ExtResource("4_bbfi4")
+volume_db = -10.0

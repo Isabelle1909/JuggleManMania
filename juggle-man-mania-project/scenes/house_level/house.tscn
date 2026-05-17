@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b6322dcbuktw5" path="res://assets/placeholder_assets/bed_placeholder.jpg" id="6_w2wtq"]
 [ext_resource type="Texture2D" uid="uid://daxl1na6kmgje" path="res://assets/placeholder_assets/wardrobe_placeholder.jpg" id="7_uw60d"]
 [ext_resource type="Texture2D" uid="uid://b44su0sj6tt0c" path="res://assets/placeholder_assets/OIP-2236234873.jpg" id="8_eew2d"]
+[ext_resource type="AudioStream" uid="uid://b5dh0tuaupvkm" path="res://assets/sound effect/opening-door-411632.mp3" id="9_qf7xi"]
 [ext_resource type="Texture2D" uid="uid://dggo61m3s3re8" path="res://assets/placeholder_assets/door_placeholder.jpg" id="9_r1b7n"]
 [ext_resource type="PackedScene" uid="uid://effsrxenqkmr" path="res://scenes/ui_scenes/text_ui.tscn" id="10_cy5ox"]
 
@@ -123,6 +124,10 @@ texture = ExtResource("9_r1b7n")
 position = Vector2(0.5, -0.5)
 shape = SubResource("RectangleShape2D_e5ov4")
 
+[node name="DoorSound" type="AudioStreamPlayer" parent="key_interactables/front_door" unique_id=16900571]
+stream = ExtResource("9_qf7xi")
+volume_db = -8.0
+
 [node name="back_door" type="StaticBody2D" parent="key_interactables" unique_id=1488391012]
 y_sort_enabled = true
 position = Vector2(720, -88)
@@ -137,6 +142,10 @@ texture = ExtResource("9_r1b7n")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="key_interactables/back_door" unique_id=789565538]
 position = Vector2(0.5, -0.5)
 shape = SubResource("RectangleShape2D_w4xns")
+
+[node name="DoorSound" type="AudioStreamPlayer" parent="key_interactables/back_door" unique_id=837388549]
+stream = ExtResource("9_qf7xi")
+volume_db = -8.0
 
 [node name="player" parent="." unique_id=1271940088 instance=ExtResource("3_cyy7t")]
 y_sort_enabled = true
