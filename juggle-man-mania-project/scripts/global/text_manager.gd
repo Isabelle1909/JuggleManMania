@@ -7,6 +7,7 @@ var last_called
 var tb
 var hm
 var rs
+var ynb
 var jfl
 var jfr
 
@@ -19,10 +20,14 @@ var talked_to_nums = {
 }
 
 var talked_cutscene_nums = {
-	"0" : 2,
+	"0": 2,
 	"1": 1,
 	"2": 1,
-	"3": 1
+	"3": 1,
+	"undress": 0,
+	"dress": 0,
+	"stay": 0,
+	"smoke": 0
 	
 }
 
@@ -67,7 +72,7 @@ func display_text(ob_name):
 			talked_to_nums[ob_name] -= 1
 			check_valid(ob_name,path_string,str(talked_to_nums[ob_name]),tb)
 		
-		#will use text box UI to display later for now prints to console
+	
 
 func check_valid(ob_name, path_string,line,bx) -> bool:
 	if all_text.has(ob_name):
@@ -79,26 +84,47 @@ func check_valid(ob_name, path_string,line,bx) -> bool:
 				return true
 			else:
 				print("line not found")
+				print(line)
 		else:
 			print("section not found")
+			print(path_string)
 	else:
 		print("object not found")
+		print(ob_name)
 	return false
 	
 
 func display_cutscene_text(scene_name,section,line,box):
 	if box == null:
-		print("dont exist")
-		return
+		box = tb
 	box.visible = true
-	if talked_cutscene_nums.has(section):
-		check_valid(scene_name,section,line,box)
+	if talked_cutscene_nums.has(str(section)) && line != null:
+		check_valid(scene_name,str(section),str(line),box)
+	elif talked_cutscene_nums.has(section):
+		talked_cutscene_nums[section] += 1
+		if !check_valid(scene_name,str(section),str(talked_cutscene_nums[section]),box):
+			talked_cutscene_nums[section] -= 1
+			check_valid(scene_name,str(section),str(talked_cutscene_nums[section]),box)
 		
 
+func question_text(question):
+	var box = tb
+	if box != null && ynb != null:
+		box.visible = true
+		box.get_node("Panel/RichTextLabel").text = question
+		ynb.visible = true
+		ynb.redirect_focus()
 
+func close_question():
+	var box = tb
+	if box != null && ynb != null:
+		box.visible = false
+		ynb.visible = false
 
 func close_text(ob_name, bx):
 		print("close_text")
+		if bx == null:
+			bx = tb
 		bx.visible = false
 		
 

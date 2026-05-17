@@ -10,11 +10,18 @@ var sprite_node_pos_tween: Tween
 var camera_node_pos_tween: Tween
 var facing_ray
 var item_near = "none"
+
 var disabled = false
 var true_disabled = false
+var waiting_answer_door = false
+var waiting_answer_bed = false
+
 var instanced = false
+
 var dir
 var ani = "idle_"
+
+
 
 func _ready() -> void:
 		facing_ray = $down
@@ -63,6 +70,8 @@ func _physics_process(delta: float) -> void:
 
 func interaction_manager():
 	if Input.is_action_just_pressed("interact"):
+		
+		#check that the correct things are visible/not
 		if TextManager.rs.visible:
 			TextManager.rs.visible = false
 		elif TextManager.hm.visible:
@@ -72,30 +81,47 @@ func interaction_manager():
 			item_near = "none"
 			disabled = false
 			
+		#Special Interactables
 		elif item_near.contains("wardrobe"):
 			if SystemManager.time.contains("morning") && !SystemManager.in_costume:
 				SystemManager.in_costume = true
 			elif SystemManager.time.contains("evening") && SystemManager.in_costume:
 				SystemManager.in_costume = false
+			else:
+				TextManager.display_text(item_near)
+				
 		elif item_near.contains("bed"):
 			if SystemManager.time.contains("evening") && SystemManager.in_costume:
-				print("need to get ready for bed first")
+				TextManager.display_cutscene_text("prompt_text","undress",null,null)
 			elif SystemManager.time.contains("evening") && !SystemManager.in_costume:
-				print("night night")
-				SystemManager.increment_time()
+				TextManager.question_text("do you want to go to bed")
+				disabled = true
+				waiting_answer_bed = true
+			else:
+				TextManager.display_text(item_near)
+		elif item_near.contains("practice_box"):
+			SystemManager.open_juggling(position)
+		#doors
 		elif item_near.contains("front_door"):
 			if SystemManager.time.contains("morning") && SystemManager.in_costume == true:
+				TextManager.question_text("do you want to go to work now?")
+				disabled = true
+				waiting_answer_door = true
 				var door = facing_ray.get_collider()
 				if door.has_node("DoorSound"):
 					door.get_node("DoorSound").play()
 				get_parent().on_entered_done = false
 				SystemManager.open_juggling(position)
 			elif SystemManager.time.contains("morning"):
-				print("I need to get dressed")
+				TextManager.display_cutscene_text("prompt_text","dress",null,null)
 			elif SystemManager.time.contains("evening"):
-				print("i dont want to go anywhere now")
+				TextManager.display_cutscene_text("prompt_text","stay",null,null)
 				
 		elif item_near.contains("back_door"):
+			SystemManager.go_balc = true
+			
+		elif item_near.contains("in_door"):
+			SystemManager.leave_balc = true
 			var door = facing_ray.get_collider()
 			if door.has_node("DoorSound"):
 				door.get_node("DoorSound").play()
@@ -103,11 +129,13 @@ func interaction_manager():
 			true_disabled = true
 			SystemManager.open_balcony()
 			
+		#General Interactables
 		elif !item_near.contains("none")&&!item_near.contains("Wall"):
 			print(item_near)
 			disabled = true
 			TextManager.display_text(item_near)
 			
+		
 	if Input.is_action_just_pressed("back"):
 		if TextManager.rs.visible:
 			TextManager.rs.visible = false

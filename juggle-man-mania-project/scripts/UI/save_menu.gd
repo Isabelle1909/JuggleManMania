@@ -10,6 +10,12 @@ extends Control
 @onready var currentTotalScore = $"Panel/Current data/total_score_number"
 @onready var saveSlotLabel = $Panel/Labels/Label_SaveSlot1
 
+var slot_1_data = {
+	"day": 1,
+	"total_jp": 0,
+	"current_jp": 0
+}
+
 var slot_1_day = 1
 var slot_1_jp = 0
 var slot_1_score = 0
@@ -126,23 +132,21 @@ func update_text() -> void:
 		dayLabel.text = str(slot_1_day)
 		jpLabel.text = str(slot_1_jp)
 		scoreLabel.text = str(slot_1_score)
-		print("wasgood")
 	elif slot == 2:
 		dayLabel.text = str(slot_2_day)
 		jpLabel.text = str(slot_2_jp)
 		scoreLabel.text = str(slot_2_score)
-		print("wasgood")
 	elif slot == 3:
 		dayLabel.text = str(slot_3_day)
 		jpLabel.text = str(slot_3_jp)
 		scoreLabel.text = str(slot_3_score)
-		print("wasgood")
 	
 	currentDay.text = str(SystemManager.day)
 	currentJp.text = str(SystemManager.current_jp)
 	currentTotalScore.text = str(SystemManager.total_jp)
 
 func _ready() -> void:
+	$Panel/Buttons/Button_Save.grab_focus.call_deferred()
 	slot = 0
 	_save()
 	slot = 1
