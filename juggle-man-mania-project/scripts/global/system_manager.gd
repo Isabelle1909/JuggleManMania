@@ -20,6 +20,9 @@ var save_scr = load("res://scenes/ui_scenes/SaveMenu.tscn")
 var house_position
 var in_costume = false
 
+var go_balc = false
+var leave_balc = false
+
 func calculate_mood():
 	#use total JP / potential JP to figure out mood
 	pass
@@ -46,11 +49,7 @@ func open_juggling(pos):
 	get_tree().change_scene_to_packed(juggle_level)
 	just_juggling = true
 
-func open_balcony():
-	var balc = balcony_level.instantiate()
-	balc.position = Vector2(-10000,-10000)
-	get_tree().root.add_child(balc)
-	TextManager.tb = balc.get_node("text_ui/Control")
+
 
 func open_house(juggle_score,items_left):
 	#increment_time()

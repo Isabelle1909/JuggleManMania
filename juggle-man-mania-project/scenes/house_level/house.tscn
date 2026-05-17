@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b44su0sj6tt0c" path="res://assets/placeholder_assets/OIP-2236234873.jpg" id="8_eew2d"]
 [ext_resource type="Texture2D" uid="uid://dggo61m3s3re8" path="res://assets/placeholder_assets/door_placeholder.jpg" id="9_r1b7n"]
 [ext_resource type="PackedScene" uid="uid://effsrxenqkmr" path="res://scenes/ui_scenes/text_ui.tscn" id="10_cy5ox"]
+[ext_resource type="PackedScene" uid="uid://18bbo870jgqk" path="res://scenes/balcony_scene/balcony_scene.tscn" id="11_qf7xi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhgw4"]
 size = Vector2(113, 104)
@@ -143,3 +144,6 @@ y_sort_enabled = true
 position = Vector2(-23, 46)
 
 [node name="text_ui" parent="." unique_id=1281821818 instance=ExtResource("10_cy5ox")]
+
+[node name="Balcony_Scene" parent="." unique_id=1986828564 instance=ExtResource("11_qf7xi")]
+position = Vector2(0, -2500)

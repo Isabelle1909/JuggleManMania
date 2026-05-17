@@ -179,25 +179,25 @@
     }
   },
   "prompt_text": {
-    "0":{
+    "undress":{
       "1": "need to get ready for bed first",
       "2": "Can't sleep in my costume, I'll have funny dreams",
       "3": "Don't want the clown pants getting creased, they're a pain to iron",
       "4": "I should get changed into something more comfortable first"
     },
-    "1":{
+    "dress":{
       "1": "Erk, I must be tired, almost left the house without getting dressed",
       "2": "Can't wear my pjs to work, I'm aiming for funny not sad",
       "3": "Can't believe I forgot a huge, multicoloured clown costume, guess i'm half asleep",
       "4": "I should get changed into my costume so i'm ready to leave for work"
     },
-    "2": {
+    "stay": {
       "1": "All the good shops are closed by now",
       "2": "Can't be bothered going out, i'm tired",
       "3": "it's been a long day, I just wanna smoke and head to bed",
       "4": "I'll head out tomorrow, I should rest now"
     },
-    "3": {
+    "smoke": {
       "1": "Can't go to bed without my daily cig, a guy's gotta have something to take the edge off",
       "2": "I know I'll just toss and turn if I don't have my balcony smoke",
       "3": "Gotta go out and get some fresh.. and rather unfresh air in these lungs",

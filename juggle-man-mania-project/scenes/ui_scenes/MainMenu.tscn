@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://csy7eigecfffg" path="res://scripts/UI/title_screen.gd" id="1_2y50p"]
 [ext_resource type="Texture2D" uid="uid://d3i4sqhx8wrdo" path="res://icon.svg" id="1_xjmod"]
+[ext_resource type="PackedScene" uid="uid://dkp2lcwdqvm8v" path="res://scenes/ui_scenes/HelpScreen.tscn" id="3_0vnpx"]
 
-[node name="Control" type="Node2D" unique_id=851641343]
+[node name="MainMenu" type="Node2D" unique_id=851641343]
 script = ExtResource("1_2y50p")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1140432038]
@@ -63,5 +64,16 @@ focus_neighbor_bottom = NodePath("../button_new_game")
 theme_override_font_sizes/font_size = 27
 text = "QUIT"
 
+[node name="help_menu" parent="." unique_id=645237815 instance=ExtResource("3_0vnpx")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
 [connection signal="pressed" from="button_new_game" to="." method="_on_button_new_game_pressed"]
 [connection signal="pressed" from="button_load_game" to="." method="_load"]
+[connection signal="pressed" from="button_help" to="." method="_on_button_help_pressed"]
+[connection signal="pressed" from="button_quit" to="." method="_on_button_quit_pressed"]
