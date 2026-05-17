@@ -143,4 +143,3 @@ y_sort_enabled = true
 position = Vector2(-23, 46)
 
 [node name="text_ui" parent="." unique_id=1281821818 instance=ExtResource("10_cy5ox")]
-visible = false
