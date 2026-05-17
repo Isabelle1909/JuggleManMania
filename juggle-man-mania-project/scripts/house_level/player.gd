@@ -4,6 +4,7 @@ const tile_size: Vector2 = Vector2(48, 48)
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var camera = $Camera2D
 
+@onready var footstep_player = $FootstepPlayer
 
 var sprite_node_pos_tween: Tween 
 var camera_node_pos_tween: Tween
@@ -51,14 +52,17 @@ func _physics_process(delta: float) -> void:
 			else:
 				dir = Vector2(0,0)
 				ani = "idle_"
+				if footstep_player.playing:
+					footstep_player.stop()
 			
 			if facing_ray != null && dir != null:
 				animation_manager()
-				if !facing_ray.is_colliding():
-						_move(dir)
-						item_near = "none"
-				else:
-					item_near = facing_ray.get_collider().name
+				if dir != Vector2.ZERO:
+					if !facing_ray.is_colliding():
+							_move(dir)
+							item_near = "none"
+					else:
+						item_near = facing_ray.get_collider().name
 					
 		
 	interaction_manager()
@@ -103,6 +107,11 @@ func interaction_manager():
 				TextManager.question_text("do you want to go to work now?")
 				disabled = true
 				waiting_answer_door = true
+				var door = facing_ray.get_collider()
+				if door.has_node("DoorSound"):
+					door.get_node("DoorSound").play()
+				get_parent().on_entered_done = false
+				SystemManager.open_juggling(position)
 			elif SystemManager.time.contains("morning"):
 				TextManager.display_cutscene_text("prompt_text","dress",null,null)
 			elif SystemManager.time.contains("evening"):
@@ -113,6 +122,12 @@ func interaction_manager():
 			
 		elif item_near.contains("in_door"):
 			SystemManager.leave_balc = true
+			var door = facing_ray.get_collider()
+			if door.has_node("DoorSound"):
+				door.get_node("DoorSound").play()
+			camera.enabled = false
+			true_disabled = true
+			SystemManager.open_balcony()
 			
 		#General Interactables
 		elif !item_near.contains("none")&&!item_near.contains("Wall"):
@@ -149,7 +164,15 @@ func animation_manager():
 	animated_sprite.play(animation)
 
 
+
 func _move(dir: Vector2):
+	
+	if footstep_player:
+		footstep_player.play()
+		get_tree().create_timer(0.285).timeout.connect(func():
+			if footstep_player:
+				footstep_player.stop()
+		)
 	
 	global_position += dir * tile_size
 	animated_sprite.global_position -= dir * tile_size
