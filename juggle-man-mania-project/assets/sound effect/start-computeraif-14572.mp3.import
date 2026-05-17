@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dalw6n48ishp3"
+path="res://.godot/imported/start-computeraif-14572.mp3-518b3a880b29e99e3813f926a1e3e064.mp3str"
+
+[deps]
+
+source_file="res://assets/sound effect/start-computeraif-14572.mp3"
+dest_files=["res://.godot/imported/start-computeraif-14572.mp3-518b3a880b29e99e3813f926a1e3e064.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
