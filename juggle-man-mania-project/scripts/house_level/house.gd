@@ -47,6 +47,9 @@ func _handle_answer(ans: bool):
 		player.disabled = false
 		SystemManager.increment_time()
 	elif player.waiting_answer_door:
+		var door = player.object_near
+		if door.has_node("DoorSound"):
+			door.get_node("DoorSound").play()
 		TextManager.close_question()
 		on_entered_done = false
 		SystemManager.open_juggling(player.position)
