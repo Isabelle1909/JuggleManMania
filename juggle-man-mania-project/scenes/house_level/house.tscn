@@ -47,6 +47,7 @@ size = Vector2(132, 123)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w4xns"]
 size = Vector2(132, 140.5)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3l30u"]
 size = Vector2(128.5, 118.5)
 
@@ -96,6 +97,7 @@ y_sort_enabled = true
 [node name="mirror" type="StaticBody2D" parent="key_interactables" unique_id=1406826812]
 y_sort_enabled = true
 position = Vector2(294, 457.535)
+scale = Vector2(0.67, 0.67)
 script = ExtResource("4_ivbvj")
 title = "mirror"
 
@@ -111,6 +113,7 @@ shape = SubResource("RectangleShape2D_bhgw4")
 [node name="bed" type="StaticBody2D" parent="key_interactables" unique_id=1265703226]
 y_sort_enabled = true
 position = Vector2(-66.95, -72)
+scale = Vector2(0.925, 0.925)
 script = ExtResource("4_ivbvj")
 title = "bed"
 
@@ -126,6 +129,7 @@ shape = SubResource("RectangleShape2D_3ewhn")
 [node name="wardrobe" type="StaticBody2D" parent="key_interactables" unique_id=244664781]
 y_sort_enabled = true
 position = Vector2(271, -48.24)
+scale = Vector2(0.82, 0.82)
 script = ExtResource("4_ivbvj")
 title = "wardrobe"
 
@@ -177,10 +181,13 @@ volume_db = -8.0
 [node name="back_door" type="StaticBody2D" parent="key_interactables" unique_id=1488391012]
 y_sort_enabled = true
 position = Vector2(720, -70.24)
+scale = Vector2(0.64, 0.64)
 script = ExtResource("4_ivbvj")
 title = "back_door"
 
 [node name="Sprite2D" type="Sprite2D" parent="key_interactables/back_door" unique_id=343310845]
+position = Vector2(1, 11.468742)
+scale = Vector2(0.2943038, 0.1410865)
 texture = ExtResource("9_r1b7n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="key_interactables/back_door" unique_id=789565538]
