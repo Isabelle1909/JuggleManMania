@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b44su0sj6tt0c" path="res://assets/placeholder_assets/OIP-2236234873.jpg" id="8_eew2d"]
 [ext_resource type="Texture2D" uid="uid://dggo61m3s3re8" path="res://assets/placeholder_assets/door_placeholder.jpg" id="9_r1b7n"]
 [ext_resource type="PackedScene" uid="uid://effsrxenqkmr" path="res://scenes/ui_scenes/text_ui.tscn" id="10_cy5ox"]
+[ext_resource type="PackedScene" uid="uid://i5ot6tbllc4l" path="res://scenes/house_level/interactable.tscn" id="11_qf7xi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhgw4"]
 size = Vector2(113, 104)
@@ -27,7 +28,7 @@ size = Vector2(126.5, 50)
 size = Vector2(132, 123)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w4xns"]
-size = Vector2(132, 123)
+size = Vector2(132, 140.5)
 
 [node name="house" type="Node2D" unique_id=626814677]
 y_sort_enabled = true
@@ -50,7 +51,8 @@ y_sort_enabled = true
 
 [node name="mirror" type="StaticBody2D" parent="key_interactables" unique_id=1406826812]
 y_sort_enabled = true
-position = Vector2(294, 472)
+position = Vector2(294, 457.535)
+scale = Vector2(0.67, 0.67)
 script = ExtResource("4_ivbvj")
 title = "mirror"
 
@@ -65,7 +67,8 @@ shape = SubResource("RectangleShape2D_bhgw4")
 
 [node name="bed" type="StaticBody2D" parent="key_interactables" unique_id=1265703226]
 y_sort_enabled = true
-position = Vector2(-45, -70)
+position = Vector2(-66.95, -72)
+scale = Vector2(0.925, 0.925)
 script = ExtResource("4_ivbvj")
 title = "bed"
 
@@ -80,7 +83,8 @@ shape = SubResource("RectangleShape2D_3ewhn")
 
 [node name="wardrobe" type="StaticBody2D" parent="key_interactables" unique_id=244664781]
 y_sort_enabled = true
-position = Vector2(271, -35)
+position = Vector2(271, -48.24)
+scale = Vector2(0.82, 0.82)
 script = ExtResource("4_ivbvj")
 title = "wardrobe"
 
@@ -96,6 +100,7 @@ shape = SubResource("RectangleShape2D_0fn05")
 [node name="computer" type="StaticBody2D" parent="key_interactables" unique_id=662879841]
 y_sort_enabled = true
 position = Vector2(1146, 22)
+scale = Vector2(0.525, 0.525)
 script = ExtResource("4_ivbvj")
 title = "computer"
 
@@ -111,31 +116,33 @@ shape = SubResource("RectangleShape2D_82h1m")
 [node name="front_door" type="StaticBody2D" parent="key_interactables" unique_id=1715739860]
 y_sort_enabled = true
 position = Vector2(725, 865)
+scale = Vector2(0.725, 0.725)
 script = ExtResource("4_ivbvj")
 title = "front_door"
 
 [node name="Sprite2D" type="Sprite2D" parent="key_interactables/front_door" unique_id=431918467]
-position = Vector2(0.999979, 17.000004)
+position = Vector2(-9.65516, 20.689642)
 scale = Vector2(0.27637136, 0.21905765)
 texture = ExtResource("9_r1b7n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="key_interactables/front_door" unique_id=764416197]
-position = Vector2(0.5, -0.5)
+position = Vector2(-9.655155, 1.3792933)
 shape = SubResource("RectangleShape2D_e5ov4")
 
 [node name="back_door" type="StaticBody2D" parent="key_interactables" unique_id=1488391012]
 y_sort_enabled = true
-position = Vector2(720, -88)
+position = Vector2(720, -70.24)
+scale = Vector2(0.64, 0.64)
 script = ExtResource("4_ivbvj")
 title = "back_door"
 
 [node name="Sprite2D" type="Sprite2D" parent="key_interactables/back_door" unique_id=343310845]
-position = Vector2(1, -18.000006)
-scale = Vector2(0.2943038, 0.22398031)
+position = Vector2(1, 11.468742)
+scale = Vector2(0.2943038, 0.1410865)
 texture = ExtResource("9_r1b7n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="key_interactables/back_door" unique_id=789565538]
-position = Vector2(0.5, -0.5)
+position = Vector2(0.5, 8.25)
 shape = SubResource("RectangleShape2D_w4xns")
 
 [node name="player" parent="." unique_id=1271940088 instance=ExtResource("3_cyy7t")]
@@ -143,3 +150,33 @@ y_sort_enabled = true
 position = Vector2(-23, 46)
 
 [node name="text_ui" parent="." unique_id=1281821818 instance=ExtResource("10_cy5ox")]
+visible = false
+
+[node name="interactables" type="Node2D" parent="." unique_id=1655120772]
+
+[node name="couch" parent="interactables" unique_id=2026339628 instance=ExtResource("11_qf7xi")]
+position = Vector2(1021, 436)
+
+[node name="tv" parent="interactables" unique_id=2093765845 instance=ExtResource("11_qf7xi")]
+position = Vector2(1312, 436)
+
+[node name="fridge" parent="interactables" unique_id=1020696720 instance=ExtResource("11_qf7xi")]
+position = Vector2(1265, 799)
+
+[node name="oven" parent="interactables" unique_id=1348045293 instance=ExtResource("11_qf7xi")]
+position = Vector2(1120, 799)
+
+[node name="messy_desk" parent="interactables" unique_id=129350285 instance=ExtResource("11_qf7xi")]
+position = Vector2(1049, 60)
+
+[node name="bookshelf" parent="interactables" unique_id=984673212 instance=ExtResource("11_qf7xi")]
+position = Vector2(449, 372)
+
+[node name="dirty_laundry" parent="interactables" unique_id=356240898 instance=ExtResource("11_qf7xi")]
+position = Vector2(307, 271)
+
+[node name="toilet" parent="interactables" unique_id=1582044579 instance=ExtResource("11_qf7xi")]
+position = Vector2(-69, 802)
+
+[node name="shower" parent="interactables" unique_id=164719141 instance=ExtResource("11_qf7xi")]
+position = Vector2(-70, 492)
