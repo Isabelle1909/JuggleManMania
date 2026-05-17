@@ -35,6 +35,7 @@ func go_balcony():
 
 func leave_balcony():
 	player.global_position = SystemManager.house_position
+	
 
 
 func _handle_answer(ans: bool):

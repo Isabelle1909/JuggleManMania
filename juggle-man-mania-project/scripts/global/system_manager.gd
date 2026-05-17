@@ -11,13 +11,14 @@ var last_bonus_1
 var just_juggling = false
 
 var house_level = load("res://scenes/house_level/house.tscn")
-var balcony_level = preload("res://scenes/balcony_scene/balcony_scene.tscn")
 var juggle_level = load("res://scenes/juggling_level/juggling_scene.tscn")
+var tutorial_level = load("res://scenes/juggling_level/tutorial/tutorial_scene.tscn")
 var results_scr = load("res://scenes/ui_scenes/ResultsScreenUI.tscn")
 var help_scr = load("res://scenes/ui_scenes/HelpScreen.tscn")
 var save_scr = load("res://scenes/ui_scenes/SaveMenu.tscn")
 
 var house_position
+var balc_position
 var in_costume = false
 
 var go_balc = false
@@ -49,7 +50,9 @@ func open_juggling(pos):
 	get_tree().change_scene_to_packed(juggle_level)
 	just_juggling = true
 
-
+func open_tutorial(pos):
+	balc_position = pos
+	get_tree().change_scene_to_packed(tutorial_level)
 
 func open_house(juggle_score,items_left):
 	#increment_time()

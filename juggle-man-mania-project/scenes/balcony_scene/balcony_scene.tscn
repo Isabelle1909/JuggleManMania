@@ -45,5 +45,6 @@ tile_set = ExtResource("1_6g3yx")
 
 [node name="practice_box" parent="." unique_id=1406826812 instance=ExtResource("4_gigyt")]
 position = Vector2(212, 349)
+title = "practice_box"
 
 [editable path="practice_box"]

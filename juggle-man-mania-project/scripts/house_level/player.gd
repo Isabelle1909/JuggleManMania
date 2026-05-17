@@ -93,7 +93,10 @@ func interaction_manager():
 				TextManager.question_text("do you want to go to bed")
 				disabled = true
 				waiting_answer_bed = true
-		
+			else:
+				TextManager.display_text(item_near)
+		elif item_near.contains("practice_box"):
+			SystemManager.open_juggling(position)
 		#doors
 		elif item_near.contains("front_door"):
 			if SystemManager.time.contains("morning") && SystemManager.in_costume == true:

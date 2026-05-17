@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var right_text = $right_feedback
 
 var disabled = false
+var move_only_disabled = false
 
 var character_direction : Vector2
 var done = true
@@ -78,6 +79,7 @@ func check_zone(zone,dir,title):
 
 #left/right movement and button hit controls
 func movement_and_sprites():
+	
 	character_direction.x = Input.get_axis("move_left", "move_right")
 	
 	if Input.is_action_just_pressed("interact"):
@@ -87,6 +89,8 @@ func movement_and_sprites():
 		%sprite.animation = "hit_right"
 		done = false
 	if done:
+		if move_only_disabled:
+			return
 		if character_direction :
 			velocity = character_direction * movement_speed
 			if %sprite.animation != "Walking": %sprite.animation = "Walking"
