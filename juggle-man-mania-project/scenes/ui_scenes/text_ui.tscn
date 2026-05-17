@@ -9,6 +9,7 @@
 [node name="text_ui" type="CanvasLayer" unique_id=1281821818]
 
 [node name="text_box" parent="." unique_id=1675855857 instance=ExtResource("1_h858l")]
+visible = false
 offset_left = -3.0
 offset_top = 390.0
 offset_right = -3.0
