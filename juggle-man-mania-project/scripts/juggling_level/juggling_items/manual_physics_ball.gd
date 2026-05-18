@@ -8,6 +8,7 @@ var acceleration
 var dis_x
 var dis_y
 var maxV = 2500
+var disabled = false
 
 var VXE = 150
 var VXP = 100
@@ -27,6 +28,8 @@ func remove_x_velocity():
 	VXL = 0
 
 func _physics_process(delta: float) -> void:
+	if disabled:
+		return
 	add_gravity(delta)
 
 
@@ -59,7 +62,7 @@ func add_impulse(dir,title):
 		velocity.y = -700
 		if dir.contains("left"):
 			velocity.x = VXL
-			TextManager.show_juggling_feedback("late","leftt")
+			TextManager.show_juggling_feedback("late","left")
 		elif dir.contains("right"):
 			velocity.x = -VXL
 			TextManager.show_juggling_feedback("late","right")
