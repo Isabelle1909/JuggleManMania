@@ -75,7 +75,7 @@ vertical_alignment = 1
 [node name="juggling_items" type="Node2D" parent="." unique_id=1382858004]
 
 [node name="manual_physics_ball" parent="juggling_items" unique_id=728813730 instance=ExtResource("5_miqb6")]
-position = Vector2(599, 211)
+position = Vector2(521, 420)
 
 [connection signal="body_entered" from="Boundaries/dampener" to="." method="_on_dampener_body_entered"]
 [connection signal="body_exited" from="Boundaries/dampener" to="." method="_on_dampener_body_exited"]

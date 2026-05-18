@@ -63,19 +63,19 @@ height = 176.0
 size = Vector2(124, 26.40625)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fjldn"]
-size = Vector2(123.1875, 25)
+size = Vector2(123.1875, 20.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tfhsj"]
-size = Vector2(132, 26.96875)
+size = Vector2(132, 33.484375)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xo2qw"]
 size = Vector2(131.6875, 29.875)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rcc3c"]
-size = Vector2(124, 23.5)
+size = Vector2(124, 20.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5mi46"]
-size = Vector2(127.421875, 29)
+size = Vector2(127.421875, 31)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_310rx"]
 size = Vector2(39.59375, 4)
@@ -104,7 +104,7 @@ collision_layer = 96
 collision_mask = 96
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/early_left" unique_id=1270791091]
-position = Vector2(-42, -95)
+position = Vector2(-46, -84)
 shape = SubResource("RectangleShape2D_22j5a")
 
 [node name="perfect_left" type="Area2D" parent="hit_areas" unique_id=647849357]
@@ -112,7 +112,7 @@ collision_layer = 96
 collision_mask = 96
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/perfect_left" unique_id=1116100008]
-position = Vector2(-42.59375, -55)
+position = Vector2(-43, -55.25)
 shape = SubResource("RectangleShape2D_fjldn")
 
 [node name="late_left" type="Area2D" parent="hit_areas" unique_id=1929758645]
@@ -120,7 +120,7 @@ collision_layer = 96
 collision_mask = 96
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/late_left" unique_id=1840191518]
-position = Vector2(-38, -12)
+position = Vector2(-38, -6.2578125)
 shape = SubResource("RectangleShape2D_tfhsj")
 
 [node name="early_right" type="Area2D" parent="hit_areas" unique_id=164673866]
@@ -128,7 +128,7 @@ collision_layer = 96
 collision_mask = 96
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/early_right" unique_id=839524202]
-position = Vector2(50.84375, -92)
+position = Vector2(57, -83)
 shape = SubResource("RectangleShape2D_xo2qw")
 
 [node name="perfect_right" type="Area2D" parent="hit_areas" unique_id=1454771069]
@@ -136,7 +136,7 @@ collision_layer = 96
 collision_mask = 96
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/perfect_right" unique_id=1638707171]
-position = Vector2(55, -54)
+position = Vector2(55, -50.375)
 shape = SubResource("RectangleShape2D_rcc3c")
 
 [node name="late_right" type="Area2D" parent="hit_areas" unique_id=1637234712]
@@ -144,7 +144,7 @@ collision_layer = 96
 collision_mask = 96
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/late_right" unique_id=1256911201]
-position = Vector2(53.710938, -11.5)
+position = Vector2(53.710938, -7.5)
 shape = SubResource("RectangleShape2D_5mi46")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="hit_areas" unique_id=442497802]
@@ -153,7 +153,7 @@ collision_mask = 64
 physics_material_override = ExtResource("3_fjldn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/StaticBody2D" unique_id=1480277747]
-position = Vector2(-62, -11)
+position = Vector2(-62, -6)
 shape = SubResource("RectangleShape2D_310rx")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="hit_areas" unique_id=1106023771]
@@ -162,7 +162,7 @@ collision_mask = 64
 physics_material_override = ExtResource("3_fjldn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/StaticBody2D2" unique_id=749672484]
-position = Vector2(62, -10)
+position = Vector2(62, -8)
 shape = SubResource("RectangleShape2D_310rx")
 
 [node name="left_feedback" type="RichTextLabel" parent="." unique_id=1308238523]

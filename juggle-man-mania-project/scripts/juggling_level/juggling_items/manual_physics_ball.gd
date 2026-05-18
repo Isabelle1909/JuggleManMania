@@ -42,7 +42,7 @@ func add_impulse(dir,title):
 	
 	if title.contains("early"):
 		last_accuracy = "early"
-		velocity.y = -1100
+		velocity.y = -700
 		if dir.contains("left"):
 			velocity.x = VXE
 			TextManager.show_juggling_feedback("early","left")
