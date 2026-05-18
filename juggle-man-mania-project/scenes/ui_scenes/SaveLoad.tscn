@@ -1,7 +1,32 @@
 [gd_scene format=3 uid="uid://bb85ng78smubc"]
 
-[ext_resource type="Script" uid="uid://inrmngjtoj23" path="res://scripts/UI/line_edit.gd" id="2_p6khk"]
-[ext_resource type="Script" uid="uid://blpllskdcq4mc" path="res://scripts/UI/spin_box.gd" id="3_ah7yp"]
+[sub_resource type="GDScript" id="GDScript_sa421"]
+script/source = "extends LineEdit
+
+func saveObject() -> Dictionary:
+	var dict := {
+		\"filepath\": get_path(),
+		\"savedText\" : text 
+	}
+	return dict 
+
+func loadObject(loadedDict: Dictionary) -> void:
+	text = loadedDict.savedText
+"
+
+[sub_resource type="GDScript" id="GDScript_pf3wb"]
+script/source = "extends SpinBox
+
+func saveObject() -> Dictionary:
+	var dict := {
+		\"filepath\": get_path(),
+		\"savedInt\": var_to_str(value)
+	}
+	return dict 
+
+func loadObject(loadedDict: Dictionary) -> void:
+	value = str_to_var(loadedDict.savedInt)
+"
 
 [node name="SaveLoad" type="Control" unique_id=1488243692]
 layout_mode = 3
@@ -16,14 +41,14 @@ layout_mode = 0
 offset_right = 230.0
 offset_bottom = 36.0
 placeholder_text = "Text to Save"
-script = ExtResource("2_p6khk")
+script = SubResource("GDScript_sa421")
 
 [node name="SpinBox" type="SpinBox" parent="." unique_id=2003233050 groups=["SaveLoad"]]
 layout_mode = 0
 offset_left = 262.0
 offset_right = 348.5
 offset_bottom = 36.0
-script = ExtResource("3_ah7yp")
+script = SubResource("GDScript_pf3wb")
 
 [node name="Save" type="Button" parent="." unique_id=2105133400]
 layout_mode = 0

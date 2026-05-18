@@ -58,14 +58,14 @@ func check(E,P,L,dir):
 	check_zone(L,dir,"late")
 
 func remove_dupes(E,P,L):
-	for i in range(E.size()):
-		if P.has(E[i]):
-			P.erase(E[i])
-		if L.has(E[i]):
-			L.erase(E[i])
 	for i in range(P.size()):
+		if E.has(P[i]):
+			E.erase(P[i])
 		if L.has(P[i]):
 			L.erase(P[i])
+	for i in range(E.size()):
+		if L.has(E[i]):
+			L.erase(E[i])
 
 func check_zone(zone,dir,title):
 	
