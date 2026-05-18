@@ -83,7 +83,7 @@ func NMball1():
 		print("la: ", ball_1.get_last_accuracy())
 		last_done.append(ball_1.get_last_accuracy())
 		if last_done.size() > last_done_max:
-			last_done.remove[0]
+			last_done.remove_at(0)
 		if check_last():
 			print("yippee")
 
