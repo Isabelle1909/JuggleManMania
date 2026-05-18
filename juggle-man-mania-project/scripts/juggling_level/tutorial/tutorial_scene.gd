@@ -19,8 +19,12 @@ var left_hand = true
 var stretch = 0
 var stretch_max = 5
 
+var last_done = []
+var last_done_max = 3
+
 var ball_1 = ball.instantiate()
 var ball_2 = ball.instantiate()
+
 
 func _ready() -> void:
 	#text_ui.get_node("help_menu").visible = false
@@ -30,10 +34,12 @@ func _ready() -> void:
 	
 	left_feedback.text = "J"
 	right_feedback.text = "L"
+
 	
 	j_player.move_only_disabled = true
 	
 	ball_1.remove_x_velocity()
+	
 	
 
 
@@ -66,12 +72,26 @@ func hands():
 			left_feedback.visible = true
 			stretch += 1
 	if stretch > stretch_max:
+		TextManager.jfl = left_feedback
+		TextManager.jfr = right_feedback
 		section = PROGRESS.EXPLANATION
 		
 
 
 func NMball1():
-	pass
+	if Input.is_action_just_pressed("interact"):
+		print("la: ", ball_1.get_last_accuracy())
+		last_done.append(ball_1.get_last_accuracy())
+		if last_done.size() > last_done_max:
+			last_done.remove_at(0)
+		if check_last():
+			print("yippee")
+
+func check_last() -> bool:
+	if last_done.size() == 3:
+		if last_done[0] == last_done[1] && last_done[1 ] == last_done[2]:
+			return true
+	return false
 
 
 func explanation():
