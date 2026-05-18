@@ -27,7 +27,6 @@ func _ready() -> void:
 	TextManager.hm = help_menu
 	TextManager.rs = result_scr
 	TextManager.ynb = y_n_box
-	
 
 func go_balcony():
 	SystemManager.house_position = player.position
@@ -35,8 +34,6 @@ func go_balcony():
 
 func leave_balcony():
 	player.global_position = SystemManager.house_position
-	
-
 
 func _handle_answer(ans: bool):
 	if !ans:
@@ -54,7 +51,6 @@ func _handle_answer(ans: bool):
 		on_entered_done = false
 		SystemManager.open_juggling(player.position)
 
-
 func on_entered():
 	if SystemManager.house_position != null:
 		text_box.visible = false
@@ -69,7 +65,6 @@ func on_entered():
 	
 	player.true_disabled = false
 	camera.enabled = true
-
 
 func results_screen(score,bonus_1):
 	result_scr.visible = true

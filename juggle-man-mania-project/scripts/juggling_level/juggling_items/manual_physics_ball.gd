@@ -14,6 +14,8 @@ var VXE = 150
 var VXP = 100
 var VXL = 50
 
+var last_accuracy = "none"
+
 func _ready() -> void:
 	velocity = Vector2(0,-100)
 
@@ -32,7 +34,8 @@ func _physics_process(delta: float) -> void:
 		return
 	add_gravity(delta)
 
-
+func get_last_accuracy() -> String:
+	return last_accuracy
 
 func add_impulse(dir,title):
 	print(title)
@@ -41,7 +44,8 @@ func add_impulse(dir,title):
 		velocity.y = 0
 	
 	if title.contains("early"):
-		velocity.y = -1100
+		last_accuracy = "early"
+		velocity.y = -700
 		if dir.contains("left"):
 			velocity.x = VXE
 			TextManager.show_juggling_feedback("early","left")
@@ -50,6 +54,7 @@ func add_impulse(dir,title):
 			TextManager.show_juggling_feedback("early","right")
 		
 	elif title.contains("perfect"):
+		last_accuracy = "perfect"
 		velocity.y = -1000
 		if dir.contains("left"):
 			velocity.x = VXP
@@ -59,6 +64,7 @@ func add_impulse(dir,title):
 			TextManager.show_juggling_feedback("perfect","right")
 		
 	elif title.contains("late"):
+		last_accuracy = "late"
 		velocity.y = -700
 		if dir.contains("left"):
 			velocity.x = VXL
@@ -66,7 +72,8 @@ func add_impulse(dir,title):
 		elif dir.contains("right"):
 			velocity.x = -VXL
 			TextManager.show_juggling_feedback("late","right")
-	
+	else:
+		last_accuracy = "none"
 	
 	if abs(velocity.y) > abs(maxV):
 		velocity.y = (velocity.y/velocity.y) * maxV
