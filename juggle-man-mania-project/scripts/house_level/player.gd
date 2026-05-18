@@ -12,6 +12,8 @@ var facing_ray
 var item_near = "none"
 var object_near
 
+var speed = 160
+
 var disabled = false
 var true_disabled = false
 var waiting_answer_door = false
@@ -32,40 +34,38 @@ func _physics_process(delta: float) -> void:
 	if true_disabled:
 		return
 	if !disabled :
-		if !sprite_node_pos_tween or !sprite_node_pos_tween.is_running():
+		dir = Vector2(0,0)
+		ani = "idle_"
+		if Input.is_action_pressed("ui_up"):
+			facing_ray = $up
+			dir.y += -1
+			ani = "walk_"
+		if Input.is_action_pressed("ui_down"):
+			facing_ray = $down
+			dir.y += 1
+			ani = "walk_"
+		if Input.is_action_pressed("ui_left"):
+			facing_ray = $left
+			dir.x += -1
+			ani = "walk_"
+		if Input.is_action_pressed("ui_right"):
+			facing_ray = $right
+			dir.x += 1
+			ani = "walk_"
+			#if footstep_player.playing:
+				#footstep_player.stop()
 			
-			if Input.is_action_pressed("ui_up"):
-				facing_ray = $up
-				dir = Vector2(0,-1)
-				ani = "walk_"
-			elif Input.is_action_pressed("ui_down"):
-				facing_ray = $down
-				dir = Vector2(0,1)
-				ani = "walk_"
-			elif Input.is_action_pressed("ui_left"):
-				facing_ray = $left
-				dir = Vector2(-1,0)
-				ani = "walk_"
-			elif Input.is_action_pressed("ui_right"):
-				facing_ray = $right
-				dir = Vector2(1,0)
-				ani = "walk_"
-			else:
-				dir = Vector2(0,0)
-				ani = "idle_"
-				if footstep_player.playing:
-					footstep_player.stop()
-			
-			if facing_ray != null && dir != null:
-				animation_manager()
-				if dir != Vector2.ZERO:
-					if !facing_ray.is_colliding():
-							_move(dir)
-							item_near = "none"
+		if facing_ray != null && dir != null:
+			animation_manager()
+			if dir != Vector2.ZERO:
+				if !facing_ray.is_colliding():
+					dir.normalized()
+					_move(dir)
+					item_near = "none"
 							
-					else:
-						item_near = facing_ray.get_collider().name
-						object_near = facing_ray.get_collider()
+				else:
+					item_near = facing_ray.get_collider().name
+					object_near = facing_ray.get_collider()
 					
 		
 	interaction_manager()
@@ -167,20 +167,7 @@ func _move(dir: Vector2):
 				footstep_player.stop()
 		)
 	
-	global_position += dir * tile_size
-	animated_sprite.global_position -= dir * tile_size
-	camera.global_position -= dir  *tile_size
+	velocity = speed * dir
+	move_and_slide()
 	
-	if sprite_node_pos_tween:
-		sprite_node_pos_tween.kill()
-	sprite_node_pos_tween = create_tween()
-	sprite_node_pos_tween.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
-	sprite_node_pos_tween.tween_property(animated_sprite, "global_position", global_position, 0.285).set_trans(Tween.TRANS_LINEAR)
-	
-	#tween camera
-	if camera_node_pos_tween:
-		camera_node_pos_tween.kill()
-	camera_node_pos_tween = create_tween()
-	camera_node_pos_tween.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
-	camera_node_pos_tween.tween_property(camera, "global_position", global_position, 0.285).set_trans(Tween.TRANS_LINEAR)
 	
