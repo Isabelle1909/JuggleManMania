@@ -14,6 +14,6 @@ scale = Vector2(8.9765625, 5.046875)
 texture = ExtResource("2_tbeqj")
 
 [node name="juggling_player" parent="." unique_id=1964283372 instance=ExtResource("3_k7w8g")]
-position = Vector2(565, 526)
+position = Vector2(506, 527)
 
 [node name="text_ui" parent="." unique_id=1281821818 instance=ExtResource("4_ki3mu")]
