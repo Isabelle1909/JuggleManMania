@@ -52,8 +52,10 @@ func _physics_process(delta: float) -> void:
 			facing_ray = $right
 			dir.x += 1
 			ani = "walk_"
-			#if footstep_player.playing:
-				#footstep_player.stop()
+			
+		if dir == Vector2(0,0):
+			if footstep_player.playing:
+				footstep_player.stop()
 			
 		if facing_ray != null && dir != null:
 			animation_manager()
