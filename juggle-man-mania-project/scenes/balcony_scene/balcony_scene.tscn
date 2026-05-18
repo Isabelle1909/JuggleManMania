@@ -4,6 +4,10 @@
 [ext_resource type="Script" uid="uid://c2521k6budvog" path="res://scripts/house_level/Interactable.gd" id="2_cissh"]
 [ext_resource type="Texture2D" uid="uid://dggo61m3s3re8" path="res://assets/placeholder_assets/door_placeholder.jpg" id="3_gnjbx"]
 [ext_resource type="PackedScene" uid="uid://i5ot6tbllc4l" path="res://scenes/house_level/interactable.tscn" id="4_gigyt"]
+[ext_resource type="Texture2D" uid="uid://xvkhenon15uf" path="res://assets/placeholder_assets/potted_plant.placeholder.jpg" id="5_1t0w1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cissh"]
+size = Vector2(48, 62)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_82lpl"]
 size = Vector2(132, 157)
@@ -46,5 +50,16 @@ tile_set = ExtResource("1_6g3yx")
 [node name="practice_box" parent="." unique_id=1406826812 instance=ExtResource("4_gigyt")]
 position = Vector2(212, 349)
 title = "practice_box"
+
+[node name="potted_plant" type="StaticBody2D" parent="." unique_id=1222164701]
+
+[node name="Sprite2D" type="Sprite2D" parent="potted_plant" unique_id=1455004666]
+position = Vector2(929, 293)
+scale = Vector2(0.22959183, 0.24319066)
+texture = ExtResource("5_1t0w1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="potted_plant" unique_id=818668329]
+position = Vector2(930, 294)
+shape = SubResource("RectangleShape2D_cissh")
 
 [editable path="practice_box"]
