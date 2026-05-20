@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bv5ow5ifgrgp0" path="res://scripts/juggling_level/juggling_playerMovement.gd" id="1_22j5a"]
 [ext_resource type="Texture2D" uid="uid://6orbrko1v3fr" path="res://assets/placeholder_assets/test jugglespr.png" id="2_22j5a"]
 [ext_resource type="PhysicsMaterial" uid="uid://c2to4k8odqbfh" path="res://physics_materials/hands.tres" id="3_fjldn"]
+[ext_resource type="AudioStream" uid="uid://coxj8epkfhm7e" path="res://assets/sound effect/The sound of swinging in the air.mp3" id="4_do3xs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fjldn"]
 atlas = ExtResource("2_22j5a")
@@ -178,6 +179,10 @@ offset_top = -91.0
 offset_right = 150.0
 offset_bottom = -51.0
 text = "Perfect!"
+
+[node name="SwingSound" type="AudioStreamPlayer" parent="." unique_id=923181932]
+stream = ExtResource("4_do3xs")
+volume_db = -8.104
 
 [connection signal="animation_finished" from="sprite" to="." method="_on_sprite_animation_finished"]
 [connection signal="body_entered" from="hit_areas/early_left" to="." method="_on_early_left_body_entered"]

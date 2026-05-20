@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://c2521k6budvog" path="res://scripts/house_level/Interactable.gd" id="4_ivbvj"]
 [ext_resource type="Texture2D" uid="uid://bx8ygf12272nu" path="res://assets/placeholder_assets/mirror.placeholder.jpg" id="5_us8f6"]
 [ext_resource type="Texture2D" uid="uid://b6322dcbuktw5" path="res://assets/placeholder_assets/bed_placeholder.jpg" id="6_w2wtq"]
+[ext_resource type="AudioStream" uid="uid://dafw5b5j58lcy" path="res://assets/sound effect/freesound_community-zipper-43841.mp3" id="7_o1dlu"]
 [ext_resource type="Texture2D" uid="uid://daxl1na6kmgje" path="res://assets/placeholder_assets/wardrobe_placeholder.jpg" id="7_uw60d"]
 [ext_resource type="Texture2D" uid="uid://b44su0sj6tt0c" path="res://assets/placeholder_assets/OIP-2236234873.jpg" id="8_eew2d"]
 [ext_resource type="AudioStream" uid="uid://b5dh0tuaupvkm" path="res://assets/sound effect/opening-door-411632.mp3" id="9_qf7xi"]
@@ -140,6 +141,10 @@ texture = ExtResource("7_uw60d")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="key_interactables/wardrobe" unique_id=1801611570]
 position = Vector2(-2.4390259, 10.04879)
 shape = SubResource("RectangleShape2D_0fn05")
+
+[node name="WardrobeSound" type="AudioStreamPlayer" parent="key_interactables/wardrobe" unique_id=1701084937]
+stream = ExtResource("7_o1dlu")
+volume_db = -8.667
 
 [node name="computer" type="StaticBody2D" parent="key_interactables" unique_id=662879841]
 y_sort_enabled = true
