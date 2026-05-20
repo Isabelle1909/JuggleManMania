@@ -14,6 +14,7 @@ var VXE = 150
 var VXP = 100
 var VXL = 50
 
+@onready var catch_sound = $CatchSound
 var last_accuracy = "none"
 
 func _ready() -> void:
@@ -39,6 +40,14 @@ func get_last_accuracy() -> String:
 
 func add_impulse(dir,title):
 	print(title)
+	
+	if catch_sound:
+		catch_sound.play(2.0)
+
+		get_tree().create_timer(0.3).timeout.connect(func():
+			if catch_sound:
+				catch_sound.stop()
+		)
 	
 	if velocity.y >= gravity.y/mass:
 		velocity.y = 0

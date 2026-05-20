@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var movement_speed : float = 500
 
+@onready var swing_sound = $SwingSound
 @onready var left_text = $left_feedback
 @onready var right_text = $right_feedback
 
@@ -83,9 +84,13 @@ func movement_and_sprites():
 	character_direction.x = Input.get_axis("move_left", "move_right")
 	
 	if Input.is_action_just_pressed("interact"):
+		if swing_sound:
+			swing_sound.play()
 		%sprite.animation = "hit_left"
 		done = false
 	if Input.is_action_just_pressed("back"):
+		if swing_sound:
+			swing_sound.play()
 		%sprite.animation = "hit_right"
 		done = false
 	if done:

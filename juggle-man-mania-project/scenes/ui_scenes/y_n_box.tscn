@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cuqn5ygrelpfh"]
 
 [ext_resource type="Script" uid="uid://dbur23y8cp2qt" path="res://scripts/UI/y_n_box.gd" id="1_bhp72"]
+[ext_resource type="AudioStream" uid="uid://dtku2eihhr2f3" path="res://assets/sound effect/UIsounds for click.mp3" id="2_82jgt"]
 
 [node name="y_n_box" type="Control" unique_id=1882826195]
 layout_mode = 3
@@ -33,6 +34,9 @@ offset_top = 119.0
 offset_right = 149.0
 offset_bottom = 182.0
 text = "NO"
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="Panel" unique_id=1692362018]
+stream = ExtResource("2_82jgt")
 
 [connection signal="pressed" from="Panel/yes_button" to="." method="_on_yes_button_pressed"]
 [connection signal="pressed" from="Panel/no_button" to="." method="_on_no_button_pressed"]
