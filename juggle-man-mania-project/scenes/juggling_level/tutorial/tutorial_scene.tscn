@@ -52,4 +52,17 @@ collision_mask = 112
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boundaries/world_boundary_right" unique_id=308497253]
 shape = SubResource("WorldBoundaryShape2D_evhq8")
 
+[node name="Panel" type="Panel" parent="." unique_id=628540149]
+offset_right = 265.0
+offset_bottom = 91.0
+
+[node name="Label" type="Label" parent="Panel" unique_id=609886167]
+layout_mode = 0
+offset_right = 266.0
+offset_bottom = 87.0
+theme_override_font_sizes/font_size = 35
+text = "Press i to quit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="body_entered" from="boundaries/ball_drop_detect" to="." method="_on_ball_drop_detect_body_entered"]

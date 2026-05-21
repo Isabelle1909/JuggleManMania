@@ -45,6 +45,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("interact"):
 		remove_dupes(early_left_zone,perfect_left_zone,late_left_zone)
 		check(early_left_zone,perfect_left_zone,late_left_zone,"left")
+		
 		print(score)
 	if Input.is_action_just_pressed("back"):
 		remove_dupes(early_right_zone,perfect_right_zone,late_right_zone)
@@ -76,7 +77,7 @@ func check_zone(zone,dir,title):
 		
 		for i in range(zone.size()):
 			zone[i].add_impulse(dir,title)
-			score += 10
+			score += zone[i].get_points()
 
 
 

@@ -12,11 +12,15 @@ extends Node2D
 @onready var adjustment = get_viewport_rect().size/2
 
 var on_entered_done
-
+var on_new = true
 
 func _ready() -> void:
 	y_n_box.answered.connect(_handle_answer)
-	text_box.visible = true
+	if on_new:
+		text_box.visible = true
+		help_menu.visible = true
+		on_new = false
+	
 	if !on_entered_done:
 		on_entered()
 		on_entered_done = true

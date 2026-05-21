@@ -42,8 +42,18 @@ func remove_x_velocity():
 	VXL = 0
 
 func _physics_process(delta: float) -> void:
+	
 	add_gravity(delta)
 
+func get_points() -> int:
+	if last_accuracy.contains("early"):
+		return 5
+	elif last_accuracy.contains("perfect"):
+		return 10
+	elif last_accuracy.contains("late"):
+		return 5
+	else:
+		return 0
 
 func get_last_accuracy() -> String:
 	return last_accuracy
