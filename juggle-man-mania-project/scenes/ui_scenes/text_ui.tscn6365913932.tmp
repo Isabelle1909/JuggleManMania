@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://effsrxenqkmr"]
 
 [ext_resource type="PackedScene" uid="uid://dnvo7ick37jdw" path="res://scenes/ui_scenes/UI.tscn" id="1_h858l"]
+[ext_resource type="Script" uid="uid://bnpecggehbyuf" path="res://scenes/ui_scenes/ui.gd" id="2_lxpq1"]
 [ext_resource type="PackedScene" uid="uid://dkp2lcwdqvm8v" path="res://scenes/ui_scenes/HelpScreen.tscn" id="2_vbm1y"]
 [ext_resource type="PackedScene" uid="uid://gihcivwsnrx7" path="res://scenes/ui_scenes/ResultsScreenUI.tscn" id="3_vnrby"]
 [ext_resource type="PackedScene" uid="uid://dcrix2nxbwg1r" path="res://scenes/ui_scenes/SaveMenu.tscn" id="4_tww4t"]
@@ -8,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bx00wbwl3byes" path="res://timer_display.tscn" id="6_l2pa0"]
 
 [node name="text_ui" type="CanvasLayer" unique_id=1281821818]
+script = ExtResource("2_lxpq1")
 
 [node name="text_box" parent="." unique_id=1675855857 instance=ExtResource("1_h858l")]
 visible = false
@@ -17,6 +19,7 @@ offset_right = -3.0
 offset_bottom = 390.0
 size_flags_horizontal = 8
 size_flags_vertical = 8
+script = ExtResource("2_lxpq1")
 metadata/_edit_use_anchors_ = true
 
 [node name="help_menu" parent="." unique_id=645237815 instance=ExtResource("2_vbm1y")]
@@ -39,17 +42,15 @@ offset_right = 891.0
 offset_bottom = 8.0
 
 [node name="Button" type="Button" parent="." unique_id=195330630]
-visible = false
-offset_left = 1025.0
-offset_top = 4.0
-offset_right = 1158.0
-offset_bottom = 74.0
+offset_left = 1014.0
+offset_top = 5.0
+offset_right = 1147.0
+offset_bottom = 75.0
 theme_override_font_sizes/font_size = 26
-text = "MENU
+text = "HELP
 "
 
 [node name="Label" type="Label" parent="Button" unique_id=1240332398]
-visible = false
 layout_mode = 0
 offset_left = 10.0
 offset_top = 55.0
@@ -58,3 +59,5 @@ offset_bottom = 83.0
 theme_override_font_sizes/font_size = 10
 text = "Press \"i\""
 horizontal_alignment = 1
+
+[connection signal="pressed" from="Button" to="text_box" method="_on_button_pressed"]

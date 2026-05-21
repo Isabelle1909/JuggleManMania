@@ -16,7 +16,7 @@ var on_entered_done
 
 func _ready() -> void:
 	y_n_box.answered.connect(_handle_answer)
-	
+	text_box.visible = true
 	if !on_entered_done:
 		on_entered()
 		on_entered_done = true
