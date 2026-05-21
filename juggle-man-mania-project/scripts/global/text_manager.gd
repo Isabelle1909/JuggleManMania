@@ -22,8 +22,9 @@ var talked_to_nums = {
 var talked_cutscene_nums = {
 	"0": 2,
 	"1": 1,
-	"2": 1,
+	"2": 2,
 	"3": 1,
+	"4": 1,
 	"undress": 0,
 	"dress": 0,
 	"stay": 0,

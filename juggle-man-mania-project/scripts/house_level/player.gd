@@ -106,7 +106,7 @@ func interaction_manager():
 				disabled = true
 				TextManager.display_text(item_near)
 		elif item_near.contains("practice_box"):
-			SystemManager.open_juggling(position)
+			SystemManager.open_tutorial_menu(position)
 		#doors
 		elif item_near.contains("front_door"):
 			if SystemManager.time.contains("morning") && SystemManager.in_costume == true:

@@ -58,7 +58,7 @@ func on_entered():
 		if SystemManager.just_juggling == true:
 			results_screen(SystemManager.last_score,SystemManager.last_bonus_1)
 			SystemManager.just_juggling = false
-		player.position = SystemManager.house_position
+		player.position = SystemManager.current_position
 	else:
 		print("house_pos ", SystemManager.house_position)
 		SystemManager.house_position = player.position

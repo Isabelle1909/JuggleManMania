@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cr7fvmbm12rae" path="res://scripts/juggling_level/juggling_items/manual_physics_ball.gd" id="1_odxty"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bkchw"]
-size = Vector2(24, 22)
+size = Vector2(21, 20)
 
 [node name="manual_physics_ball" type="CharacterBody2D" unique_id=728813730 groups=["ball", "juggling_items"]]
 collision_layer = 96
@@ -17,4 +17,5 @@ scale = Vector2(0.049180333, 0.046189375)
 texture = ExtResource("1_bkchw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1389078110]
+position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_bkchw")

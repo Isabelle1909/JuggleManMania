@@ -5,6 +5,8 @@ extends CharacterBody2D
 @onready var left_text = $left_feedback
 @onready var right_text = $right_feedback
 
+var grabbed = []
+
 var disabled = false
 var move_only_disabled = false
 
@@ -37,6 +39,7 @@ func _ready() -> void:
 func _physics_process(delta):
 	if disabled:
 		return
+	grabbed_follow()
 	movement_and_sprites()
 	
 	if Input.is_action_just_pressed("interact"):
@@ -98,13 +101,19 @@ func movement_and_sprites():
 			velocity = velocity.move_toward(Vector2.ZERO, movement_speed)
 			if %sprite.animation != "Idle": %sprite.animation = "Idle"
 		
-	velocity = character_direction * movement_speed
-	move_and_slide()
+		velocity = character_direction * movement_speed
+		move_and_slide()
+	
 
-
-
+func grabbed_follow():
+	for i in grabbed.size():
+		var d = grabbed[i].dif
+		grabbed[i].position.x = position.x - d
+		
 
 #signals
+
+
 
 func _on_sprite_animation_finished() -> void:
 	done = true
@@ -172,3 +181,18 @@ func _on_late_right_body_exited(body: Node2D) -> void:
 	if body.is_in_group("juggling_items"):
 		if late_right_zone.has(body):
 			late_right_zone.erase(body)
+
+
+func _on_grab_left_body_entered(body: Node2D) -> void:
+	if body.is_in_group("juggling_items"):
+		var d = position.x - body.position.x
+		body.dif = d
+		body.velocity.x = 0
+		grabbed.append(body)
+		print("grab")
+
+func _on_grab_left_body_exited(body: Node2D) -> void:
+	if body.is_in_group("juggling_items"):
+		body.position.y -= 20
+		grabbed.erase(body)
+		print("yeet")

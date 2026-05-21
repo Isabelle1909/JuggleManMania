@@ -8,6 +8,7 @@ var active_juggling_items = []
 var score = 0
 var timer = 10
 var finish = false
+var infinite = false
 
 func _ready() -> void:
 	TextManager.jfl = player.get_node("left_feedback")
@@ -19,13 +20,14 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	if timer > 0 && active_juggling_items.size() > 0:
-		timer -= delta
-	else:
-		SystemManager.increment_time()
-		SystemManager.open_house(score,active_juggling_items.size())
-		finish = true
-		print("TIMEOUT")
+	if !infinite:
+		if timer > 0 && active_juggling_items.size() > 0:
+			timer -= delta
+		else:
+			SystemManager.increment_time()
+			SystemManager.open_house(score,active_juggling_items.size(),"house")
+			finish = true
+			print("TIMEOUT")
 	
 	if score != player.score:
 		score = player.score

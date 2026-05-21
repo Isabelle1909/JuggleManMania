@@ -237,7 +237,7 @@ func _preload() -> void:
 
 
 func _close() -> void:
-	SystemManager.open_house(0, 0)
+	SystemManager.open_house(0, 0,"house")
 
 
 func _delete() -> void:

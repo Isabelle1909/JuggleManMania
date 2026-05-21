@@ -9,11 +9,18 @@ var dis_x
 var dis_y
 var maxV = 2500
 
-var VXE = 150
+var VXE = 250
 var VXP = 100
 var VXL = 50
 
+var VYE = 750
+var VYP = 1000
+var VYL = 700
+
 var last_accuracy = "none"
+
+var following = false
+var dif
 
 func _ready() -> void:
 	velocity = Vector2(0,-100)
@@ -23,6 +30,12 @@ func add_gravity(time):
 		velocity.y += gravity.y/mass
 	move_and_slide()
 
+func reduce_speed():
+	VYE = 750 * (4.0/7.0)
+	VYP = 1000 * (4.0/7.0)
+	VYL = 700 * (4.0/7.0)
+	gravity = Vector2(0,4)
+
 func remove_x_velocity():
 	VXE = 0
 	VXP = 0
@@ -30,6 +43,7 @@ func remove_x_velocity():
 
 func _physics_process(delta: float) -> void:
 	add_gravity(delta)
+
 
 func get_last_accuracy() -> String:
 	return last_accuracy
@@ -42,7 +56,7 @@ func add_impulse(dir,title):
 	
 	if title.contains("early"):
 		last_accuracy = "early"
-		velocity.y = -700
+		velocity.y = -VYE
 		if dir.contains("left"):
 			velocity.x = VXE
 			TextManager.show_juggling_feedback("early","left")
@@ -52,7 +66,7 @@ func add_impulse(dir,title):
 		
 	elif title.contains("perfect"):
 		last_accuracy = "perfect"
-		velocity.y = -1000
+		velocity.y = -VYP
 		if dir.contains("left"):
 			velocity.x = VXP
 			TextManager.show_juggling_feedback("perfect","left")
@@ -62,7 +76,7 @@ func add_impulse(dir,title):
 		
 	elif title.contains("late"):
 		last_accuracy = "late"
-		velocity.y = -700
+		velocity.y = -VYL
 		if dir.contains("left"):
 			velocity.x = VXL
 			TextManager.show_juggling_feedback("late","leftt")
