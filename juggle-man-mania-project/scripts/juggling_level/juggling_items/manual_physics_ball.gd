@@ -30,10 +30,10 @@ func add_gravity(time):
 		velocity.y += gravity.y/mass
 	move_and_slide()
 
-func reduce_speed():
-	VYE = 750 * (4.0/7.0)
-	VYP = 1000 * (4.0/7.0)
-	VYL = 700 * (4.0/7.0)
+func reduce_speed(num):
+	VYE = 750 * (num/7.0)
+	VYP = 1000 * (num/7.0)
+	VYL = 700 * (num/7.0)
 	gravity = Vector2(0,4)
 
 func remove_x_velocity():

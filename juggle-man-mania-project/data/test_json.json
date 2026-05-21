@@ -163,20 +163,23 @@
       "3": "Ahh.. that's better" 
     },
     "1": {
-      "1": "Now let's start by tossing a ball up and down",
+      "1": "Now let's start by gently tossing a light ball around",
       "2": "guess i'm a bit rusty",
-      "3": "There we go, got a good feel for the timing"
+      "3": "There we go, nice and warmed up"
     },
     "2": {
       "1": "alright time to get some more movement going",
-      "2": "Let's toss the ball around while moving around",
+      "2": "Let's toss this heavier ball a bit faster",
       "3": "oops",
       "4": "Alright, I still got it!"
     },
     "3": {
-      "1": "Now, it's time to step up the game, and get juggling for real",
+      "1": "Now, it's time to step up the game, and get juggling for real, I'll use the both balls now",
       "2": "I just need a little more warming up",
       "3": "They don't call me juggle man for nothing!"
+    },
+    "4": {
+      "1": "Phew all warmed up!"
     }
   },
   "prompt_text": {

@@ -42,7 +42,8 @@ func _ready() -> void:
 	#text_ui.get_node("help_menu").visible = false
 	text_box.position = Vector2(0,0)
 	TextManager.tb = text_box
-	TextManager.display_cutscene_text("tutorial",str(section),str(line),text_box)
+	TextManager.display_cutscene_text("tutorial",str("0"),str(line),text_box)
+	line += 1
 	
 	left_feedback.text = "J"
 	right_feedback.text = "L"
@@ -51,7 +52,7 @@ func _ready() -> void:
 	j_player.move_only_disabled = true
 	
 	ball_1.remove_x_velocity()
-	ball_4.reduce_speed()
+	ball_4.reduce_speed(4.0)
 	
 	ball_1.name = "ball_1"
 	ball_2.name = "ball_2"
@@ -137,7 +138,7 @@ func slow_ball(delta):
 	
 	if finished:
 		heard = false
-		between_text("2","4",true)
+		between_text("1","3",true)
 
 func Mball2(delta):
 	if !begun && (Input.is_action_just_pressed("back") || Input.is_action_just_pressed("interact")):
@@ -149,7 +150,7 @@ func Mball2(delta):
 	
 	if finished:
 		heard = false
-		between_text("3","3",true)
+		between_text("2","3",true)
 
 func timer_process(delta,max_time):
 	var display_num = 0
@@ -192,7 +193,8 @@ func explanation():
 				print(ex, " 1")
 				print("slowball")
 				section = PROGRESS.SLOWBALL
-				get_tree().root.add_child(ball_4)
+				if !get_tree().root.has_node("ball_4"):
+					get_tree().root.add_child(ball_4)
 				time_display.visible = true
 				j_player.move_only_disabled = false
 				j_player.position = Vector2(565,526)
@@ -231,15 +233,16 @@ func explanation():
 					get_tree().root.remove_child(ball_1)
 				if !get_tree().root.has_node("ball_2"):
 					get_tree().root.add_child(ball_2)
-				if !get_tree().root.has_node("ball_3"):
-					get_tree().root.add_child(ball_3)
+				if !get_tree().root.has_node("ball_4"):
+					get_tree().root.add_child(ball_4)
+				ball_4.reduce_speed(5.0)
 				time_display.visible = true
 				j_player.move_only_disabled = false
 				j_player.position = Vector2(565,526)
 				ball_2.velocity.x = 0
 				ball_2.position = Vector2(625,400)
-				ball_3.velocity.x = 0
-				ball_3.position = Vector2(500,400)
+				ball_4.velocity.x = 0
+				ball_4.position = Vector2(500,400)
 				timer = 0
 				begun = false
 				finished = false
@@ -250,7 +253,7 @@ func explanation():
 
 func reset_phase():
 	if section == PROGRESS.SLOWBALL:
-		between_text("1","3",false)
+		between_text("1","2",false)
 		heard = true
 	if section == PROGRESS.MBALL1:
 		between_text("2","3", false)
@@ -265,7 +268,8 @@ func _on_ball_drop_detect_body_entered(body: Node2D) -> void:
 		reset_phase()
 	if body.name.contains("ball_2") && section == PROGRESS.MBALL1: 
 		reset_phase()
-	if body.name.contains("ball_2") || body.name.contains("ball_3"):
+	if body.name.contains("ball_2") || body.name.contains("ball_4") && section == PROGRESS.MBALL2:
 		dropped.append(body)
 		if dropped.size() >= 2:
 			reset_phase()
+			
