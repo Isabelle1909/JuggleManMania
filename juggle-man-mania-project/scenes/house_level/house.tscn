@@ -29,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://ihrnpx07y8hp" path="res://assets/placeholder_assets/shower.placeholder.webp" id="24_g751u"]
 [ext_resource type="Texture2D" uid="uid://1eyeotvx55nq" path="res://assets/placeholder_assets/tv.placeholder.jpg" id="25_y182y"]
 [ext_resource type="Texture2D" uid="uid://d5p2qdljxhe" path="res://assets/placeholder_assets/oven.placeholder.webp" id="26_36doj"]
+[ext_resource type="PackedScene" uid="uid://coykm3xxm1ygg" path="res://scenes/balcony_scene/time of day.tscn" id="30_ydu31"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhgw4"]
 size = Vector2(113, 104)
@@ -324,3 +325,10 @@ texture = ExtResource("26_36doj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactables/oven" unique_id=949285163]
 position = Vector2(196, -336)
 shape = SubResource("RectangleShape2D_4u1od")
+
+[node name="Node2D" parent="." unique_id=1390977037 instance=ExtResource("30_ydu31")]
+position = Vector2(-605, -3094.0002)
+scale = Vector2(1.885, 1.885)
+
+[node name="Node2D2" parent="." unique_id=942535428 instance=ExtResource("30_ydu31")]
+position = Vector2(554, -2275)
