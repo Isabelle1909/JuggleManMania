@@ -27,4 +27,4 @@ func _on_infinite_mode_start_pressed() -> void:
 
 
 func _on_close_pressed() -> void:
-	SystemManager.open_house(0,0,"balcony")
+	SystemManager.open_house(0,0)

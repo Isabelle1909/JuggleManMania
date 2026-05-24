@@ -21,7 +21,9 @@ var save_scr = load("res://scenes/ui_scenes/SaveMenu.tscn")
 var house_position
 var balc_position
 var current_position
+var location = "house"
 var in_costume = false
+var tutorial_done = false
 
 var go_balc = false
 var leave_balc = false
@@ -29,13 +31,46 @@ var leave_balc = false
 var tutorial_max = 0
 var infinity_max = 0
 
+var default_talked_to_nums = {
+	"wardrobe": 0,
+	"mirror": 0,
+	"bed": 0,
+	"computer": 0,
+	"tutorial": 0
+}
+
+var default_talked_cutscene_nums = {
+	"-1": 2,
+	"0": 1,
+	"1": 1,
+	"2": 2,
+	"3": 1,
+	"4": 1,
+	"undress": 0,
+	"dress": 0,
+	"stay": 0,
+	"smoke": 0,
+	"dress_practice":0
+	
+}
+
+
+
 func calculate_mood():
 	#use total JP / potential JP to figure out mood
-	pass
+	var percent = total_jp / (day * 50.0)
+	if percent > 1:
+		mood = "good"
+	elif percent < 0.5:
+		mood = "bad"
+	else:
+		mood = "neutral"
 
 func increment_time():
 	#if the time is morning change it to evening, if its not morning make it morning
 	print(time," ",day)
+	TextManager.talked_to_nums.assign(default_talked_to_nums)
+	TextManager.talked_cutscene_nums.assign(default_talked_cutscene_nums)
 	if time.contains("morning"):
 		time = "evening"
 	else:
@@ -44,6 +79,7 @@ func increment_time():
 
 func increment_day():
 	day += 1
+
 
 func update_scores(to_add):
 	total_jp += to_add
@@ -58,8 +94,8 @@ func open_juggling(pos):
 func open_tutorial():
 	get_tree().change_scene_to_packed(tutorial_level)
 
-func open_house(juggle_score,items_left,where):
-	if where.contains("house"):
+func open_house(juggle_score,items_left):
+	if SystemManager.location.contains("house"):
 		current_position = house_position
 	else:
 		current_position = balc_position
@@ -76,6 +112,9 @@ func open_tutorial_menu(pos):
 
 
 func open_save_menu(pos) -> void:
-	house_position = pos
+	if SystemManager.location.contains("balc"):
+		balc_position = pos
+	else:
+		house_position = pos
 	get_tree().change_scene_to_packed(save_scr)
-	print("house pos ", house_position)
+	

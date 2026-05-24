@@ -20,7 +20,8 @@ var talked_to_nums = {
 }
 
 var talked_cutscene_nums = {
-	"0": 2,
+	"-1": 2,
+	"0": 1,
 	"1": 1,
 	"2": 2,
 	"3": 1,
@@ -28,7 +29,8 @@ var talked_cutscene_nums = {
 	"undress": 0,
 	"dress": 0,
 	"stay": 0,
-	"smoke": 0
+	"smoke": 0,
+	"dress_practice":0
 	
 }
 
@@ -122,7 +124,7 @@ func close_question():
 		box.visible = false
 		ynb.visible = false
 
-func close_text(ob_name, bx):
+func close_text(bx):
 		print("close_text")
 		if bx == null:
 			bx = tb

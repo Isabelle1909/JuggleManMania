@@ -35,9 +35,11 @@ func _ready() -> void:
 func go_balcony():
 	SystemManager.house_position = player.position
 	player.global_position = Vector2(550,-2000)
+	SystemManager.location = "balc"
 
 func leave_balcony():
 	player.global_position = SystemManager.house_position
+	SystemManager.location = "house"
 
 func _handle_answer(ans: bool):
 	if !ans:
@@ -80,9 +82,12 @@ func results_screen(score,bonus_1):
 func _physics_process(delta: float) -> void:
 	if SystemManager.go_balc:
 		go_balcony()
+		
 		SystemManager.go_balc = false
 	elif SystemManager.leave_balc:
 		leave_balcony()
+		
 		SystemManager.leave_balc = false
 	if Input.is_action_just_pressed("ui_open_menu"):
+		print(SystemManager.location)
 		SystemManager.open_save_menu(player.position)

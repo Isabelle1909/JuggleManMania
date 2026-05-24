@@ -25,7 +25,8 @@ func _physics_process(delta: float) -> void:
 			timer -= delta
 		else:
 			SystemManager.increment_time()
-			SystemManager.open_house(score,active_juggling_items.size(),"house")
+			SystemManager.open_house(score,active_juggling_items.size())
+			SystemManager.calculate_mood()
 			finish = true
 			print("TIMEOUT")
 	

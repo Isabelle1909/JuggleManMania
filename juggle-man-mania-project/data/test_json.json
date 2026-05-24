@@ -157,10 +157,14 @@
 
   },
   "tutorial": {
-    "0":{
+    "-1":{
       "1": "Alright time to stretch",
       "2": "One arm and then the other.",
       "3": "Ahh.. that's better" 
+    },
+    "0": {
+        "1": "Next, I'll refresh my sense of timing, and just toss this ball straight up and down.",
+        "2": "there we go..."
     },
     "1": {
       "1": "Now let's start by gently tossing a light ball around",
@@ -194,6 +198,11 @@
       "2": "Shouldn't wear my pjs to work, I'm aiming for funny not sad",
       "3": "Can't believe I almost forgot a huge, multicoloured clown costume, guess i'm half asleep",
       "4": "I should get changed into my costume so i'm ready to leave for work"
+    },
+    "dress_practice": {
+      "1": "I should get dressed and warm up, otherwise I'll be fumbleman out there",
+      "2": "No costume, and no practice.. I should at least get dressed",
+      "3": "That balcony air is good for the soul, I should put my costume on and have a practice out there"
     },
     "stay": {
       "1": "All the good shops are closed by now",

@@ -16,7 +16,7 @@ var ball = load("res://scenes/juggling_level/juggling_items/manual_physics_ball.
 enum PROGRESS {HANDS, NMBALL1, MBALL1, MBALL2, EXPLANATION, FINISH, SLOWBALL}
 var section = PROGRESS.EXPLANATION
 var line = 1
-var ex = 0
+var ex = -1
 
 var sub_score = 0
 var score = 0
@@ -44,10 +44,12 @@ var m1_timer = 10
 var m2_timer = 5
 
 func _ready() -> void:
-	#text_ui.get_node("help_menu").visible = false
+	
+	SystemManager.tutorial_done = true
+	
 	text_box.position = Vector2(0,0)
 	TextManager.tb = text_box
-	TextManager.display_cutscene_text("tutorial",str("0"),str(line),text_box)
+	TextManager.display_cutscene_text("tutorial",str("-1"),str(line),text_box)
 	line += 1
 	
 	score_display.visible = true
@@ -65,6 +67,7 @@ func _ready() -> void:
 	ball_2.name = "ball_2"
 	ball_3.name = "ball_3"
 	ball_4.name = "ball_4"
+	
 
 func _physics_process(delta: float) -> void:
 	if section == PROGRESS.HANDS:
@@ -113,12 +116,12 @@ func hands():
 		TextManager.jfl = left_feedback
 		TextManager.jfr = right_feedback
 		update_score(10)
-		between_text("0","3",true)
+		between_text("-1","3",true)
 
 func NMball1():
 	if check_last():
 		j_player.disabled = true
-		between_text("1","3",true)
+		between_text("0","2",true)
 		
 	if Input.is_action_just_pressed("interact"):
 		print("la: ", ball_1.get_last_accuracy())
@@ -194,7 +197,7 @@ func timer_process(delta,max_time):
 		time_display.visible = false
 
 func finish():
-	SystemManager.open_house(0,0,"balcony")
+	SystemManager.open_house(0,0)
 
 
 
@@ -215,12 +218,19 @@ func explanation():
 			TextManager.display_cutscene_text("tutorial",str(ex),str(line),text_box)
 		else:
 			line = 0
-			TextManager.close_text(null,text_box)
+			TextManager.close_text(text_box)
 			j_player.disabled = false
-			if ex == 0:
+			print(ex)
+			if ex == -1:
 				section = PROGRESS.HANDS
 				left_feedback.visible = true
-				print(ex, " 0")
+				print(ex, " -1")
+			if ex == 0:
+				if !get_tree().root.has_node("ball_1"):
+					get_tree().root.add_child(ball_1)
+				section = PROGRESS.NMBALL1
+				ball_1.position = Vector2(500,450)
+				update_score(0) 
 			elif ex == 1:
 				sub_score = score
 				print(sub_score, " sub_score")
@@ -228,6 +238,8 @@ func explanation():
 				print(ex, " 1")
 				print("slowball")
 				section = PROGRESS.SLOWBALL
+				if get_tree().root.has_node("ball_1"):
+					get_tree().root.remove_child(ball_1)
 				if !get_tree().root.has_node("ball_4"):
 					get_tree().root.add_child(ball_4)
 				time_display.visible = true
@@ -318,5 +330,6 @@ func _on_ball_drop_detect_body_entered(body: Node2D) -> void:
 	if body.name.contains("ball_2") || body.name.contains("ball_4") && section == PROGRESS.MBALL2:
 		dropped.append(body)
 		if dropped.size() >= 2:
+			print(dropped)
 			reset_phase()
 			
