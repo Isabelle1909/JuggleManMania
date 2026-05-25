@@ -54,7 +54,7 @@ func add_impulse(dir,title):
 	
 	if title.contains("early"):
 		last_accuracy = "early"
-		velocity.y = -700
+		velocity.y = -800
 		if dir.contains("left"):
 			velocity.x = VXE
 			TextManager.show_juggling_feedback("early","left")
@@ -64,7 +64,7 @@ func add_impulse(dir,title):
 		
 	elif title.contains("perfect"):
 		last_accuracy = "perfect"
-		velocity.y = -1000
+		velocity.y = -1150
 		if dir.contains("left"):
 			velocity.x = VXP
 			TextManager.show_juggling_feedback("perfect","left")
@@ -74,7 +74,7 @@ func add_impulse(dir,title):
 		
 	elif title.contains("late"):
 		last_accuracy = "late"
-		velocity.y = -700
+		velocity.y = -800
 		if dir.contains("left"):
 			velocity.x = VXL
 			TextManager.show_juggling_feedback("late","left")

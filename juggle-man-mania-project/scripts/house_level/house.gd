@@ -33,7 +33,8 @@ func go_balcony():
 	player.global_position = Vector2(550,-2000)
 
 func leave_balcony():
-	player.global_position = SystemManager.house_position
+	player.global_position = Vector2(620, -425)
+	#player.global_position = SystemManager.house_position
 
 func _handle_answer(ans: bool):
 	if !ans:

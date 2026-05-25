@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://diq0237gr3yt7"]
 
 [ext_resource type="Script" uid="uid://djwk4ladk4mgx" path="res://scripts/juggling_level/tutorial/tutorial_scene.gd" id="1_yf4vk"]
-[ext_resource type="Texture2D" uid="uid://d3i4sqhx8wrdo" path="res://icon.svg" id="2_tbeqj"]
+[ext_resource type="Texture2D" uid="uid://fj4w2dpkbv3c" path="res://scenes/juggling_level/IMG_0285.png" id="2_yf4vk"]
 [ext_resource type="PackedScene" uid="uid://0bj0hox2j6k3" path="res://scenes/juggling_level/juggling_player.tscn" id="3_k7w8g"]
 [ext_resource type="PackedScene" uid="uid://effsrxenqkmr" path="res://scenes/ui_scenes/text_ui.tscn" id="4_ki3mu"]
 
@@ -9,11 +9,10 @@
 script = ExtResource("1_yf4vk")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2094491437]
-position = Vector2(574.5, 325)
-scale = Vector2(8.9765625, 5.046875)
-texture = ExtResource("2_tbeqj")
+position = Vector2(570, 320)
+texture = ExtResource("2_yf4vk")
 
 [node name="juggling_player" parent="." unique_id=1964283372 instance=ExtResource("3_k7w8g")]
-position = Vector2(506, 527)
+position = Vector2(506, 592)
 
 [node name="text_ui" parent="." unique_id=1281821818 instance=ExtResource("4_ki3mu")]

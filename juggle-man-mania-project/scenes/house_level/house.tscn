@@ -38,7 +38,7 @@ size = Vector2(113, 104)
 size = Vector2(155, 79)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0fn05"]
-size = Vector2(132, 150.5)
+size = Vector2(114.78049, 150.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_82h1m"]
 size = Vector2(126.5, 50)
@@ -108,7 +108,7 @@ scale = Vector2(0.23813292, 0.22125527)
 texture = ExtResource("5_us8f6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="key_interactables/mirror" unique_id=203169812]
-position = Vector2(352.2388, -520.2015)
+position = Vector2(352.23877, -520.20154)
 shape = SubResource("RectangleShape2D_bhgw4")
 
 [node name="bed" type="StaticBody2D" parent="key_interactables" unique_id=1265703226]
@@ -140,7 +140,7 @@ scale = Vector2(0.25527427, 0.3164557)
 texture = ExtResource("7_uw60d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="key_interactables/wardrobe" unique_id=1801611570]
-position = Vector2(-307.31708, -177.75609)
+position = Vector2(-315.92688, -177.75612)
 shape = SubResource("RectangleShape2D_0fn05")
 
 [node name="WardrobeSound" type="AudioStreamPlayer" parent="key_interactables/wardrobe" unique_id=1701084937]
