@@ -31,6 +31,10 @@ var leave_balc = false
 var tutorial_max = 0
 var infinity_max = 0
 
+var new_high_score_text = "you got a new high score!"
+var normal_completion_text = "you completed the tutorial you champ, you."
+
+
 var default_talked_to_nums = {
 	"wardrobe": 0,
 	"mirror": 0,
@@ -107,7 +111,8 @@ func open_house(juggle_score,items_left):
 	get_tree().change_scene_to_packed(house_level)
 
 func open_tutorial_menu(pos):
-	balc_position = pos
+	if pos != null:
+		balc_position = pos
 	get_tree().change_scene_to_packed(tutorial_menu)
 
 

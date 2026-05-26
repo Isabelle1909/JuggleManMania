@@ -98,25 +98,25 @@ offset_bottom = 601.0
 theme_override_font_sizes/normal_font_size = 30
 text = "0"
 
-[node name="Panel2" type="Panel" parent="." unique_id=1311131065]
+[node name="congrats" type="Panel" parent="." unique_id=1311131065]
 visible = false
 layout_mode = 0
 offset_right = 1144.0
 offset_bottom = 651.0
 
-[node name="Sprite2D" type="Sprite2D" parent="Panel2" unique_id=371428509]
+[node name="Sprite2D" type="Sprite2D" parent="congrats" unique_id=371428509]
 position = Vector2(550, 279.5)
 scale = Vector2(4.78125, 2.1015627)
 texture = ExtResource("1_jdx6l")
 
-[node name="Panel" type="Panel" parent="Panel2" unique_id=1125079625]
+[node name="Panel" type="Panel" parent="congrats" unique_id=1125079625]
 layout_mode = 0
 offset_left = 257.0
 offset_top = 156.0
 offset_right = 855.0
 offset_bottom = 402.0
 
-[node name="Label" type="Label" parent="Panel2/Panel" unique_id=569280061]
+[node name="Label" type="Label" parent="congrats/Panel" unique_id=569280061]
 layout_mode = 0
 offset_left = 133.0
 offset_top = 9.0
@@ -127,7 +127,7 @@ text = "Excellent Work!!!!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="Panel2/Panel" unique_id=998240710]
+[node name="Label2" type="Label" parent="congrats/Panel" unique_id=998240710]
 layout_mode = 0
 offset_left = 126.0
 offset_top = 128.0

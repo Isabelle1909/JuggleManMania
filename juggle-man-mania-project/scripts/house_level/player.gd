@@ -114,7 +114,7 @@ func interaction_manager():
 				disabled = true
 				waiting_answer_door = true
 			elif SystemManager.time.contains("morning") &&  SystemManager.in_costume && !SystemManager.tutorial_done:
-				TextManager.question_text("I should probably warm up and practice before I leave for work, Do I really want to go now?")
+				TextManager.question_text("I should probably warm up and practice on the balcony before I leave for work, Do I really want to go now?")
 				disabled = true
 				waiting_answer_door = true
 			elif SystemManager.time.contains("morning") &&  !SystemManager.in_costume && !SystemManager.tutorial_done:

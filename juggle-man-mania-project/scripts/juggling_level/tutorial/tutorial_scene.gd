@@ -11,6 +11,7 @@ extends Node2D
 @onready var score_display = $text_ui/score_display
 @onready var score_text = $text_ui/score_display/Panel/score_number
 
+
 var ball = load("res://scenes/juggling_level/juggling_items/manual_physics_ball.tscn")
 
 enum PROGRESS {HANDS, NMBALL1, MBALL1, MBALL2, EXPLANATION, FINISH, SLOWBALL}
@@ -197,6 +198,10 @@ func timer_process(delta,max_time):
 		time_display.visible = false
 
 func finish():
+	if SystemManager.tutorial_max < score:
+		SystemManager.tutorial_max = score
+		
+	#SystemManager.open_tutorial_menu(null)
 	SystemManager.open_house(0,0)
 
 
@@ -290,7 +295,7 @@ func explanation():
 					get_tree().root.add_child(ball_2)
 				if !get_tree().root.has_node("ball_4"):
 					get_tree().root.add_child(ball_4)
-				ball_4.reduce_speed(5.0)
+				ball_4.reduce_speed(6.0)
 				time_display.visible = true
 				j_player.move_only_disabled = false
 				j_player.position = Vector2(565,526)
