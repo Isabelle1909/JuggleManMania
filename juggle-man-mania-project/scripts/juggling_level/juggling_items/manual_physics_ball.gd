@@ -8,6 +8,7 @@ var acceleration
 var dis_x
 var dis_y
 var maxV = 2500
+var disabled = false
 
 var VXE = 250
 var VXP = 100
@@ -17,6 +18,7 @@ var VYE = 750
 var VYP = 1000
 var VYL = 700
 
+@onready var catch_sound = $CatchSound
 var last_accuracy = "none"
 
 var following = false
@@ -61,6 +63,14 @@ func get_last_accuracy() -> String:
 func add_impulse(dir,title):
 	print(title)
 	
+	if catch_sound:
+		catch_sound.play(2.0)
+
+		get_tree().create_timer(0.3).timeout.connect(func():
+			if catch_sound:
+				catch_sound.stop()
+		)
+	
 	if velocity.y >= gravity.y/mass:
 		velocity.y = 0
 	
@@ -89,7 +99,7 @@ func add_impulse(dir,title):
 		velocity.y = -VYL
 		if dir.contains("left"):
 			velocity.x = VXL
-			TextManager.show_juggling_feedback("late","leftt")
+			TextManager.show_juggling_feedback("late","left")
 		elif dir.contains("right"):
 			velocity.x = -VXL
 			TextManager.show_juggling_feedback("late","right")

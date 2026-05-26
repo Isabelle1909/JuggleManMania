@@ -1,159 +1,159 @@
 {
   "wardrobe": {
-    "morning_1_b4": {
-      "1": "Time to get this show on the road."
+	"morning_1_b4": {
+	  "1": "Time to get this show on the road."
 
-    },
-    "morning_1_neutral": {
-      "1": "My clothes are in here.",
-      "2": "Should probably do some laundry soon.",
-      "3": "Nothing more to see here..."
+	},
+	"morning_1_neutral": {
+	  "1": "My clothes are in here.",
+	  "2": "Should probably do some laundry soon.",
+	  "3": "Nothing more to see here..."
 
-    },
+	},
 
-    "evening_1_b4": {
-      "1": "Let's see what I have here..."
+	"evening_1_b4": {
+	  "1": "Let's see what I have here..."
 
 		},
 		"evening_1_neutral": {
-      "1": "I haven't worn a lot of this stuff in a while.",
-      "2": "I've already got something comfy enough on.",
-      "3": "Its just my wardrobe, same as always."
-    },
-    "evening_1_good": {
-      "1": "It's nice getting something comfy on.",
-      "2": "I'm already wearing what I like.",
-      "3": "My wardrobe, lots of old favorites here."
+	  "1": "I haven't worn a lot of this stuff in a while.",
+	  "2": "I've already got something comfy enough on.",
+	  "3": "Its just my wardrobe, same as always."
+	},
+	"evening_1_good": {
+	  "1": "It's nice getting something comfy on.",
+	  "2": "I'm already wearing what I like.",
+	  "3": "My wardrobe, lots of old favorites here."
 
-    },
-    "evening_1_bad": {
-      "1": "Getting dressed is always such a hassle.",
-      "2": "Anything is better than trying to sleep in costume though, learned that the hard way.",
-      "3": "Stupid thing, full of random crap."
-    },
+	},
+	"evening_1_bad": {
+	  "1": "Getting dressed is always such a hassle.",
+	  "2": "Anything is better than trying to sleep in costume though, learned that the hard way.",
+	  "3": "Stupid thing, full of random crap."
+	},
 
-    "morning_2_b4": {
-      "1": "Just another day in paradise. Hah, I crack myself up."
+	"morning_2_b4": {
+	  "1": "Just another day in paradise. Hah, I crack myself up."
 
-    },
-    "morning_2_neutral": {
-      "1": "Funny how even a clown costume gets boring after awhile, well funny might not be the word for it.",
-      "2": "I should probably throw some of this out... but I won't.",
-      "3": "Well I guess all this stuff reminds me too much of happier times."
-    }
+	},
+	"morning_2_neutral": {
+	  "1": "Funny how even a clown costume gets boring after awhile, well funny might not be the word for it.",
+	  "2": "I should probably throw some of this out... but I won't.",
+	  "3": "Well I guess all this stuff reminds me too much of happier times."
+	}
 
-    },
+	},
 
 
   "mirror": {
-    "morning_1_neutral": {
-      "1": "Phew, those dark circles are getting bad.",
-      "2": "Guess i'll give my hair a comb.",
-      "3": "It's just me..."
+	"morning_1_neutral": {
+	  "1": "Phew, those dark circles are getting bad.",
+	  "2": "Guess i'll give my hair a comb.",
+	  "3": "It's just me..."
 
-    },
+	},
 
-    "evening_1_good": {
-      "1": "You did alright today.",
-      "2": "Crowd liked you. It's whether the kids are happy that counts for something.",
-      "3": "Same old me, not the worst a guy could be."
+	"evening_1_good": {
+	  "1": "You did alright today.",
+	  "2": "Crowd liked you. It's whether the kids are happy that counts for something.",
+	  "3": "Same old me, not the worst a guy could be."
 
-    },
-    "evening_1_neutral": {
-      "1": "Not much to see here.",
-      "2": "Man, I need to get better at brushing my teeth.",
-      "3": "It's just me, with yet another day gone by."
+	},
+	"evening_1_neutral": {
+	  "1": "Not much to see here.",
+	  "2": "Man, I need to get better at brushing my teeth.",
+	  "3": "It's just me, with yet another day gone by."
 
-    },
-    "evening_1_bad": {
-      "1": "I can't even meet my own eye.",
-      "2": "The kids thought it was funny when I dropped everything at least.",
-      "3": "Not sure if I deserve to call myself juggleman anymore though..."
+	},
+	"evening_1_bad": {
+	  "1": "I can't even meet my own eye.",
+	  "2": "The kids thought it was funny when I dropped everything at least.",
+	  "3": "Not sure if I deserve to call myself juggleman anymore though..."
 
-    },
+	},
 
-    "morning_2_good":{
-      "1": "Might not be much to look at but I know my jugglin' sure is something.",
-      "2": "Good mornin' me, another day another party to attend heh.",
-      "3": "Alright, just gotta do what I did yesterday, but hopefully even better."
+	"morning_2_good":{
+	  "1": "Might not be much to look at but I know my jugglin' sure is something.",
+	  "2": "Good mornin' me, another day another party to attend heh.",
+	  "3": "Alright, just gotta do what I did yesterday, but hopefully even better."
 
-    },
-    "morning_2_neutral": {
-      "1": "Eesh, I've seen zombies that look more awake.",
-      "2": "Nothing wrong with the familiar I suppose.",
-      "3": "Alright, me. We got this. I got this."
+	},
+	"morning_2_neutral": {
+	  "1": "Eesh, I've seen zombies that look more awake.",
+	  "2": "Nothing wrong with the familiar I suppose.",
+	  "3": "Alright, me. We got this. I got this."
 
-    },
-    "morning_2_bad": {
-      "1": "Better add a layer to my facepaint, I couldn't sleep last night.",
-      "2": "I just don't get it, I used to do this so easily.",
-      "3": "I don't want to look anymore."
-    }
+	},
+	"morning_2_bad": {
+	  "1": "Better add a layer to my facepaint, I couldn't sleep last night.",
+	  "2": "I just don't get it, I used to do this so easily.",
+	  "3": "I don't want to look anymore."
+	}
 
   },
 
 
   "computer": {
-    "morning_1_neutral": {
-      "1": "Hmmm... looks like there's no internet.",
-      "2": "Nothing to do.",
-      "3": "I'm sure if I look again later, it will be working."
+	"morning_1_neutral": {
+	  "1": "Hmmm... looks like there's no internet.",
+	  "2": "Nothing to do.",
+	  "3": "I'm sure if I look again later, it will be working."
 
-    },
+	},
 
-    "morning_2_good": {
-      "1": "Internet's workin' maybe I could watch a movie later.",
-      "2": "No messages, but I guess it's less distractions.",
-      "3": "Don't have time to log on now though, don't wanna be late."
-    },
-    "morning_2_neutral": {
-      "1": "Internet's workin' too bad there's nothing interesting on it.",
-      "2": "Could check messages... if anyone actually sent any.",
-      "3": "Don't have time to waste anyway, I should get to work."
-    },
-    "morning_2_bad": {
-      "1": "Internet's connected, least now I know no one cares to message.",
-      "2": "Not that I'm exactly reaching out either.",
-      "3": "I don't want to think about this anymore. It's no-one's fault but my own anyway.",
-      "4": "I should get to work already."
-    }
+	"morning_2_good": {
+	  "1": "Internet's workin' maybe I could watch a movie later.",
+	  "2": "No messages, but I guess it's less distractions.",
+	  "3": "Don't have time to log on now though, don't wanna be late."
+	},
+	"morning_2_neutral": {
+	  "1": "Internet's workin' too bad there's nothing interesting on it.",
+	  "2": "Could check messages... if anyone actually sent any.",
+	  "3": "Don't have time to waste anyway, I should get to work."
+	},
+	"morning_2_bad": {
+	  "1": "Internet's connected, least now I know no one cares to message.",
+	  "2": "Not that I'm exactly reaching out either.",
+	  "3": "I don't want to think about this anymore. It's no-one's fault but my own anyway.",
+	  "4": "I should get to work already."
+	}
 
   },
 
 
   "bed": {
-    "morning_1_neutral": {
-      "1": "God, I wish.",
-      "2": "I have to go to work.",
-      "3": "Must resist.... The call of the cosy.."
+	"morning_1_neutral": {
+	  "1": "God, I wish.",
+	  "2": "I have to go to work.",
+	  "3": "Must resist.... The call of the cosy.."
 
-    },
+	},
 
-    "evening_1_good": {
-      "1": "I'm tired... but I think I'll sleep well tonight.",
-      "2": "Tomorrow might not be so bad.",
-      "3": "I think I might actually be a bit excited"
+	"evening_1_good": {
+	  "1": "I'm tired... but I think I'll sleep well tonight.",
+	  "2": "Tomorrow might not be so bad.",
+	  "3": "I think I might actually be a bit excited"
 
-    },
-    "evening_1_neutral": {
-      "1": "Another day done.",
-      "2": "Hopefully I'll get at least some sleep.",
-      "3": "It's all done now, It's all okay..."
+	},
+	"evening_1_neutral": {
+	  "1": "Another day done.",
+	  "2": "Hopefully I'll get at least some sleep.",
+	  "3": "It's all done now, It's all okay..."
 
-    },
-    "evening_1_bad": {
-      "1": "I'm tired, but I don't want to sleep.",
-      "2": "Tomorrow will come too soon.",
-      "3": "But the later I stay up, The worse I'll feel in the morning."
-      
-    },
+	},
+	"evening_1_bad": {
+	  "1": "I'm tired, but I don't want to sleep.",
+	  "2": "Tomorrow will come too soon.",
+	  "3": "But the later I stay up, The worse I'll feel in the morning."
+	  
+	},
 
-    "morning_2_neutral": {
-      "1": "Tired, but still kicking.",
-      "2": "I could crawl back in... but I can't.",
-      "3": "Wait for me bed... I shall return to thee."
+	"morning_2_neutral": {
+	  "1": "Tired, but still kicking.",
+	  "2": "I could crawl back in... but I can't.",
+	  "3": "Wait for me bed... I shall return to thee."
 
-    }
+	}
 
   },
   "tutorial": {

@@ -3,14 +3,15 @@
 [ext_resource type="TileSet" uid="uid://bhw3ra2uh0fnt" path="res://tilesets/balcony_tileset.tres" id="1_6g3yx"]
 [ext_resource type="Script" uid="uid://c2521k6budvog" path="res://scripts/house_level/Interactable.gd" id="2_cissh"]
 [ext_resource type="Texture2D" uid="uid://dggo61m3s3re8" path="res://assets/placeholder_assets/door_placeholder.jpg" id="3_gnjbx"]
+[ext_resource type="AudioStream" uid="uid://b5dh0tuaupvkm" path="res://assets/sound effect/opening-door-411632.mp3" id="4_cissh"]
 [ext_resource type="PackedScene" uid="uid://i5ot6tbllc4l" path="res://scenes/house_level/interactable.tscn" id="4_gigyt"]
 [ext_resource type="Texture2D" uid="uid://xvkhenon15uf" path="res://assets/placeholder_assets/potted_plant.placeholder.jpg" id="5_1t0w1"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cissh"]
-size = Vector2(48, 62)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_82lpl"]
 size = Vector2(132, 157)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cissh"]
+size = Vector2(48, 62)
 
 [node name="Balcony_Scene" type="Node2D" unique_id=1986828564]
 
@@ -34,6 +35,9 @@ texture = ExtResource("3_gnjbx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game_Tilemap/in_door" unique_id=637196175]
 position = Vector2(0.5, -17.5)
 shape = SubResource("RectangleShape2D_82lpl")
+
+[node name="DoorSound" type="AudioStreamPlayer" parent="Game_Tilemap/in_door" unique_id=555593397]
+stream = ExtResource("4_cissh")
 
 [node name="Wall" type="TileMapLayer" parent="Game_Tilemap" unique_id=1856203386]
 tile_map_data = PackedByteArray("AAAOAA0AAQAEAAMAAAAPAA0AAQAEAAMAAAAQAA0AAQAEAAMAAAARAA0AAQAEAAMAAAASAA0AAQAEAAMAAAATAA0AAQAEAAMAAAAIAA0AAQAEAAMAAAAHAA0AAQAEAAMAAAAGAA0AAQAEAAMAAAAFAA0AAQAEAAMAAAAEAA0AAQAEAAMAAAADAA0AAQAEAAMAAAACAA0AAQAEAAMAAAABAA0AAQAEAAMAAAAAAA0AAQAEAAMAAAAUAA0AAQAEAAMAAAAVAA0AAQAEAAMAAAAWAA0AAQAEAAMAAAAXAA0AAQAEAAMAAAAYAA0AAQAEAAMAAAD+/w0AAQAEAAMAAAD//w0AAQAEAAMAAAD9/w0AAQAEAAMAAAAYAA4AAQAEAAQAAAAXAA4AAQAEAAQAAAAWAA4AAQAEAAQAAAAVAA4AAQAEAAQAAAAUAA4AAQAEAAQAAAATAA4AAQAEAAQAAAASAA4AAQAEAAQAAAARAA4AAQAEAAQAAAAQAA4AAQAEAAQAAAAPAA4AAQAEAAQAAAAOAA4AAQAEAAQAAAANAA4AAQAEAAQAAAAMAA4AAQAEAAQAAAALAA4AAQAEAAQAAAAKAA4AAQAEAAQAAAAJAA4AAQAEAAQAAAAIAA4AAQAEAAQAAAAHAA4AAQAEAAQAAAAGAA4AAQAEAAQAAAAFAA4AAQAEAAQAAAAJAA0AAQAEAAMAAAANAA0AAQAEAAMAAAAEAA4AAQAEAAQAAAADAA4AAQAEAAQAAAACAA4AAQAEAAQAAAABAA4AAQAEAAQAAAAAAA4AAQAEAAQAAAD//w4AAQAEAAQAAAD+/w4AAQAEAAQAAAD9/w4AAQAEAAQAAAD8/w4AAQAEAAQAAAD7/w4AAQAEAAQAAAD8/w0AAQAEAAMAAAD7/w0AAQAEAAMAAAAZAA0AAQAEAAMAAAAaAA0AAQAEAAMAAAAZAA4AAQAEAAQAAAAaAA4AAQAEAAQAAAA=")

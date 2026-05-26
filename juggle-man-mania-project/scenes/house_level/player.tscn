@@ -408,4 +408,4 @@ hit_from_inside = true
 
 [node name="FootstepPlayer" type="AudioStreamPlayer" parent="." unique_id=684393312]
 stream = ExtResource("4_bbfi4")
-volume_db = -10.0
+volume_db = -8.416

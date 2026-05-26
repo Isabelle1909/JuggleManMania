@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://csy7eigecfffg" path="res://scripts/UI/title_screen.gd" id="1_2y50p"]
 [ext_resource type="Texture2D" uid="uid://d3i4sqhx8wrdo" path="res://icon.svg" id="1_xjmod"]
 [ext_resource type="PackedScene" uid="uid://dkp2lcwdqvm8v" path="res://scenes/ui_scenes/HelpScreen.tscn" id="3_0vnpx"]
+[ext_resource type="AudioStream" uid="uid://dtku2eihhr2f3" path="res://assets/sound effect/UIsounds for click.mp3" id="4_ugyeh"]
 
 [node name="MainMenu" type="Node2D" unique_id=851641343]
 script = ExtResource("1_2y50p")
@@ -82,6 +83,8 @@ offset_bottom = 157.0
 text = "Press   J"
 horizontal_alignment = 1
 vertical_alignment = 1
+[node name="ClickSound" type="AudioStreamPlayer" parent="." unique_id=542062847]
+stream = ExtResource("4_ugyeh")
 
 [connection signal="pressed" from="button_new_game" to="." method="_on_button_new_game_pressed"]
 [connection signal="pressed" from="button_load_game" to="." method="_load"]

@@ -72,6 +72,14 @@ func _physics_process(delta: float) -> void:
 		
 	interaction_manager()
 	
+func play_door_sound():
+	if object_near and object_near.has_node("DoorSound"):
+		object_near.get_node("DoorSound").play()
+		
+func play_wardrobe_sound():
+	if object_near and object_near.has_node("WardrobeSound"):
+		object_near.get_node("WardrobeSound").play()
+	
 
 func interaction_manager():
 	if Input.is_action_just_pressed("interact"):
@@ -87,6 +95,9 @@ func interaction_manager():
 			
 		#Special Interactables
 		elif item_near.contains("wardrobe"):
+			
+			play_wardrobe_sound()
+			
 			if SystemManager.time.contains("morning") && !SystemManager.in_costume:
 				SystemManager.in_costume = true
 			elif SystemManager.time.contains("evening") && SystemManager.in_costume:
@@ -125,10 +136,12 @@ func interaction_manager():
 				TextManager.display_cutscene_text("prompt_text","stay",null,null)
 				
 		elif item_near.contains("back_door"):
+			play_door_sound()
 			SystemManager.go_balc = true
 			
 			
 		elif item_near.contains("in_door"):
+			play_door_sound()
 			SystemManager.leave_balc = true
 			
 		#General Interactables
@@ -169,12 +182,9 @@ func animation_manager():
 
 func _move(dire: Vector2):
 	
-	if footstep_player:
-		footstep_player.play()
-		get_tree().create_timer(0.285).timeout.connect(func():
-			if footstep_player:
-				footstep_player.stop()
-		)
+
+	if footstep_player and !footstep_player.playing:
+			footstep_player.play()
 	
 	velocity = speed * dire
 	move_and_slide()
