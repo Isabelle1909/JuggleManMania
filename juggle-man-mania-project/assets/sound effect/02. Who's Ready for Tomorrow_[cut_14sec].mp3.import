@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://du5x0wfciyftt"
+path="res://.godot/imported/02. Who's Ready for Tomorrow_[cut_14sec].mp3-f29e5d255938448b6b9406b7be27b4b4.mp3str"
+
+[deps]
+
+source_file="res://assets/sound effect/02. Who's Ready for Tomorrow_[cut_14sec].mp3"
+dest_files=["res://.godot/imported/02. Who's Ready for Tomorrow_[cut_14sec].mp3-f29e5d255938448b6b9406b7be27b4b4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

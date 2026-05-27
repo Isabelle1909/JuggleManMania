@@ -157,65 +157,65 @@
 
   },
   "tutorial": {
-    "-1":{
-      "1": "Alright time to stretch",
-      "2": "One arm and then the other.",
-      "3": "Ahh.. that's better" 
-    },
-    "0": {
-        "1": "Next, I'll refresh my sense of timing, and just toss this ball straight up and down.",
-        "2": "there we go..."
-    },
-    "1": {
-      "1": "Now let's start by gently tossing a light ball around",
-      "2": "guess i'm a bit rusty",
-      "3": "There we go, nice and warmed up"
-    },
-    "2": {
-      "1": "alright time to get some more movement going",
-      "2": "Let's toss this heavier ball a bit faster",
-      "3": "oops",
-      "4": "Alright, I still got it!"
-    },
-    "3": {
-      "1": "Now, it's time to step up the game, and get juggling for real, I'll use the both balls now",
-      "2": "I just need a little more warming up",
-      "3": "They don't call me juggle man for nothing!"
-    },
-    "4": {
-      "1": "Phew all warmed up!"
-    }
+	"-1":{
+	  "1": "Alright time to stretch",
+	  "2": "One arm and then the other.",
+	  "3": "Ahh.. that's better" 
+	},
+	"0": {
+		"1": "Next, I'll refresh my sense of timing, and just toss this ball straight up and down.",
+		"2": "there we go..."
+	},
+	"1": {
+	  "1": "Now let's start by gently tossing a light ball around",
+	  "2": "guess i'm a bit rusty",
+	  "3": "There we go, nice and warmed up"
+	},
+	"2": {
+	  "1": "alright time to get some more movement going",
+	  "2": "Let's toss this heavier ball a bit faster",
+	  "3": "oops",
+	  "4": "Alright, I still got it!"
+	},
+	"3": {
+	  "1": "Now, it's time to step up the game, and get juggling for real, I'll use the both balls now",
+	  "2": "I just need a little more warming up",
+	  "3": "They don't call me juggle man for nothing!"
+	},
+	"4": {
+	  "1": "Phew all warmed up!"
+	}
   },
   "prompt_text": {
-    "undress":{
-      "1": "need to get ready for bed first",
-      "2": "Can't sleep in my costume, I'll have funny dreams",
-      "3": "Don't want the clown pants getting creased, they're a pain to iron",
-      "4": "I should get changed into something more comfortable first"
-    },
-    "dress":{
-      "1": "Erk, I must be tired, almost left the house without getting dressed",
-      "2": "Shouldn't wear my pjs to work, I'm aiming for funny not sad",
-      "3": "Can't believe I almost forgot a huge, multicoloured clown costume, guess i'm half asleep",
-      "4": "I should get changed into my costume so i'm ready to leave for work"
-    },
-    "dress_practice": {
-      "1": "I should get dressed and warm up, otherwise I'll be fumbleman out there",
-      "2": "No costume, and no practice.. I should at least get dressed",
-      "3": "That balcony air is good for the soul, I should put my costume on and have a practice out there"
-    },
-    "stay": {
-      "1": "All the good shops are closed by now",
-      "2": "Can't be bothered going out, i'm tired",
-      "3": "it's been a long day, I just wanna smoke and head to bed",
-      "4": "I'll head out tomorrow, I should rest now"
-    },
-    "smoke": {
-      "1": "Can't go to bed without my daily cig, a guy's gotta have something to take the edge off",
-      "2": "I know I'll just toss and turn if I don't have my balcony smoke",
-      "3": "Gotta go out and get some fresh.. and rather unfresh air in these lungs",
-      "4": "You know what they say. A smoke a day keeps the doctor paid",
-      "5": "I'm nothing if not a man of routine, I need to go out and have my cigarette"
-    }
+	"undress":{
+	  "1": "need to get ready for bed first",
+	  "2": "Can't sleep in my costume, I'll have funny dreams",
+	  "3": "Don't want the clown pants getting creased, they're a pain to iron",
+	  "4": "I should get changed into something more comfortable first"
+	},
+	"dress":{
+	  "1": "Erk, I must be tired, almost left the house without getting dressed",
+	  "2": "Shouldn't wear my pjs to work, I'm aiming for funny not sad",
+	  "3": "Can't believe I almost forgot a huge, multicoloured clown costume, guess i'm half asleep",
+	  "4": "I should get changed into my costume so i'm ready to leave for work"
+	},
+	"dress_practice": {
+	  "1": "I should get dressed and warm up, otherwise I'll be fumbleman out there",
+	  "2": "No costume, and no practice.. I should at least get dressed",
+	  "3": "That balcony air is good for the soul, I should put my costume on and have a practice out there"
+	},
+	"stay": {
+	  "1": "All the good shops are closed by now",
+	  "2": "Can't be bothered going out, i'm tired",
+	  "3": "it's been a long day, I just wanna smoke and head to bed",
+	  "4": "I'll head out tomorrow, I should rest now"
+	},
+	"smoke": {
+	  "1": "Can't go to bed without my daily cig, a guy's gotta have something to take the edge off",
+	  "2": "I know I'll just toss and turn if I don't have my balcony smoke",
+	  "3": "Gotta go out and get some fresh.. and rather unfresh air in these lungs",
+	  "4": "You know what they say. A smoke a day keeps the doctor paid",
+	  "5": "I'm nothing if not a man of routine, I need to go out and have my cigarette"
+	}
   }
 }
