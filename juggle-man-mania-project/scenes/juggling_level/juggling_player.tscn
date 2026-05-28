@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://blgvled4gicvw" path="res://scenes/juggling_level/leftHand_animation.png" id="4_31qiq"]
 [ext_resource type="AudioStream" uid="uid://coxj8epkfhm7e" path="res://assets/sound effect/The sound of swinging in the air.mp3" id="4_do3xs"]
 [ext_resource type="Texture2D" uid="uid://ogeenbmg6tgm" path="res://scenes/juggling_level/expressions.png" id="5_wlxme"]
+[ext_resource type="FontFile" uid="uid://b72kg2y6yhaxv" path="res://assets/text/splurge.ttf" id="7_t0055"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wt60r"]
 atlas = ExtResource("2_o66wg")
@@ -338,7 +339,9 @@ offset_left = 42.0
 offset_top = -91.0
 offset_right = 150.0
 offset_bottom = -51.0
-theme_override_colors/default_color = Color(0.80784315, 0.60784316, 0.101960786, 1)
+theme_override_colors/default_color = Color(0.9254902, 0.5254902, 0.16862746, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_t0055")
 theme_override_font_sizes/normal_font_size = 24
 text = "Perfect!"
 
@@ -347,7 +350,9 @@ offset_left = -135.0
 offset_top = -93.0
 offset_right = -37.0
 offset_bottom = -53.0
-theme_override_colors/default_color = Color(0.80784315, 0.60784316, 0.101960786, 1)
+theme_override_colors/default_color = Color(0.92474633, 0.5270564, 0.16978425, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_t0055")
 theme_override_font_sizes/normal_font_size = 24
 text = "Perfect!"
 
