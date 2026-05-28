@@ -19,9 +19,9 @@ offset_bottom = 648.0
 [node name="Categories" type="VBoxContainer" parent="Panel" unique_id=1925897207]
 layout_mode = 0
 offset_left = 179.0
-offset_top = 232.0
+offset_top = 170.0
 offset_right = 297.0
-offset_bottom = 538.80005
+offset_bottom = 476.80005
 
 [node name="day" type="Label" parent="Panel/Categories" unique_id=1095940128]
 layout_mode = 2
@@ -42,10 +42,10 @@ text = "Score
 
 [node name="Save data" type="VBoxContainer" parent="Panel" unique_id=1750928520]
 layout_mode = 0
-offset_left = 794.0
-offset_top = 231.0
-offset_right = 912.0
-offset_bottom = 537.80005
+offset_left = 741.0
+offset_top = 139.0
+offset_right = 859.0
+offset_bottom = 445.80005
 
 [node name="save" type="Label" parent="Panel/Save data" unique_id=1024245417]
 layout_mode = 2
@@ -71,10 +71,10 @@ text = "xxxx
 
 [node name="Current data" type="VBoxContainer" parent="Panel" unique_id=21109211]
 layout_mode = 0
-offset_left = 912.0
-offset_top = 232.0
-offset_right = 1030.0
-offset_bottom = 538.80005
+offset_left = 880.0
+offset_top = 138.0
+offset_right = 998.0
+offset_bottom = 444.80005
 
 [node name="save" type="Label" parent="Panel/Current data" unique_id=741843615]
 layout_mode = 2
@@ -105,14 +105,14 @@ offset_bottom = 40.0
 
 [node name="Button_Delete" type="Button" parent="Panel/Buttons" unique_id=224536242]
 layout_mode = 0
-offset_left = 304.0
-offset_top = 467.0
-offset_right = 466.0
-offset_bottom = 537.0
-focus_neighbor_left = NodePath("../Button_Load")
+offset_left = 249.0
+offset_top = 399.0
+offset_right = 411.0
+offset_bottom = 469.0
+focus_neighbor_left = NodePath("../Button_Save")
 focus_neighbor_top = NodePath("../Button_Close")
-focus_neighbor_right = NodePath("../Button_Save")
-focus_neighbor_bottom = NodePath("../Button_Next")
+focus_neighbor_right = NodePath("../Button_Load")
+focus_neighbor_bottom = NodePath("../Button_Back")
 theme_override_font_sizes/font_size = 28
 text = "DELETE"
 
@@ -128,50 +128,52 @@ text = "CLOSE"
 
 [node name="Button_Load" type="Button" parent="Panel/Buttons" unique_id=1752916761]
 layout_mode = 0
-offset_left = 472.0
-offset_top = 464.0
-offset_right = 634.0
-offset_bottom = 534.0
-focus_neighbor_left = NodePath("../Button_Back")
+offset_left = 449.0
+offset_top = 401.0
+offset_right = 611.0
+offset_bottom = 471.0
+focus_neighbor_left = NodePath("../Button_Delete")
 focus_neighbor_top = NodePath("../Button_Close")
-focus_neighbor_right = NodePath("../Button_Delete")
-focus_neighbor_bottom = NodePath("../Button_Back")
+focus_neighbor_right = NodePath("../Button_Save")
+focus_neighbor_bottom = NodePath("../Button_Next")
 theme_override_font_sizes/font_size = 28
 text = "LOAD"
 
 [node name="Button_Back" type="Button" parent="Panel/Buttons" unique_id=2067161858]
 layout_mode = 0
-offset_left = 61.0
-offset_top = 536.0
-offset_right = 223.0
-offset_bottom = 606.0
+offset_left = 362.0
+offset_top = 538.0
+offset_right = 524.0
+offset_bottom = 608.0
 focus_neighbor_left = NodePath("../Button_Next")
 focus_neighbor_top = NodePath("../Button_Load")
-focus_neighbor_right = NodePath("../Button_Load")
+focus_neighbor_right = NodePath("../Button_Next")
+focus_neighbor_bottom = NodePath("../Button_Close")
 theme_override_font_sizes/font_size = 28
 text = "← Back"
 
 [node name="Button_Next" type="Button" parent="Panel/Buttons" unique_id=1925953485]
 layout_mode = 0
-offset_left = 916.0
-offset_top = 537.0
-offset_right = 1078.0
-offset_bottom = 607.0
-focus_neighbor_left = NodePath("../Button_Save")
-focus_neighbor_top = NodePath("../Button_Close")
+offset_left = 572.0
+offset_top = 539.0
+offset_right = 734.0
+offset_bottom = 609.0
+focus_neighbor_left = NodePath("../Button_Back")
+focus_neighbor_top = NodePath("../Button_Save")
 focus_neighbor_right = NodePath("../Button_Back")
+focus_neighbor_bottom = NodePath("../Button_Close")
 theme_override_font_sizes/font_size = 28
 text = "Next →"
 
 [node name="Button_Save" type="Button" parent="Panel/Buttons" unique_id=1251355196]
 layout_mode = 0
-offset_left = 648.0
-offset_top = 464.0
-offset_right = 810.0
-offset_bottom = 534.0
-focus_neighbor_left = NodePath("../Button_Delete")
+offset_left = 647.0
+offset_top = 400.0
+offset_right = 809.0
+offset_bottom = 470.0
+focus_neighbor_left = NodePath("../Button_Load")
 focus_neighbor_top = NodePath("../Button_Close")
-focus_neighbor_right = NodePath("../Button_Next")
+focus_neighbor_right = NodePath("../Button_Delete")
 focus_neighbor_bottom = NodePath("../Button_Next")
 theme_override_font_sizes/font_size = 28
 text = "SAVE"

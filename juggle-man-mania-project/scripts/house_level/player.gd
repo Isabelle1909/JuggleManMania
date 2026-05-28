@@ -61,14 +61,14 @@ func _physics_process(delta: float) -> void:
 			animation_manager()
 			if dir != Vector2.ZERO:
 				if !facing_ray.is_colliding():
-					dir.normalized()
-					_move(dir)
 					item_near = "none"
 							
 				else:
 					item_near = facing_ray.get_collider().name
 					object_near = facing_ray.get_collider()
-					
+				
+				dir.normalized()
+				_move(dir)
 		
 	interaction_manager()
 	
@@ -90,7 +90,7 @@ func interaction_manager():
 		elif TextManager.hm.visible:
 			TextManager.hm.visible = false
 		elif TextManager.tb.visible :
-			TextManager.close_text(item_near,TextManager.tb)
+			TextManager.close_text(TextManager.tb)
 			disabled = false
 			
 		#Special Interactables
@@ -117,15 +117,20 @@ func interaction_manager():
 				disabled = true
 				TextManager.display_text(item_near)
 		elif item_near.contains("practice_box"):
-			SystemManager.open_juggling(position)
+			SystemManager.open_tutorial_menu(position)
 		#doors
 		elif item_near.contains("front_door"):
-			if SystemManager.time.contains("morning") && SystemManager.in_costume == true:
-				play_door_sound()
+			if SystemManager.time.contains("morning") && SystemManager.in_costume && SystemManager.tutorial_done:
 				TextManager.question_text("do you want to go to work now?")
 				disabled = true
 				waiting_answer_door = true
-			elif SystemManager.time.contains("morning"):
+			elif SystemManager.time.contains("morning") &&  SystemManager.in_costume && !SystemManager.tutorial_done:
+				TextManager.question_text("I should probably warm up and practice on the balcony before I leave for work, Do I really want to go now?")
+				disabled = true
+				waiting_answer_door = true
+			elif SystemManager.time.contains("morning") &&  !SystemManager.in_costume && !SystemManager.tutorial_done:
+				TextManager.display_cutscene_text("prompt_text","dress_practice",null,null)
+			elif SystemManager.time.contains("morning") &&  !SystemManager.in_costume:
 				TextManager.display_cutscene_text("prompt_text","dress",null,null)
 			elif SystemManager.time.contains("evening"):
 				TextManager.display_cutscene_text("prompt_text","stay",null,null)
@@ -133,6 +138,7 @@ func interaction_manager():
 		elif item_near.contains("back_door"):
 			play_door_sound()
 			SystemManager.go_balc = true
+			
 			
 		elif item_near.contains("in_door"):
 			play_door_sound()
@@ -174,13 +180,13 @@ func animation_manager():
 
 
 
-func _move(dir: Vector2):
+func _move(dire: Vector2):
 	
 
 	if footstep_player and !footstep_player.playing:
 			footstep_player.play()
 	
-	velocity = speed * dir
+	velocity = speed * dire
 	move_and_slide()
 	
 	

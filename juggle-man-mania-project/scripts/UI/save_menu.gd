@@ -10,136 +10,104 @@ extends Control
 @onready var currentTotalScore = $"Panel/Current data/total_score_number"
 @onready var saveSlotLabel = $Panel/Labels/Label_SaveSlot1
 
-var slot_1_data = {
+var default_pos = (Vector2(-23, 46))
+var current_save_slot = {}
+
+var slot_default_data = {
 	"day": 1,
+	"current_jp": 0,
 	"total_jp": 0,
-	"current_jp": 0
+	
+	"tutorial_score": 0,
+	"infinity_score": 0,
+	
+	"house_pos": Vector2(-23, 46),
+	"balc_pos": Vector2(-23,46),
+	"location": "house",
+	"mood": "neutral",
+	"time": "morning",
+	
+	"talked_to_nums": {},
+	"talked_cutscene_nums": {},
+	
+	"in_costume": false,
+	"tutorial_done": false
 }
 
-var slot_1_day = 1
-var slot_1_jp = 0
-var slot_1_score = 0
-var slot_1_pos = (Vector2(-23, 46))
-var slot_1_mood = "neutral"
-var slot_1_time = "morning" 
+var slot_1_data = slot_default_data
 
-var slot_2_day = 1
-var slot_2_jp = 0
-var slot_2_score = 0
-var slot_2_pos = (Vector2(-23, 46))
-var slot_2_mood = "neutral"
-var slot_2_time = "morning" 
+var slot_2_data = slot_default_data
 
-var slot_3_day = 1
-var slot_3_jp = 0
-var slot_3_score = 0
-var slot_3_pos = (Vector2(-23, 46))
-var slot_3_mood = "neutral"
-var slot_3_time = "morning" 
+var slot_3_data = slot_default_data
 
 var slot = 1
 
 func _initializingSave(config) -> void:
-	if !config.has_section("Save Slot 1"):
-		config.set_value("Save Slot 1", "day", slot_1_day)
-		config.set_value("Save Slot 1", "total_jp", slot_1_jp)
-		config.set_value("Save Slot 1", "current_jp", slot_1_score)
-		config.set_value("Save Slot 1", "pos", slot_1_pos)
-		config.set_value("Save Slot 1", "mood", slot_1_mood)
-		config.set_value("Save Slot 1", "time", slot_1_time)
-		
-	if !config.has_section("Save Slot 2"):
-		config.set_value("Save Slot 2", "day", slot_2_day)
-		config.set_value("Save Slot 2", "total_jp", slot_2_jp)
-		config.set_value("Save Slot 2", "current_jp", slot_2_score)
-		config.set_value("Save Slot 2", "pos", slot_2_pos)
-		config.set_value("Save Slot 2", "mood", slot_2_mood)
-		config.set_value("Save Slot 2", "time", slot_2_time)
+	if !config.has_section_key("save_slots", "1"):
+		config.set_value("save_slots", "1", slot_1_data)
 	
-	if !config.has_section("Save Slot 3"):
-		config.set_value("Save Slot 3", "day", slot_3_day)
-		config.set_value("Save Slot 3", "total_jp", slot_3_jp)
-		config.set_value("Save Slot 3", "current_jp", slot_3_score)
-		config.set_value("Save Slot 3", "pos", slot_3_pos)
-		config.set_value("Save Slot 3", "mood", slot_3_mood)
-		config.set_value("Save Slot 3", "time", slot_3_time)
+	if !config.has_section_key("save_slots", "2"):
+		config.set_value("save_slots", "2", slot_2_data)
+	
+	if !config.has_section_key("save_slots", "3"):
+		config.set_value("save_slots", "3", slot_3_data)
+	
+	update_text()
 
 func _save() -> void: 
 	var config = ConfigFile.new()
-	var result = config.load("user://saves.cfg")
+	var result = config.load("user://juggle_man_saves.cfg")
 	if result == OK:
+		if !set_current_slot():
+			_initializingSave(config)
+		
+		update_slot()
+		config.set_value("save_slots", "1", slot_1_data)
+		config.set_value("save_slots", "2", slot_2_data)
+		config.set_value("save_slots", "3", slot_3_data)
 	
-		if slot == 1:
-			config.set_value("Save Slot 1", "day", SystemManager.day)
-			config.set_value("Save Slot 1", "total_jp", SystemManager.total_jp)
-			config.set_value("Save Slot 1", "current_jp", SystemManager.current_jp)
-			config.set_value("Save Slot 1", "pos", SystemManager.house_position)
-			config.set_value("Save Slot 1", "mood", SystemManager.mood)
-			config.set_value("Save Slot 1", "time", SystemManager.time)
-			
-		elif slot == 2:
-			config.set_value("Save Slot 2", "day", SystemManager.day)
-			config.set_value("Save Slot 2", "total_jp", SystemManager.total_jp)
-			config.set_value("Save Slot 2", "current_jp", SystemManager.current_jp)
-			config.set_value("Save Slot 2", "pos", SystemManager.house_position)
-			config.set_value("Save Slot 2", "mood", SystemManager.mood)
-			config.set_value("Save Slot 2", "time", SystemManager.time)
-			
-		elif slot == 3:
-			config.set_value("Save Slot 3", "day", SystemManager.day)
-			config.set_value("Save Slot 3", "total_jp", SystemManager.total_jp)
-			config.set_value("Save Slot 3", "current_jp", SystemManager.current_jp)
-			config.set_value("Save Slot 3", "pos", SystemManager.house_position)
-			config.set_value("Save Slot 3", "mood", SystemManager.mood)
-			config.set_value("Save Slot 3", "time", SystemManager.time)
-	
-	else:
-		_initializingSave(config)
-	
-	config.save("user://saves.cfg")
-	update_slot()
+	config.save("user://juggle_man_saves.cfg")
 	update_text()
 
 
 
 func update_slot() -> void:
+	
+	set_current_slot()
+	
+	current_save_slot["day"] = SystemManager.day
+	current_save_slot["current_jp"] = SystemManager.current_jp
+	current_save_slot["total_jp"] = SystemManager.total_jp
+	
+	current_save_slot["tutorial_score"] = SystemManager.tutorial_max
+	current_save_slot["infinity_score"] = SystemManager.infinity_max
+	
+	current_save_slot["house_pos"] = SystemManager.house_position
+	current_save_slot["balc_pos"] = SystemManager.balc_position
+	current_save_slot["location"] = SystemManager.location
+	current_save_slot["mood"] = SystemManager.mood
+	current_save_slot["time"] = SystemManager.time
+	
+	current_save_slot["talked_to_nums"] = TextManager.talked_to_nums
+	current_save_slot["talked_cutscene_nums"] = TextManager.talked_cutscene_nums
+	
+	current_save_slot["in_costume"] = SystemManager.in_costume
+	current_save_slot["tutorial_done"] = SystemManager.tutorial_done
+	
 	if slot == 1:
-		slot_1_day = SystemManager.day
-		slot_1_jp = SystemManager.current_jp
-		slot_1_score = SystemManager.total_jp
-		slot_1_pos = SystemManager.house_position
-		slot_1_mood = SystemManager.mood
-		slot_1_time = SystemManager.time
-		
+		slot_1_data.assign(current_save_slot)
 	elif slot == 2:
-		slot_2_day = SystemManager.day
-		slot_2_jp = SystemManager.current_jp
-		slot_2_score = SystemManager.total_jp
-		slot_2_pos = SystemManager.house_position
-		slot_2_mood = SystemManager.mood
-		slot_2_time = SystemManager.time
-		
+		slot_2_data.assign(current_save_slot)
 	elif slot == 3:
-		slot_3_day = SystemManager.day
-		slot_3_jp = SystemManager.current_jp
-		slot_3_score = SystemManager.total_jp
-		slot_3_pos = SystemManager.house_position
-		slot_3_mood = SystemManager.mood
-		slot_3_time = SystemManager.time
+		slot_3_data.assign(current_save_slot)
+	
+	update_text()
 
 func update_text() -> void:
-	if slot == 1:
-		dayLabel.text = str(slot_1_day)
-		jpLabel.text = str(slot_1_jp)
-		scoreLabel.text = str(slot_1_score)
-	elif slot == 2:
-		dayLabel.text = str(slot_2_day)
-		jpLabel.text = str(slot_2_jp)
-		scoreLabel.text = str(slot_2_score)
-	elif slot == 3:
-		dayLabel.text = str(slot_3_day)
-		jpLabel.text = str(slot_3_jp)
-		scoreLabel.text = str(slot_3_score)
+	set_current_slot()
+	dayLabel.text = str(current_save_slot["day"])
+	jpLabel.text = str(current_save_slot["current_jp"])
+	scoreLabel.text =  str(current_save_slot["total_jp"])
 	
 	currentDay.text = str(SystemManager.day)
 	currentJp.text = str(SystemManager.current_jp)
@@ -147,37 +115,34 @@ func update_text() -> void:
 
 func _ready() -> void:
 	$Panel/Buttons/Button_Save.grab_focus.call_deferred()
-	slot = 0
-	_save()
 	slot = 1
 	_preload()
 
 func _load() -> void:
 	var config = ConfigFile.new()
-	var result = config.load("user://saves.cfg")
+	var result = config.load("user://juggle_man_saves.cfg")
 	if result == OK:
-		if slot == 1:
-			SystemManager.day = config.get_value("Save Slot 1", "day")
-			SystemManager.total_jp = config.get_value("Save Slot 1", "total_jp")
-			SystemManager.current_jp = config.get_value("Save Slot 1", "current_jp")
-			SystemManager.house_position = config.get_value("Save Slot 1", "pos")
-			SystemManager.mood = config.get_value("Save Slot 1", "mood")
-			SystemManager.time = config.get_value("Save Slot 1", "time")
-		elif slot == 2:
-			SystemManager.day = config.get_value("Save Slot 2", "day")
-			SystemManager.total_jp = config.get_value("Save Slot 2", "total_jp")
-			SystemManager.current_jp = config.get_value("Save Slot 2", "current_jp")
-			SystemManager.house_position = config.get_value("Save Slot 2", "pos")
-			SystemManager.mood = config.get_value("Save Slot 2", "mood")
-			SystemManager.time = config.get_value("Save Slot 2", "time")
-		elif slot == 3:
-			SystemManager.day = config.get_value("Save Slot 3", "day")
-			SystemManager.total_jp = config.get_value("Save Slot 3", "total_jp")
-			SystemManager.current_jp = config.get_value("Save Slot 3", "current_jp")
-			SystemManager.house_position = config.get_value("Save Slot 3", "pos")
-			SystemManager.mood = config.get_value("Save Slot 3", "mood")
-			SystemManager.time = config.get_value("Save Slot 3", "time")
-			
+		set_current_slot()
+		
+		SystemManager.day = config.get_value("save_slots", str(slot))["day"]
+		SystemManager.total_jp = config.get_value("save_slots", str(slot))["total_jp"]
+		SystemManager.current_jp = config.get_value("save_slots", str(slot))["current_jp"]
+		
+		SystemManager.tutorial_max = config.get_value("save_slots", str(slot))["tutorial_score"]
+		SystemManager.infinity_max = config.get_value("save_slots", str(slot))["infinity_score"]
+		
+		SystemManager.balc_position = config.get_value("save_slots",str(slot))["balc_pos"]
+		SystemManager.house_position = config.get_value("save_slots", str(slot))["house_pos"]
+		SystemManager.location = config.get_value("save_slots", str(slot))["location"]
+		SystemManager.mood = config.get_value("save_slots", str(slot))["mood"]
+		SystemManager.time = config.get_value("save_slots", str(slot))["time"]
+		
+		TextManager.talked_to_nums = config.get_value("save_slots", str(slot))["talked_to_nums"]
+		TextManager.talked_cutscene_nums = config.get_value("save_slots", str(slot))["talked_cutscene_nums"]
+		
+		SystemManager.in_costume = config.get_value("save_slots", str(slot))["in_costume"]
+		SystemManager.tutorial_done = config.get_value("save_slots", str(slot))["tutorial_done"]
+		
 		update_slot()
 		update_text()
 	else:
@@ -186,54 +151,15 @@ func _load() -> void:
 
 func _preload() -> void:
 	var config = ConfigFile.new()
-	var result = config.load("user://saves.cfg")
+	var result = config.load("user://juggle_man_saves.cfg")
+	set_current_slot()
 	if result == OK:
-		if slot == 1:
-			slot_1_day = config.get_value("Save Slot 1", "day")
-			slot_1_jp = config.get_value("Save Slot 1", "total_jp")
-			slot_1_score = config.get_value("Save Slot 1", "current_jp")
-			slot_1_pos = config.get_value("Save Slot 1", "pos")
-			slot_1_mood = config.get_value("Save Slot 1", "mood")
-			slot_1_time = config.get_value("Save Slot 1", "time")
-		elif slot == 2:
-			slot_2_day = config.get_value("Save Slot 2", "day")
-			slot_2_jp = config.get_value("Save Slot 2", "total_jp")
-			slot_2_score = config.get_value("Save Slot 2", "current_jp")
-			slot_2_pos = config.get_value("Save Slot 2", "pos")
-			slot_2_mood = config.get_value("Save Slot 2", "mood")
-			slot_2_time = config.get_value("Save Slot 2", "time")
-		elif slot == 3:
-			slot_3_day = config.get_value("Save Slot 3", "day")
-			slot_3_jp = config.get_value("Save Slot 3", "total_jp")
-			slot_3_score = config.get_value("Save Slot 3", "current_jp")
-			slot_3_pos = config.get_value("Save Slot 3", "pos")
-			slot_3_mood = config.get_value("Save Slot 3", "mood")
-			slot_3_time = config.get_value("Save Slot 3", "time")
-		update_text()
+		if config.has_section_key("save_slots", str(slot)):
+			current_save_slot = config.get_value("save_slots", str(slot))
 	else:
-		if slot == 1:
-			slot_1_day = 1
-			slot_1_jp = 0
-			slot_1_score = 0
-			slot_1_pos = (Vector2(-23, 46))
-			slot_1_mood = "neutral"
-			slot_1_time = "morning" 
-		elif slot == 2:
-			slot_2_day = 1
-			slot_2_jp = 0
-			slot_2_score = 0
-			slot_1_pos = (Vector2(-23, 46))
-			slot_1_mood = "neutral"
-			slot_1_time = "morning" 
-		elif slot == 3:
-			slot_3_day = 1
-			slot_3_jp = 0
-			slot_3_score = 0
-			slot_1_pos = (Vector2(-23, 46))
-			slot_1_mood = "neutral"
-			slot_1_time = "morning" 
-		update_text()
-		
+		_initializingSave(config)
+	
+	update_text()
 
 
 func _close() -> void:
@@ -242,63 +168,47 @@ func _close() -> void:
 
 func _delete() -> void:
 	var config = ConfigFile.new()
-	if slot == 1:
-		config.set_value("Save Slot 1", "day", 1)
-		config.set_value("Save Slot 1", "total_jp", 0)
-		config.set_value("Save Slot 1", "current_jp",0)
-		config.set_value("Save Slot 1", "pos", Vector2(-23, 46))
-		config.set_value("Save Slot 1", "mood", "neutral")
-		config.set_value("Save Slot 1", "time", "morning")
-		config.save("user://saves.cfg")
+	var result = config.load("user://juggle_man_saves.cfg")
+	if result == OK:
+		if !set_current_slot():
+			_initializingSave(config)
+			
 		
-		slot_1_day = 1
-		slot_1_jp = 0
-		slot_1_score = 0
-		slot_1_pos = (Vector2 (-23, 46))
-		slot_1_mood = "neutral"
-		slot_1_time = "morning"
-	elif slot == 2:
-		config.set_value("Save Slot 2", "day", 1)
-		config.set_value("Save Slot 2", "total_jp", 0)
-		config.set_value("Save Slot 2", "current_jp",0)
-		config.set_value("Save Slot 2", "pos", Vector2(-23, 46))
-		config.set_value("Save Slot 2", "mood", "neutral")
-		config.set_value("Save Slot 2", "time", "morning")
-		config.save("user://saves.cfg")
+		if slot == 1:
+			slot_1_data.assign(slot_default_data)
+		elif slot == 2:
+			slot_2_data.assign(slot_default_data)
+		elif slot == 3:
+			slot_3_data.assign(slot_default_data)
 		
-		slot_2_day = 1
-		slot_2_jp = 0
-		slot_2_score = 0
-		slot_2_pos = (Vector2 (-23, 46))
-		slot_2_mood = "neutral"
-		slot_2_time = "morning"
-		
-	elif slot == 3:
-		config.set_value("Save Slot 3", "day", 1)
-		config.set_value("Save Slot 3", "total_jp", 0)
-		config.set_value("Save Slot 3", "current_jp",0)
-		config.set_value("Save Slot 3", "pos", Vector2(-23, 46))
-		config.set_value("Save Slot 3", "mood", "neutral")
-		config.set_value("Save Slot 3", "time", "morning")
-		config.save("user://saves.cfg")
-		
-		slot_3_day = 1
-		slot_3_jp = 0
-		slot_3_score = 0
-		slot_3_pos = (Vector2 (-23, 46))
-		slot_3_mood = "neutral"
-		slot_3_time = "morning"
+		config.set_value("save_slots", "1", slot_1_data)
+		config.set_value("save_slots", "2", slot_2_data)
+		config.set_value("save_slots", "3", slot_3_data)
 	
+	config.save("user://juggle_man_saves.cfg")
 	update_text()
 
+func set_current_slot() -> bool:
+	if slot == 1:
+		current_save_slot.assign(slot_1_data)
+	elif slot == 2:
+		current_save_slot.assign(slot_2_data)
+	elif slot == 3:
+		current_save_slot.assign(slot_3_data)
+	else:
+		return false
+	return true
 
 func _next() -> void:
 	slot += 1 
 	if slot > 3:
 		slot = 1
 	
+	set_current_slot()
+	
 	saveSlotLabel.text = str("Save Slot ", slot)
-	_preload()
+	
+	update_text()
 
 
 func _back() -> void:
@@ -306,5 +216,8 @@ func _back() -> void:
 	if slot < 1:
 		slot = 3
 	
+	set_current_slot()
+	
 	saveSlotLabel.text = str("Save Slot ", slot)
-	_preload()
+	
+	update_text()

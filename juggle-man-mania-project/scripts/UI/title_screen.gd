@@ -6,7 +6,6 @@ extends Node2D
 var help_open = false
 
 func _ready() -> void:
-	
 	button_help.grab_focus.call_deferred()
 
 func _on_button_new_game_pressed() -> void:

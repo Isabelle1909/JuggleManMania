@@ -5,6 +5,15 @@
 [ext_resource type="Texture2D" uid="uid://fj4w2dpkbv3c" path="res://scenes/juggling_level/IMG_0285.png" id="2_tw54j"]
 [ext_resource type="PackedScene" uid="uid://effsrxenqkmr" path="res://scenes/ui_scenes/text_ui.tscn" id="4_2a8d8"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tw54j"]
+size = Vector2(1336, 137)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_x40yl"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_evhq8"]
+normal = Vector2(-0.9998564, 0.016946718)
+
 [node name="tutorial_scene" type="Node2D" unique_id=1433285458]
 script = ExtResource("1_8kngq")
 
@@ -16,3 +25,43 @@ texture = ExtResource("2_tw54j")
 position = Vector2(564, 596)
 
 [node name="text_ui" parent="." unique_id=1281821818 instance=ExtResource("4_2a8d8")]
+
+[node name="boundaries" type="Node2D" parent="." unique_id=1352589015]
+
+[node name="ball_drop_detect" type="Area2D" parent="boundaries" unique_id=1989737255]
+collision_layer = 96
+collision_mask = 96
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boundaries/ball_drop_detect" unique_id=58098173]
+position = Vector2(568, 717)
+shape = SubResource("RectangleShape2D_tw54j")
+
+[node name="world_boundary_left" type="StaticBody2D" parent="boundaries" unique_id=649455044]
+collision_layer = 112
+collision_mask = 112
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boundaries/world_boundary_left" unique_id=1714445111]
+shape = SubResource("WorldBoundaryShape2D_x40yl")
+
+[node name="world_boundary_right" type="StaticBody2D" parent="boundaries" unique_id=1342464463]
+position = Vector2(1153, 0)
+collision_layer = 112
+collision_mask = 112
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boundaries/world_boundary_right" unique_id=308497253]
+shape = SubResource("WorldBoundaryShape2D_evhq8")
+
+[node name="Panel" type="Panel" parent="." unique_id=628540149]
+offset_right = 265.0
+offset_bottom = 91.0
+
+[node name="Label" type="Label" parent="Panel" unique_id=609886167]
+layout_mode = 0
+offset_right = 266.0
+offset_bottom = 87.0
+theme_override_font_sizes/font_size = 35
+text = "Press i to quit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="boundaries/ball_drop_detect" to="." method="_on_ball_drop_detect_body_entered"]

@@ -30,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://1eyeotvx55nq" path="res://assets/placeholder_assets/tv.placeholder.jpg" id="25_y182y"]
 [ext_resource type="Texture2D" uid="uid://d5p2qdljxhe" path="res://assets/placeholder_assets/oven.placeholder.webp" id="26_36doj"]
 [ext_resource type="PackedScene" uid="uid://coykm3xxm1ygg" path="res://scenes/balcony_scene/time of day.tscn" id="30_ydu31"]
+[ext_resource type="AudioStream" uid="uid://du5x0wfciyftt" path="res://assets/sound effect/02. Who's Ready for Tomorrow_[cut_14sec].mp3" id="30_ydu31"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhgw4"]
 size = Vector2(113, 104)
@@ -332,3 +333,8 @@ scale = Vector2(1.885, 1.885)
 
 [node name="Node2D2" parent="." unique_id=942535428 instance=ExtResource("30_ydu31")]
 position = Vector2(554, -2275)
+[node name="HouseBGM" type="AudioStreamPlayer" parent="." unique_id=1961539089]
+stream = ExtResource("30_ydu31")
+volume_db = -17.0
+autoplay = true
+parameters/looping = true

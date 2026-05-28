@@ -12,10 +12,14 @@ extends Node2D
 @onready var adjustment = get_viewport_rect().size/2
 
 var on_entered_done
-
+var on_new = true
 
 func _ready() -> void:
 	y_n_box.answered.connect(_handle_answer)
+	if on_new:
+		text_box.visible = true
+		help_menu.visible = true
+		on_new = false
 	
 	if !on_entered_done:
 		on_entered()
@@ -31,6 +35,7 @@ func _ready() -> void:
 func go_balcony():
 	SystemManager.house_position = player.position
 	player.global_position = Vector2(550,-2000)
+	SystemManager.location = "balc"
 
 func leave_balcony():
 	player.global_position = Vector2(620, -425)
@@ -59,7 +64,7 @@ func on_entered():
 		if SystemManager.just_juggling == true:
 			results_screen(SystemManager.last_score,SystemManager.last_bonus_1)
 			SystemManager.just_juggling = false
-		player.position = SystemManager.house_position
+		player.position = SystemManager.current_position
 	else:
 		print("house_pos ", SystemManager.house_position)
 		SystemManager.house_position = player.position
@@ -77,9 +82,12 @@ func results_screen(score,bonus_1):
 func _physics_process(delta: float) -> void:
 	if SystemManager.go_balc:
 		go_balcony()
+		
 		SystemManager.go_balc = false
 	elif SystemManager.leave_balc:
 		leave_balcony()
+		
 		SystemManager.leave_balc = false
 	if Input.is_action_just_pressed("ui_open_menu"):
+		print(SystemManager.location)
 		SystemManager.open_save_menu(player.position)

@@ -316,18 +316,40 @@ physics_material_override = ExtResource("3_fjldn")
 position = Vector2(53.5, -56)
 shape = SubResource("RectangleShape2D_310rx")
 
-[node name="left_feedback" type="RichTextLabel" parent="." unique_id=1308238523]
-offset_left = -135.0
-offset_top = -93.0
-offset_right = -47.0
-offset_bottom = -53.0
-text = "Perfect!"
+[node name="grab_left" type="Area2D" parent="hit_areas" unique_id=1084404912]
+position = Vector2(-62, -10)
+collision_layer = 96
+collision_mask = 96
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/grab_left" unique_id=2028631908]
+position = Vector2(-0.75, 4.5)
+shape = SubResource("RectangleShape2D_t484i")
+
+[node name="grab_right" type="Area2D" parent="hit_areas" unique_id=593020914]
+position = Vector2(61, -9)
+collision_layer = 96
+collision_mask = 96
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/grab_right" unique_id=487273281]
+position = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_t484i")
 
 [node name="right_feedback" type="RichTextLabel" parent="." unique_id=1217882336]
-offset_left = 62.0
+offset_left = 42.0
 offset_top = -91.0
 offset_right = 150.0
 offset_bottom = -51.0
+theme_override_colors/default_color = Color(0.80784315, 0.60784316, 0.101960786, 1)
+theme_override_font_sizes/normal_font_size = 24
+text = "Perfect!"
+
+[node name="left_feedback" type="RichTextLabel" parent="." unique_id=1308238523]
+offset_left = -135.0
+offset_top = -93.0
+offset_right = -37.0
+offset_bottom = -53.0
+theme_override_colors/default_color = Color(0.80784315, 0.60784316, 0.101960786, 1)
+theme_override_font_sizes/normal_font_size = 24
 text = "Perfect!"
 
 [node name="SwingSound" type="AudioStreamPlayer" parent="." unique_id=923181932]
@@ -347,3 +369,5 @@ volume_db = -8.104
 [connection signal="body_exited" from="hit_areas/perfect_right" to="." method="_on_perfect_right_body_exited"]
 [connection signal="body_entered" from="hit_areas/late_right" to="." method="_on_late_right_body_entered"]
 [connection signal="body_exited" from="hit_areas/late_right" to="." method="_on_late_right_body_exited"]
+[connection signal="body_entered" from="hit_areas/grab_left" to="." method="_on_grab_left_body_entered"]
+[connection signal="body_exited" from="hit_areas/grab_left" to="." method="_on_grab_left_body_exited"]

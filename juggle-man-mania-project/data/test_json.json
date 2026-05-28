@@ -157,25 +157,33 @@
 
   },
   "tutorial": {
-	"0":{
+	"-1":{
 	  "1": "Alright time to stretch",
 	  "2": "One arm and then the other.",
 	  "3": "Ahh.. that's better" 
 	},
+	"0": {
+		"1": "Next, I'll refresh my sense of timing, and just toss this ball straight up and down.",
+		"2": "there we go..."
+	},
 	"1": {
-	  "1": "Now let's start by tossing a ball up and down",
+	  "1": "Now let's start by gently tossing a light ball around",
 	  "2": "guess i'm a bit rusty",
-	  "3": "There we go, got a feel for the timing"
+	  "3": "There we go, nice and warmed up"
 	},
 	"2": {
 	  "1": "alright time to get some more movement going",
-	  "2": "oops",
-	  "3": "Alright, I still got it!"
+	  "2": "Let's toss this heavier ball a bit faster",
+	  "3": "oops",
+	  "4": "Alright, I still got it!"
 	},
 	"3": {
-	  "1": "Now, it's time to step up the game, and get juggling for real",
+	  "1": "Now, it's time to step up the game, and get juggling for real, I'll use the both balls now",
 	  "2": "I just need a little more warming up",
 	  "3": "They don't call me juggle man for nothing!"
+	},
+	"4": {
+	  "1": "Phew all warmed up!"
 	}
   },
   "prompt_text": {
@@ -190,6 +198,11 @@
 	  "2": "Shouldn't wear my pjs to work, I'm aiming for funny not sad",
 	  "3": "Can't believe I almost forgot a huge, multicoloured clown costume, guess i'm half asleep",
 	  "4": "I should get changed into my costume so i'm ready to leave for work"
+	},
+	"dress_practice": {
+	  "1": "I should get dressed and warm up, otherwise I'll be fumbleman out there",
+	  "2": "No costume, and no practice.. I should at least get dressed",
+	  "3": "That balcony air is good for the soul, I should put my costume on and have a practice out there"
 	},
 	"stay": {
 	  "1": "All the good shops are closed by now",

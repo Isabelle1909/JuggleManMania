@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bx00wbwl3byes"]
+
+[node name="Timer Display" type="Control" unique_id=207893985]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=589501105]
+layout_mode = 0
+offset_right = 257.0
+offset_bottom = 94.0
+
+[node name="time" type="RichTextLabel" parent="Panel" unique_id=1308494988]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 44.0
+theme_override_font_sizes/normal_font_size = 31
+text = "Time Left:"
+horizontal_alignment = 1
+
+[node name="time_number" type="RichTextLabel" parent="Panel" unique_id=2107080963]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 48.0
+offset_right = 255.0
+offset_bottom = 92.0
+theme_override_font_sizes/normal_font_size = 31
+text = "10"
+horizontal_alignment = 1
