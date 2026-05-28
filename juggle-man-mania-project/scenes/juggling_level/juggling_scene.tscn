@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d0bhx8xvmpi25"]
 
 [ext_resource type="Script" uid="uid://dju7bj665jynp" path="res://scripts/juggling_level/juggling_scene.gd" id="1_ho08g"]
-[ext_resource type="Texture2D" uid="uid://fj4w2dpkbv3c" path="res://scenes/juggling_level/IMG_0285.png" id="2_ho08g"]
+[ext_resource type="Texture2D" uid="uid://d3i4sqhx8wrdo" path="res://icon.svg" id="2_miqb6"]
 [ext_resource type="PackedScene" uid="uid://0bj0hox2j6k3" path="res://scenes/juggling_level/juggling_player.tscn" id="3_sywdt"]
 [ext_resource type="PackedScene" uid="uid://byuw47dct35aj" path="res://scenes/juggling_level/juggling_items/manual_physics_ball.tscn" id="5_miqb6"]
 
@@ -18,11 +18,12 @@ size = Vector2(1603, 133)
 script = ExtResource("1_ho08g")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1107217740]
-position = Vector2(579, 323)
-texture = ExtResource("2_ho08g")
+position = Vector2(578.5, 322.5)
+scale = Vector2(9.0390625, 4.9921875)
+texture = ExtResource("2_miqb6")
 
 [node name="juggling_player" parent="." unique_id=1964283372 instance=ExtResource("3_sywdt")]
-position = Vector2(574, 559)
+position = Vector2(574, 470)
 
 [node name="Boundaries" type="Node2D" parent="." unique_id=715281043]
 
@@ -46,7 +47,7 @@ collision_layer = 96
 collision_mask = 96
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/dampener" unique_id=921140774]
-position = Vector2(580, -154)
+position = Vector2(582, -61)
 shape = SubResource("RectangleShape2D_gq0ih")
 
 [node name="out_bound_detector" type="Area2D" parent="Boundaries" unique_id=1767283251]
@@ -74,7 +75,7 @@ vertical_alignment = 1
 [node name="juggling_items" type="Node2D" parent="." unique_id=1382858004]
 
 [node name="manual_physics_ball" parent="juggling_items" unique_id=728813730 instance=ExtResource("5_miqb6")]
-position = Vector2(481, 219)
+position = Vector2(521, 420)
 
 [connection signal="body_entered" from="Boundaries/dampener" to="." method="_on_dampener_body_entered"]
 [connection signal="body_exited" from="Boundaries/dampener" to="." method="_on_dampener_body_exited"]

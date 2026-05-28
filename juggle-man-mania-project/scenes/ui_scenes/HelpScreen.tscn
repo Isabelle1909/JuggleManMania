@@ -75,5 +75,3 @@ offset_right = 709.5
 offset_bottom = 625.0
 theme_override_font_sizes/font_size = 29
 text = "Press J to continue"
-
-[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
