@@ -360,7 +360,9 @@ text = "Perfect!"
 stream = ExtResource("4_do3xs")
 volume_db = -8.104
 
+[connection signal="animation_finished" from="hit_right" to="." method="_on_hit_right_animation_finished"]
 [connection signal="animation_finished" from="sprite" to="." method="_on_sprite_animation_finished"]
+[connection signal="animation_finished" from="hit_left" to="." method="_on_hit_left_animation_finished"]
 [connection signal="body_entered" from="hit_areas/early_left" to="." method="_on_early_left_body_entered"]
 [connection signal="body_exited" from="hit_areas/early_left" to="." method="_on_early_left_body_exited"]
 [connection signal="body_entered" from="hit_areas/perfect_left" to="." method="_on_perfect_left_body_entered"]

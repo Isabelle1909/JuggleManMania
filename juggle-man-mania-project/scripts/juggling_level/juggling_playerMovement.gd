@@ -94,13 +94,11 @@ func movement_and_sprites():
 			swing_sound.play()
 		hit_left.play("hit_left")
 		print("shitting left")
-		done = true
 	if Input.is_action_just_pressed("back"):
 		if swing_sound:
 			swing_sound.play()
 		hit_right.play("hit_right")
 		print("shitting right")
-		done = true
 	if done:
 		print("done")
 		if move_only_disabled:
@@ -128,13 +126,6 @@ func grabbed_follow():
 
 #signals
 
-
-
-func _on_sprite_animation_finished() -> void:
-	done = true
-	%sprite.play("Idle")
-	print("done")
-	TextManager.hide_juggling_feedback()
 
 #hit area signals
 func _on_early_left_body_entered(body: Node2D) -> void:
@@ -211,3 +202,19 @@ func _on_grab_left_body_exited(body: Node2D) -> void:
 		body.position.y -= 20
 		grabbed.erase(body)
 		print("yeet")
+
+
+#animation signals
+
+func _on_hit_right_animation_finished() -> void:
+	done = true
+	%sprite.play("Idle")
+	print("done")
+	TextManager.hide_juggling_feedback()
+
+
+func _on_hit_left_animation_finished() -> void:
+	done = true
+	%sprite.play("Idle")
+	print("done")
+	TextManager.hide_juggling_feedback()
