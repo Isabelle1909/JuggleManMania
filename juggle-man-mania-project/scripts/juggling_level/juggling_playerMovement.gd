@@ -5,6 +5,8 @@ extends CharacterBody2D
 @onready var swing_sound = $SwingSound
 @onready var left_text = $left_feedback
 @onready var right_text = $right_feedback
+@onready var hit_right: AnimatedSprite2D = %hit_right
+@onready var hit_left: AnimatedSprite2D = %hit_left
 
 var grabbed = []
 
@@ -90,26 +92,33 @@ func movement_and_sprites():
 	if Input.is_action_just_pressed("interact"):
 		if swing_sound:
 			swing_sound.play()
-		%sprite.animation = "hit_left"
-		done = false
+		hit_left.play("hit_left")
+		print("shitting left")
+		done = true
 	if Input.is_action_just_pressed("back"):
 		if swing_sound:
 			swing_sound.play()
-		%sprite.animation = "hit_right"
-		done = false
+		hit_right.play("hit_right")
+		print("shitting right")
+		done = true
 	if done:
+		print("done")
 		if move_only_disabled:
+			print("movement disabled")
 			return
-		if character_direction :
+		if character_direction:
+			print("cahrcate deirction: ",character_direction)
 			velocity = character_direction * movement_speed
-			if %sprite.animation != "Walking": %sprite.animation = "Walking"
+			if %sprite.animation != "Walking": %sprite.play("Walking")
+			print("")
 		else:
 			velocity = velocity.move_toward(Vector2.ZERO, movement_speed)
-			if %sprite.animation != "Idle": %sprite.animation = "Idle"
-		
+			if %sprite.animation != "Idle": %sprite.play("Idle")
+		print("He idles")
 		velocity = character_direction * movement_speed
 		move_and_slide()
-	
+	else:
+		print("not done")
 
 func grabbed_follow():
 	for i in grabbed.size():
