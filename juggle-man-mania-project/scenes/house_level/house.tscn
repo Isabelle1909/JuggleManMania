@@ -13,19 +13,12 @@
 [ext_resource type="Texture2D" uid="uid://dggo61m3s3re8" path="res://assets/placeholder_assets/door_placeholder.jpg" id="9_r1b7n"]
 [ext_resource type="PackedScene" uid="uid://effsrxenqkmr" path="res://scenes/ui_scenes/text_ui.tscn" id="10_cy5ox"]
 [ext_resource type="PackedScene" uid="uid://18bbo870jgqk" path="res://scenes/balcony_scene/balcony_scene.tscn" id="11_qf7xi"]
-[ext_resource type="Script" uid="uid://b3hc20imlqltc" path="res://scenes/house_level/static_body_2d.gd" id="11_rm4kp"]
 [ext_resource type="Texture2D" uid="uid://dlh1b3p7ld1um" path="res://assets/placeholder_assets/dirty_laundry.placeholder.webp" id="12_5byq6"]
-[ext_resource type="Script" uid="uid://b8bbvbyotvpcp" path="res://scenes/house_level/bookshelf.gd" id="13_gk87v"]
 [ext_resource type="Texture2D" uid="uid://dmxs0d2anj46v" path="res://assets/placeholder_assets/bookshelf.placeholder.jpg" id="14_o1dlu"]
-[ext_resource type="Script" uid="uid://bbeyopwbsut2q" path="res://scenes/house_level/fridge.gd" id="15_ydu31"]
 [ext_resource type="Texture2D" uid="uid://bbwkwnvodoobx" path="res://assets/placeholder_assets/fridge.placeholder.webp" id="16_hadgj"]
-[ext_resource type="Script" uid="uid://dlqyjmrtau8o6" path="res://scenes/house_level/couch.gd" id="17_03v04"]
 [ext_resource type="Texture2D" uid="uid://dknpjml27x85h" path="res://assets/placeholder_assets/couch.placeholder.jpg" id="18_vkeaj"]
-[ext_resource type="Script" uid="uid://b2c0t65asstw2" path="res://scenes/house_level/toilet.gd" id="19_ya45t"]
 [ext_resource type="Texture2D" uid="uid://n8pb6gjamg4d" path="res://assets/placeholder_assets/toilet.placeholder.jpg" id="20_8htqq"]
-[ext_resource type="Script" uid="uid://07bmmfgeq2h5" path="res://scenes/house_level/messy_desk.gd" id="21_ymuph"]
 [ext_resource type="Texture2D" uid="uid://bb3qr7ov573lj" path="res://assets/placeholder_assets/messy_desk.placeholder.webp" id="22_gmx3x"]
-[ext_resource type="Script" uid="uid://bnmll7dwsoppd" path="res://scenes/house_level/shower.gd" id="23_berg8"]
 [ext_resource type="Texture2D" uid="uid://ihrnpx07y8hp" path="res://assets/placeholder_assets/shower.placeholder.webp" id="24_g751u"]
 [ext_resource type="Texture2D" uid="uid://1eyeotvx55nq" path="res://assets/placeholder_assets/tv.placeholder.jpg" id="25_y182y"]
 [ext_resource type="Texture2D" uid="uid://d5p2qdljxhe" path="res://assets/placeholder_assets/oven.placeholder.webp" id="26_36doj"]
@@ -215,7 +208,8 @@ position = Vector2(0, -2500)
 [node name="interactables" type="Node2D" parent="." unique_id=1655120772]
 
 [node name="dirty_laundry" type="StaticBody2D" parent="interactables" unique_id=893127275]
-script = ExtResource("11_rm4kp")
+script = ExtResource("4_ivbvj")
+title = "dirty_laundry"
 
 [node name="Sprite2D" type="Sprite2D" parent="interactables/dirty_laundry" unique_id=639126926]
 position = Vector2(283.46875, -212)
@@ -227,7 +221,8 @@ position = Vector2(282, -212)
 shape = SubResource("RectangleShape2D_3l30u")
 
 [node name="bookshelf" type="StaticBody2D" parent="interactables" unique_id=490212079]
-script = ExtResource("13_gk87v")
+script = ExtResource("4_ivbvj")
+title = "bookshelf"
 
 [node name="Sprite2D" type="Sprite2D" parent="interactables/bookshelf" unique_id=1321763016]
 position = Vector2(1051.9999, -427)
@@ -240,7 +235,8 @@ rotation = 1.5707964
 shape = SubResource("RectangleShape2D_ee6hf")
 
 [node name="fridge" type="StaticBody2D" parent="interactables" unique_id=65941298]
-script = ExtResource("15_ydu31")
+script = ExtResource("4_ivbvj")
+title = "fridge"
 
 [node name="Sprite2D" type="Sprite2D" parent="interactables/fridge" unique_id=1454943841]
 position = Vector2(154.00002, -453)
@@ -252,7 +248,8 @@ position = Vector2(155, -451)
 shape = SubResource("RectangleShape2D_abrmu")
 
 [node name="couch" type="StaticBody2D" parent="interactables" unique_id=862722206]
-script = ExtResource("17_03v04")
+script = ExtResource("4_ivbvj")
+title = "couch"
 
 [node name="Sprite2D" type="Sprite2D" parent="interactables/couch" unique_id=582591675]
 position = Vector2(647.00006, -174.00002)
@@ -266,7 +263,8 @@ rotation = -1.5707964
 shape = SubResource("RectangleShape2D_ppn5q")
 
 [node name="toilet" type="StaticBody2D" parent="interactables" unique_id=858077886]
-script = ExtResource("19_ya45t")
+script = ExtResource("4_ivbvj")
+title = "toilet"
 
 [node name="Sprite2D" type="Sprite2D" parent="interactables/toilet" unique_id=1633386176]
 position = Vector2(389, 338)
@@ -278,7 +276,8 @@ position = Vector2(393, 335)
 shape = SubResource("RectangleShape2D_thtpj")
 
 [node name="messy_desk" type="StaticBody2D" parent="interactables" unique_id=1346219529]
-script = ExtResource("21_ymuph")
+script = ExtResource("4_ivbvj")
+title = "messy_desk"
 
 [node name="Sprite2D" type="Sprite2D" parent="interactables/messy_desk" unique_id=301245600]
 position = Vector2(1056.0001, 156.00002)
@@ -290,7 +289,8 @@ position = Vector2(1060, 163)
 shape = SubResource("RectangleShape2D_o8vit")
 
 [node name="shower" type="StaticBody2D" parent="interactables" unique_id=1180592028]
-script = ExtResource("23_berg8")
+script = ExtResource("4_ivbvj")
+title = "shower"
 
 [node name="Sprite2D" type="Sprite2D" parent="interactables/shower" unique_id=967267057]
 position = Vector2(651.99994, 300.00006)
@@ -302,7 +302,8 @@ position = Vector2(650, 302)
 shape = SubResource("RectangleShape2D_q00ae")
 
 [node name="tv" type="StaticBody2D" parent="interactables" unique_id=266785012]
-script = ExtResource("11_rm4kp")
+script = ExtResource("4_ivbvj")
+title = "tv"
 
 [node name="Sprite2D" type="Sprite2D" parent="interactables/tv" unique_id=723601076]
 position = Vector2(860.00006, -120)
@@ -315,7 +316,8 @@ position = Vector2(857, -114)
 shape = SubResource("RectangleShape2D_t4hf5")
 
 [node name="oven" type="StaticBody2D" parent="interactables" unique_id=1578060390]
-script = ExtResource("11_rm4kp")
+script = ExtResource("4_ivbvj")
+title = "oven"
 
 [node name="Sprite2D" type="Sprite2D" parent="interactables/oven" unique_id=1369746223]
 position = Vector2(194.99998, -333)
