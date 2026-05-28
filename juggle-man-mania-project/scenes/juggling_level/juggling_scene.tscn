@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d0bhx8xvmpi25"]
 
 [ext_resource type="Script" uid="uid://dju7bj665jynp" path="res://scripts/juggling_level/juggling_scene.gd" id="1_ho08g"]
-[ext_resource type="Texture2D" uid="uid://d3i4sqhx8wrdo" path="res://icon.svg" id="2_miqb6"]
+[ext_resource type="Texture2D" uid="uid://fj4w2dpkbv3c" path="res://scenes/juggling_level/IMG_0285.png" id="2_ho08g"]
 [ext_resource type="PackedScene" uid="uid://0bj0hox2j6k3" path="res://scenes/juggling_level/juggling_player.tscn" id="3_sywdt"]
 [ext_resource type="PackedScene" uid="uid://byuw47dct35aj" path="res://scenes/juggling_level/juggling_items/manual_physics_ball.tscn" id="5_miqb6"]
 
@@ -19,8 +19,7 @@ script = ExtResource("1_ho08g")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1107217740]
 position = Vector2(578.5, 322.5)
-scale = Vector2(9.0390625, 4.9921875)
-texture = ExtResource("2_miqb6")
+texture = ExtResource("2_ho08g")
 
 [node name="juggling_player" parent="." unique_id=1964283372 instance=ExtResource("3_sywdt")]
 position = Vector2(574, 470)
