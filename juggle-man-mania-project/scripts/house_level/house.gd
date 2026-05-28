@@ -38,8 +38,8 @@ func go_balcony():
 	SystemManager.location = "balc"
 
 func leave_balcony():
-	player.global_position = SystemManager.house_position
-	SystemManager.location = "house"
+	player.global_position = Vector2(620, -425)
+	#player.global_position = SystemManager.house_position
 
 func _handle_answer(ans: bool):
 	if !ans:

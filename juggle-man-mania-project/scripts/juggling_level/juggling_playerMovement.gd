@@ -5,6 +5,8 @@ extends CharacterBody2D
 @onready var swing_sound = $SwingSound
 @onready var left_text = $left_feedback
 @onready var right_text = $right_feedback
+@onready var left_arm: AnimatedSprite2D = $left_arm
+@onready var right_arm: AnimatedSprite2D = $right_arm
 
 var grabbed = []
 
@@ -32,6 +34,10 @@ var late_impulse = Vector2(0,-50)
 #whether the ball is hit slighty one way or the other depending on hand
 var left_impulse = Vector2(50,0)
 var right_impulse = Vector2(-50,0)
+
+#checks if you've clicked the button to avoid spamming
+
+
 
 func _ready() -> void:
 	left_text.visible = false
@@ -90,13 +96,18 @@ func movement_and_sprites():
 	if Input.is_action_just_pressed("interact"):
 		if swing_sound:
 			swing_sound.play()
-		%sprite.animation = "hit_left"
+		#left_arm.animation = "juggle"
+		left_arm.play("juggle")
+		
 		done = false
+		
 	if Input.is_action_just_pressed("back"):
 		if swing_sound:
 			swing_sound.play()
-		%sprite.animation = "hit_right"
+		#right_arm.animation = "juggle"
+		right_arm.play("juggle")
 		done = false
+		
 	if done:
 		if move_only_disabled:
 			return
@@ -117,7 +128,7 @@ func grabbed_follow():
 		grabbed[i].position.x = position.x - d
 		
 
-#signals
+#ssignals
 
 
 
@@ -127,7 +138,7 @@ func _on_sprite_animation_finished() -> void:
 	print("done")
 	TextManager.hide_juggling_feedback()
 
-#hit area signals
+#hif area signals
 func _on_early_left_body_entered(body: Node2D) -> void:
 	if body.is_in_group("juggling_items"):
 		if !early_left_zone.has(body):

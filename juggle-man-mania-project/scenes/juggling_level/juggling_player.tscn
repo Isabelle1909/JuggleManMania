@@ -1,31 +1,85 @@
 [gd_scene format=3 uid="uid://0bj0hox2j6k3"]
 
 [ext_resource type="Script" uid="uid://bv5ow5ifgrgp0" path="res://scripts/juggling_level/juggling_playerMovement.gd" id="1_22j5a"]
-[ext_resource type="Texture2D" uid="uid://6orbrko1v3fr" path="res://assets/placeholder_assets/test jugglespr.png" id="2_22j5a"]
+[ext_resource type="Texture2D" uid="uid://bcp35cbq5wq81" path="res://scenes/juggling_level/jugglingMan_animation.png" id="2_wt60r"]
 [ext_resource type="PhysicsMaterial" uid="uid://c2to4k8odqbfh" path="res://physics_materials/hands.tres" id="3_fjldn"]
+[ext_resource type="Texture2D" uid="uid://blgvled4gicvw" path="res://scenes/juggling_level/leftHand_animation.png" id="3_o66wg"]
 [ext_resource type="AudioStream" uid="uid://coxj8epkfhm7e" path="res://assets/sound effect/The sound of swinging in the air.mp3" id="4_do3xs"]
+[ext_resource type="Texture2D" uid="uid://cmi81vol726ks" path="res://scenes/juggling_level/rightHand_animation.png" id="4_t0055"]
+[ext_resource type="Texture2D" uid="uid://ogeenbmg6tgm" path="res://scenes/juggling_level/expressions.png" id="5_o66wg"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fjldn"]
-atlas = ExtResource("2_22j5a")
-region = Rect2(640, 0, 640, 1080)
+[sub_resource type="AtlasTexture" id="AtlasTexture_aww1q"]
+atlas = ExtResource("4_t0055")
+region = Rect2(0, 100, 400, 100)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tfhsj"]
-atlas = ExtResource("2_22j5a")
-region = Rect2(640, 0, 640, 1080)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejcxf"]
+atlas = ExtResource("4_t0055")
+region = Rect2(400, 100, 400, 100)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xo2qw"]
-atlas = ExtResource("2_22j5a")
-region = Rect2(1280, 0, 640, 1080)
+[sub_resource type="AtlasTexture" id="AtlasTexture_mx0th"]
+atlas = ExtResource("4_t0055")
+region = Rect2(800, 100, 400, 100)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rcc3c"]
-atlas = ExtResource("2_22j5a")
-region = Rect2(0, 0, 640, 1080)
+[sub_resource type="SpriteFrames" id="SpriteFrames_eb47g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aww1q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejcxf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mx0th")
+}],
+"loop": false,
+"name": &"juggle",
+"speed": 6.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31qiq"]
+atlas = ExtResource("2_wt60r")
+region = Rect2(0, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wlxme"]
+atlas = ExtResource("2_wt60r")
+region = Rect2(400, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrp4g"]
+atlas = ExtResource("2_wt60r")
+region = Rect2(800, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sh7xv"]
+atlas = ExtResource("2_wt60r")
+region = Rect2(0, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqfxb"]
+atlas = ExtResource("2_wt60r")
+region = Rect2(400, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yeybw"]
+atlas = ExtResource("2_wt60r")
+region = Rect2(800, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmaju"]
+atlas = ExtResource("2_wt60r")
+region = Rect2(1200, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbq77"]
+atlas = ExtResource("2_wt60r")
+region = Rect2(0, 400, 400, 400)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fjldn"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fjldn")
+"texture": SubResource("AtlasTexture_31qiq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wlxme")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrp4g")
 }],
 "loop": true,
 "name": &"Idle",
@@ -33,72 +87,165 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tfhsj")
+"texture": SubResource("AtlasTexture_sh7xv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqfxb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yeybw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmaju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vbq77")
 }],
 "loop": true,
 "name": &"Walking",
 "speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wt60r"]
+atlas = ExtResource("3_o66wg")
+region = Rect2(0, 100, 400, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o66wg"]
+atlas = ExtResource("3_o66wg")
+region = Rect2(400, 100, 400, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0055"]
+atlas = ExtResource("3_o66wg")
+region = Rect2(800, 100, 400, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_31qiq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wt60r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o66wg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0055")
+}],
+"loop": false,
+"name": &"juggle",
+"speed": 6.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7js4"]
+atlas = ExtResource("5_o66wg")
+region = Rect2(1200, 100, 400, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3q3i6"]
+atlas = ExtResource("5_o66wg")
+region = Rect2(400, 100, 400, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ni7gy"]
+atlas = ExtResource("5_o66wg")
+region = Rect2(800, 100, 400, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfd10"]
+atlas = ExtResource("5_o66wg")
+region = Rect2(0, 100, 400, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wicuf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g7js4")
+}],
+"loop": true,
+"name": &"happy",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xo2qw")
+"texture": SubResource("AtlasTexture_3q3i6")
 }],
-"loop": false,
-"name": &"hit_left",
-"speed": 4.0
+"loop": true,
+"name": &"sad",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rcc3c")
+"texture": SubResource("AtlasTexture_ni7gy")
 }],
-"loop": false,
-"name": &"hit_right",
-"speed": 4.0
+"loop": true,
+"name": &"shock",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yfd10")
+}],
+"loop": true,
+"name": &"smile",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8kxmk"]
-radius = 81.0
-height = 176.0
+radius = 62.0
+height = 124.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22j5a"]
-size = Vector2(124, 35.203125)
+size = Vector2(24, 27)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fjldn"]
-size = Vector2(123.1875, 22)
+size = Vector2(41.046875, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tfhsj"]
-size = Vector2(132, 36.484375)
+size = Vector2(26, 38.484375)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xo2qw"]
-size = Vector2(131.6875, 35)
+size = Vector2(27.5, 26.46875)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rcc3c"]
-size = Vector2(124, 22)
+size = Vector2(45.5, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5mi46"]
-size = Vector2(127.421875, 35)
+size = Vector2(26.5, 35)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_310rx"]
-size = Vector2(47.398438, 4)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t484i"]
-size = Vector2(52.5, 7)
+size = Vector2(18.796875, 4)
 
 [node name="juggling_player" type="CharacterBody2D" unique_id=1964283372]
+scale = Vector2(2, 2)
 collision_layer = 16
 collision_mask = 16
 script = ExtResource("1_22j5a")
 
+[node name="right_arm" type="AnimatedSprite2D" parent="." unique_id=1593232510]
+position = Vector2(7, -59)
+scale = Vector2(0.335, 0.335)
+sprite_frames = SubResource("SpriteFrames_eb47g")
+animation = &"juggle"
+
 [node name="sprite" type="AnimatedSprite2D" parent="." unique_id=1543978175]
 unique_name_in_owner = true
-position = Vector2(-0.99999994, -35.999996)
-scale = Vector2(0.2684725, 0.2647967)
+position = Vector2(-2, -53)
+scale = Vector2(0.36961812, 0.32869923)
 sprite_frames = SubResource("SpriteFrames_fjldn")
-animation = &"hit_left"
+animation = &"Idle"
 autoplay = "Idle"
 
+[node name="left_arm" type="AnimatedSprite2D" parent="." unique_id=788682793]
+position = Vector2(-4, -63)
+scale = Vector2(0.335, 0.335)
+sprite_frames = SubResource("SpriteFrames_31qiq")
+animation = &"juggle"
+
+[node name="expression" type="AnimatedSprite2D" parent="." unique_id=261137913]
+position = Vector2(-1, -70)
+scale = Vector2(0.29, 0.29)
+sprite_frames = SubResource("SpriteFrames_wicuf")
+animation = &"smile"
+autoplay = "smile"
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1233205852]
-position = Vector2(0, -3)
+position = Vector2(1, -54)
 shape = SubResource("CapsuleShape2D_8kxmk")
 
 [node name="hit_areas" type="Node2D" parent="." unique_id=1988722638]
@@ -108,7 +255,7 @@ collision_layer = 96
 collision_mask = 96
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/early_left" unique_id=1270791091]
-position = Vector2(-46, -86.39844)
+position = Vector2(-31, -89.5)
 shape = SubResource("RectangleShape2D_22j5a")
 
 [node name="perfect_left" type="Area2D" parent="hit_areas" unique_id=647849357]
@@ -116,7 +263,7 @@ collision_layer = 96
 collision_mask = 96
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/perfect_left" unique_id=1116100008]
-position = Vector2(-43, -42)
+position = Vector2(-40.023438, -57)
 shape = SubResource("RectangleShape2D_fjldn")
 
 [node name="late_left" type="Area2D" parent="hit_areas" unique_id=1929758645]
@@ -124,7 +271,7 @@ collision_layer = 96
 collision_mask = 96
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/late_left" unique_id=1840191518]
-position = Vector2(-38, 5.2421875)
+position = Vector2(-31.5, -24)
 shape = SubResource("RectangleShape2D_tfhsj")
 
 [node name="early_right" type="Area2D" parent="hit_areas" unique_id=164673866]
@@ -132,7 +279,7 @@ collision_layer = 96
 collision_mask = 96
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/early_right" unique_id=839524202]
-position = Vector2(57, -88.5)
+position = Vector2(31.25, -89.734375)
 shape = SubResource("RectangleShape2D_xo2qw")
 
 [node name="perfect_right" type="Area2D" parent="hit_areas" unique_id=1454771069]
@@ -140,7 +287,7 @@ collision_layer = 96
 collision_mask = 96
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/perfect_right" unique_id=1638707171]
-position = Vector2(55, -42)
+position = Vector2(41.25, -57)
 shape = SubResource("RectangleShape2D_rcc3c")
 
 [node name="late_right" type="Area2D" parent="hit_areas" unique_id=1637234712]
@@ -148,25 +295,25 @@ collision_layer = 96
 collision_mask = 96
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/late_right" unique_id=1256911201]
-position = Vector2(53.710938, 5.5)
+position = Vector2(31.25, -25)
 shape = SubResource("RectangleShape2D_5mi46")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="hit_areas" unique_id=442497802]
+[node name="left_hand" type="StaticBody2D" parent="hit_areas" unique_id=442497802]
 collision_layer = 64
 collision_mask = 64
 physics_material_override = ExtResource("3_fjldn")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/StaticBody2D" unique_id=1480277747]
-position = Vector2(-64.60156, -6)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/left_hand" unique_id=1480277747]
+position = Vector2(-44.5, -57.5)
 shape = SubResource("RectangleShape2D_310rx")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="hit_areas" unique_id=1106023771]
+[node name="right_hand" type="StaticBody2D" parent="hit_areas" unique_id=1106023771]
 collision_layer = 64
 collision_mask = 64
 physics_material_override = ExtResource("3_fjldn")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/StaticBody2D2" unique_id=749672484]
-position = Vector2(63.30078, -8)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/right_hand" unique_id=749672484]
+position = Vector2(53.5, -56)
 shape = SubResource("RectangleShape2D_310rx")
 
 [node name="grab_left" type="Area2D" parent="hit_areas" unique_id=1084404912]
