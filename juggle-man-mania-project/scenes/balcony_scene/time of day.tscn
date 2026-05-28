@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://coykm3xxm1ygg"]
+
+[ext_resource type="Script" uid="uid://da3uace3gsoba" path="res://scripts/balcony_level/morning.gd" id="1_qnrlj"]
+
+[node name="Node2D" type="Node2D" unique_id=1390977037]
+script = ExtResource("1_qnrlj")
