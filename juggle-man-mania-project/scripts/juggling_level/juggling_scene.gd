@@ -3,6 +3,7 @@ extends Node2D
 @onready var score_display = $score_display/RichTextLabel
 @onready var player = $juggling_player
 @onready var juggling_items = $juggling_items
+@onready var quit_panel = $Panel
 
 var active_juggling_items = []
 var score = 0
@@ -11,8 +12,14 @@ var finish = false
 var infinite = false
 
 func _ready() -> void:
-	TextManager.jfl = player.get_node("left_feedback")
-	TextManager.jfr = player.get_node("right_feedback")
+	infinite = SystemManager.juggle_infinite
+	if infinite:
+		quit_panel.visible = true
+	else:
+		quit_panel.visible = false
+	
+	TextManager.jfl = player.get_node("left_panel")
+	TextManager.jfr = player.get_node("right_panel")
 	for child: Node in juggling_items.get_children():
 		if child.is_in_group("juggling_items"):
 			active_juggling_items.push_back(child)
@@ -29,6 +36,12 @@ func _physics_process(delta: float) -> void:
 			SystemManager.calculate_mood()
 			finish = true
 			print("TIMEOUT")
+	else:
+		if Input.is_action_just_pressed("ui_open_menu") || active_juggling_items.size() <= 0:
+			SystemManager.infinity_max = score
+			SystemManager.open_tutorial_menu(null)
+			finish = true
+		
 	
 	if score != player.score:
 		score = player.score
@@ -60,3 +73,4 @@ func _on_out_bound_detector_body_entered(body: Node2D) -> void:
 	print(active_juggling_items)
 	if active_juggling_items.has(body):
 		active_juggling_items.erase(body)
+		print(active_juggling_items.size())

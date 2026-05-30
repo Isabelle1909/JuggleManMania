@@ -8,7 +8,9 @@ var current_jp = 0
 var total_jp = 0
 var last_score
 var last_bonus_1
+
 var just_juggling = false
+var juggle_infinite = false
 
 var house_level = load("res://scenes/house_level/house.tscn")
 var juggle_level = load("res://scenes/juggling_level/juggling_scene.tscn")
@@ -30,6 +32,7 @@ var leave_balc = false
 
 var tutorial_max = 0
 var infinity_max = 0
+var tut_just_done = false
 
 var new_high_score_text = "you got a new high score!"
 var normal_completion_text = "you completed the tutorial you champ, you."
@@ -90,10 +93,13 @@ func update_scores(to_add):
 	current_jp += to_add
 
 func open_juggling(pos):
-	house_position = pos
+	if pos != null:
+		house_position = pos
+		just_juggling = true
+	
 	print("house pos ", house_position)
 	get_tree().change_scene_to_packed(juggle_level)
-	just_juggling = true
+	
 
 func open_tutorial():
 	get_tree().change_scene_to_packed(tutorial_level)
@@ -111,9 +117,11 @@ func open_house(juggle_score,items_left):
 	get_tree().change_scene_to_packed(house_level)
 
 func open_tutorial_menu(pos):
+	get_tree().change_scene_to_packed(tutorial_menu)
 	if pos != null:
 		balc_position = pos
-	get_tree().change_scene_to_packed(tutorial_menu)
+	
+
 
 
 func open_save_menu(pos) -> void:

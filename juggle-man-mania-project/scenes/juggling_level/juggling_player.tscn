@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://blgvled4gicvw" path="res://scenes/juggling_level/leftHand_animation.png" id="4_31qiq"]
 [ext_resource type="AudioStream" uid="uid://coxj8epkfhm7e" path="res://assets/sound effect/The sound of swinging in the air.mp3" id="4_do3xs"]
 [ext_resource type="Texture2D" uid="uid://ogeenbmg6tgm" path="res://scenes/juggling_level/expressions.png" id="5_wlxme"]
-[ext_resource type="FontFile" uid="uid://b72kg2y6yhaxv" path="res://assets/text/splurge.ttf" id="7_t0055"]
+[ext_resource type="FontFile" uid="uid://cmiq3uxxd6en1" path="res://assets/text/HVD_Comic_Serif_Pro.otf" id="7_t0055"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wt60r"]
 atlas = ExtResource("2_o66wg")
@@ -35,7 +35,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"hit_right",
-"speed": 5.0
+"speed": 7.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mmaju"]
@@ -142,7 +142,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"hit_left",
-"speed": 5.0
+"speed": 7.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_31qiq"]
@@ -334,31 +334,46 @@ collision_mask = 96
 position = Vector2(1, 2)
 shape = SubResource("RectangleShape2D_t484i")
 
-[node name="right_feedback" type="RichTextLabel" parent="." unique_id=1217882336]
-offset_left = 42.0
-offset_top = -91.0
-offset_right = 150.0
-offset_bottom = -51.0
-theme_override_colors/default_color = Color(0.9254902, 0.5254902, 0.16862746, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("7_t0055")
-theme_override_font_sizes/normal_font_size = 24
-text = "Perfect!"
+[node name="right_panel" type="Panel" parent="." unique_id=881104036]
+offset_left = 110.0
+offset_top = -107.0
+offset_right = 232.0
+offset_bottom = -77.0
 
-[node name="left_feedback" type="RichTextLabel" parent="." unique_id=1308238523]
-offset_left = -135.0
-offset_top = -93.0
-offset_right = -37.0
-offset_bottom = -53.0
-theme_override_colors/default_color = Color(0.92474633, 0.5270564, 0.16978425, 1)
+[node name="right_feedback" type="RichTextLabel" parent="right_panel" unique_id=1217882336]
+layout_mode = 0
+offset_left = -3.0
+offset_right = 125.0
+offset_bottom = 39.0
+theme_override_colors/default_color = Color(0.9254902, 0.5254902, 0.16862746, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("7_t0055")
-theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/normal_font_size = 29
 text = "Perfect!"
+horizontal_alignment = 1
 
 [node name="SwingSound" type="AudioStreamPlayer" parent="." unique_id=923181932]
 stream = ExtResource("4_do3xs")
 volume_db = -8.104
+
+[node name="left_panel" type="Panel" parent="." unique_id=816178768]
+offset_left = -224.0
+offset_top = -106.0
+offset_right = -98.0
+offset_bottom = -74.0
+
+[node name="left_feedback" type="RichTextLabel" parent="left_panel" unique_id=1308238523]
+layout_mode = 0
+offset_right = 126.0
+offset_bottom = 39.0
+theme_override_colors/default_color = Color(0.92474633, 0.5270564, 0.16978425, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_t0055")
+theme_override_font_sizes/normal_font_size = 30
+text = "Perfect!"
+horizontal_alignment = 1
 
 [connection signal="animation_finished" from="hit_right" to="." method="_on_hit_right_animation_finished"]
 [connection signal="animation_finished" from="sprite" to="." method="_on_sprite_animation_finished"]
@@ -377,3 +392,5 @@ volume_db = -8.104
 [connection signal="body_exited" from="hit_areas/late_right" to="." method="_on_late_right_body_exited"]
 [connection signal="body_entered" from="hit_areas/grab_left" to="." method="_on_grab_left_body_entered"]
 [connection signal="body_exited" from="hit_areas/grab_left" to="." method="_on_grab_left_body_exited"]
+[connection signal="body_entered" from="hit_areas/grab_right" to="." method="_on_grab_right_body_entered"]
+[connection signal="body_exited" from="hit_areas/grab_right" to="." method="_on_grab_right_body_exited"]
