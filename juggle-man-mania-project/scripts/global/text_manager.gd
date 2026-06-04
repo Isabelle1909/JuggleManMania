@@ -30,7 +30,10 @@ var talked_cutscene_nums = {
 	"dress": 0,
 	"stay": 0,
 	"smoke": 0,
-	"dress_practice":0
+	"dress_practice":0,
+	"ending_1": 6,
+	"ending_2": 9,
+	"ending_3": 26
 	
 }
 

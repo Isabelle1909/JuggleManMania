@@ -19,6 +19,7 @@ var tutorial_menu = load("res://scenes/juggling_level/tutorial/tutorial_menu.tsc
 var results_scr = load("res://scenes/ui_scenes/ResultsScreenUI.tscn")
 var help_scr = load("res://scenes/ui_scenes/HelpScreen.tscn")
 var save_scr = load("res://scenes/ui_scenes/SaveMenu.tscn")
+var end_game_scene = load("res://ending_1.tscn")
 
 var house_position
 var balc_position
@@ -86,7 +87,11 @@ func increment_time():
 
 func increment_day():
 	day += 1
+	if day >= 4:
+		end_game()
 
+func end_game():
+	get_tree().change_scene_to_packed(end_game_scene)
 
 func update_scores(to_add):
 	total_jp += to_add

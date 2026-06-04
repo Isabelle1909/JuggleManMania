@@ -11,12 +11,18 @@ var timer = 10
 var finish = false
 var infinite = false
 
+var ball = load("res://scenes/juggling_level/juggling_items/manual_physics_ball.tscn")
+
 func _ready() -> void:
 	infinite = SystemManager.juggle_infinite
 	if infinite:
 		quit_panel.visible = true
 	else:
 		quit_panel.visible = false
+		if SystemManager.day == 2:
+			pass
+		elif SystemManager.day == 3:
+			pass
 	
 	TextManager.jfl = player.get_node("left_panel")
 	TextManager.jfr = player.get_node("right_panel")
