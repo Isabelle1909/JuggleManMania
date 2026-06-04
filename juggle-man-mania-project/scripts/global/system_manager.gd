@@ -3,12 +3,15 @@ extends Node
 var time = "morning"
 var day = 1
 var mood = "neutral"
+var face
 
 var current_jp = 0
 var total_jp = 0
 var last_score
 var last_bonus_1
+
 var just_juggling = false
+var juggle_infinite = false
 
 var house_level = load("res://scenes/house_level/house.tscn")
 var juggle_level = load("res://scenes/juggling_level/juggling_scene.tscn")
@@ -17,6 +20,7 @@ var tutorial_menu = load("res://scenes/juggling_level/tutorial/tutorial_menu.tsc
 var results_scr = load("res://scenes/ui_scenes/ResultsScreenUI.tscn")
 var help_scr = load("res://scenes/ui_scenes/HelpScreen.tscn")
 var save_scr = load("res://scenes/ui_scenes/SaveMenu.tscn")
+var end_game_scene = load("res://ending_1.tscn")
 
 var house_position
 var balc_position
@@ -30,6 +34,7 @@ var leave_balc = false
 
 var tutorial_max = 0
 var infinity_max = 0
+var tut_just_done = false
 
 var new_high_score_text = "you got a new high score!"
 var normal_completion_text = "you completed the tutorial you champ, you."
@@ -83,17 +88,24 @@ func increment_time():
 
 func increment_day():
 	day += 1
+	if day >= 4:
+		end_game()
 
+func end_game():
+	get_tree().change_scene_to_packed(end_game_scene)
 
 func update_scores(to_add):
 	total_jp += to_add
 	current_jp += to_add
 
 func open_juggling(pos):
-	house_position = pos
+	if pos != null:
+		house_position = pos
+		just_juggling = true
+	
 	print("house pos ", house_position)
 	get_tree().change_scene_to_packed(juggle_level)
-	just_juggling = true
+	
 
 func open_tutorial():
 	get_tree().change_scene_to_packed(tutorial_level)
@@ -111,9 +123,11 @@ func open_house(juggle_score,items_left):
 	get_tree().change_scene_to_packed(house_level)
 
 func open_tutorial_menu(pos):
+	get_tree().change_scene_to_packed(tutorial_menu)
 	if pos != null:
 		balc_position = pos
-	get_tree().change_scene_to_packed(tutorial_menu)
+	
+
 
 
 func open_save_menu(pos) -> void:
