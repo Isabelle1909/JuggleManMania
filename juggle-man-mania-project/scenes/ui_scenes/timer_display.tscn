@@ -1,5 +1,10 @@
 [gd_scene format=3 uid="uid://bx00wbwl3byes"]
 
+[ext_resource type="Texture2D" uid="uid://bpm3qonues7xa" path="res://assets/UI image assets/Text box.png" id="1_cx2mb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rasii"]
+texture = ExtResource("1_cx2mb")
+
 [node name="Timer Display" type="Control" unique_id=207893985]
 layout_mode = 3
 anchors_preset = 15
@@ -12,6 +17,7 @@ grow_vertical = 2
 layout_mode = 0
 offset_right = 257.0
 offset_bottom = 94.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_rasii")
 
 [node name="time" type="RichTextLabel" parent="Panel" unique_id=1308494988]
 layout_mode = 0
