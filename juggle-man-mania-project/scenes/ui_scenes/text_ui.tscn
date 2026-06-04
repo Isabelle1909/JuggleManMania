@@ -8,6 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://bx00wbwl3byes" path="res://scenes/ui_scenes/timer_display.tscn" id="6_l2pa0"]
 [ext_resource type="PackedScene" uid="uid://d0ok3sn8c03rl" path="res://scenes/ui_scenes/score_display.tscn" id="7_lxpq1"]
 
+[sub_resource type="Gradient" id="Gradient_lxpq1"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rv5q3"]
+gradient = SubResource("Gradient_lxpq1")
+
 [node name="text_ui" type="CanvasLayer" unique_id=1281821818]
 
 [node name="timer_display" parent="." unique_id=207893985 instance=ExtResource("6_l2pa0")]
@@ -45,3 +51,9 @@ visible = false
 
 [node name="y_n_box" parent="." unique_id=1882826195 instance=ExtResource("5_xxgiu")]
 visible = false
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=32869872]
+visible = false
+position = Vector2(600, 317)
+scale = Vector2(5.0351563, 647.5)
+texture = SubResource("GradientTexture1D_rv5q3")
