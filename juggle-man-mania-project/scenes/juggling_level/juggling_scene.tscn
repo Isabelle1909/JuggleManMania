@@ -99,6 +99,20 @@ vertical_alignment = 1
 [node name="manual_physics_ball" parent="juggling_items" unique_id=728813730 instance=ExtResource("5_miqb6")]
 position = Vector2(521, 420)
 
+[node name="Panel" type="Panel" parent="." unique_id=213843193]
+visible = false
+offset_right = 265.0
+offset_bottom = 91.0
+
+[node name="Label" type="Label" parent="Panel" unique_id=376724612]
+layout_mode = 0
+offset_right = 266.0
+offset_bottom = 87.0
+theme_override_font_sizes/font_size = 35
+text = "Press i to quit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="body_entered" from="Boundaries/dampener" to="." method="_on_dampener_body_entered"]
 [connection signal="body_exited" from="Boundaries/dampener" to="." method="_on_dampener_body_exited"]
 [connection signal="body_entered" from="Boundaries/out_bound_detector" to="." method="_on_out_bound_detector_body_entered"]

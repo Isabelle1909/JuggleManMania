@@ -1,221 +1,1279 @@
 {
   "wardrobe": {
-	"morning_1_b4": {
-	  "1": "Time to get this show on the road."
 
-	},
-	"morning_1_neutral": {
-	  "1": "My clothes are in here.",
-	  "2": "Should probably do some laundry soon.",
-	  "3": "Nothing more to see here..."
+    "morning_1_b4": {
+      "1": "Time to get this show on the road."
+    },
+    "morning_1_neutral": {
+      "1": "My clothes are in here.",
+      "2": "Should probably do some laundry soon.",
+      "3": "Nothing more to see here..."
+    },
 
-	},
 
-	"evening_1_b4": {
-	  "1": "Let's see what I have here..."
-
+    "evening_1_b4": {
+      "1": "Let's see what I have here..."
 		},
 		"evening_1_neutral": {
-	  "1": "I haven't worn a lot of this stuff in a while.",
-	  "2": "I've already got something comfy enough on.",
-	  "3": "Its just my wardrobe, same as always."
-	},
-	"evening_1_good": {
-	  "1": "It's nice getting something comfy on.",
-	  "2": "I'm already wearing what I like.",
-	  "3": "My wardrobe, lots of old favorites here."
+      "1": "I haven't worn a lot of this stuff in a while.",
+      "2": "I've already got something comfy enough on.",
+      "3": "Its just my wardrobe, same as always."
+    },
+    "evening_1_good": {
+      "1": "It's nice getting something comfy on.",
+      "2": "I'm already wearing what I like.",
+      "3": "My wardrobe, lots of old favorites here."
+    },
+    "evening_1_bad": {
+      "1": "Getting dressed is always such a hassle.",
+      "2": "Anything is better than trying to sleep in costume though, learned that the hard way.",
+      "3": "Stupid thing, full of random crap."
+    },
 
-	},
-	"evening_1_bad": {
-	  "1": "Getting dressed is always such a hassle.",
-	  "2": "Anything is better than trying to sleep in costume though, learned that the hard way.",
-	  "3": "Stupid thing, full of random crap."
-	},
 
-	"morning_2_b4": {
-	  "1": "Just another day in paradise. Hah, I crack myself up."
+    "morning_2_b4": {
+      "1": "Just another day in paradise. Hah, I crack myself up."
+    },
+    "morning_2_neutral": {
+      "1": "Funny how even a clown costume gets boring after awhile, well funny might not be the word for it.",
+      "2": "I should probably throw some of this out...",
+      "3": "But I guess all this stuff reminds me too much of happier times."
+    },
+    "morning_2_good": {
+      "1": "Yet another magical transformation done eh?",
+      "2": "Better quit 'clowning' around and get to work",
+      "3": "I've got three clown suits exactly the same, Though I normally only use one or the the other, with the third one collecting dust.",
+      "4": "They are all exactly the same though"
+    },
+    "morning_2_bad": {
+      "1": "I've got some pretty big shoes to fill, In more ways than one.",
+      "2": "I don't think I'll be filling them though",
+      "3": "Not sure I'm cut out for this role anymore",
+      "4": "well.. maybe yesterday was just an off day for me, we all have em."
+    },
 
-	},
-	"morning_2_neutral": {
-	  "1": "Funny how even a clown costume gets boring after awhile, well funny might not be the word for it.",
-	  "2": "I should probably throw some of this out... but I won't.",
-	  "3": "Well I guess all this stuff reminds me too much of happier times."
-	}
 
-	},
+    "evening_2_neutral": {
+      "1": "Another long day... Glad to get outta costume",
+      "2": "This jersey.. it's my favorite, got a few chritsmases ago. ",
+      "3": "Never did get around to writing back",
+      "4": "I wonder if it's too late...",
+      "5": "probably..."
+    },
+    "evening_2_good": {
+      "1": "Phewwwwie, nothing like getting ready to relax after a long day."
+    },
+    "evening_2_bad": {
+      "1": "I feel like shit today..",
+      "2": "And my favorite pair of pants are in the wash pile...",
+      "3": "these ones just aren't as comfortable",
+      "4": "Well.. the rest of them are even less comfy."
+    },
+
+
+    "morning_3_neutral": {
+      "1": "New day, same routine.. ",
+      "2": "Well, at least I always know what to expect, ",
+      "3": "Not the world.. ",
+      "4": "But my own little something eh? "
+    },
+    "morning_3_good":{
+      "1": "Y'know I haven't been feeling quite the same dread I used to, ",
+      "2": "Getting dressed in the morning ",
+      "3": "I always hated leaving the safety of my own home ",
+      "4": "And it only got worse and worse these past few years ",
+      "5": "But lately..",
+      "6": "Well, I'm still scared, but I'm also looking forward to it..",
+      "7": "The day waiting ahead of me"
+
+    },
+    "morning_3_bad":{
+      "1": "I... I think I hate it ",
+      "2": "This fucking costume ",
+      "3": "I'll try.., I'll give it one last shot ",
+      "4": "I'm not if I am meant to be juggleman ",
+      "5": "I'm not sure of anything these days",
+      "6": "I wish I didn't have to go out today",
+      "7": "But i'll definitely feel guilty if I leave whatever kids birthday party hanging...",
+      "8": "well... better not waste too much time"
+    },
+
+
+    "evening_3_neutral": {
+      "1": "I used to feel depressed staring in here and never seeing anything.. ",
+      "2": "Anything.. new, I suppose ",
+      "3": "I felt stagnant, and I guess it felt like a reminder, ",
+      "4": "But now i'm not so sure, ",
+      "5": "I don't think I mind where I am right now.. ",
+      "6": "I think.. I like it even..",
+      "7": "is that the same as being stagnant?"
+    },
+    "evening_3_good": {
+      "1": "Hmm.. y'know what maybe it is time I got some new stuff ",
+      "2": "I, maybe I could even update the old clown costume ",
+      "3": "Or get another spare one, and start rotating them more",
+      "4": "I wear one everday and work hard in it after all. "
+    },
+    "evening_3_bad": {
+      "1": "All of this, it so outdated... ",
+      "2": "Not just in terms of whatever's in fashion ",
+      "3": "This isn't me anymore ",
+      "4": "I don't think it has been for a long time either.. ",
+      "5": "I hate looking in here sometimes...",
+      "6": "why do I even keep all this around,",
+      "7": "Looking at my costume hanging there.. I just feel sick."
+    } 
+  },
 
 
   "mirror": {
-	"morning_1_neutral": {
-	  "1": "Phew, those dark circles are getting bad.",
-	  "2": "Guess i'll give my hair a comb.",
-	  "3": "It's just me..."
 
-	},
+    "morning_1_neutral": {
+      "1": "Phew, those dark circles are getting bad.",
+      "2": "Guess i'll give my hair a comb.",
+      "3": "It's just me..."
+    },
 
-	"evening_1_good": {
-	  "1": "You did alright today.",
-	  "2": "Crowd liked you. It's whether the kids are happy that counts for something.",
-	  "3": "Same old me, not the worst a guy could be."
+    "evening_1_good": {
+      "1": "You did alright today.",
+      "2": "Crowd liked you. It's whether the kids are happy that counts for something.",
+      "3": "Same old me, not the worst a guy could be."
+    },
+    "evening_1_neutral": {
+      "1": "Not much to see here.",
+      "2": "Man, I need to get better at brushing my teeth.",
+      "3": "It's just me, with yet another day gone by."
+    },
+    "evening_1_bad": {
+      "1": "I can't even meet my own eye.",
+      "2": "The kids thought it was funny when I dropped everything at least.",
+      "3": "Not sure if I deserve to call myself juggleman anymore though..."
+    },
 
-	},
-	"evening_1_neutral": {
-	  "1": "Not much to see here.",
-	  "2": "Man, I need to get better at brushing my teeth.",
-	  "3": "It's just me, with yet another day gone by."
 
-	},
-	"evening_1_bad": {
-	  "1": "I can't even meet my own eye.",
-	  "2": "The kids thought it was funny when I dropped everything at least.",
-	  "3": "Not sure if I deserve to call myself juggleman anymore though..."
+    "morning_2_good":{
+      "1": "Might not be much to look at but I know my jugglin' sure is something.",
+      "2": "Good mornin' me, another day another party to attend heh.",
+      "3": "Alright, just gotta do what I did yesterday, but hopefully even better."
+    },
+    "morning_2_neutral": {
+      "1": "Eesh, I've seen zombies that look more awake.",
+      "2": "Nothing wrong with the familiar I suppose.",
+      "3": "Alright, me. We got this. I got this."
+    },
+    "morning_2_bad": {
+      "1": "Better add a layer to my facepaint, I couldn't sleep last night.",
+      "2": "I just don't get it, I used to do this so easily.",
+      "3": "I don't want to look anymore."
+    
+    },
 
-	},
+    "evening_2_neutral":{
+      "1": "Another day done eh? ",
+      "2": "Somehow I look even less awake than this morning ",
+      "3": "Hopefully, I'll sleep well tonight at least. ",
+      "4": "Eesh, This glass could probably use a clean.. ",
+      "5": "(wipe, wipe)",
+      "6": "Ugh, Now I can see myself better",
+      "7": "Should've left it grubby, hah!"
+    },
+    "evening_2_good":{
+      "1": "Welcome home handsome.. ",
+      "2": "Hah!, Now that's a good one",
+      "3": "Nothing wrong with having a funny face though right? ",
+      "4": "Especially for a class A clown like me! "
+    },
+    "evening_2_bad": {
+      "1": "Well, at least im not out of clown make-up remover.. ",
+      "2": "But I definietly have way too much for a chump like me ",
+      "3": "I mean, it's funny when I drop them, but that's not really the clown I wanna be ",
+      "4": "I used to know exactly what I wanted, no matter what anyone thought ",
+      "5": "now I just wish there was something to think something of what I'm doing ",
+      "6": "other than me...I wish I could stop. "
+    },
 
-	"morning_2_good":{
-	  "1": "Might not be much to look at but I know my jugglin' sure is something.",
-	  "2": "Good mornin' me, another day another party to attend heh.",
-	  "3": "Alright, just gotta do what I did yesterday, but hopefully even better."
 
-	},
-	"morning_2_neutral": {
-	  "1": "Eesh, I've seen zombies that look more awake.",
-	  "2": "Nothing wrong with the familiar I suppose.",
-	  "3": "Alright, me. We got this. I got this."
+    "morning_3_neutral":{
+      "1": "Hello, hello, you come here often?",
+      "2": "Hmm... Actually i'm probably here a little too much. ",
+      "3": "I need to get out of the house more, but at the same time I'm always so tired after work, i head straight here ",
+      "4": "Soon I'll be pale enough I won't need to paint my face...",
+      "5": "yeesh..."
+    },
+    "morning_3_good": {
+      "1": "Hmm.. I think.. my dark circles are actually easing up ",
+      "2": "I feel like I have been sleeping a little better these last few days ",
+      "3": "Makes me feel younger ",
+      "4": "Not that I look all the different, heh. "
+    },
+    "morning_3_bad":{
+      "1": "God.. I look like I didn't sleep a wink.. ",
+      "2": "And I certainly feel like it ",
+      "3": "I... just, I'm so damn tired ",
+      "4": "I wish I could go back to bed... "
+    },
 
-	},
-	"morning_2_bad": {
-	  "1": "Better add a layer to my facepaint, I couldn't sleep last night.",
-	  "2": "I just don't get it, I used to do this so easily.",
-	  "3": "I don't want to look anymore."
-	}
+
+    "evening_3_neutral":{
+      "1": "It's me",
+      "2": "Y'know I think today was alright ",
+      "3": "I'm not quite as exhausted as normal ",
+      "4": "Maybe, tomorrow.. after work, I go out somewhere ",
+      "5": "Get a snack, some more juggleman blue paint."
+    },
+    "evening_3_good":{
+      "1": "Today... was pretty good",
+      "2": "And I feel it too",
+      "3": "I even got a job offer",
+      "4": "Something bigger than a birthday",
+      "5": "reminds me of the old days..",
+      "6": "it's a bit scary.. but also exciting, Things are lookin up",
+      "7": "(He smiles in the mirror)"
+    },
+    "evening_3_bad":{
+      "1": "God... what I am doing ",
+      "2": "I-I'm so fucking shit ",
+      "3": "The last thing I want is to look in the mirror",
+      "4": "I don't deserve to call myself a clown..."
+    }
 
   },
 
 
   "computer": {
-	"morning_1_neutral": {
-	  "1": "Hmmm... looks like there's no internet.",
-	  "2": "Nothing to do.",
-	  "3": "I'm sure if I look again later, it will be working."
 
-	},
+    "morning_1_neutral": {
+      "1": "Hmmm... looks like there's no internet.",
+      "2": "Nothing to do.",
+      "3": "I'm sure if I look again later, it will be working."
+    },
 
-	"morning_2_good": {
-	  "1": "Internet's workin' maybe I could watch a movie later.",
-	  "2": "No messages, but I guess it's less distractions.",
-	  "3": "Don't have time to log on now though, don't wanna be late."
-	},
-	"morning_2_neutral": {
-	  "1": "Internet's workin' too bad there's nothing interesting on it.",
-	  "2": "Could check messages... if anyone actually sent any.",
-	  "3": "Don't have time to waste anyway, I should get to work."
-	},
-	"morning_2_bad": {
-	  "1": "Internet's connected, least now I know no one cares to message.",
-	  "2": "Not that I'm exactly reaching out either.",
-	  "3": "I don't want to think about this anymore. It's no-one's fault but my own anyway.",
-	  "4": "I should get to work already."
-	}
+    "morning_2_good": {
+      "1": "Internet's workin' maybe I could watch a movie later.",
+      "2": "No messages, but I guess it's less distractions.",
+      "3": "Don't have time to log on now though, don't wanna be late."
+    },
+    "morning_2_neutral": {
+      "1": "Internet's workin' too bad there's nothing interesting on it.",
+      "2": "Could check messages... if anyone actually sent any.",
+      "3": "Don't have time to waste anyway, I should get to work."
+    },
+    "morning_2_bad": {
+      "1": "Internet's connected, least now I know no one cares to message.",
+      "2": "Not that I'm exactly reaching out either.",
+      "3": "I don't want to think about this anymore. It's no-one's fault but my own anyway.",
+      "4": "I should get to work already."
+    },
+    
+    
+    "evening_2_neutral":{
+      "1": "I wonder how Ma's doing.. ",
+      "2": "The old man too ",
+      "3": "I think I showed them how use email before I left.. ",
+      "4": "Maybe they forgot though.. Maybe that's why they haven't sent any."
+    },
+    "evening_2_good":{
+      "1": "Let's see.... ",
+      "2": "hmm..Funny jokes for awesome clowns.. ",
+      "3": "Why did the clown cross the road? ",
+      "4": "To Honk on the other side! ",
+      "5": "..............",
+      "6": "Jesus Christ...Is ths what passes as funny nowadays..",
+      "7": "...no wonder clowns are going outta style... ",
+      "8": "Maybe I'll start a clown blog",
+      "9": "Get some real jokes out there...or at least some damn puns"
+    },
+    "evening_2_bad": {
+      "1": "Still no emails...or messages at all... ",
+      "2": "I know I should also reach out but it's hard ",
+      "3": "I was already a disapointment when I was suceeding ",
+      "4": " .... I wonder... what that would make me now..."
+    },
+
+
+    "morning_3_bad":{
+      "1": "I always think about it ",
+      "2": "Writing out something and trying to reconect ",
+      "3": "If only.. I wasn't such a coward.. ",
+      "4": "I know if I keep dragging my feet it might end up being too late ",
+      "5": "but i don't know what I'd do it I didnt get a reply",
+      "6": "A confirmation that I am alone...",
+      "7": "I guess... I'd rather not.."
+    },
+    "morning_3_good": {
+      "1": "Hmmm... maybe I'll download some new music to listen to on the way to work ",
+      "2": ".......nope, .....nope....., eh, i don't like that either ",
+      "3": "Guess what I got is pretty good anyway ",
+      "4": "If I got too much more It would be ages until my favourite song comes around again anyway.. "
+    },
+    "morning_3_neutral":{
+      "1": "Let's see... looks like I have another birthday party job coming up... ",
+      "2": "and then a company dinner...nothing too interesting ",
+      "3": "but not too bad if i say so myself ",
+      "4": "well, better not mess around on here too much heh.. "
+    },
+
+    
+    "evening_3_neutral":{
+      "1": "hmm.. maybe.. ",
+      "2": "I start writing a draft..-I dont have to send anything ",
+      "3": "But maybe.. Just in case ",
+      "4": "To Ma.....How are you and dad? ",
+      "5": "(typing....typing...)",
+      "6": "love your (foolish) son, Juggleman",
+      "7": "hmm... maybe the foolish is a bit much",
+      "8": "or not enough",
+      "9": "ugh.. thats enough for now"
+
+
+    },
+    "evening_3_good":{
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+    "evening_3_bad":{
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    }
 
   },
 
 
   "bed": {
-	"morning_1_neutral": {
-	  "1": "God, I wish.",
-	  "2": "I have to go to work.",
-	  "3": "Must resist.... The call of the cosy.."
 
-	},
+    "morning_1_neutral": {
+      "1": "God, I wish.",
+      "2": "I have to go to work.",
+      "3": "Must resist.... The call of the cosy.."
+    },
 
-	"evening_1_good": {
-	  "1": "I'm tired... but I think I'll sleep well tonight.",
-	  "2": "Tomorrow might not be so bad.",
-	  "3": "I think I might actually be a bit excited"
 
-	},
-	"evening_1_neutral": {
-	  "1": "Another day done.",
-	  "2": "Hopefully I'll get at least some sleep.",
-	  "3": "It's all done now, It's all okay..."
+    "morning_2_good": {
+      "1": "I'm tired... but I think I'll sleep well tonight.",
+      "2": "Today might not be so bad.",
+      "3": "I think I might actually be a bit excited",
+      "4": "At the very least I dont want to crawl back in as much as usual"
+    },
+    "morning_2_neutral": {
+      "1": "Tired, but still kicking.",
+      "2": "I could crawl back in... but I can't.",
+      "3": "Wait for me bed... I shall return to thee."
+    },
 
-	},
-	"evening_1_bad": {
-	  "1": "I'm tired, but I don't want to sleep.",
-	  "2": "Tomorrow will come too soon.",
-	  "3": "But the later I stay up, The worse I'll feel in the morning."
-	  
-	},
 
-	"morning_2_neutral": {
-	  "1": "Tired, but still kicking.",
-	  "2": "I could crawl back in... but I can't.",
-	  "3": "Wait for me bed... I shall return to thee."
+    "morning_3_neutral":{
 
-	}
+    },
+    "morning_3_good": {
+
+    },
+    "morning_3_bad":{
+
+    }
 
   },
+
+
+  "dirty_laundry": {
+
+    "morning_1_neutral": {
+      "1": "It just keeps on stacking up.",
+      "2": "I never have time during the week for all this.",
+      "3": "But I always forget when the weekend comes around.",
+      "4": "My own little Sisyphean hell"
+    },
+
+
+		"evening_1_neutral": {
+      "1": "I've got a real 'Laundry list' of things to do huh? ",
+      "2": "Ah... That where my favorite trackpants went.",
+      "3": "Man, I need to remember this time around. It's getting ridiculous"
+    },
+    "evening_1_good": {
+      "1": "I think this weekend I'll make a day of sorting this out",
+      "2": "Go to the laundromat with a good book, get it done",
+      "3": "Maybe I'll get something nice to eat after, as a treat ~~"
+    },
+    "evening_1_bad": {
+      "1": "Uuugh, by the end of this week I won't have anyting left to wear.",
+      "2": "I do not want to go to the laundromat in costume again.",
+      "3": "I'm sure there'll be something here that passes the sniff test.",
+      "4": "I'm not going through it now though."
+    },
+
+
+    "morning_2_neutral": {
+      "1": "They need to invent clothes that wash themselves.",
+      "2": "Or invent a me that doesnt sweat so much.",
+      "3": "It used to be so easy to keep on top of this...",
+      "4": "I felt like a super man, the house was clean, all the chores done, working full time, seeing friends everyday",
+      "5": "I guess I just got burnt out.",
+      "6": "Bound to happen with how much I was putting into work on top of all of that.",
+      "7": "It feels like everyone else can do it though, I just don't understand what makes me so different.",
+      "8": "A big ol' pile of laundry.."
+    },
+    "morning_2_good": {
+      "1": "well, at least I can say I have plans for the weekend, hah.",
+      "2": "Hmm.... maybe I should spice things up a little...",
+      "3": "try a new laundry detergent scent..",
+      "4": "nah... Better not go too crazy, dont wanna risk hatin' it.",
+      "5": "...been awhile since I had lavender though.. and why not get an old favorite again?"
+    },
+    "morning_2_bad": {
+      "1": "Hello laundry..",
+      "2": "(Juggleman, In a squeaky voice): Hello Juggleman!",
+      "3": "Good to see you've finally grown large enough to gain sentience.",
+      "4": "(Juggleman, In a squeaky voice): Father.. why did you create me? Please... put me out of my misery..",
+      "5": "Oh laundry pile, if only I wasn't an idiot incapabe of remembering you when I actually have time..",
+      "6": "(Juggleman, In a squeaky voice): They say talking to yourself is a sign of madness, y'know?",
+      "7": "God I wish laundry pile, I wish..."
+    },
+
+    "evening_2_neutral":{
+
+    },
+    "evening_2_good":{
+
+    },
+    "evening_2_bad": {
+
+    },
+
+
+    "morning_3_neutral":{
+
+    },
+    "morning_3_good": {
+
+    },
+    "morning_3_bad":{
+
+    },
+
+    
+    "evening_3_neutral":{
+
+    },
+    "evening_3_good":{
+
+    },
+    "evening_3_bad":{
+
+    }
+
+  },
+
+
+  "book_shelf":{
+
+     "morning_1_neutral": {
+      "1": "All my old books",
+      "2": "Been awhile since I've sat down and read.",
+      "3": "My to read pile kept stacking higher and higher",
+      "4": "Haven't been to the bookstore in an age though...",
+      "5": "Probably for the best in this economy, hah..."
+    },
+
+
+		"evening_1_neutral": {
+      "1": "The only friends I have left these days..",
+      "2": "And even them I don't get to spend much time with.",
+      "3": "It's nice to know they're here though.",
+      "4": "No matter how busy I get, They'll always be on the shelf waiting.",
+      "5": "It's a little sad, them waiting.."
+    },
+    "evening_1_good": {
+      "1": "I'm a bit too tired to read this evening... ",
+      "2": "But perhaps I'll pick one out for when I next get the chance. ",
+      "3": "Let's see what's in my to-read pile ",
+      "4": "... hmm... ",
+      "5": "Maybe I'll just re-read A midsummer night's dream instead..."
+    },
+    "evening_1_bad": {
+      "1": "I'm too tired to read something new",
+      "2": "But I don't want to re-read any of my books right now either",
+      "3": "I suppose I'm just too tired to read..",
+      "4": "When aren't I? These books will be buried in dust before I find the energy to read them",
+      "5": "I'm still too selfish to give them away though",
+      "6": "well, It's nice to think about reading them...",
+      "7": "guess, i'm just hopeful like that... hah."
+    },
+
+
+    "morning_2_neutral": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+    "morning_2_good": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+    "morning_2_bad": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+        "evening_2_neutral":{
+
+    },
+    "evening_2_good":{
+
+    },
+    "evening_2_bad": {
+
+    },
+
+
+    "morning_3_neutral":{
+
+    },
+    "morning_3_good": {
+
+    },
+    "morning_3_bad":{
+
+    },
+
+    
+    "evening_3_neutral":{
+
+    },
+    "evening_3_good":{
+
+    },
+    "evening_3_bad":{
+
+    }
+  },
+
+
+  "fridge":{
+    "morning_1_neutral": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+		"evening_1_neutral": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+    "evening_1_good": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+
+    },
+    "evening_1_bad": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+
+    "morning_2_neutral": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+    "morning_2_good": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+    "morning_2_bad": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+    "evening_2_neutral":{
+
+    },
+    "evening_2_good":{
+
+    },
+    "evening_2_bad": {
+
+    },
+
+
+    "morning_3_neutral":{
+
+    },
+    "morning_3_good": {
+
+    },
+    "morning_3_bad":{
+
+    },
+
+    
+    "evening_3_neutral":{
+
+    },
+    "evening_3_good":{
+
+    },
+    "evening_3_bad":{
+
+    }
+  },
+
+
+  "couch":{
+    "morning_1_neutral": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+		"evening_1_neutral": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+    "evening_1_good": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+
+    },
+    "evening_1_bad": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+
+    "morning_2_neutral": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+    "morning_2_good": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+    "morning_2_bad": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+    "evening_2_neutral":{
+
+    },
+    "evening_2_good":{
+
+    },
+    "evening_2_bad": {
+
+    },
+
+
+    "morning_3_neutral":{
+
+    },
+    "morning_3_good": {
+
+    },
+    "morning_3_bad":{
+
+    },
+
+    
+    "evening_3_neutral":{
+
+    },
+    "evening_3_good":{
+
+    },
+    "evening_3_bad":{
+
+    }
+  },
+
+
+  "toilet":{
+    "morning_1_neutral": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+		"evening_1_neutral": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+    "evening_1_good": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+
+    },
+    "evening_1_bad": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+
+    "morning_2_neutral": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+    "morning_2_good": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+    "morning_2_bad": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+    "evening_2_neutral":{
+
+    },
+    "evening_2_good":{
+
+    },
+    "evening_2_bad": {
+
+    },
+
+
+    "morning_3_neutral":{
+
+    },
+    "morning_3_good": {
+
+    },
+    "morning_3_bad":{
+
+    },
+
+    
+    "evening_3_neutral":{
+
+    },
+    "evening_3_good":{
+
+    },
+    "evening_3_bad":{
+
+    }
+  },
+
+
+  "messy_desk":{
+    "morning_1_neutral": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+		"evening_1_neutral": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+    "evening_1_good": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+
+    },
+    "evening_1_bad": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+
+    "morning_2_neutral": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+    "morning_2_good": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+    "morning_2_bad": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+    "evening_2_neutral":{
+
+    },
+    "evening_2_good":{
+
+    },
+    "evening_2_bad": {
+
+    },
+
+
+    "morning_3_neutral":{
+
+    },
+    "morning_3_good": {
+
+    },
+    "morning_3_bad":{
+
+    },
+
+    
+    "evening_3_neutral":{
+
+    },
+    "evening_3_good":{
+
+    },
+    "evening_3_bad":{
+
+    }
+  },
+
+
+  "shower":{
+    "morning_1_neutral": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+		"evening_1_neutral": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+    "evening_1_good": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+
+    },
+    "evening_1_bad": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+
+    "morning_2_neutral": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+    "morning_2_good": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+    "morning_2_bad": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+    "evening_2_neutral":{
+
+    },
+    "evening_2_good":{
+
+    },
+    "evening_2_bad": {
+
+    },
+
+
+    "morning_3_neutral":{
+
+    },
+    "morning_3_good": {
+
+    },
+    "morning_3_bad":{
+
+    },
+
+    
+    "evening_3_neutral":{
+
+    },
+    "evening_3_good":{
+
+    },
+    "evening_3_bad":{
+
+    }
+  },
+
+
+  "tv":{
+    "morning_1_neutral": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+		"evening_1_neutral": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+    "evening_1_good": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+
+    },
+    "evening_1_bad": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+
+    "morning_2_neutral": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+    "morning_2_good": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+    "morning_2_bad": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+        "evening_2_neutral":{
+
+    },
+    "evening_2_good":{
+
+    },
+    "evening_2_bad": {
+
+    },
+
+
+    "morning_3_neutral":{
+
+    },
+    "morning_3_good": {
+
+    },
+    "morning_3_bad":{
+
+    },
+
+    
+    "evening_3_neutral":{
+
+    },
+    "evening_3_good":{
+
+    },
+    "evening_3_bad":{
+
+    }
+  },
+
+
+  "oven":{
+    "morning_1_neutral": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+		"evening_1_neutral": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+    "evening_1_good": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+
+    },
+    "evening_1_bad": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+
+    "morning_2_neutral": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+    "morning_2_good": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+    "morning_2_bad": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " "
+    },
+
+    "evening_2_neutral":{
+
+    },
+    "evening_2_good":{
+
+    },
+    "evening_2_bad": {
+
+    },
+
+
+    "morning_3_neutral":{
+
+    },
+    "morning_3_good": {
+
+    },
+    "morning_3_bad":{
+
+    },
+
+    
+    "evening_3_neutral":{
+
+    },
+    "evening_3_good":{
+
+    },
+    "evening_3_bad":{
+
+    }
+  },
+
+
+
   "tutorial": {
-	"-1":{
-	  "1": "Alright time to stretch",
-	  "2": "One arm and then the other.",
-	  "3": "Ahh.. that's better" 
-	},
-	"0": {
-		"1": "Next, I'll refresh my sense of timing, and just toss this ball straight up and down.",
-		"2": "there we go..."
-	},
-	"1": {
-	  "1": "Now let's start by gently tossing a light ball around",
-	  "2": "guess i'm a bit rusty",
-	  "3": "There we go, nice and warmed up"
-	},
-	"2": {
-	  "1": "alright time to get some more movement going",
-	  "2": "Let's toss this heavier ball a bit faster",
-	  "3": "oops",
-	  "4": "Alright, I still got it!"
-	},
-	"3": {
-	  "1": "Now, it's time to step up the game, and get juggling for real, I'll use the both balls now",
-	  "2": "I just need a little more warming up",
-	  "3": "They don't call me juggle man for nothing!"
-	},
-	"4": {
-	  "1": "Phew all warmed up!"
-	}
+    "-1":{
+      "1": "Alright time to stretch",
+      "2": "One arm and then the other.",
+      "3": "Ahh.. that's better" 
+    },
+    "0": {
+        "1": "Next, I'll refresh my sense of timing, and just toss this ball straight up and down.",
+        "2": "there we go..."
+    },
+    "1": {
+      "1": "Now let's start by gently tossing a light ball around",
+      "2": "guess i'm a bit rusty",
+      "3": "There we go, nice and warmed up"
+    },
+    "2": {
+      "1": "alright time to get some more movement going",
+      "2": "Let's toss this heavier ball a bit faster",
+      "3": "oops",
+      "4": "Alright, I still got it!"
+    },
+    "3": {
+      "1": "Now, it's time to step up the game, and get juggling for real, I'll use the both balls now",
+      "2": "I just need a little more warming up",
+      "3": "They don't call me juggle man for nothing!"
+    },
+    "4": {
+      "1": "Phew all warmed up!"
+    }
   },
+
+
   "prompt_text": {
-	"undress":{
-	  "1": "need to get ready for bed first",
-	  "2": "Can't sleep in my costume, I'll have funny dreams",
-	  "3": "Don't want the clown pants getting creased, they're a pain to iron",
-	  "4": "I should get changed into something more comfortable first"
-	},
-	"dress":{
-	  "1": "Erk, I must be tired, almost left the house without getting dressed",
-	  "2": "Shouldn't wear my pjs to work, I'm aiming for funny not sad",
-	  "3": "Can't believe I almost forgot a huge, multicoloured clown costume, guess i'm half asleep",
-	  "4": "I should get changed into my costume so i'm ready to leave for work"
-	},
-	"dress_practice": {
-	  "1": "I should get dressed and warm up, otherwise I'll be fumbleman out there",
-	  "2": "No costume, and no practice.. I should at least get dressed",
-	  "3": "That balcony air is good for the soul, I should put my costume on and have a practice out there"
-	},
-	"stay": {
-	  "1": "All the good shops are closed by now",
-	  "2": "Can't be bothered going out, i'm tired",
-	  "3": "it's been a long day, I just wanna smoke and head to bed",
-	  "4": "I'll head out tomorrow, I should rest now"
-	},
-	"smoke": {
-	  "1": "Can't go to bed without my daily cig, a guy's gotta have something to take the edge off",
-	  "2": "I know I'll just toss and turn if I don't have my balcony smoke",
-	  "3": "Gotta go out and get some fresh.. and rather unfresh air in these lungs",
-	  "4": "You know what they say. A smoke a day keeps the doctor paid",
-	  "5": "I'm nothing if not a man of routine, I need to go out and have my cigarette"
-	}
+    "undress":{
+      "1": "need to get ready for bed first",
+      "2": "Can't sleep in my costume, I'll have funny dreams",
+      "3": "Don't want the clown pants getting creased, they're a pain to iron",
+      "4": "I should get changed into something more comfortable first"
+    },
+    "dress":{
+      "1": "Erk, I must be tired, almost left the house without getting dressed",
+      "2": "Shouldn't wear my pjs to work, I'm aiming for funny not sad",
+      "3": "Can't believe I almost forgot a huge, multicoloured clown costume, guess i'm half asleep",
+      "4": "I should get changed into my costume so i'm ready to leave for work"
+    },
+    "dress_practice": {
+      "1": "I should get dressed and warm up, otherwise I'll be fumbleman out there",
+      "3": "No costume, and no practice.. I should at least get dressed",
+      "2": "That balcony air is good for the soul, I should put my costume on and have a practice out there"
+    },
+    "stay": {
+      "1": "All the good shops are closed by now",
+      "2": "Can't be bothered going out, i'm tired",
+      "3": "it's been a long day, I just wanna smoke and head to bed",
+      "4": "I'll head out tomorrow, I should rest now"
+    },
+    "smoke": {
+      "1": "Can't go to bed without my daily cig, a guy's gotta have something to take the edge off",
+      "2": "I know I'll just toss and turn if I don't have my balcony smoke",
+      "3": "Gotta go out and get some fresh.. and rather unfresh air in these lungs",
+      "4": "You know what they say. A smoke a day keeps the doctor paid",
+      "5": "I'm nothing if not a man of routine, I need to go out and have my cigarette"
+    }
+  },
+
+
+
+  "ending_texts": {
+    "ending_1": {
+      "1": "And so I became a star, I was one of the best jugglers the world had ever seen.",
+      "2": "The people loved me, and they couldn't get enough.",
+      "3": "Old friends and family were finally getting back in touch with me.",
+      "4": "I still had tough days and sometimes weeks but,",
+      "5": "finally... I have the life I'd always dreamed of.",
+      "6": "I'm no longer desperately trying to prove myself."
+    },
+    "ending_2": {
+      "1": "I never did become a world class clown...",
+      "2": "but I did remember why it was I wanted to be one in the first place.",
+      "3": "There a lot of terrible and scary things in this world.",
+      "4": "And so I wanted to do what I could to spread joy and laughter",
+      "5": "I'm not rich, or famous... but i finally feel like myself again",
+      "6": "I've started reaching out again to my family, to old friends",
+      "7": "I may never acomplish what I dreamed of, but in all honesty i'm not sure I care to.",
+      "8": "The bad days are getting easier, and the good days more frequent.",
+      "9": "And I find myself still smiling long after the show is done"
+    },
+    "ending_3": {
+      "1": "I-I'm scared to admit this, even to myself..",
+      "2": "But I think I hate it",
+      "3": "Juggling that is..",
+      "4": "I dread getting up there, and I dread each toss...",
+      "5": "But I'm also terrified of what would happen if I stopped.",
+      "6": "I built my entire identity around this, I let the people and everything else in my life fall to the wayside.",
+      "7": "I don't know who I am anymore",
+      "8": "I don't know who I am if I'm not Juggleman.",
+      "9": "Or if I'm even a person at all",
+      "10": ".....",
+      "11": "I knew it was getting unhealthy",
+      "12": "The way I couldn't, wouldn't do anything else.",
+      "13": "But this past week, I haven't even been able to juggle.",
+      "14": "I can't live like this, This agony of failing at the one thing that has defined me... But i'm afraid to die tomorrow...",
+      "15": "I wonder... if my parents are more disapointed in me, or the fact that they were right...",
+      "16": ".....",
+      "17": "I think I need to take a break...",
+      "18": "I need to find something outside of this-",
+      "19": "this fucking cage i've built around myself for no damn reason.",
+      "20": "I'm gonna go for a walk, and a smoke, and I'm gonna find at least one damn thing out there to enjoy",
+
+      "21": "That sign on the street below, A night class.....for accounting",
+      "22": "I always did like the perfect consistenty of numbers..",
+      "23": "Counting my juggles and keeping score in my head",
+      "24": "well not that that went so well for me..",
+      "25": "It's worth a shot right?",
+      "26": "It's, it ain't like I can't this quit this too if I fuck it up, heh..",
+      "27": "And so I became an accountant, it's not where I thought'd i'd ever be but I'm happier, not just because of the change of pace, but because i've proved to myself..",
+      "28": "That I can change, That it's okay to."
+
+    }
   }
+
 }
