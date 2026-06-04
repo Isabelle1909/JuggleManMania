@@ -56,7 +56,8 @@ tile_set = ExtResource("1_6g3yx")
 position = Vector2(212, 349)
 title = "practice_box"
 
-[node name="potted_plant" type="StaticBody2D" parent="."]
+[node name="potted_plant" type="StaticBody2D" parent="." unique_id=1222164701]
+visibility_layer = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="potted_plant"]
 position = Vector2(929, 293)

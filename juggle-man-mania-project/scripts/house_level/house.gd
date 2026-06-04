@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var ui_scr = $text_ui
+@onready var blk = $text_ui/Sprite2D3
 @onready var text_box = $text_ui/text_box
 @onready var help_menu = $text_ui/help_menu
 @onready var result_scr = $text_ui/results_screen
@@ -48,6 +49,7 @@ func _handle_answer(ans: bool):
 		TextManager.close_question()
 		player.disabled = false
 	elif player.waiting_answer_bed:
+		blk.visible = true
 		TextManager.close_question()
 		player.disabled = false
 		SystemManager.increment_time()
@@ -86,6 +88,9 @@ func results_screen(score,bonus_1):
 	bs1.text = str(bonus_1)
 
 func _physics_process(delta: float) -> void:
+	if SystemManager.time.contains("morning"):
+		await get_tree().create_timer(1.0).timeout
+		blk.visible = false
 	if SystemManager.go_balc:
 		go_balcony()
 		

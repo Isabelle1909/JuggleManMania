@@ -2,7 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cl3usunub6e5h" path="res://scripts/house_level/house.gd" id="1_a5e21"]
 [ext_resource type="TileSet" uid="uid://dmt30scjkk0fc" path="res://tilesets/game_tile_set.tres" id="2_qf7xi"]
+[ext_resource type="Texture2D" uid="uid://dlg24asi58e5i" path="res://scripts/balcony_level/evening.placeholder.jpg" id="2_vkeaj"]
 [ext_resource type="PackedScene" uid="uid://dksw6vohgomcm" path="res://scenes/house_level/player.tscn" id="3_cyy7t"]
+[ext_resource type="Script" uid="uid://bavedodqchli2" path="res://evening_toggle.gd" id="3_ya45t"]
+[ext_resource type="Texture2D" uid="uid://dqgno3un702au" path="res://scripts/balcony_level/morning.placeholder.jpg" id="4_8htqq"]
 [ext_resource type="Script" uid="uid://c2521k6budvog" path="res://scripts/house_level/Interactable.gd" id="4_ivbvj"]
 [ext_resource type="Texture2D" uid="uid://drpiaialarbkh" path="res://assets/house_assets/Mirror.png" id="4_ydu31"]
 [ext_resource type="Texture2D" uid="uid://kdg5o3yd0avj" path="res://assets/house_assets/Bed.png" id="5_ydu31"]
@@ -77,11 +80,22 @@ size = Vector2(75.25, 132)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4u1od"]
 size = Vector2(201.75, 60.625)
 
-[node name="house" type="Node2D" unique_id=99672333]
-y_sort_enabled = true
+[node name="house" type="Node2D" unique_id=626814677]
 script = ExtResource("1_a5e21")
 
-[node name="GameTilemap" type="Node2D" parent="." unique_id=231002208]
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1094154841]
+position = Vector2(546.4998, -2194)
+scale = Vector2(1.9268486, 2.0857143)
+texture = ExtResource("4_8htqq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1053499470]
+visible = false
+position = Vector2(542.49976, -2197.5)
+scale = Vector2(3.9673204, 3.8507855)
+texture = ExtResource("2_vkeaj")
+script = ExtResource("3_ya45t")
+
+[node name="GameTilemap" type="Node2D" parent="." unique_id=1779792854]
 
 [node name="Floor" type="TileMapLayer" parent="GameTilemap" unique_id=341785494]
 z_index = -1
@@ -205,14 +219,14 @@ shape = SubResource("RectangleShape2D_w4xns")
 stream = ExtResource("9_qf7xi")
 volume_db = -8.0
 
-[node name="player" parent="." unique_id=1879465028 instance=ExtResource("3_cyy7t")]
+[node name="text_ui" parent="." unique_id=1281821818 instance=ExtResource("10_cy5ox")]
+
+[node name="Balcony_Scene" parent="." unique_id=1986828564 instance=ExtResource("11_qf7xi")]
+position = Vector2(30, -2470)
+
+[node name="player" parent="." unique_id=1271940088 instance=ExtResource("3_cyy7t")]
 y_sort_enabled = true
 position = Vector2(145, -50)
-
-[node name="text_ui" parent="." unique_id=240054920 instance=ExtResource("10_cy5ox")]
-
-[node name="Balcony_Scene" parent="." unique_id=869663003 instance=ExtResource("11_qf7xi")]
-position = Vector2(0, -2500)
 
 [node name="interactables" type="Node2D" parent="." unique_id=2116506441]
 
