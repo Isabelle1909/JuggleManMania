@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://d0hod3585ysfe"]
+
+[ext_resource type="Script" uid="uid://bavedodqchli2" path="res://evening_toggle.gd" id="1_5s2k2"]
+[ext_resource type="Texture2D" uid="uid://dlg24asi58e5i" path="res://scripts/balcony_level/evening.placeholder.jpg" id="2_aj2b4"]
+
+[node name="Evening_toggle" type="Node2D" unique_id=45193353]
+script = ExtResource("1_5s2k2")
+
+[node name="Evening_placeholder" type="Sprite2D" parent="." unique_id=2047711579]
+visible = false
+position = Vector2(1088.4999, 641.5)
+scale = Vector2(3.5702612, 3.4109948)
+texture = ExtResource("2_aj2b4")

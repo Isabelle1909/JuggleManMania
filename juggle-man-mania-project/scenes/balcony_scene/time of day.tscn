@@ -1,6 +1,21 @@
 [gd_scene format=3 uid="uid://coykm3xxm1ygg"]
 
-[ext_resource type="Script" uid="uid://da3uace3gsoba" path="res://scripts/balcony_level/morning.gd" id="1_qnrlj"]
+[ext_resource type="Script" uid="uid://ddsudl6mdj06b" path="res://scenes/balcony_scene/time_of_day.gd" id="1_73wln"]
+[ext_resource type="Texture2D" uid="uid://dqgno3un702au" path="res://scripts/balcony_level/morning.placeholder.jpg" id="2_8g6vo"]
+[ext_resource type="Texture2D" uid="uid://dlg24asi58e5i" path="res://scripts/balcony_level/evening.placeholder.jpg" id="3_o5wid"]
 
-[node name="Node2D" type="Node2D" unique_id=1390977037]
-script = ExtResource("1_qnrlj")
+[node name="Day_Night Cycle" type="CanvasLayer" unique_id=123116332]
+layer = 3
+follow_viewport_enabled = true
+script = ExtResource("1_73wln")
+
+[node name="Morning_placeholder" type="Sprite2D" parent="." unique_id=762270990]
+light_mask = 512
+visibility_layer = 512
+position = Vector2(621, 350)
+texture = ExtResource("2_8g6vo")
+
+[node name="Evening_placeholder" type="Sprite2D" parent="." unique_id=220036212]
+position = Vector2(626, 350)
+scale = Vector2(2.0326798, 1.8442407)
+texture = ExtResource("3_o5wid")
