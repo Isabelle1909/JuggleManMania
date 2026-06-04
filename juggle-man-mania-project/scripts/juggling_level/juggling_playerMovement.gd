@@ -3,8 +3,8 @@ extends CharacterBody2D
 @export var movement_speed : float = 500
 
 @onready var swing_sound = $SwingSound
-@onready var left_text = $left_feedback
-@onready var right_text = $right_feedback
+@onready var left_text = $left_panel
+@onready var right_text = $right_panel
 @onready var hit_right: AnimatedSprite2D = %hit_right
 @onready var hit_left: AnimatedSprite2D = %hit_left
 
@@ -57,9 +57,6 @@ func _physics_process(delta):
 
 
 func check(E,P,L,dir):
-	print(E)
-	print(P)
-	print(L)
 	check_zone(E,dir,"early")
 	check_zone(P,dir,"perfect")
 	check_zone(L,dir,"late")
@@ -93,32 +90,29 @@ func movement_and_sprites():
 		if swing_sound:
 			swing_sound.play()
 		hit_left.play("hit_left")
-		print("shitting left")
-		done = true
+	
 	if Input.is_action_just_pressed("back"):
 		if swing_sound:
 			swing_sound.play()
 		hit_right.play("hit_right")
-		print("shitting right")
-		done = true
+	
 	if done:
-		print("done")
 		if move_only_disabled:
-			print("movement disabled")
 			return
+		
 		if character_direction:
-			print("cahrcate deirction: ",character_direction)
 			velocity = character_direction * movement_speed
-			if %sprite.animation != "Walking": %sprite.play("Walking")
-			print("")
+			if %sprite.animation != "Walking": 
+				%sprite.play("Walking")
+			
 		else:
 			velocity = velocity.move_toward(Vector2.ZERO, movement_speed)
-			if %sprite.animation != "Idle": %sprite.play("Idle")
-		print("He idles")
+			if %sprite.animation != "Idle": 
+				%sprite.play("Idle")
+			
 		velocity = character_direction * movement_speed
 		move_and_slide()
-	else:
-		print("not done")
+
 
 func grabbed_follow():
 	for i in grabbed.size():
@@ -128,13 +122,6 @@ func grabbed_follow():
 
 #signals
 
-
-
-func _on_sprite_animation_finished() -> void:
-	done = true
-	%sprite.play("Idle")
-	print("done")
-	TextManager.hide_juggling_feedback()
 
 #hit area signals
 func _on_early_left_body_entered(body: Node2D) -> void:
@@ -211,3 +198,33 @@ func _on_grab_left_body_exited(body: Node2D) -> void:
 		body.position.y -= 20
 		grabbed.erase(body)
 		print("yeet")
+
+func _on_grab_right_body_entered(body: Node2D) -> void:
+	if body.is_in_group("juggling_items"):
+		var d = position.x - body.position.x
+		body.dif = d
+		body.velocity.x = 0
+		grabbed.append(body)
+		print("grab")
+
+func _on_grab_right_body_exited(body: Node2D) -> void:
+	if body.is_in_group("juggling_items"):
+		body.position.y -= 20
+		grabbed.erase(body)
+		print("yeet")
+	
+#animation signals
+
+func _on_hit_right_animation_finished() -> void:
+	done = true
+	print("done")
+	%sprite.play("Idle")
+	print("done")
+	TextManager.hide_juggling_feedback()
+
+
+func _on_hit_left_animation_finished() -> void:
+	done = true
+	print("done")
+	%sprite.play("Idle")
+	TextManager.hide_juggling_feedback()
