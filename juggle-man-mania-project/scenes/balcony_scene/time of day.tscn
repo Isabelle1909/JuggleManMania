@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://coykm3xxm1ygg"]
+[gd_scene load_steps=2 format=3 uid="uid://coykm3xxm1ygg"]
 
 [ext_resource type="Script" uid="uid://ddsudl6mdj06b" path="res://scenes/balcony_scene/time_of_day.gd" id="1_73wln"]
 [ext_resource type="Texture2D" uid="uid://dqgno3un702au" path="res://scripts/balcony_level/morning.placeholder.jpg" id="2_8g6vo"]

@@ -7,6 +7,7 @@ extends Node2D
 @onready var result_scr = $text_ui/results_screen
 @onready var saveMenu = $text_ui/save_menu
 @onready var y_n_box = $text_ui/y_n_box
+@onready var button_info = $text_ui/button_info
 
 @onready var player = $player
 @onready var camera = player.get_node("Camera2D")
@@ -16,6 +17,7 @@ var on_entered_done
 var on_new = true
 
 func _ready() -> void:
+	button_info.visible = true
 	y_n_box.answered.connect(_handle_answer)
 	if on_new:
 		text_box.visible = true
@@ -52,14 +54,18 @@ func _handle_answer(ans: bool):
 		player.disabled = false
 		SystemManager.increment_time()
 	elif player.waiting_answer_door:
+		button_info.visible = false
 		var door = player.object_near
 		if door.has_node("DoorSound"):
 			door.get_node("DoorSound").play()
 		TextManager.close_question()
 		on_entered_done = false
+		SystemManager.juggle_infinite = false
+		button_info.visible = false
 		SystemManager.open_juggling(player.position)
 
 func on_entered():
+	
 	if SystemManager.house_position != null:
 		text_box.visible = false
 		help_menu.visible = false
@@ -93,6 +99,11 @@ func _physics_process(delta: float) -> void:
 		leave_balcony()
 		
 		SystemManager.leave_balc = false
-	if Input.is_action_just_pressed("ui_open_menu"):
+	
+	if Input.is_action_just_pressed("ui_open_menu") && !help_menu.visible && !text_box.visible:
 		print(SystemManager.location)
+		button_info.visible = false
 		SystemManager.open_save_menu(player.position)
+	elif Input.is_action_just_pressed("open_help") && !help_menu.visible && !text_box.visible:
+		help_menu.visible = true
+		

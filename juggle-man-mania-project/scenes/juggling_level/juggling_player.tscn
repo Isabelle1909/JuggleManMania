@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://0bj0hox2j6k3"]
+[gd_scene load_steps=40 format=3 uid="uid://0bj0hox2j6k3"]
 
 [ext_resource type="Script" uid="uid://bv5ow5ifgrgp0" path="res://scripts/juggling_level/juggling_playerMovement.gd" id="1_22j5a"]
 [ext_resource type="Texture2D" uid="uid://cmi81vol726ks" path="res://scenes/juggling_level/rightHand_animation.png" id="2_o66wg"]
@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://blgvled4gicvw" path="res://scenes/juggling_level/leftHand_animation.png" id="4_31qiq"]
 [ext_resource type="AudioStream" uid="uid://coxj8epkfhm7e" path="res://assets/sound effect/The sound of swinging in the air.mp3" id="4_do3xs"]
 [ext_resource type="Texture2D" uid="uid://ogeenbmg6tgm" path="res://scenes/juggling_level/expressions.png" id="5_wlxme"]
-[ext_resource type="FontFile" uid="uid://b72kg2y6yhaxv" path="res://assets/text/splurge.ttf" id="7_t0055"]
+[ext_resource type="FontFile" uid="uid://cmiq3uxxd6en1" path="res://assets/text/HVD_Comic_Serif_Pro.otf" id="7_t0055"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wt60r"]
 atlas = ExtResource("2_o66wg")
@@ -35,7 +35,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"hit_right",
-"speed": 5.0
+"speed": 7.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mmaju"]
@@ -142,7 +142,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"hit_left",
-"speed": 5.0
+"speed": 7.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_31qiq"]
@@ -186,181 +186,198 @@ radius = 81.0
 height = 176.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22j5a"]
-size = Vector2(124, 35.203125)
+size = Vector2(124, 35.2031)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fjldn"]
-size = Vector2(123.1875, 22)
+size = Vector2(123.188, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tfhsj"]
-size = Vector2(132, 36.484375)
+size = Vector2(132, 36.4844)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xo2qw"]
-size = Vector2(131.6875, 35)
+size = Vector2(131.688, 35)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rcc3c"]
 size = Vector2(124, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5mi46"]
-size = Vector2(127.421875, 35)
+size = Vector2(127.422, 35)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_310rx"]
-size = Vector2(47.398438, 4)
+size = Vector2(47.3984, 4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t484i"]
 size = Vector2(52.5, 7)
 
-[node name="juggling_player" type="CharacterBody2D" unique_id=1964283372]
+[node name="juggling_player" type="CharacterBody2D"]
 collision_layer = 16
 collision_mask = 16
 script = ExtResource("1_22j5a")
 
-[node name="hit_right" type="AnimatedSprite2D" parent="." unique_id=1948992918]
+[node name="hit_right" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(1, -23)
 scale = Vector2(0.463, 0.458)
 sprite_frames = SubResource("SpriteFrames_31qiq")
 animation = &"hit_right"
-frame_progress = 0.22220594
+frame_progress = 0.222206
 
-[node name="sprite" type="AnimatedSprite2D" parent="." unique_id=1543978175]
+[node name="sprite" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(-0.40000147, -6.4000053)
+position = Vector2(-0.400001, -6.40001)
 scale = Vector2(0.463, 0.458)
 sprite_frames = SubResource("SpriteFrames_fjldn")
 animation = &"Walking"
 autoplay = "Idle"
-frame_progress = 0.5313678
+frame_progress = 0.531368
 
-[node name="hit_left" type="AnimatedSprite2D" parent="." unique_id=1069199372]
+[node name="hit_left" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(0, -26)
 scale = Vector2(0.463, 0.458)
 sprite_frames = SubResource("SpriteFrames_qqfxb")
 animation = &"hit_left"
-frame_progress = 0.80137706
+frame_progress = 0.801377
 
-[node name="emote" type="AnimatedSprite2D" parent="." unique_id=913277636]
+[node name="emote" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -30)
 scale = Vector2(0.463, 0.458)
 sprite_frames = SubResource("SpriteFrames_ejcxf")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1233205852]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3)
 shape = SubResource("CapsuleShape2D_8kxmk")
 
-[node name="hit_areas" type="Node2D" parent="." unique_id=1988722638]
+[node name="hit_areas" type="Node2D" parent="."]
 
-[node name="early_left" type="Area2D" parent="hit_areas" unique_id=378337614]
+[node name="early_left" type="Area2D" parent="hit_areas"]
 collision_layer = 96
 collision_mask = 96
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/early_left" unique_id=1270791091]
-position = Vector2(-46, -86.39844)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/early_left"]
+position = Vector2(-46, -86.3984)
 shape = SubResource("RectangleShape2D_22j5a")
 
-[node name="perfect_left" type="Area2D" parent="hit_areas" unique_id=647849357]
+[node name="perfect_left" type="Area2D" parent="hit_areas"]
 collision_layer = 96
 collision_mask = 96
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/perfect_left" unique_id=1116100008]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/perfect_left"]
 position = Vector2(-43, -42)
 shape = SubResource("RectangleShape2D_fjldn")
 
-[node name="late_left" type="Area2D" parent="hit_areas" unique_id=1929758645]
+[node name="late_left" type="Area2D" parent="hit_areas"]
 collision_layer = 96
 collision_mask = 96
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/late_left" unique_id=1840191518]
-position = Vector2(-38, 5.2421875)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/late_left"]
+position = Vector2(-38, 5.24219)
 shape = SubResource("RectangleShape2D_tfhsj")
 
-[node name="early_right" type="Area2D" parent="hit_areas" unique_id=164673866]
+[node name="early_right" type="Area2D" parent="hit_areas"]
 collision_layer = 96
 collision_mask = 96
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/early_right" unique_id=839524202]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/early_right"]
 position = Vector2(57, -88.5)
 shape = SubResource("RectangleShape2D_xo2qw")
 
-[node name="perfect_right" type="Area2D" parent="hit_areas" unique_id=1454771069]
+[node name="perfect_right" type="Area2D" parent="hit_areas"]
 collision_layer = 96
 collision_mask = 96
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/perfect_right" unique_id=1638707171]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/perfect_right"]
 position = Vector2(55, -42)
 shape = SubResource("RectangleShape2D_rcc3c")
 
-[node name="late_right" type="Area2D" parent="hit_areas" unique_id=1637234712]
+[node name="late_right" type="Area2D" parent="hit_areas"]
 collision_layer = 96
 collision_mask = 96
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/late_right" unique_id=1256911201]
-position = Vector2(53.710938, 5.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/late_right"]
+position = Vector2(53.7109, 5.5)
 shape = SubResource("RectangleShape2D_5mi46")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="hit_areas" unique_id=442497802]
+[node name="StaticBody2D" type="StaticBody2D" parent="hit_areas"]
 collision_layer = 64
 collision_mask = 64
 physics_material_override = ExtResource("3_fjldn")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/StaticBody2D" unique_id=1480277747]
-position = Vector2(-64.60156, -6)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/StaticBody2D"]
+position = Vector2(-64.6016, -6)
 shape = SubResource("RectangleShape2D_310rx")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="hit_areas" unique_id=1106023771]
+[node name="StaticBody2D2" type="StaticBody2D" parent="hit_areas"]
 collision_layer = 64
 collision_mask = 64
 physics_material_override = ExtResource("3_fjldn")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/StaticBody2D2" unique_id=749672484]
-position = Vector2(63.30078, -8)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/StaticBody2D2"]
+position = Vector2(63.3008, -8)
 shape = SubResource("RectangleShape2D_310rx")
 
-[node name="grab_left" type="Area2D" parent="hit_areas" unique_id=1084404912]
+[node name="grab_left" type="Area2D" parent="hit_areas"]
 position = Vector2(-62, -10)
 collision_layer = 96
 collision_mask = 96
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/grab_left" unique_id=2028631908]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/grab_left"]
 position = Vector2(-0.75, 4.5)
 shape = SubResource("RectangleShape2D_t484i")
 
-[node name="grab_right" type="Area2D" parent="hit_areas" unique_id=593020914]
+[node name="grab_right" type="Area2D" parent="hit_areas"]
 position = Vector2(61, -9)
 collision_layer = 96
 collision_mask = 96
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/grab_right" unique_id=487273281]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_areas/grab_right"]
 position = Vector2(1, 2)
 shape = SubResource("RectangleShape2D_t484i")
 
-[node name="right_feedback" type="RichTextLabel" parent="." unique_id=1217882336]
-offset_left = 42.0
-offset_top = -91.0
-offset_right = 150.0
-offset_bottom = -51.0
-theme_override_colors/default_color = Color(0.9254902, 0.5254902, 0.16862746, 1)
+[node name="right_panel" type="Panel" parent="."]
+offset_left = 110.0
+offset_top = -107.0
+offset_right = 232.0
+offset_bottom = -77.0
+
+[node name="right_feedback" type="RichTextLabel" parent="right_panel"]
+layout_mode = 0
+offset_left = -3.0
+offset_right = 125.0
+offset_bottom = 39.0
+theme_override_colors/default_color = Color(0.92549, 0.52549, 0.168627, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("7_t0055")
-theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/normal_font_size = 29
 text = "Perfect!"
+horizontal_alignment = 1
 
-[node name="left_feedback" type="RichTextLabel" parent="." unique_id=1308238523]
-offset_left = -135.0
-offset_top = -93.0
-offset_right = -37.0
-offset_bottom = -53.0
-theme_override_colors/default_color = Color(0.92474633, 0.5270564, 0.16978425, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("7_t0055")
-theme_override_font_sizes/normal_font_size = 24
-text = "Perfect!"
-
-[node name="SwingSound" type="AudioStreamPlayer" parent="." unique_id=923181932]
+[node name="SwingSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_do3xs")
 volume_db = -8.104
 
+[node name="left_panel" type="Panel" parent="."]
+offset_left = -224.0
+offset_top = -106.0
+offset_right = -98.0
+offset_bottom = -74.0
+
+[node name="left_feedback" type="RichTextLabel" parent="left_panel"]
+layout_mode = 0
+offset_right = 126.0
+offset_bottom = 39.0
+theme_override_colors/default_color = Color(0.924746, 0.527056, 0.169784, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_t0055")
+theme_override_font_sizes/normal_font_size = 30
+text = "Perfect!"
+horizontal_alignment = 1
+
+[connection signal="animation_finished" from="hit_right" to="." method="_on_hit_right_animation_finished"]
 [connection signal="animation_finished" from="sprite" to="." method="_on_sprite_animation_finished"]
+[connection signal="animation_finished" from="hit_left" to="." method="_on_hit_left_animation_finished"]
 [connection signal="body_entered" from="hit_areas/early_left" to="." method="_on_early_left_body_entered"]
 [connection signal="body_exited" from="hit_areas/early_left" to="." method="_on_early_left_body_exited"]
 [connection signal="body_entered" from="hit_areas/perfect_left" to="." method="_on_perfect_left_body_entered"]
@@ -375,3 +392,5 @@ volume_db = -8.104
 [connection signal="body_exited" from="hit_areas/late_right" to="." method="_on_late_right_body_exited"]
 [connection signal="body_entered" from="hit_areas/grab_left" to="." method="_on_grab_left_body_entered"]
 [connection signal="body_exited" from="hit_areas/grab_left" to="." method="_on_grab_left_body_exited"]
+[connection signal="body_entered" from="hit_areas/grab_right" to="." method="_on_grab_right_body_entered"]
+[connection signal="body_exited" from="hit_areas/grab_right" to="." method="_on_grab_right_body_exited"]

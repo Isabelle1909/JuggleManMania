@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://dw6qgte08ya5d"]
+
+[ext_resource type="Script" uid="uid://c6onve58awkqo" path="res://ending_1.gd" id="1_0tjmg"]
+[ext_resource type="Texture2D" uid="uid://cyk4o4rrglrwe" path="res://assets/placeholder_assets/juggleman-offTheClock.png" id="1_trqny"]
+[ext_resource type="PackedScene" uid="uid://effsrxenqkmr" path="res://scenes/ui_scenes/text_ui.tscn" id="2_0tjmg"]
+[ext_resource type="FontFile" uid="uid://cmiq3uxxd6en1" path="res://assets/text/HVD_Comic_Serif_Pro.otf" id="4_qfwha"]
+
+[node name="Ending" type="Node2D"]
+script = ExtResource("1_0tjmg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(580.111, 320.5)
+scale = Vector2(0.599074, 0.599074)
+texture = ExtResource("1_trqny")
+
+[node name="text_ui" parent="." instance=ExtResource("2_0tjmg")]
+
+[node name="fin_label" type="RichTextLabel" parent="."]
+visible = false
+offset_left = 268.0
+offset_top = 97.0
+offset_right = 870.0
+offset_bottom = 278.0
+theme_override_fonts/normal_font = ExtResource("4_qfwha")
+theme_override_font_sizes/normal_font_size = 100
+text = "FIN."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="fin_label"]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 127.0
+offset_right = 429.0
+offset_bottom = 228.0
+text = "press esc to quit"
+horizontal_alignment = 1
