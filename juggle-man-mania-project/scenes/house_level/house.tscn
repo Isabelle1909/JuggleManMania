@@ -9,9 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://cpqmnshxukjqb" path="res://assets/house_assets/Wardrobe.png" id="6_hadgj"]
 [ext_resource type="AudioStream" uid="uid://dafw5b5j58lcy" path="res://assets/sound effect/freesound_community-zipper-43841.mp3" id="7_o1dlu"]
 [ext_resource type="Texture2D" uid="uid://dgwxiiywfk5n0" path="res://assets/house_assets/Computer.png" id="8_hadgj"]
+[ext_resource type="Texture2D" uid="uid://crh6tj472rrw4" path="res://assets/house_assets/DoorFlatpng.png" id="9_hadgj"]
 [ext_resource type="AudioStream" uid="uid://b5dh0tuaupvkm" path="res://assets/sound effect/opening-door-411632.mp3" id="9_qf7xi"]
-[ext_resource type="Texture2D" uid="uid://dggo61m3s3re8" path="res://assets/placeholder_assets/door_placeholder.jpg" id="9_r1b7n"]
 [ext_resource type="PackedScene" uid="uid://effsrxenqkmr" path="res://scenes/ui_scenes/text_ui.tscn" id="10_cy5ox"]
+[ext_resource type="Texture2D" uid="uid://jed88h0rsma8" path="res://assets/house_assets/Door.png" id="11_03v04"]
 [ext_resource type="PackedScene" uid="uid://18bbo870jgqk" path="res://scenes/balcony_scene/balcony_scene.tscn" id="11_qf7xi"]
 [ext_resource type="Script" uid="uid://b3hc20imlqltc" path="res://scenes/house_level/static_body_2d.gd" id="11_rm4kp"]
 [ext_resource type="Texture2D" uid="uid://dlh1b3p7ld1um" path="res://assets/placeholder_assets/dirty_laundry.placeholder.webp" id="12_5byq6"]
@@ -44,10 +45,10 @@ size = Vector2(91.60976, 145.98172)
 size = Vector2(197.33917, 125.833336)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e5ov4"]
-size = Vector2(132, 123)
+size = Vector2(37.189728, 120.40529)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w4xns"]
-size = Vector2(132, 140.5)
+size = Vector2(97.09375, 141.89076)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3l30u"]
 size = Vector2(84.125, 65.625)
@@ -56,7 +57,7 @@ size = Vector2(84.125, 65.625)
 size = Vector2(128, 268)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_abrmu"]
-size = Vector2(62.375, 101.625)
+size = Vector2(59.148438, 97.47656)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ppn5q"]
 size = Vector2(214.25002, 85.25)
@@ -173,12 +174,14 @@ script = ExtResource("4_ivbvj")
 title = "front_door"
 
 [node name="Sprite2D" type="Sprite2D" parent="key_interactables/front_door" unique_id=431918467]
-position = Vector2(597.24133, -1573.793)
-scale = Vector2(0.27637136, 0.21905765)
-texture = ExtResource("9_r1b7n")
+position = Vector2(591.7241, -1547.5862)
+rotation = 1.5707964
+scale = Vector2(0.63915086, 0.46197575)
+texture = ExtResource("9_hadgj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="key_interactables/front_door" unique_id=764416197]
-position = Vector2(599.99994, -1569.655)
+position = Vector2(625.4913, -1547.099)
+scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_e5ov4")
 
 [node name="DoorSound" type="AudioStreamPlayer" parent="key_interactables/front_door" unique_id=16900571]
@@ -193,12 +196,12 @@ script = ExtResource("4_ivbvj")
 title = "back_door"
 
 [node name="Sprite2D" type="Sprite2D" parent="key_interactables/back_door" unique_id=343310845]
-position = Vector2(-156.25003, -634.0001)
-scale = Vector2(0.2943038, 0.1410865)
-texture = ExtResource("9_r1b7n")
+position = Vector2(-115.527306, -667.30084)
+scale = Vector2(0.55078137, 0.678906)
+texture = ExtResource("11_03v04")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="key_interactables/back_door" unique_id=789565538]
-position = Vector2(-156.25002, -630.87506)
+position = Vector2(-112.609375, -667.4454)
 shape = SubResource("RectangleShape2D_w4xns")
 
 [node name="DoorSound" type="AudioStreamPlayer" parent="key_interactables/back_door" unique_id=837388549]
@@ -250,7 +253,7 @@ scale = Vector2(0.3232656, 0.42406264)
 texture = ExtResource("19_hadgj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactables/fridge" unique_id=1793391705]
-position = Vector2(141, -463)
+position = Vector2(139.42578, -466.73828)
 shape = SubResource("RectangleShape2D_abrmu")
 
 [node name="couch" type="StaticBody2D" parent="interactables" unique_id=862722206]
