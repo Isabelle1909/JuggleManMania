@@ -1,26 +1,6 @@
 [gd_scene format=3 uid="uid://dcrix2nxbwg1r"]
 
 [ext_resource type="Script" uid="uid://ur6q6lg0edu0" path="res://scripts/UI/save_menu.gd" id="1_y552w"]
-[ext_resource type="Texture2D" uid="uid://oqqnp8wvqwpk" path="res://assets/UI image assets/Background for portraits in text box of needed.png" id="2_hisbj"]
-[ext_resource type="Texture2D" uid="uid://di71udk2c8efj" path="res://assets/UI image assets/buttons.png" id="3_2uf07"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2uf07"]
-texture = ExtResource("2_hisbj")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4uv4a"]
-texture = ExtResource("3_2uf07")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wreud"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l56im"]
-texture = ExtResource("3_2uf07")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2me2c"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nvx88"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g3mqe"]
-texture = ExtResource("3_2uf07")
 
 [node name="Load" type="Control" unique_id=1860916958]
 layout_mode = 3
@@ -35,7 +15,6 @@ script = ExtResource("1_y552w")
 layout_mode = 0
 offset_right = 1151.0
 offset_bottom = 648.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_2uf07")
 
 [node name="Categories" type="VBoxContainer" parent="Panel" unique_id=1925897207]
 layout_mode = 0
@@ -126,16 +105,15 @@ offset_bottom = 40.0
 
 [node name="Button_Delete" type="Button" parent="Panel/Buttons" unique_id=224536242]
 layout_mode = 0
-offset_left = 248.0
-offset_top = 401.0
-offset_right = 410.0
-offset_bottom = 471.0
+offset_left = 249.0
+offset_top = 399.0
+offset_right = 411.0
+offset_bottom = 469.0
 focus_neighbor_left = NodePath("../Button_Save")
 focus_neighbor_top = NodePath("../Button_Close")
 focus_neighbor_right = NodePath("../Button_Load")
 focus_neighbor_bottom = NodePath("../Button_Back")
 theme_override_font_sizes/font_size = 28
-theme_override_styles/normal = SubResource("StyleBoxTexture_4uv4a")
 text = "DELETE"
 
 [node name="Button_Close" type="Button" parent="Panel/Buttons" unique_id=322385550]
@@ -146,7 +124,6 @@ offset_right = 1122.0
 offset_bottom = 94.0
 focus_neighbor_bottom = NodePath("../Button_Save")
 theme_override_font_sizes/font_size = 28
-theme_override_styles/normal = SubResource("StyleBoxTexture_wreud")
 text = "CLOSE"
 
 [node name="Button_Load" type="Button" parent="Panel/Buttons" unique_id=1752916761]
@@ -160,7 +137,6 @@ focus_neighbor_top = NodePath("../Button_Close")
 focus_neighbor_right = NodePath("../Button_Save")
 focus_neighbor_bottom = NodePath("../Button_Next")
 theme_override_font_sizes/font_size = 28
-theme_override_styles/normal = SubResource("StyleBoxTexture_l56im")
 text = "LOAD"
 
 [node name="Button_Back" type="Button" parent="Panel/Buttons" unique_id=2067161858]
@@ -174,7 +150,6 @@ focus_neighbor_top = NodePath("../Button_Load")
 focus_neighbor_right = NodePath("../Button_Next")
 focus_neighbor_bottom = NodePath("../Button_Close")
 theme_override_font_sizes/font_size = 28
-theme_override_styles/normal = SubResource("StyleBoxTexture_2me2c")
 text = "← Back"
 
 [node name="Button_Next" type="Button" parent="Panel/Buttons" unique_id=1925953485]
@@ -188,21 +163,19 @@ focus_neighbor_top = NodePath("../Button_Save")
 focus_neighbor_right = NodePath("../Button_Back")
 focus_neighbor_bottom = NodePath("../Button_Close")
 theme_override_font_sizes/font_size = 28
-theme_override_styles/normal = SubResource("StyleBoxTexture_nvx88")
 text = "Next →"
 
 [node name="Button_Save" type="Button" parent="Panel/Buttons" unique_id=1251355196]
 layout_mode = 0
-offset_left = 636.0
-offset_top = 401.0
-offset_right = 798.0
-offset_bottom = 471.0
+offset_left = 647.0
+offset_top = 400.0
+offset_right = 809.0
+offset_bottom = 470.0
 focus_neighbor_left = NodePath("../Button_Load")
 focus_neighbor_top = NodePath("../Button_Close")
 focus_neighbor_right = NodePath("../Button_Delete")
 focus_neighbor_bottom = NodePath("../Button_Next")
 theme_override_font_sizes/font_size = 28
-theme_override_styles/normal = SubResource("StyleBoxTexture_g3mqe")
 text = "SAVE"
 
 [node name="Labels" type="Control" parent="Panel" unique_id=1688752644]

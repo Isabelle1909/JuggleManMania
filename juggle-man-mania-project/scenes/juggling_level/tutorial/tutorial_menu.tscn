@@ -2,15 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bd3wcp0jper6k" path="res://scripts/juggling_level/tutorial/tutorial_menu.gd" id="1_c8j6g"]
 [ext_resource type="Texture2D" uid="uid://d3i4sqhx8wrdo" path="res://icon.svg" id="1_jdx6l"]
-[ext_resource type="Texture2D" uid="uid://oqqnp8wvqwpk" path="res://assets/UI image assets/Background for portraits in text box of needed.png" id="2_jxfg0"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jcgpu"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bffek"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ynm3s"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jub0o"]
 
 [node name="Tutorial Menu" type="Control" unique_id=1924829434]
 layout_mode = 3
@@ -24,7 +15,7 @@ script = ExtResource("1_c8j6g")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=732733335]
 position = Vector2(568.5, 319.5)
 scale = Vector2(8.8515625, 5.0390625)
-texture = ExtResource("2_jxfg0")
+texture = ExtResource("1_jdx6l")
 
 [node name="Panel" type="Panel" parent="." unique_id=1458868221]
 layout_mode = 0
@@ -32,7 +23,6 @@ offset_left = 12.0
 offset_top = -3.0
 offset_right = 1151.0
 offset_bottom = 649.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_jcgpu")
 
 [node name="title" type="RichTextLabel" parent="Panel" unique_id=1778770859]
 layout_mode = 0
@@ -54,7 +44,6 @@ focus_neighbor_top = NodePath("../close")
 focus_neighbor_right = NodePath("../close")
 focus_neighbor_bottom = NodePath("../infinite_mode_start")
 theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = SubResource("StyleBoxTexture_bffek")
 text = "Tutorial"
 
 [node name="infinite_mode_start" type="Button" parent="Panel" unique_id=662128762]
@@ -66,7 +55,6 @@ offset_bottom = 374.0
 focus_neighbor_top = NodePath("../tutorial_start")
 focus_neighbor_right = NodePath("../close")
 theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = SubResource("StyleBoxTexture_ynm3s")
 text = "Infinite Juggling"
 
 [node name="close" type="Button" parent="Panel" unique_id=604446729]
@@ -78,7 +66,6 @@ offset_bottom = 122.0
 focus_neighbor_right = NodePath("../tutorial_start")
 focus_neighbor_bottom = NodePath("../tutorial_start")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxTexture_jub0o")
 text = "Close"
 
 [node name="score_labels" type="RichTextLabel" parent="Panel" unique_id=254611063]

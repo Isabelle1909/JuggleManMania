@@ -4,15 +4,14 @@
 [ext_resource type="TileSet" uid="uid://dmt30scjkk0fc" path="res://tilesets/game_tile_set.tres" id="2_qf7xi"]
 [ext_resource type="PackedScene" uid="uid://dksw6vohgomcm" path="res://scenes/house_level/player.tscn" id="3_cyy7t"]
 [ext_resource type="Script" uid="uid://c2521k6budvog" path="res://scripts/house_level/Interactable.gd" id="4_ivbvj"]
-[ext_resource type="Texture2D" uid="uid://drpiaialarbkh" path="res://assets/house_assets/Mirror.png" id="4_ydu31"]
-[ext_resource type="Texture2D" uid="uid://kdg5o3yd0avj" path="res://assets/house_assets/Bed.png" id="5_ydu31"]
-[ext_resource type="Texture2D" uid="uid://cpqmnshxukjqb" path="res://assets/house_assets/Wardrobe.png" id="6_hadgj"]
+[ext_resource type="Texture2D" uid="uid://bx8ygf12272nu" path="res://assets/placeholder_assets/mirror.placeholder.jpg" id="5_us8f6"]
+[ext_resource type="Texture2D" uid="uid://b6322dcbuktw5" path="res://assets/placeholder_assets/bed_placeholder.jpg" id="6_w2wtq"]
 [ext_resource type="AudioStream" uid="uid://dafw5b5j58lcy" path="res://assets/sound effect/freesound_community-zipper-43841.mp3" id="7_o1dlu"]
-[ext_resource type="Texture2D" uid="uid://dgwxiiywfk5n0" path="res://assets/house_assets/Computer.png" id="8_hadgj"]
-[ext_resource type="Texture2D" uid="uid://crh6tj472rrw4" path="res://assets/house_assets/DoorFlatpng.png" id="9_hadgj"]
+[ext_resource type="Texture2D" uid="uid://daxl1na6kmgje" path="res://assets/placeholder_assets/wardrobe_placeholder.jpg" id="7_uw60d"]
+[ext_resource type="Texture2D" uid="uid://b44su0sj6tt0c" path="res://assets/placeholder_assets/OIP-2236234873.jpg" id="8_eew2d"]
 [ext_resource type="AudioStream" uid="uid://b5dh0tuaupvkm" path="res://assets/sound effect/opening-door-411632.mp3" id="9_qf7xi"]
+[ext_resource type="Texture2D" uid="uid://dggo61m3s3re8" path="res://assets/placeholder_assets/door_placeholder.jpg" id="9_r1b7n"]
 [ext_resource type="PackedScene" uid="uid://effsrxenqkmr" path="res://scenes/ui_scenes/text_ui.tscn" id="10_cy5ox"]
-[ext_resource type="Texture2D" uid="uid://jed88h0rsma8" path="res://assets/house_assets/Door.png" id="11_03v04"]
 [ext_resource type="PackedScene" uid="uid://18bbo870jgqk" path="res://scenes/balcony_scene/balcony_scene.tscn" id="11_qf7xi"]
 [ext_resource type="Texture2D" uid="uid://dlh1b3p7ld1um" path="res://assets/placeholder_assets/dirty_laundry.placeholder.webp" id="12_5byq6"]
 [ext_resource type="Texture2D" uid="uid://dmxs0d2anj46v" path="res://assets/placeholder_assets/bookshelf.placeholder.jpg" id="14_o1dlu"]
@@ -26,22 +25,22 @@
 [ext_resource type="AudioStream" uid="uid://c31djxrcxg54p" path="res://assets/sound effect/music_for_creators-background-jazz-golden-whisper-358520.mp3" id="30_ydu31"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhgw4"]
-size = Vector2(91.0448, 71.402985)
+size = Vector2(113, 104)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ewhn"]
-size = Vector2(189.93243, 113.01352)
+size = Vector2(155, 79)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0fn05"]
-size = Vector2(91.60976, 145.98172)
+size = Vector2(132, 150.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_82h1m"]
-size = Vector2(197.33917, 125.833336)
+size = Vector2(126.5, 50)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e5ov4"]
-size = Vector2(37.189728, 120.40529)
+size = Vector2(132, 123)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w4xns"]
-size = Vector2(97.09375, 141.89076)
+size = Vector2(132, 140.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3l30u"]
 size = Vector2(84.125, 65.625)
@@ -50,25 +49,25 @@ size = Vector2(84.125, 65.625)
 size = Vector2(128, 268)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_abrmu"]
-size = Vector2(59.148438, 97.47656)
+size = Vector2(94.75, 125.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ppn5q"]
 size = Vector2(214.25002, 85.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_thtpj"]
-size = Vector2(72.25, 50)
+size = Vector2(88.5, 98)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o8vit"]
-size = Vector2(198, 65.75)
+size = Vector2(196, 63.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q00ae"]
-size = Vector2(26.5, 107)
+size = Vector2(119, 171)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t4hf5"]
-size = Vector2(75.25, 132)
+size = Vector2(66.5, 130)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4u1od"]
-size = Vector2(201.75, 60.625)
+size = Vector2(179, 96.5)
 
 [node name="house" type="Node2D" unique_id=626814677]
 y_sort_enabled = true
@@ -97,12 +96,12 @@ script = ExtResource("4_ivbvj")
 title = "mirror"
 
 [node name="Sprite2D" type="Sprite2D" parent="key_interactables/mirror" unique_id=403400776]
-position = Vector2(366.06577, -560.32465)
-scale = Vector2(0.47445837, 0.30904528)
-texture = ExtResource("4_ydu31")
+position = Vector2(352.2388, -520.2015)
+scale = Vector2(0.23813292, 0.22125527)
+texture = ExtResource("5_us8f6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="key_interactables/mirror" unique_id=203169812]
-position = Vector2(364.17905, -532.1418)
+position = Vector2(352.2388, -520.2015)
 shape = SubResource("RectangleShape2D_bhgw4")
 
 [node name="bed" type="StaticBody2D" parent="key_interactables" unique_id=1265703226]
@@ -113,13 +112,12 @@ script = ExtResource("4_ivbvj")
 title = "bed"
 
 [node name="Sprite2D" type="Sprite2D" parent="key_interactables/bed" unique_id=859110776]
-position = Vector2(136.687, 221.47597)
-scale = Vector2(0.86931473, 0.64748347)
-texture = ExtResource("5_ydu31")
+position = Vector2(111.297295, 247.56757)
+scale = Vector2(0.3723943, 0.272096)
+texture = ExtResource("6_w2wtq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="key_interactables/bed" unique_id=987536330]
-position = Vector2(128.76352, 230.56082)
-scale = Vector2(0.9999999, 0.9999999)
+position = Vector2(111.2973, 247.56757)
 shape = SubResource("RectangleShape2D_3ewhn")
 
 [node name="wardrobe" type="StaticBody2D" parent="key_interactables" unique_id=244664781]
@@ -130,12 +128,12 @@ script = ExtResource("4_ivbvj")
 title = "wardrobe"
 
 [node name="Sprite2D" type="Sprite2D" parent="key_interactables/wardrobe" unique_id=448882874]
-position = Vector2(-320.7317, -199.7073)
-scale = Vector2(0.5520272, 0.68433124)
-texture = ExtResource("6_hadgj")
+position = Vector2(-317.07312, -177.75609)
+scale = Vector2(0.25527427, 0.3164557)
+texture = ExtResource("7_uw60d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="key_interactables/wardrobe" unique_id=1801611570]
-position = Vector2(-325.07318, -205.62505)
+position = Vector2(-307.31708, -177.75609)
 shape = SubResource("RectangleShape2D_0fn05")
 
 [node name="WardrobeSound" type="AudioStreamPlayer" parent="key_interactables/wardrobe" unique_id=1701084937]
@@ -150,13 +148,12 @@ script = ExtResource("4_ivbvj")
 title = "computer"
 
 [node name="Sprite2D" type="Sprite2D" parent="key_interactables/computer" unique_id=575539642]
-position = Vector2(-600.9811, -26.38392)
-scale = Vector2(0.8611821, 0.7139286)
-texture = ExtResource("8_hadgj")
+position = Vector2(-154.28574, 120.000015)
+scale = Vector2(0.24472573, 0.25000006)
+texture = ExtResource("8_eew2d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="key_interactables/computer" unique_id=571972320]
-position = Vector2(-600.00006, -20.952377)
-scale = Vector2(1.0000002, 1.0000002)
+position = Vector2(-154.28563, 72.38097)
 shape = SubResource("RectangleShape2D_82h1m")
 
 [node name="front_door" type="StaticBody2D" parent="key_interactables" unique_id=1715739860]
@@ -167,14 +164,12 @@ script = ExtResource("4_ivbvj")
 title = "front_door"
 
 [node name="Sprite2D" type="Sprite2D" parent="key_interactables/front_door" unique_id=431918467]
-position = Vector2(591.7241, -1547.5862)
-rotation = 1.5707964
-scale = Vector2(0.63915086, 0.46197575)
-texture = ExtResource("9_hadgj")
+position = Vector2(597.24133, -1573.793)
+scale = Vector2(0.27637136, 0.21905765)
+texture = ExtResource("9_r1b7n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="key_interactables/front_door" unique_id=764416197]
-position = Vector2(625.4913, -1547.099)
-scale = Vector2(0.9999999, 0.9999999)
+position = Vector2(599.99994, -1569.655)
 shape = SubResource("RectangleShape2D_e5ov4")
 
 [node name="DoorSound" type="AudioStreamPlayer" parent="key_interactables/front_door" unique_id=16900571]
@@ -189,12 +184,12 @@ script = ExtResource("4_ivbvj")
 title = "back_door"
 
 [node name="Sprite2D" type="Sprite2D" parent="key_interactables/back_door" unique_id=343310845]
-position = Vector2(-115.527306, -667.30084)
-scale = Vector2(0.55078137, 0.678906)
-texture = ExtResource("11_03v04")
+position = Vector2(-156.25003, -634.0001)
+scale = Vector2(0.2943038, 0.1410865)
+texture = ExtResource("9_r1b7n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="key_interactables/back_door" unique_id=789565538]
-position = Vector2(-112.609375, -667.4454)
+position = Vector2(-156.25002, -630.87506)
 shape = SubResource("RectangleShape2D_w4xns")
 
 [node name="DoorSound" type="AudioStreamPlayer" parent="key_interactables/back_door" unique_id=837388549]
@@ -244,12 +239,12 @@ script = ExtResource("4_ivbvj")
 title = "fridge"
 
 [node name="Sprite2D" type="Sprite2D" parent="interactables/fridge" unique_id=1454943841]
-position = Vector2(139.5918, -467.00778)
-scale = Vector2(0.3232656, 0.42406264)
-texture = ExtResource("19_hadgj")
+position = Vector2(154.00002, -453)
+scale = Vector2(0.045062553, 0.06425)
+texture = ExtResource("16_hadgj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactables/fridge" unique_id=1793391705]
-position = Vector2(139.42578, -466.73828)
+position = Vector2(155, -451)
 shape = SubResource("RectangleShape2D_abrmu")
 
 [node name="couch" type="StaticBody2D" parent="interactables" unique_id=862722206]
@@ -272,13 +267,12 @@ script = ExtResource("4_ivbvj")
 title = "toilet"
 
 [node name="Sprite2D" type="Sprite2D" parent="interactables/toilet" unique_id=1633386176]
-position = Vector2(388.00003, 353)
-rotation = -1.5707964
-scale = Vector2(0.36978903, 0.36291218)
-texture = ExtResource("23_03v04")
+position = Vector2(389, 338)
+scale = Vector2(0.06757814, 0.061824534)
+texture = ExtResource("20_8htqq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactables/toilet" unique_id=418803046]
-position = Vector2(385.875, 356)
+position = Vector2(393, 335)
 shape = SubResource("RectangleShape2D_thtpj")
 
 [node name="messy_desk" type="StaticBody2D" parent="interactables" unique_id=1346219529]
@@ -286,12 +280,12 @@ script = ExtResource("4_ivbvj")
 title = "messy_desk"
 
 [node name="Sprite2D" type="Sprite2D" parent="interactables/messy_desk" unique_id=301245600]
-position = Vector2(817.00006, 7.92928)
-scale = Vector2(0.8176607, 0.3765658)
-texture = ExtResource("30_ya45t")
+position = Vector2(1056.0001, 156.00002)
+scale = Vector2(0.29464298, 0.17252609)
+texture = ExtResource("22_gmx3x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactables/messy_desk" unique_id=1020194986]
-position = Vector2(824, 11.125)
+position = Vector2(1060, 163)
 shape = SubResource("RectangleShape2D_o8vit")
 
 [node name="shower" type="StaticBody2D" parent="interactables" unique_id=1180592028]
@@ -299,13 +293,12 @@ script = ExtResource("4_ivbvj")
 title = "shower"
 
 [node name="Sprite2D" type="Sprite2D" parent="interactables/shower" unique_id=967267057]
-position = Vector2(649.62396, 328.73376)
-scale = Vector2(0.50099176, 0.47787014)
-texture = ExtResource("27_03v04")
-flip_h = true
+position = Vector2(651.99994, 300.00006)
+scale = Vector2(0.115966804, 0.16748048)
+texture = ExtResource("24_g751u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactables/shower" unique_id=1439469422]
-position = Vector2(604, 329.5)
+position = Vector2(650, 302)
 shape = SubResource("RectangleShape2D_q00ae")
 
 [node name="tv" type="StaticBody2D" parent="interactables" unique_id=266785012]
@@ -313,13 +306,13 @@ script = ExtResource("4_ivbvj")
 title = "tv"
 
 [node name="Sprite2D" type="Sprite2D" parent="interactables/tv" unique_id=723601076]
-position = Vector2(864, -119)
+position = Vector2(860.00006, -120)
 rotation = 1.5707964
-scale = Vector2(0.5743098, 0.59046924)
-texture = ExtResource("28_ydu31")
+scale = Vector2(0.40823326, 0.4225268)
+texture = ExtResource("25_y182y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactables/tv" unique_id=543137931]
-position = Vector2(861.375, -115)
+position = Vector2(857, -114)
 shape = SubResource("RectangleShape2D_t4hf5")
 
 [node name="oven" type="StaticBody2D" parent="interactables" unique_id=1578060390]
@@ -327,31 +320,13 @@ script = ExtResource("4_ivbvj")
 title = "oven"
 
 [node name="Sprite2D" type="Sprite2D" parent="interactables/oven" unique_id=1369746223]
-position = Vector2(208.78986, -319.82147)
-scale = Vector2(0.31368104, 0.29742837)
-texture = ExtResource("29_vkeaj")
+position = Vector2(194.99998, -333)
+scale = Vector2(0.17089841, 0.15885407)
+texture = ExtResource("26_36doj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactables/oven" unique_id=949285163]
-position = Vector2(208.125, -318.6875)
+position = Vector2(196, -336)
 shape = SubResource("RectangleShape2D_4u1od")
-
-[node name="counter" type="StaticBody2D" parent="interactables" unique_id=1666962653]
-script = ExtResource("11_rm4kp")
-
-[node name="Sprite2D" type="Sprite2D" parent="interactables/counter" unique_id=2100830787]
-position = Vector2(140, -318.00003)
-rotation = 3.1415927
-scale = Vector2(0.27905434, 0.34976748)
-texture = ExtResource("30_ya45t")
-
-[node name="counter2" type="StaticBody2D" parent="interactables" unique_id=88479984]
-script = ExtResource("11_rm4kp")
-
-[node name="Sprite2D" type="Sprite2D" parent="interactables/counter2" unique_id=1532685294]
-position = Vector2(278.8903, -318.19788)
-rotation = 3.1415927
-scale = Vector2(0.28617677, 0.3513503)
-texture = ExtResource("30_ya45t")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1252143962]
 stream = ExtResource("30_ydu31")

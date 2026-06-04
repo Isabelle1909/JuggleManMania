@@ -1,13 +1,10 @@
 [gd_scene format=3 uid="uid://dkp2lcwdqvm8v"]
 
-[ext_resource type="Texture2D" uid="uid://oqqnp8wvqwpk" path="res://assets/UI image assets/Background for portraits in text box of needed.png" id="1_40th0"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m2kmj"]
+bg_color = Color(0.18039216, 0.18039216, 0.18039216, 0.78431374)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fj3ts"]
-texture = ExtResource("1_40th0")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pyf0h"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_40th0"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_40th0"]
+bg_color = Color(0.14406255, 0.14406255, 0.14406249, 1)
 
 [node name="Control" type="Control" unique_id=645237815]
 layout_mode = 3
@@ -21,7 +18,7 @@ grow_vertical = 2
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_fj3ts")
+theme_override_styles/panel = SubResource("StyleBoxFlat_m2kmj")
 
 [node name="Panel2" type="Panel" parent="." unique_id=461083351]
 layout_mode = 1
@@ -29,7 +26,7 @@ offset_left = 338.0
 offset_top = 63.5
 offset_right = 814.0
 offset_bottom = 512.5
-theme_override_styles/panel = SubResource("StyleBoxTexture_pyf0h")
+theme_override_styles/panel = SubResource("StyleBoxFlat_40th0")
 
 [node name="Label_Title" type="Label" parent="Panel2" unique_id=2061589588]
 layout_mode = 1
@@ -80,5 +77,4 @@ offset_top = 538.0
 offset_right = 709.5
 offset_bottom = 625.0
 theme_override_font_sizes/font_size = 29
-theme_override_styles/normal = SubResource("StyleBoxTexture_40th0")
 text = "Press J to continue"
