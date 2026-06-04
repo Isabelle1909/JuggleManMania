@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://dbur23y8cp2qt" path="res://scripts/UI/y_n_box.gd" id="1_bhp72"]
 [ext_resource type="AudioStream" uid="uid://dtku2eihhr2f3" path="res://assets/sound effect/UIsounds for click.mp3" id="2_82jgt"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_82jgt"]
+
 [node name="y_n_box" type="Control" unique_id=1882826195]
 layout_mode = 3
 anchors_preset = 15
@@ -18,6 +20,7 @@ offset_left = 984.0
 offset_top = 178.0
 offset_right = 1149.0
 offset_bottom = 391.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_82jgt")
 
 [node name="yes_button" type="Button" parent="Panel" unique_id=301932116]
 layout_mode = 0
