@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://y8670k1u2j8o"]
+[gd_scene load_steps=8 format=3 uid="uid://y8670k1u2j8o"]
 
 [ext_resource type="Script" uid="uid://djwk4ladk4mgx" path="res://scripts/juggling_level/tutorial/tutorial_scene.gd" id="1_8kngq"]
 [ext_resource type="Texture2D" uid="uid://d3i4sqhx8wrdo" path="res://icon.svg" id="1_qv2oq"]
@@ -12,51 +12,51 @@ size = Vector2(1336, 137)
 normal = Vector2(1, 0)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_evhq8"]
-normal = Vector2(-0.9998564, 0.016946718)
+normal = Vector2(-0.999856, 0.0169467)
 
-[node name="tutorial_scene" type="Node2D" unique_id=1433285458]
+[node name="tutorial_scene" type="Node2D"]
 script = ExtResource("1_8kngq")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2094491437]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(574.5, 325)
-scale = Vector2(8.9765625, 5.046875)
+scale = Vector2(8.97656, 5.04688)
 texture = ExtResource("1_qv2oq")
 
-[node name="juggling_player" parent="." unique_id=1964283372 instance=ExtResource("2_8kngq")]
+[node name="juggling_player" parent="." instance=ExtResource("2_8kngq")]
 position = Vector2(565, 526)
 
-[node name="text_ui" parent="." unique_id=1281821818 instance=ExtResource("4_2a8d8")]
+[node name="text_ui" parent="." instance=ExtResource("4_2a8d8")]
 
-[node name="boundaries" type="Node2D" parent="." unique_id=1352589015]
+[node name="boundaries" type="Node2D" parent="."]
 
-[node name="ball_drop_detect" type="Area2D" parent="boundaries" unique_id=1989737255]
+[node name="ball_drop_detect" type="Area2D" parent="boundaries"]
 collision_layer = 96
 collision_mask = 96
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="boundaries/ball_drop_detect" unique_id=58098173]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boundaries/ball_drop_detect"]
 position = Vector2(568, 717)
 shape = SubResource("RectangleShape2D_tw54j")
 
-[node name="world_boundary_left" type="StaticBody2D" parent="boundaries" unique_id=649455044]
+[node name="world_boundary_left" type="StaticBody2D" parent="boundaries"]
 collision_layer = 112
 collision_mask = 112
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="boundaries/world_boundary_left" unique_id=1714445111]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boundaries/world_boundary_left"]
 shape = SubResource("WorldBoundaryShape2D_x40yl")
 
-[node name="world_boundary_right" type="StaticBody2D" parent="boundaries" unique_id=1342464463]
+[node name="world_boundary_right" type="StaticBody2D" parent="boundaries"]
 position = Vector2(1153, 0)
 collision_layer = 112
 collision_mask = 112
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="boundaries/world_boundary_right" unique_id=308497253]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boundaries/world_boundary_right"]
 shape = SubResource("WorldBoundaryShape2D_evhq8")
 
-[node name="Panel" type="Panel" parent="." unique_id=628540149]
+[node name="Panel" type="Panel" parent="."]
 offset_right = 265.0
 offset_bottom = 91.0
 
-[node name="Label" type="Label" parent="Panel" unique_id=609886167]
+[node name="Label" type="Label" parent="Panel"]
 layout_mode = 0
 offset_right = 266.0
 offset_bottom = 87.0

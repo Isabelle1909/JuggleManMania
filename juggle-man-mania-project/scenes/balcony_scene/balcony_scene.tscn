@@ -1,68 +1,69 @@
-[gd_scene format=4 uid="uid://18bbo870jgqk"]
+[gd_scene load_steps=9 format=4 uid="uid://18bbo870jgqk"]
 
 [ext_resource type="TileSet" uid="uid://bhw3ra2uh0fnt" path="res://tilesets/balcony_tileset.tres" id="1_6g3yx"]
 [ext_resource type="Script" uid="uid://c2521k6budvog" path="res://scripts/house_level/Interactable.gd" id="2_cissh"]
-[ext_resource type="Texture2D" uid="uid://dggo61m3s3re8" path="res://assets/placeholder_assets/door_placeholder.jpg" id="3_gnjbx"]
+[ext_resource type="Texture2D" uid="uid://crh6tj472rrw4" path="res://assets/house_assets/DoorFlatpng.png" id="3_cissh"]
 [ext_resource type="AudioStream" uid="uid://b5dh0tuaupvkm" path="res://assets/sound effect/opening-door-411632.mp3" id="4_cissh"]
 [ext_resource type="PackedScene" uid="uid://i5ot6tbllc4l" path="res://scenes/house_level/interactable.tscn" id="4_gigyt"]
 [ext_resource type="Texture2D" uid="uid://xvkhenon15uf" path="res://assets/placeholder_assets/potted_plant.placeholder.jpg" id="5_1t0w1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_82lpl"]
-size = Vector2(132, 157)
+size = Vector2(144, 42.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cissh"]
 size = Vector2(48, 62)
 
-[node name="Balcony_Scene" type="Node2D" unique_id=1986828564]
+[node name="Balcony_Scene" type="Node2D"]
 
-[node name="Game_Tilemap" type="Node2D" parent="." unique_id=540432398]
+[node name="Game_Tilemap" type="Node2D" parent="."]
 
-[node name="Floor" type="TileMapLayer" parent="Game_Tilemap" unique_id=1769196296]
+[node name="Floor" type="TileMapLayer" parent="Game_Tilemap"]
 tile_map_data = PackedByteArray("AAAKAAwAAAAHAAYAAAALAAwAAAAHAAYAAAAMAAwAAAAHAAYAAAAKAA0AAAAGAAcAAAALAA0AAAAHAAcAAAAMAA0AAAAIAAcAAAAMAAsAAAAHAAYAAAALAAsAAAAHAAYAAAAKAAsAAAAHAAYAAAAJAAsAAAAHAAYAAAAIAAsAAAAHAAYAAAAHAAsAAAAHAAYAAAAGAAsAAAAHAAYAAAAFAAsAAAAHAAYAAAAJAAwAAAAHAAcAAAAIAAwAAAAHAAcAAAAHAAwAAAAHAAcAAAAGAAwAAAAHAAcAAAAFAAwAAAAHAAcAAAAFAAoAAAAHAAYAAAAFAAkAAAAHAAYAAAAFAAgAAAAHAAYAAAAGAAgAAAAHAAYAAAAHAAgAAAAHAAYAAAAIAAgAAAAHAAYAAAAJAAgAAAAHAAYAAAAKAAgAAAAHAAYAAAALAAgAAAAHAAYAAAAMAAgAAAAHAAYAAAANAAgAAAAHAAYAAAAOAAgAAAAHAAYAAAAPAAgAAAAHAAYAAAAQAAgAAAAHAAYAAAARAAgAAAAHAAYAAAASAAgAAAAHAAYAAAASAAkAAAAHAAYAAAASAAoAAAAHAAYAAAASAAsAAAAHAAYAAAARAAsAAAAHAAYAAAAQAAsAAAAHAAYAAAAPAAsAAAAHAAYAAAAOAAsAAAAHAAYAAAANAAsAAAAHAAYAAAANAAwAAAAHAAcAAAAOAAwAAAAHAAcAAAAPAAwAAAAHAAcAAAAQAAwAAAAHAAcAAAARAAwAAAAHAAcAAAARAAoAAAAHAAYAAAARAAkAAAAHAAYAAAASAAwAAAAHAAcAAAAQAAkAAAAHAAYAAAAQAAoAAAAHAAYAAAAPAAoAAAAHAAYAAAAPAAkAAAAHAAYAAAAOAAkAAAAHAAYAAAAOAAoAAAAHAAYAAAANAAoAAAAHAAYAAAAMAAoAAAAHAAYAAAALAAoAAAAHAAYAAAAKAAoAAAAHAAYAAAAJAAoAAAAHAAYAAAAIAAoAAAAHAAYAAAAHAAoAAAAHAAYAAAAGAAoAAAAHAAYAAAAGAAkAAAAHAAYAAAAHAAkAAAAHAAYAAAAIAAkAAAAHAAYAAAAJAAkAAAAHAAYAAAAKAAkAAAAHAAYAAAALAAkAAAAHAAYAAAAMAAkAAAAHAAYAAAANAAkAAAAHAAYAAAAEAAwAAAAHAAcAAAAEAAsAAAAHAAYAAAAEAAoAAAAHAAYAAAAEAAkAAAAHAAYAAAAEAAgAAAAHAAYAAAAEAAcAAAAHAAYAAAAFAAcAAAAHAAYAAAAGAAcAAAAHAAYAAAAHAAcAAAAHAAYAAAAIAAcAAAAHAAYAAAAJAAcAAAAHAAYAAAAKAAcAAAAHAAYAAAALAAcAAAAHAAYAAAAMAAcAAAAHAAYAAAANAAcAAAAHAAYAAAAOAAcAAAAHAAYAAAAPAAcAAAAHAAYAAAAQAAcAAAAHAAYAAAARAAcAAAAHAAYAAAASAAcAAAAHAAYAAAADAAwAAAAGAAcAAAADAAsAAAAGAAYAAAADAAoAAAAGAAYAAAADAAkAAAAGAAYAAAADAAgAAAAGAAYAAAADAAcAAAAGAAYAAAATAAgAAAAIAAYAAAATAAkAAAAIAAYAAAATAAoAAAAIAAYAAAATAAsAAAAIAAYAAAATAAwAAAAIAAcAAAADAAYAAAAGAAUAAAATAAYAAAAIAAUAAAATAAcAAAAIAAYAAAASAAYAAAAHAAUAAAARAAYAAAAHAAUAAAAQAAYAAAAHAAUAAAAPAAYAAAAHAAUAAAAOAAYAAAAHAAUAAAANAAYAAAAHAAUAAAAMAAYAAAAHAAUAAAALAAYAAAAHAAUAAAAKAAYAAAAHAAUAAAAJAAYAAAAHAAUAAAAIAAYAAAAHAAUAAAAHAAYAAAAHAAUAAAAGAAYAAAAHAAUAAAAFAAYAAAAHAAUAAAAEAAYAAAAHAAUAAAA=")
 tile_set = ExtResource("1_6g3yx")
 
-[node name="in_door" type="StaticBody2D" parent="Game_Tilemap" unique_id=1498389721]
+[node name="in_door" type="StaticBody2D" parent="Game_Tilemap"]
 y_sort_enabled = true
 position = Vector2(555, 680)
 script = ExtResource("2_cissh")
 title = "in_door"
 
-[node name="Sprite2D" type="Sprite2D" parent="Game_Tilemap/in_door" unique_id=625949242]
-position = Vector2(1, -18.000006)
-scale = Vector2(0.2943038, 0.22398031)
-texture = ExtResource("3_gnjbx")
+[node name="Sprite2D" type="Sprite2D" parent="Game_Tilemap/in_door"]
+position = Vector2(-2.00002, -66)
+rotation = 3.14159
+scale = Vector2(0.464672, 0.503138)
+texture = ExtResource("3_cissh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Game_Tilemap/in_door" unique_id=637196175]
-position = Vector2(0.5, -17.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game_Tilemap/in_door"]
+position = Vector2(-2, -1.75)
 shape = SubResource("RectangleShape2D_82lpl")
 
-[node name="DoorSound" type="AudioStreamPlayer" parent="Game_Tilemap/in_door" unique_id=555593397]
+[node name="DoorSound" type="AudioStreamPlayer" parent="Game_Tilemap/in_door"]
 stream = ExtResource("4_cissh")
 
-[node name="Wall" type="TileMapLayer" parent="Game_Tilemap" unique_id=1856203386]
+[node name="Wall" type="TileMapLayer" parent="Game_Tilemap"]
 tile_map_data = PackedByteArray("AAAOAA0AAQAEAAMAAAAPAA0AAQAEAAMAAAAQAA0AAQAEAAMAAAARAA0AAQAEAAMAAAASAA0AAQAEAAMAAAATAA0AAQAEAAMAAAAIAA0AAQAEAAMAAAAHAA0AAQAEAAMAAAAGAA0AAQAEAAMAAAAFAA0AAQAEAAMAAAAEAA0AAQAEAAMAAAADAA0AAQAEAAMAAAACAA0AAQAEAAMAAAABAA0AAQAEAAMAAAAAAA0AAQAEAAMAAAAUAA0AAQAEAAMAAAAVAA0AAQAEAAMAAAAWAA0AAQAEAAMAAAAXAA0AAQAEAAMAAAAYAA0AAQAEAAMAAAD+/w0AAQAEAAMAAAD//w0AAQAEAAMAAAD9/w0AAQAEAAMAAAAYAA4AAQAEAAQAAAAXAA4AAQAEAAQAAAAWAA4AAQAEAAQAAAAVAA4AAQAEAAQAAAAUAA4AAQAEAAQAAAATAA4AAQAEAAQAAAASAA4AAQAEAAQAAAARAA4AAQAEAAQAAAAQAA4AAQAEAAQAAAAPAA4AAQAEAAQAAAAOAA4AAQAEAAQAAAANAA4AAQAEAAQAAAAMAA4AAQAEAAQAAAALAA4AAQAEAAQAAAAKAA4AAQAEAAQAAAAJAA4AAQAEAAQAAAAIAA4AAQAEAAQAAAAHAA4AAQAEAAQAAAAGAA4AAQAEAAQAAAAFAA4AAQAEAAQAAAAJAA0AAQAEAAMAAAANAA0AAQAEAAMAAAAEAA4AAQAEAAQAAAADAA4AAQAEAAQAAAACAA4AAQAEAAQAAAABAA4AAQAEAAQAAAAAAA4AAQAEAAQAAAD//w4AAQAEAAQAAAD+/w4AAQAEAAQAAAD9/w4AAQAEAAQAAAD8/w4AAQAEAAQAAAD7/w4AAQAEAAQAAAD8/w0AAQAEAAMAAAD7/w0AAQAEAAMAAAAZAA0AAQAEAAMAAAAaAA0AAQAEAAMAAAAZAA4AAQAEAAQAAAAaAA4AAQAEAAQAAAA=")
 tile_set = ExtResource("1_6g3yx")
 
-[node name="Fence" type="TileMapLayer" parent="Game_Tilemap" unique_id=940809357]
+[node name="Fence" type="TileMapLayer" parent="Game_Tilemap"]
 tile_map_data = PackedByteArray("AAADAAYAAAAAAAkAAAATAAcAAAACAAkAAAATAAgAAAACAAkAAAATAAkAAAACAAkAAAATAAoAAAACAAkAAAATAAsAAAACAAkAAAATAAwAAAACAAkAAAADAAcAAAAAAAkAAAADAAgAAAAAAAkAAAADAAkAAAAAAAkAAAADAAoAAAAAAAkAAAADAAsAAAAAAAkAAAADAAwAAAAAAAkAAAADAAUAAAAAAAgAAAATAAYAAAACAAkAAAATAAUAAAACAAgAAAASAAUAAAABAAgAAAARAAUAAAABAAgAAAAQAAUAAAABAAgAAAAPAAUAAAABAAgAAAAOAAUAAAABAAgAAAANAAUAAAABAAgAAAAMAAUAAAABAAgAAAALAAUAAAABAAgAAAAKAAUAAAABAAgAAAAJAAUAAAABAAgAAAAIAAUAAAABAAgAAAAHAAUAAAABAAgAAAAGAAUAAAABAAgAAAAFAAUAAAABAAgAAAAEAAUAAAABAAgAAAA=")
 tile_set = ExtResource("1_6g3yx")
 
-[node name="transparent" type="TileMapLayer" parent="Game_Tilemap" unique_id=237641942]
+[node name="transparent" type="TileMapLayer" parent="Game_Tilemap"]
 tile_map_data = PackedByteArray("AAAKAA0AAgAEAAMAAAALAA0AAgAEAAMAAAAMAA0AAgAEAAMAAAA=")
 tile_set = ExtResource("1_6g3yx")
 
-[node name="practice_box" parent="." unique_id=1406826812 instance=ExtResource("4_gigyt")]
+[node name="practice_box" parent="." instance=ExtResource("4_gigyt")]
 position = Vector2(212, 349)
 title = "practice_box"
 
-[node name="potted_plant" type="StaticBody2D" parent="." unique_id=1222164701]
+[node name="potted_plant" type="StaticBody2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="potted_plant" unique_id=1455004666]
+[node name="Sprite2D" type="Sprite2D" parent="potted_plant"]
 position = Vector2(929, 293)
-scale = Vector2(0.22959183, 0.24319066)
+scale = Vector2(0.229592, 0.243191)
 texture = ExtResource("5_1t0w1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="potted_plant" unique_id=818668329]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="potted_plant"]
 position = Vector2(930, 294)
 shape = SubResource("RectangleShape2D_cissh")
 

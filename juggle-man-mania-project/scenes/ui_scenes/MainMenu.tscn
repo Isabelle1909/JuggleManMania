@@ -1,23 +1,41 @@
-[gd_scene format=3 uid="uid://60s214ud27j5"]
+[gd_scene load_steps=12 format=3 uid="uid://60s214ud27j5"]
 
 [ext_resource type="Script" uid="uid://csy7eigecfffg" path="res://scripts/UI/title_screen.gd" id="1_2y50p"]
-[ext_resource type="Texture2D" uid="uid://d3i4sqhx8wrdo" path="res://icon.svg" id="1_xjmod"]
+[ext_resource type="Texture2D" uid="uid://oqqnp8wvqwpk" path="res://assets/UI image assets/Background for portraits in text box of needed.png" id="2_ugyeh"]
 [ext_resource type="PackedScene" uid="uid://dkp2lcwdqvm8v" path="res://scenes/ui_scenes/HelpScreen.tscn" id="3_0vnpx"]
+[ext_resource type="Texture2D" uid="uid://di71udk2c8efj" path="res://assets/UI image assets/buttons.png" id="3_w5uqf"]
 [ext_resource type="AudioStream" uid="uid://dtku2eihhr2f3" path="res://assets/sound effect/UIsounds for click.mp3" id="4_ugyeh"]
 
-[node name="MainMenu" type="Node2D" unique_id=851641343]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ugyeh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m5w54"]
+texture = ExtResource("3_w5uqf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t6bap"]
+texture = ExtResource("3_w5uqf")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w5uqf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w5uqf"]
+texture = ExtResource("3_w5uqf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bpq7r"]
+texture = ExtResource("3_w5uqf")
+
+[node name="MainMenu" type="Node2D"]
 script = ExtResource("1_2y50p")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1140432038]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(575.5, 324.5)
-scale = Vector2(8.9765625, 5.0546875)
-texture = ExtResource("1_xjmod")
+scale = Vector2(8.97656, 5.05469)
+texture = ExtResource("2_ugyeh")
 
-[node name="Panel" type="Panel" parent="." unique_id=1724316390]
+[node name="Panel" type="Panel" parent="."]
 offset_right = 1151.0
 offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ugyeh")
 
-[node name="Label" type="Label" parent="." unique_id=1508532687]
+[node name="Label" type="Label" parent="."]
 offset_left = 467.0
 offset_top = 59.0
 offset_right = 679.0
@@ -25,47 +43,52 @@ offset_bottom = 114.0
 theme_override_font_sizes/font_size = 40
 text = "Juggle Man"
 
-[node name="button_new_game" type="Button" parent="." unique_id=904363457]
+[node name="button_new_game" type="Button" parent="."]
 offset_left = 484.0
 offset_top = 203.0
-offset_right = 652.8889
+offset_right = 652.889
 offset_bottom = 248.0
 focus_neighbor_top = NodePath("../button_quit")
 focus_neighbor_bottom = NodePath("../button_load_game")
 theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxTexture_m5w54")
 text = "New Game"
 
-[node name="button_load_game" type="Button" parent="." unique_id=791660594]
+[node name="button_load_game" type="Button" parent="."]
 offset_left = 484.0
 offset_top = 306.0
-offset_right = 652.8889
+offset_right = 652.889
 offset_bottom = 351.0
 focus_neighbor_top = NodePath("../button_new_game")
 focus_neighbor_bottom = NodePath("../button_help")
 theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxTexture_t6bap")
 text = "Load Game"
 
-[node name="button_help" type="Button" parent="." unique_id=566609283]
+[node name="button_help" type="Button" parent="."]
 offset_left = 484.0
 offset_top = 403.0
-offset_right = 652.8889
+offset_right = 652.889
 offset_bottom = 448.0
 focus_neighbor_top = NodePath("../button_load_game")
 focus_neighbor_bottom = NodePath("../button_quit")
 theme_override_font_sizes/font_size = 27
+theme_override_styles/focus = SubResource("StyleBoxEmpty_w5uqf")
+theme_override_styles/normal = SubResource("StyleBoxTexture_w5uqf")
 text = "HELP"
 
-[node name="button_quit" type="Button" parent="." unique_id=530439100]
+[node name="button_quit" type="Button" parent="."]
 offset_left = 484.0
 offset_top = 509.0
-offset_right = 652.8889
+offset_right = 652.889
 offset_bottom = 554.0
 focus_neighbor_top = NodePath("../button_help")
 focus_neighbor_bottom = NodePath("../button_new_game")
 theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxTexture_bpq7r")
 text = "QUIT"
 
-[node name="help_menu" parent="." unique_id=645237815 instance=ExtResource("3_0vnpx")]
+[node name="help_menu" parent="." instance=ExtResource("3_0vnpx")]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -75,7 +98,7 @@ anchor_bottom = 0.5
 size_flags_horizontal = 0
 size_flags_vertical = 8
 
-[node name="Label2" type="Label" parent="." unique_id=1434560908]
+[node name="Label2" type="Label" parent="."]
 offset_left = 385.0
 offset_top = 119.0
 offset_right = 752.0
@@ -85,7 +108,7 @@ Use W to go up, and S to go down"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ClickSound" type="AudioStreamPlayer" parent="." unique_id=542062847]
+[node name="ClickSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_ugyeh")
 
 [connection signal="pressed" from="button_new_game" to="." method="_on_button_new_game_pressed"]

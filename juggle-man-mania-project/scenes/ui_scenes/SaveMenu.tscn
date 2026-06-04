@@ -1,8 +1,28 @@
-[gd_scene format=3 uid="uid://dcrix2nxbwg1r"]
+[gd_scene load_steps=11 format=3 uid="uid://dcrix2nxbwg1r"]
 
 [ext_resource type="Script" uid="uid://ur6q6lg0edu0" path="res://scripts/UI/save_menu.gd" id="1_y552w"]
+[ext_resource type="Texture2D" uid="uid://oqqnp8wvqwpk" path="res://assets/UI image assets/Background for portraits in text box of needed.png" id="2_hisbj"]
+[ext_resource type="Texture2D" uid="uid://di71udk2c8efj" path="res://assets/UI image assets/buttons.png" id="3_2uf07"]
 
-[node name="Load" type="Control" unique_id=1860916958]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2uf07"]
+texture = ExtResource("2_hisbj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4uv4a"]
+texture = ExtResource("3_2uf07")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wreud"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l56im"]
+texture = ExtResource("3_2uf07")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2me2c"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nvx88"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g3mqe"]
+texture = ExtResource("3_2uf07")
+
+[node name="Load" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,112 +31,114 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_y552w")
 
-[node name="Panel" type="Panel" parent="." unique_id=462600059]
+[node name="Panel" type="Panel" parent="."]
 layout_mode = 0
 offset_right = 1151.0
 offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_2uf07")
 
-[node name="Categories" type="VBoxContainer" parent="Panel" unique_id=1925897207]
+[node name="Categories" type="VBoxContainer" parent="Panel"]
 layout_mode = 0
 offset_left = 179.0
 offset_top = 170.0
 offset_right = 297.0
-offset_bottom = 476.80005
+offset_bottom = 476.8
 
-[node name="day" type="Label" parent="Panel/Categories" unique_id=1095940128]
+[node name="day" type="Label" parent="Panel/Categories"]
 layout_mode = 2
 text = "Day
 "
 
-[node name="jp" type="Label" parent="Panel/Categories" unique_id=1949093084]
+[node name="jp" type="Label" parent="Panel/Categories"]
 layout_mode = 2
 text = "JP
 
 "
 
-[node name="score" type="Label" parent="Panel/Categories" unique_id=987436667]
+[node name="score" type="Label" parent="Panel/Categories"]
 layout_mode = 2
 text = "Score
 
 "
 
-[node name="Save data" type="VBoxContainer" parent="Panel" unique_id=1750928520]
+[node name="Save data" type="VBoxContainer" parent="Panel"]
 layout_mode = 0
 offset_left = 741.0
 offset_top = 139.0
 offset_right = 859.0
-offset_bottom = 445.80005
+offset_bottom = 445.8
 
-[node name="save" type="Label" parent="Panel/Save data" unique_id=1024245417]
+[node name="save" type="Label" parent="Panel/Save data"]
 layout_mode = 2
 text = "Load Data"
 
-[node name="day_number" type="Label" parent="Panel/Save data" unique_id=906787687]
+[node name="day_number" type="Label" parent="Panel/Save data"]
 layout_mode = 2
 text = "xxxx
 
 "
 
-[node name="current_jp_number" type="Label" parent="Panel/Save data" unique_id=1214259975]
+[node name="current_jp_number" type="Label" parent="Panel/Save data"]
 layout_mode = 2
 text = "xxxx
 
 "
 
-[node name="total_score_number" type="Label" parent="Panel/Save data" unique_id=1438199172]
+[node name="total_score_number" type="Label" parent="Panel/Save data"]
 layout_mode = 2
 text = "xxxx
 
 "
 
-[node name="Current data" type="VBoxContainer" parent="Panel" unique_id=21109211]
+[node name="Current data" type="VBoxContainer" parent="Panel"]
 layout_mode = 0
 offset_left = 880.0
 offset_top = 138.0
 offset_right = 998.0
-offset_bottom = 444.80005
+offset_bottom = 444.8
 
-[node name="save" type="Label" parent="Panel/Current data" unique_id=741843615]
+[node name="save" type="Label" parent="Panel/Current data"]
 layout_mode = 2
 text = "Current Data"
 
-[node name="day_number" type="Label" parent="Panel/Current data" unique_id=944944234]
+[node name="day_number" type="Label" parent="Panel/Current data"]
 layout_mode = 2
 text = "xxxx
 
 "
 
-[node name="current_jp_number" type="Label" parent="Panel/Current data" unique_id=1630917360]
+[node name="current_jp_number" type="Label" parent="Panel/Current data"]
 layout_mode = 2
 text = "xxxx
 
 "
 
-[node name="total_score_number" type="Label" parent="Panel/Current data" unique_id=1230833065]
+[node name="total_score_number" type="Label" parent="Panel/Current data"]
 layout_mode = 2
 text = "xxxx
 
 "
 
-[node name="Buttons" type="Control" parent="Panel" unique_id=1089446543]
+[node name="Buttons" type="Control" parent="Panel"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Button_Delete" type="Button" parent="Panel/Buttons" unique_id=224536242]
+[node name="Button_Delete" type="Button" parent="Panel/Buttons"]
 layout_mode = 0
-offset_left = 249.0
-offset_top = 399.0
-offset_right = 411.0
-offset_bottom = 469.0
+offset_left = 248.0
+offset_top = 401.0
+offset_right = 410.0
+offset_bottom = 471.0
 focus_neighbor_left = NodePath("../Button_Save")
 focus_neighbor_top = NodePath("../Button_Close")
 focus_neighbor_right = NodePath("../Button_Load")
 focus_neighbor_bottom = NodePath("../Button_Back")
 theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_4uv4a")
 text = "DELETE"
 
-[node name="Button_Close" type="Button" parent="Panel/Buttons" unique_id=322385550]
+[node name="Button_Close" type="Button" parent="Panel/Buttons"]
 layout_mode = 0
 offset_left = 960.0
 offset_top = 24.0
@@ -124,9 +146,10 @@ offset_right = 1122.0
 offset_bottom = 94.0
 focus_neighbor_bottom = NodePath("../Button_Save")
 theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_wreud")
 text = "CLOSE"
 
-[node name="Button_Load" type="Button" parent="Panel/Buttons" unique_id=1752916761]
+[node name="Button_Load" type="Button" parent="Panel/Buttons"]
 layout_mode = 0
 offset_left = 449.0
 offset_top = 401.0
@@ -137,9 +160,10 @@ focus_neighbor_top = NodePath("../Button_Close")
 focus_neighbor_right = NodePath("../Button_Save")
 focus_neighbor_bottom = NodePath("../Button_Next")
 theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_l56im")
 text = "LOAD"
 
-[node name="Button_Back" type="Button" parent="Panel/Buttons" unique_id=2067161858]
+[node name="Button_Back" type="Button" parent="Panel/Buttons"]
 layout_mode = 0
 offset_left = 362.0
 offset_top = 538.0
@@ -150,9 +174,10 @@ focus_neighbor_top = NodePath("../Button_Load")
 focus_neighbor_right = NodePath("../Button_Next")
 focus_neighbor_bottom = NodePath("../Button_Close")
 theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_2me2c")
 text = "← Back"
 
-[node name="Button_Next" type="Button" parent="Panel/Buttons" unique_id=1925953485]
+[node name="Button_Next" type="Button" parent="Panel/Buttons"]
 layout_mode = 0
 offset_left = 572.0
 offset_top = 539.0
@@ -163,27 +188,29 @@ focus_neighbor_top = NodePath("../Button_Save")
 focus_neighbor_right = NodePath("../Button_Back")
 focus_neighbor_bottom = NodePath("../Button_Close")
 theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_nvx88")
 text = "Next →"
 
-[node name="Button_Save" type="Button" parent="Panel/Buttons" unique_id=1251355196]
+[node name="Button_Save" type="Button" parent="Panel/Buttons"]
 layout_mode = 0
-offset_left = 647.0
-offset_top = 400.0
-offset_right = 809.0
-offset_bottom = 470.0
+offset_left = 636.0
+offset_top = 401.0
+offset_right = 798.0
+offset_bottom = 471.0
 focus_neighbor_left = NodePath("../Button_Load")
 focus_neighbor_top = NodePath("../Button_Close")
 focus_neighbor_right = NodePath("../Button_Delete")
 focus_neighbor_bottom = NodePath("../Button_Next")
 theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_g3mqe")
 text = "SAVE"
 
-[node name="Labels" type="Control" parent="Panel" unique_id=1688752644]
+[node name="Labels" type="Control" parent="Panel"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Label_SaveSlot1" type="Label" parent="Panel/Labels" unique_id=691912818]
+[node name="Label_SaveSlot1" type="Label" parent="Panel/Labels"]
 layout_mode = 0
 offset_left = 45.0
 offset_top = 29.0
@@ -192,7 +219,7 @@ offset_bottom = 74.0
 theme_override_font_sizes/font_size = 32
 text = "Save Slot 1 "
 
-[node name="Label_PlayerTitle" type="Label" parent="Panel/Labels" unique_id=790048748]
+[node name="Label_PlayerTitle" type="Label" parent="Panel/Labels"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -205,7 +232,7 @@ grow_horizontal = 2
 theme_override_font_sizes/font_size = 25
 text = "SaveMenu"
 
-[node name="Label_ScoreTitle" type="Label" parent="Panel/Labels" unique_id=938460429]
+[node name="Label_ScoreTitle" type="Label" parent="Panel/Labels"]
 visible = false
 layout_mode = 0
 offset_left = 188.0
@@ -214,7 +241,7 @@ offset_right = 392.0
 offset_bottom = 198.0
 theme_override_font_sizes/font_size = 20
 
-[node name="Label_ScoreNumber" type="Label" parent="Panel/Labels" unique_id=1265676882]
+[node name="Label_ScoreNumber" type="Label" parent="Panel/Labels"]
 visible = false
 layout_mode = 0
 offset_left = 771.0

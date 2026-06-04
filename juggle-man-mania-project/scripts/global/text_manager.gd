@@ -16,7 +16,17 @@ var talked_to_nums = {
 	"mirror": 0,
 	"bed": 0,
 	"computer": 0,
-	"tutorial": 0
+	"tutorial": 0,
+	"dirty_laundry": 0,
+	"bookshelf": 0,
+	"fridge": 0,
+	"couch": 0,
+	"toilet": 0,
+	"messy_desk":0,
+	"shower": 0,
+	"tv":0,
+	"oven":0,
+	
 }
 
 var talked_cutscene_nums = {
