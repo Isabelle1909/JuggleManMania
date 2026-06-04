@@ -3,6 +3,7 @@ extends Node
 var time = "morning"
 var day = 1
 var mood = "neutral"
+var face
 
 var current_jp = 0
 var total_jp = 0
