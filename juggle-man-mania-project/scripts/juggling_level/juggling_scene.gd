@@ -13,7 +13,12 @@ var infinite = false
 
 var ball = load("res://scenes/juggling_level/juggling_items/manual_physics_ball.tscn")
 
+var done = false
+
 func _ready() -> void:
+	SystemManager.j_done = true
+	timer = 10
+	print("juggling")
 	infinite = SystemManager.juggle_infinite
 	if infinite:
 		quit_panel.visible = true
@@ -33,6 +38,26 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if SystemManager.j_done == false:
+		timer = 10
+		print("juggling")
+		infinite = SystemManager.juggle_infinite
+		if infinite:
+			quit_panel.visible = true
+		else:
+			quit_panel.visible = false
+			if SystemManager.day == 2:
+				pass
+			elif SystemManager.day == 3:
+				pass
+		
+		TextManager.jfl = player.get_node("left_panel")
+		TextManager.jfr = player.get_node("right_panel")
+		for child: Node in juggling_items.get_children():
+			if child.is_in_group("juggling_items"):
+				active_juggling_items.push_back(child)
+		SystemManager.j_done = true
+	
 	if !infinite:
 		if timer > 0 && active_juggling_items.size() > 0:
 			timer -= delta

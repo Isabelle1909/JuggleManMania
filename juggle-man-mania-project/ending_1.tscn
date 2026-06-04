@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dw6qgte08ya5d"]
+[gd_scene format=3 uid="uid://dw6qgte08ya5d"]
 
 [ext_resource type="Script" uid="uid://c6onve58awkqo" path="res://ending_1.gd" id="1_0tjmg"]
 [ext_resource type="Texture2D" uid="uid://cyk4o4rrglrwe" path="res://assets/placeholder_assets/juggleman-offTheClock.png" id="1_trqny"]

@@ -38,7 +38,7 @@ var tut_just_done = false
 
 var new_high_score_text = "you got a new high score!"
 var normal_completion_text = "you completed the tutorial you champ, you."
-
+var j_done = false
 
 var default_talked_to_nums = {
 	"wardrobe": 0,
@@ -101,8 +101,9 @@ func update_scores(to_add):
 func open_juggling(pos):
 	if pos != null:
 		house_position = pos
-		just_juggling = true
-	
+		
+	just_juggling = true
+	j_done = false
 	print("house pos ", house_position)
 	get_tree().change_scene_to_packed(juggle_level)
 	
@@ -118,6 +119,7 @@ func open_house(juggle_score,items_left):
 	#increment_time()
 	last_score = juggle_score
 	last_bonus_1 = items_left * 10
+	just_juggling = false
 	update_scores(last_score)
 	update_scores(last_bonus_1)
 	get_tree().change_scene_to_packed(house_level)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://effsrxenqkmr"]
+[gd_scene format=3 uid="uid://effsrxenqkmr"]
 
 [ext_resource type="PackedScene" uid="uid://dnvo7ick37jdw" path="res://scenes/ui_scenes/UI.tscn" id="1_h858l"]
 [ext_resource type="PackedScene" uid="uid://dkp2lcwdqvm8v" path="res://scenes/ui_scenes/HelpScreen.tscn" id="2_vbm1y"]
@@ -17,11 +17,11 @@ gradient = SubResource("Gradient_lxpq1")
 
 [node name="text_ui" type="CanvasLayer" unique_id=1281821818]
 
-[node name="button_info" type="Panel" parent="."]
+[node name="button_info" type="Panel" parent="." unique_id=26931823]
 offset_right = 182.0
 offset_bottom = 120.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="button_info"]
+[node name="RichTextLabel" type="RichTextLabel" parent="button_info" unique_id=1964082217]
 layout_mode = 0
 offset_right = 182.0
 offset_bottom = 120.0
@@ -34,21 +34,21 @@ PRESS K"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="timer_display" parent="." instance=ExtResource("6_l2pa0")]
+[node name="timer_display" parent="." unique_id=838922295 instance=ExtResource("6_l2pa0")]
 visible = false
 offset_left = 891.0
 offset_top = 8.0
 offset_right = 891.0
 offset_bottom = 8.0
 
-[node name="score_display" parent="." instance=ExtResource("7_lxpq1")]
+[node name="score_display" parent="." unique_id=1847754324 instance=ExtResource("7_lxpq1")]
 visible = false
 offset_left = 891.0
 offset_top = 115.0
 offset_right = 891.0
 offset_bottom = 115.0
 
-[node name="text_box" parent="." instance=ExtResource("1_h858l")]
+[node name="text_box" parent="." unique_id=606426437 instance=ExtResource("1_h858l")]
 visible = false
 offset_left = -3.0
 offset_top = 390.0
@@ -56,18 +56,19 @@ offset_right = -3.0
 offset_bottom = 390.0
 size_flags_horizontal = 8
 size_flags_vertical = 8
+script = null
 metadata/_edit_use_anchors_ = true
 
-[node name="help_menu" parent="." instance=ExtResource("2_vbm1y")]
+[node name="help_menu" parent="." unique_id=1885291979 instance=ExtResource("2_vbm1y")]
 visible = false
 
-[node name="results_screen" parent="." instance=ExtResource("3_vnrby")]
+[node name="results_screen" parent="." unique_id=1345962324 instance=ExtResource("3_vnrby")]
 visible = false
 
-[node name="save_menu" parent="." instance=ExtResource("4_tww4t")]
+[node name="save_menu" parent="." unique_id=692229141 instance=ExtResource("4_tww4t")]
 visible = false
 
-[node name="y_n_box" parent="." instance=ExtResource("5_xxgiu")]
+[node name="y_n_box" parent="." unique_id=2074274476 instance=ExtResource("5_xxgiu")]
 visible = false
 
 [node name="Sprite2D3" type="Sprite2D" parent="." unique_id=32869872]

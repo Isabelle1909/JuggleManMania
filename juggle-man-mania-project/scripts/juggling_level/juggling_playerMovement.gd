@@ -38,6 +38,7 @@ var right_impulse = Vector2(-50,0)
 func _ready() -> void:
 	left_text.visible = false
 	right_text.visible = false
+	
 
 func _physics_process(delta):
 	if disabled:
