@@ -99,12 +99,11 @@ size_flags_horizontal = 0
 size_flags_vertical = 8
 
 [node name="Label2" type="Label" parent="." unique_id=1434560908]
-offset_left = 385.0
-offset_top = 119.0
-offset_right = 752.0
-offset_bottom = 170.0
-text = "Press   J  to confirm
-Use W to go up, and S to go down"
+offset_left = 496.0
+offset_top = 106.0
+offset_right = 655.0
+offset_bottom = 157.0
+text = "Press   J"
 horizontal_alignment = 1
 vertical_alignment = 1
 

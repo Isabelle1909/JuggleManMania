@@ -44,6 +44,7 @@ func remove_x_velocity():
 	VXL = 0
 
 func _physics_process(delta: float) -> void:
+	
 	add_gravity(delta)
 
 func get_points() -> int:

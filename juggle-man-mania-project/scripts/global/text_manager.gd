@@ -30,10 +30,7 @@ var talked_cutscene_nums = {
 	"dress": 0,
 	"stay": 0,
 	"smoke": 0,
-	"dress_practice":0,
-	"ending_1": 6,
-	"ending_2": 9,
-	"ending_3": 26
+	"dress_practice":0
 	
 }
 
@@ -137,27 +134,24 @@ func close_text(bx):
 
 func show_juggling_feedback(timing,side):
 	var box
-	var box_text
 	
 	if jfl == null || jfr == null:
 		return
 	
 	if side.contains("left"):
 		box = jfl
-		box_text = jfl.get_node("left_feedback")
 	elif side.contains("right"):
 		box = jfr
-		box_text = jfr.get_node("right_feedback")
 	
 	if timing.contains("early"):
 		box.visible = true
-		box_text.text = "Early!"
+		box.text = "Early!"
 	elif timing.contains("perfect"):
 		box.visible = true
-		box_text.text = "Perfect!"
+		box.text = "Perfect!"
 	elif timing.contains("late"):
 		box.visible = true
-		box_text.text = "Late!"
+		box.text = "Late!"
 
 
 func hide_juggling_feedback():

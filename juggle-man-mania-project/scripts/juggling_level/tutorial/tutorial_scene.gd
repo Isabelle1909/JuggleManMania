@@ -4,15 +4,12 @@ extends Node2D
 @onready var text_ui = $text_ui
 @onready var text_box = $text_ui/text_box
 @onready var j_player = $juggling_player
-@onready var left_panel = $juggling_player/left_panel
-@onready var right_panel = $juggling_player/right_panel
-@onready var left_feedback = $juggling_player/left_panel/left_feedback
-@onready var right_feedback = $juggling_player/right_panel/right_feedback
+@onready var left_feedback = $juggling_player/left_feedback
+@onready var right_feedback = $juggling_player/right_feedback
 @onready var time_display = $text_ui/timer_display
 @onready var timer_text = $text_ui/timer_display/Panel/time_number
 @onready var score_display = $text_ui/score_display
 @onready var score_text = $text_ui/score_display/Panel/score_number
-@onready var button_info = $text_ui/button_info
 
 
 var ball = load("res://scenes/juggling_level/juggling_items/manual_physics_ball.tscn")
@@ -48,7 +45,7 @@ var m1_timer = 10
 var m2_timer = 5
 
 func _ready() -> void:
-	button_info.visible = false
+	
 	SystemManager.tutorial_done = true
 	
 	text_box.position = Vector2(0,0)
@@ -104,21 +101,21 @@ func hands():
 	#print("stretch: ",stretch)
 	if Input.is_action_just_pressed("interact"):
 		if left_hand:
-			left_panel.visible = false
+			left_feedback.visible = false
 			left_hand = false
-			right_panel.visible = true
+			right_feedback.visible = true
 			stretch += 1
 			update_score(5)
 	elif Input.is_action_just_pressed("back"):
 		if !left_hand:
-			right_panel.visible = false
+			right_feedback.visible = false
 			left_hand = true
-			left_panel.visible = true
+			left_feedback.visible = true
 			stretch += 1
 			update_score(5)
 	if stretch > stretch_max:
-		TextManager.jfl = left_panel
-		TextManager.jfr = right_panel
+		TextManager.jfl = left_feedback
+		TextManager.jfr = right_feedback
 		update_score(10)
 		between_text("-1","3",true)
 
@@ -203,11 +200,10 @@ func timer_process(delta,max_time):
 func finish():
 	if SystemManager.tutorial_max < score:
 		SystemManager.tutorial_max = score
-		print(SystemManager.tutorial_max)
-	
-	SystemManager.tut_just_done = true
-	SystemManager.open_tutorial_menu(null)
-	#SystemManager.open_house(0,0)
+		
+	#SystemManager.open_tutorial_menu(null)
+	SystemManager.open_house(0,0)
+
 
 
 func check_last() -> bool:
@@ -232,7 +228,7 @@ func explanation():
 			print(ex)
 			if ex == -1:
 				section = PROGRESS.HANDS
-				left_panel.visible = true
+				left_feedback.visible = true
 				print(ex, " -1")
 			if ex == 0:
 				if !get_tree().root.has_node("ball_1"):
