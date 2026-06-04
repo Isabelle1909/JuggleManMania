@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=13 format=3 uid="uid://bhw3ra2uh0fnt"]
+[gd_resource type="TileSet" format=3 uid="uid://bhw3ra2uh0fnt"]
 
 [ext_resource type="Texture2D" uid="uid://hdmcsxmhxx" path="res://assets/placeholder_assets/tilesets/Screenshot 2026-04-22 132522.png" id="1_62lp0"]
 [ext_resource type="Texture2D" uid="uid://c3aaju6hdkpkd" path="res://assets/placeholder_assets/tilesets/JuggleManHouseTileset.png" id="1_fcmk3"]
