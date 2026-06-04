@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bktfq58wfdfv1"]
+[gd_scene load_steps=8 format=3 uid="uid://bktfq58wfdfv1"]
 
 [ext_resource type="Script" uid="uid://bd3wcp0jper6k" path="res://scripts/juggling_level/tutorial/tutorial_menu.gd" id="1_c8j6g"]
 [ext_resource type="Texture2D" uid="uid://d3i4sqhx8wrdo" path="res://icon.svg" id="1_jdx6l"]
@@ -12,7 +12,7 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jub0o"]
 
-[node name="Tutorial Menu" type="Control" unique_id=1924829434]
+[node name="Tutorial Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,12 +21,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_c8j6g")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=732733335]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(568.5, 319.5)
-scale = Vector2(8.8515625, 5.0390625)
+scale = Vector2(8.85156, 5.03906)
 texture = ExtResource("2_jxfg0")
 
-[node name="Panel" type="Panel" parent="." unique_id=1458868221]
+[node name="Panel" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 12.0
 offset_top = -3.0
@@ -34,7 +34,7 @@ offset_right = 1151.0
 offset_bottom = 649.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_jcgpu")
 
-[node name="title" type="RichTextLabel" parent="Panel" unique_id=1778770859]
+[node name="title" type="RichTextLabel" parent="Panel"]
 layout_mode = 0
 offset_left = 330.0
 offset_top = 35.0
@@ -44,7 +44,7 @@ theme_override_font_sizes/normal_font_size = 50
 text = "Juggling Box"
 horizontal_alignment = 1
 
-[node name="tutorial_start" type="Button" parent="Panel" unique_id=853716746]
+[node name="tutorial_start" type="Button" parent="Panel"]
 layout_mode = 0
 offset_left = 475.0
 offset_top = 177.0
@@ -57,7 +57,7 @@ theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxTexture_bffek")
 text = "Tutorial"
 
-[node name="infinite_mode_start" type="Button" parent="Panel" unique_id=662128762]
+[node name="infinite_mode_start" type="Button" parent="Panel"]
 layout_mode = 0
 offset_left = 399.0
 offset_top = 311.0
@@ -69,7 +69,7 @@ theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxTexture_ynm3s")
 text = "Infinite Juggling"
 
-[node name="close" type="Button" parent="Panel" unique_id=604446729]
+[node name="close" type="Button" parent="Panel"]
 layout_mode = 0
 offset_left = 879.0
 offset_top = 27.0
@@ -81,7 +81,7 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxTexture_jub0o")
 text = "Close"
 
-[node name="score_labels" type="RichTextLabel" parent="Panel" unique_id=254611063]
+[node name="score_labels" type="RichTextLabel" parent="Panel"]
 layout_mode = 0
 offset_left = 95.0
 offset_top = 405.0
@@ -93,7 +93,7 @@ text = "Highest Tutorial Score:
 Highest Infinite Mode Score:"
 vertical_alignment = 1
 
-[node name="tutorial_score" type="RichTextLabel" parent="Panel" unique_id=116544539]
+[node name="tutorial_score" type="RichTextLabel" parent="Panel"]
 layout_mode = 0
 offset_left = 552.0
 offset_top = 440.0
@@ -102,7 +102,7 @@ offset_bottom = 516.0
 theme_override_font_sizes/normal_font_size = 30
 text = "0"
 
-[node name="infinity_score" type="RichTextLabel" parent="Panel" unique_id=416342077]
+[node name="infinity_score" type="RichTextLabel" parent="Panel"]
 layout_mode = 0
 offset_left = 555.0
 offset_top = 525.0
@@ -111,25 +111,25 @@ offset_bottom = 601.0
 theme_override_font_sizes/normal_font_size = 30
 text = "0"
 
-[node name="congrats" type="Panel" parent="." unique_id=1311131065]
+[node name="congrats" type="Panel" parent="."]
 visible = false
 layout_mode = 0
 offset_right = 1144.0
 offset_bottom = 651.0
 
-[node name="Sprite2D" type="Sprite2D" parent="congrats" unique_id=371428509]
+[node name="Sprite2D" type="Sprite2D" parent="congrats"]
 position = Vector2(550, 279.5)
-scale = Vector2(4.78125, 2.1015627)
+scale = Vector2(4.78125, 2.10156)
 texture = ExtResource("1_jdx6l")
 
-[node name="Panel" type="Panel" parent="congrats" unique_id=1125079625]
+[node name="Panel" type="Panel" parent="congrats"]
 layout_mode = 0
 offset_left = 257.0
 offset_top = 156.0
 offset_right = 855.0
 offset_bottom = 402.0
 
-[node name="Label" type="Label" parent="congrats/Panel" unique_id=569280061]
+[node name="Label" type="Label" parent="congrats/Panel"]
 layout_mode = 0
 offset_left = 133.0
 offset_top = 9.0
@@ -140,7 +140,7 @@ text = "Excellent Work!!!!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="congrats/Panel" unique_id=998240710]
+[node name="Label2" type="Label" parent="congrats/Panel"]
 layout_mode = 0
 offset_left = 126.0
 offset_top = 128.0

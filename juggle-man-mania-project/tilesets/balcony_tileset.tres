@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" format=3 uid="uid://bhw3ra2uh0fnt"]
+[gd_resource type="TileSet" load_steps=13 format=3 uid="uid://bhw3ra2uh0fnt"]
 
 [ext_resource type="Texture2D" uid="uid://hdmcsxmhxx" path="res://assets/placeholder_assets/tilesets/Screenshot 2026-04-22 132522.png" id="1_62lp0"]
 [ext_resource type="Texture2D" uid="uid://c3aaju6hdkpkd" path="res://assets/placeholder_assets/tilesets/JuggleManHouseTileset.png" id="1_fcmk3"]
@@ -11,15 +11,15 @@
 texture = ExtResource("1_fcmk3")
 texture_region_size = Vector2i(48, 48)
 0:8/0 = 0
-0:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -12.982899, -24, 24, 24, 24, 24, -12.982899)
+0:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -12.9829, -24, 24, 24, 24, 24, -12.9829)
 1:8/0 = 0
-1:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -12.982899, -24, 24, 24, 24, 24, -14.111847)
+1:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -12.9829, -24, 24, 24, 24, 24, -14.1118)
 2:8/0 = 0
-2:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -14.111847, -24, 24, 24, 24, 24, -12.982899)
+2:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -14.1118, -24, 24, 24, 24, 24, -12.9829)
 2:9/0 = 0
-2:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(10.725006, 24, 24, 24, 24, -24, 9.596054, -24)
+2:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(10.725, 24, 24, 24, 24, -24, 9.59605, -24)
 0:9/0 = 0
-0:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, -24, 24, -12.418423, 24, -11.2894745, -24)
+0:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, -24, 24, -12.4184, 24, -11.2895, -24)
 4:9/0 = 0
 4:8/0 = 0
 4:7/0 = 0

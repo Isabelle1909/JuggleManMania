@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://d0bhx8xvmpi25"]
+[gd_scene load_steps=8 format=3 uid="uid://d0bhx8xvmpi25"]
 
 [ext_resource type="Script" uid="uid://dju7bj665jynp" path="res://scripts/juggling_level/juggling_scene.gd" id="1_ho08g"]
 [ext_resource type="Texture2D" uid="uid://fj4w2dpkbv3c" path="res://scenes/juggling_level/IMG_0285.png" id="2_ho08g"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://byuw47dct35aj" path="res://scenes/juggling_level/juggling_items/manual_physics_ball.tscn" id="5_miqb6"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_a6ydb"]
-normal = Vector2(0.99997133, 0.0075755403)
+normal = Vector2(0.999971, 0.00757554)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5haue"]
 normal = Vector2(-1, 0)
@@ -14,78 +14,78 @@ normal = Vector2(-1, 0)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gq0ih"]
 size = Vector2(1603, 133)
 
-[node name="juggling_scene" type="Node2D" unique_id=1394213028]
+[node name="juggling_scene" type="Node2D"]
 script = ExtResource("1_ho08g")
 
-[node name="Background2" type="Sprite2D" parent="." unique_id=1189697282]
+[node name="Background2" type="Sprite2D" parent="."]
 position = Vector2(1143.76, 408)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_ho08g")
 
-[node name="Background3" type="Sprite2D" parent="." unique_id=1459988651]
+[node name="Background3" type="Sprite2D" parent="."]
 position = Vector2(63.625, 409)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_ho08g")
 
-[node name="Background4" type="Sprite2D" parent="." unique_id=124024125]
-position = Vector2(605.00006, -273.99997)
-rotation = 3.1415927
+[node name="Background4" type="Sprite2D" parent="."]
+position = Vector2(605, -274)
+rotation = 3.14159
 scale = Vector2(1.54, 1.54)
 texture = ExtResource("2_ho08g")
 
-[node name="Background5" type="Sprite2D" parent="." unique_id=1184878224]
+[node name="Background5" type="Sprite2D" parent="."]
 position = Vector2(604, 1099)
-rotation = 3.1415927
+rotation = 3.14159
 scale = Vector2(1.54, 1.54)
 texture = ExtResource("2_ho08g")
 
-[node name="Background" type="Sprite2D" parent="." unique_id=1107217740]
+[node name="Background" type="Sprite2D" parent="."]
 position = Vector2(580, 408)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_ho08g")
 
-[node name="juggling_player" parent="." unique_id=1964283372 instance=ExtResource("3_sywdt")]
+[node name="juggling_player" parent="." instance=ExtResource("3_sywdt")]
 position = Vector2(574, 470)
 
-[node name="Boundaries" type="Node2D" parent="." unique_id=715281043]
+[node name="Boundaries" type="Node2D" parent="."]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Boundaries" unique_id=1794051764]
+[node name="StaticBody2D" type="StaticBody2D" parent="Boundaries"]
 collision_layer = 112
 collision_mask = 112
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/StaticBody2D" unique_id=757958884]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/StaticBody2D"]
 shape = SubResource("WorldBoundaryShape2D_a6ydb")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="Boundaries" unique_id=421159997]
+[node name="StaticBody2D2" type="StaticBody2D" parent="Boundaries"]
 position = Vector2(1152, 4)
 collision_layer = 112
 collision_mask = 112
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/StaticBody2D2" unique_id=1208527868]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/StaticBody2D2"]
 shape = SubResource("WorldBoundaryShape2D_5haue")
 
-[node name="dampener" type="Area2D" parent="Boundaries" unique_id=1006477699]
+[node name="dampener" type="Area2D" parent="Boundaries"]
 collision_layer = 96
 collision_mask = 96
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/dampener" unique_id=921140774]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/dampener"]
 position = Vector2(582, -61)
 shape = SubResource("RectangleShape2D_gq0ih")
 
-[node name="out_bound_detector" type="Area2D" parent="Boundaries" unique_id=1767283251]
+[node name="out_bound_detector" type="Area2D" parent="Boundaries"]
 collision_layer = 96
 collision_mask = 96
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boundaries/out_bound_detector" unique_id=540565830]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boundaries/out_bound_detector"]
 polygon = PackedVector2Array(-203, -38, -267, 674, -273, 777, 1300, 749, 1302, 644, 1373, -35, 1195, -23, 1184, 644, -14, 666, -38, -46)
 
-[node name="score_display" type="Panel" parent="." unique_id=693193099]
+[node name="score_display" type="Panel" parent="."]
 offset_left = 861.0
 offset_top = 525.0
 offset_right = 1096.0
 offset_bottom = 600.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="score_display" unique_id=70743172]
+[node name="RichTextLabel" type="RichTextLabel" parent="score_display"]
 layout_mode = 0
 offset_right = 231.0
 offset_bottom = 75.0
@@ -94,17 +94,17 @@ text = "score:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="juggling_items" type="Node2D" parent="." unique_id=1382858004]
+[node name="juggling_items" type="Node2D" parent="."]
 
-[node name="manual_physics_ball" parent="juggling_items" unique_id=728813730 instance=ExtResource("5_miqb6")]
+[node name="manual_physics_ball" parent="juggling_items" instance=ExtResource("5_miqb6")]
 position = Vector2(521, 420)
 
-[node name="Panel" type="Panel" parent="." unique_id=213843193]
+[node name="Panel" type="Panel" parent="."]
 visible = false
 offset_right = 265.0
 offset_bottom = 91.0
 
-[node name="Label" type="Label" parent="Panel" unique_id=376724612]
+[node name="Label" type="Label" parent="Panel"]
 layout_mode = 0
 offset_right = 266.0
 offset_bottom = 87.0

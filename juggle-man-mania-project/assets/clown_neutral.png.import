@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsps2s2w7noj2"
-path="res://.godot/imported/TV.png-2705f1755b03acf34a27020dd6fdee2a.ctex"
+uid="uid://8ive54fpdu2s"
+path="res://.godot/imported/clown_neutral.png-c8699bdc09fbe9e7a200e544c3be548f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/house_assets/TV.png"
-dest_files=["res://.godot/imported/TV.png-2705f1755b03acf34a27020dd6fdee2a.ctex"]
+source_file="res://assets/clown_neutral.png"
+dest_files=["res://.godot/imported/clown_neutral.png-c8699bdc09fbe9e7a200e544c3be548f.ctex"]
 
 [params]
 
