@@ -3,17 +3,24 @@
 [ext_resource type="Script" uid="uid://csy7eigecfffg" path="res://scripts/UI/title_screen.gd" id="1_2y50p"]
 [ext_resource type="Texture2D" uid="uid://oqqnp8wvqwpk" path="res://assets/UI image assets/Background for portraits in text box of needed.png" id="2_ugyeh"]
 [ext_resource type="PackedScene" uid="uid://dkp2lcwdqvm8v" path="res://scenes/ui_scenes/HelpScreen.tscn" id="3_0vnpx"]
+[ext_resource type="Texture2D" uid="uid://di71udk2c8efj" path="res://assets/UI image assets/buttons.png" id="3_w5uqf"]
 [ext_resource type="AudioStream" uid="uid://dtku2eihhr2f3" path="res://assets/sound effect/UIsounds for click.mp3" id="4_ugyeh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ugyeh"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w5uqf"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m5w54"]
+texture = ExtResource("3_w5uqf")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t6bap"]
+texture = ExtResource("3_w5uqf")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m5w54"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w5uqf"]
+texture = ExtResource("3_w5uqf")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hgjpm"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w5uqf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bpq7r"]
+texture = ExtResource("3_w5uqf")
 
 [node name="MainMenu" type="Node2D" unique_id=851641343]
 script = ExtResource("1_2y50p")
@@ -44,7 +51,7 @@ offset_bottom = 248.0
 focus_neighbor_top = NodePath("../button_quit")
 focus_neighbor_bottom = NodePath("../button_load_game")
 theme_override_font_sizes/font_size = 27
-theme_override_styles/normal = SubResource("StyleBoxTexture_w5uqf")
+theme_override_styles/normal = SubResource("StyleBoxTexture_m5w54")
 text = "New Game"
 
 [node name="button_load_game" type="Button" parent="." unique_id=791660594]
@@ -66,7 +73,8 @@ offset_bottom = 448.0
 focus_neighbor_top = NodePath("../button_load_game")
 focus_neighbor_bottom = NodePath("../button_quit")
 theme_override_font_sizes/font_size = 27
-theme_override_styles/normal = SubResource("StyleBoxTexture_m5w54")
+theme_override_styles/normal = SubResource("StyleBoxTexture_w5uqf")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_w5uqf")
 text = "HELP"
 
 [node name="button_quit" type="Button" parent="." unique_id=530439100]
@@ -77,7 +85,7 @@ offset_bottom = 554.0
 focus_neighbor_top = NodePath("../button_help")
 focus_neighbor_bottom = NodePath("../button_new_game")
 theme_override_font_sizes/font_size = 27
-theme_override_styles/normal = SubResource("StyleBoxTexture_hgjpm")
+theme_override_styles/normal = SubResource("StyleBoxTexture_bpq7r")
 text = "QUIT"
 
 [node name="help_menu" parent="." unique_id=645237815 instance=ExtResource("3_0vnpx")]
