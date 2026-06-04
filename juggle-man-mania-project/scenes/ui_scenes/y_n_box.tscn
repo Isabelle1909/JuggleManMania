@@ -2,15 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dbur23y8cp2qt" path="res://scripts/UI/y_n_box.gd" id="1_bhp72"]
 [ext_resource type="AudioStream" uid="uid://dtku2eihhr2f3" path="res://assets/sound effect/UIsounds for click.mp3" id="2_82jgt"]
-[ext_resource type="Texture2D" uid="uid://d2wjb2g2j28l0" path="res://assets/UI image assets/smaller button for the text box2.png" id="2_h4fr2"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_82jgt"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kgdbf"]
-texture = ExtResource("2_h4fr2")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w1pfv"]
-texture = ExtResource("2_h4fr2")
 
 [node name="y_n_box" type="Control" unique_id=1882826195]
 layout_mode = 3
@@ -27,7 +18,6 @@ offset_left = 984.0
 offset_top = 178.0
 offset_right = 1149.0
 offset_bottom = 391.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_82jgt")
 
 [node name="yes_button" type="Button" parent="Panel" unique_id=301932116]
 layout_mode = 0
@@ -35,7 +25,6 @@ offset_left = 16.0
 offset_top = 27.0
 offset_right = 148.0
 offset_bottom = 90.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_kgdbf")
 text = "YES"
 
 [node name="no_button" type="Button" parent="Panel" unique_id=878702148]
@@ -44,7 +33,6 @@ offset_left = 17.0
 offset_top = 119.0
 offset_right = 149.0
 offset_bottom = 182.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_w1pfv")
 text = "NO"
 
 [node name="ClickSound" type="AudioStreamPlayer" parent="Panel" unique_id=1692362018]

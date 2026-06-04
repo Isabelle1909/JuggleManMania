@@ -1,7 +1,5 @@
 [gd_scene format=3 uid="uid://d0ok3sn8c03rl"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xdp83"]
-
 [node name="score_display" type="Control" unique_id=381678788]
 layout_mode = 3
 anchors_preset = 15
@@ -14,7 +12,6 @@ grow_vertical = 2
 layout_mode = 0
 offset_right = 257.0
 offset_bottom = 94.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_xdp83")
 
 [node name="score" type="RichTextLabel" parent="Panel" unique_id=607831087]
 layout_mode = 0

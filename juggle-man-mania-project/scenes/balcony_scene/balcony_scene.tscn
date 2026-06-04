@@ -2,13 +2,13 @@
 
 [ext_resource type="TileSet" uid="uid://bhw3ra2uh0fnt" path="res://tilesets/balcony_tileset.tres" id="1_6g3yx"]
 [ext_resource type="Script" uid="uid://c2521k6budvog" path="res://scripts/house_level/Interactable.gd" id="2_cissh"]
-[ext_resource type="Texture2D" uid="uid://crh6tj472rrw4" path="res://assets/house_assets/DoorFlatpng.png" id="3_cissh"]
+[ext_resource type="Texture2D" uid="uid://dggo61m3s3re8" path="res://assets/placeholder_assets/door_placeholder.jpg" id="3_gnjbx"]
 [ext_resource type="AudioStream" uid="uid://b5dh0tuaupvkm" path="res://assets/sound effect/opening-door-411632.mp3" id="4_cissh"]
 [ext_resource type="PackedScene" uid="uid://i5ot6tbllc4l" path="res://scenes/house_level/interactable.tscn" id="4_gigyt"]
 [ext_resource type="Texture2D" uid="uid://xvkhenon15uf" path="res://assets/placeholder_assets/potted_plant.placeholder.jpg" id="5_1t0w1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_82lpl"]
-size = Vector2(144, 42.5)
+size = Vector2(132, 157)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cissh"]
 size = Vector2(48, 62)
@@ -28,13 +28,12 @@ script = ExtResource("2_cissh")
 title = "in_door"
 
 [node name="Sprite2D" type="Sprite2D" parent="Game_Tilemap/in_door" unique_id=625949242]
-position = Vector2(-2.0000203, -66.00003)
-rotation = 3.1415927
-scale = Vector2(0.46467224, 0.5031378)
-texture = ExtResource("3_cissh")
+position = Vector2(1, -18.000006)
+scale = Vector2(0.2943038, 0.22398031)
+texture = ExtResource("3_gnjbx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game_Tilemap/in_door" unique_id=637196175]
-position = Vector2(-2, -1.75)
+position = Vector2(0.5, -17.5)
 shape = SubResource("RectangleShape2D_82lpl")
 
 [node name="DoorSound" type="AudioStreamPlayer" parent="Game_Tilemap/in_door" unique_id=555593397]
