@@ -1,0 +1,65 @@
+[gd_scene load_steps=9 format=3 uid="uid://effsrxenqkmr"]
+
+[ext_resource type="PackedScene" uid="uid://dnvo7ick37jdw" path="res://scenes/ui_scenes/UI.tscn" id="1_h858l"]
+[ext_resource type="PackedScene" uid="uid://dkp2lcwdqvm8v" path="res://scenes/ui_scenes/HelpScreen.tscn" id="2_vbm1y"]
+[ext_resource type="PackedScene" uid="uid://gihcivwsnrx7" path="res://scenes/ui_scenes/ResultsScreenUI.tscn" id="3_vnrby"]
+[ext_resource type="PackedScene" uid="uid://dcrix2nxbwg1r" path="res://scenes/ui_scenes/SaveMenu.tscn" id="4_tww4t"]
+[ext_resource type="PackedScene" uid="uid://cuqn5ygrelpfh" path="res://scenes/ui_scenes/y_n_box.tscn" id="5_xxgiu"]
+[ext_resource type="PackedScene" uid="uid://bx00wbwl3byes" path="res://scenes/ui_scenes/timer_display.tscn" id="6_l2pa0"]
+[ext_resource type="PackedScene" uid="uid://d0ok3sn8c03rl" path="res://scenes/ui_scenes/score_display.tscn" id="7_lxpq1"]
+[ext_resource type="FontFile" uid="uid://cmiq3uxxd6en1" path="res://assets/text/HVD_Comic_Serif_Pro.otf" id="8_rv5q3"]
+
+[node name="text_ui" type="CanvasLayer"]
+
+[node name="button_info" type="Panel" parent="."]
+offset_right = 182.0
+offset_bottom = 120.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="button_info"]
+layout_mode = 0
+offset_right = 182.0
+offset_bottom = 120.0
+theme_override_fonts/normal_font = ExtResource("8_rv5q3")
+theme_override_font_sizes/normal_font_size = 24
+text = "SAVE MENU:
+PRESS I
+HELP MENU: 
+PRESS K"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="timer_display" parent="." instance=ExtResource("6_l2pa0")]
+visible = false
+offset_left = 891.0
+offset_top = 8.0
+offset_right = 891.0
+offset_bottom = 8.0
+
+[node name="score_display" parent="." instance=ExtResource("7_lxpq1")]
+visible = false
+offset_left = 891.0
+offset_top = 115.0
+offset_right = 891.0
+offset_bottom = 115.0
+
+[node name="text_box" parent="." instance=ExtResource("1_h858l")]
+visible = false
+offset_left = -3.0
+offset_top = 390.0
+offset_right = -3.0
+offset_bottom = 390.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+metadata/_edit_use_anchors_ = true
+
+[node name="help_menu" parent="." instance=ExtResource("2_vbm1y")]
+visible = false
+
+[node name="results_screen" parent="." instance=ExtResource("3_vnrby")]
+visible = false
+
+[node name="save_menu" parent="." instance=ExtResource("4_tww4t")]
+visible = false
+
+[node name="y_n_box" parent="." instance=ExtResource("5_xxgiu")]
+visible = false

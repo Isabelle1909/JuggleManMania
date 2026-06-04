@@ -1,0 +1,156 @@
+[gd_scene load_steps=8 format=3 uid="uid://bktfq58wfdfv1"]
+
+[ext_resource type="Script" uid="uid://bd3wcp0jper6k" path="res://scripts/juggling_level/tutorial/tutorial_menu.gd" id="1_c8j6g"]
+[ext_resource type="Texture2D" uid="uid://d3i4sqhx8wrdo" path="res://icon.svg" id="1_jdx6l"]
+[ext_resource type="Texture2D" uid="uid://oqqnp8wvqwpk" path="res://assets/UI image assets/Background for portraits in text box of needed.png" id="2_jxfg0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jcgpu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bffek"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ynm3s"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jub0o"]
+
+[node name="Tutorial Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c8j6g")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(568.5, 319.5)
+scale = Vector2(8.85156, 5.03906)
+texture = ExtResource("2_jxfg0")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = -3.0
+offset_right = 1151.0
+offset_bottom = 649.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_jcgpu")
+
+[node name="title" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 330.0
+offset_top = 35.0
+offset_right = 787.0
+offset_bottom = 128.0
+theme_override_font_sizes/normal_font_size = 50
+text = "Juggling Box"
+horizontal_alignment = 1
+
+[node name="tutorial_start" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 475.0
+offset_top = 177.0
+offset_right = 634.0
+offset_bottom = 240.0
+focus_neighbor_top = NodePath("../close")
+focus_neighbor_right = NodePath("../close")
+focus_neighbor_bottom = NodePath("../infinite_mode_start")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_bffek")
+text = "Tutorial"
+
+[node name="infinite_mode_start" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 399.0
+offset_top = 311.0
+offset_right = 708.0
+offset_bottom = 374.0
+focus_neighbor_top = NodePath("../tutorial_start")
+focus_neighbor_right = NodePath("../close")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_ynm3s")
+text = "Infinite Juggling"
+
+[node name="close" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 879.0
+offset_top = 27.0
+offset_right = 1087.0
+offset_bottom = 122.0
+focus_neighbor_right = NodePath("../tutorial_start")
+focus_neighbor_bottom = NodePath("../tutorial_start")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_jub0o")
+text = "Close"
+
+[node name="score_labels" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 405.0
+offset_right = 580.0
+offset_bottom = 592.0
+theme_override_font_sizes/normal_font_size = 30
+text = "Highest Tutorial Score:
+
+Highest Infinite Mode Score:"
+vertical_alignment = 1
+
+[node name="tutorial_score" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 552.0
+offset_top = 440.0
+offset_right = 660.0
+offset_bottom = 516.0
+theme_override_font_sizes/normal_font_size = 30
+text = "0"
+
+[node name="infinity_score" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 555.0
+offset_top = 525.0
+offset_right = 663.0
+offset_bottom = 601.0
+theme_override_font_sizes/normal_font_size = 30
+text = "0"
+
+[node name="congrats" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 1144.0
+offset_bottom = 651.0
+
+[node name="Sprite2D" type="Sprite2D" parent="congrats"]
+position = Vector2(550, 279.5)
+scale = Vector2(4.78125, 2.10156)
+texture = ExtResource("1_jdx6l")
+
+[node name="Panel" type="Panel" parent="congrats"]
+layout_mode = 0
+offset_left = 257.0
+offset_top = 156.0
+offset_right = 855.0
+offset_bottom = 402.0
+
+[node name="Label" type="Label" parent="congrats/Panel"]
+layout_mode = 0
+offset_left = 133.0
+offset_top = 9.0
+offset_right = 496.0
+offset_bottom = 146.0
+theme_override_font_sizes/font_size = 38
+text = "Excellent Work!!!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="congrats/Panel"]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 128.0
+offset_right = 489.0
+offset_bottom = 265.0
+theme_override_font_sizes/font_size = 38
+text = "J to continue"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Panel/tutorial_start" to="." method="_on_tutorial_start_pressed"]
+[connection signal="pressed" from="Panel/infinite_mode_start" to="." method="_on_infinite_mode_start_pressed"]
+[connection signal="pressed" from="Panel/close" to="." method="_on_close_pressed"]

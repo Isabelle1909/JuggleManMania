@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://p8xengw6p11y"]
+
+[ext_resource type="PackedScene" uid="uid://d0twvx4mn4o62" path="res://scenes/juggling_level/juggling_player.tscn" id="1_mlf6e"]
+
+[node name="game_scene" type="Node2D" unique_id=839924362]
+
+[node name="juggling_player" parent="." unique_id=1964283372 instance=ExtResource("1_mlf6e")]
