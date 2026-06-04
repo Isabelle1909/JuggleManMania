@@ -2,21 +2,25 @@
 
 [ext_resource type="Script" uid="uid://ur6q6lg0edu0" path="res://scripts/UI/save_menu.gd" id="1_y552w"]
 [ext_resource type="Texture2D" uid="uid://oqqnp8wvqwpk" path="res://assets/UI image assets/Background for portraits in text box of needed.png" id="2_hisbj"]
+[ext_resource type="Texture2D" uid="uid://di71udk2c8efj" path="res://assets/UI image assets/buttons.png" id="3_2uf07"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2uf07"]
 texture = ExtResource("2_hisbj")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hisbj"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4uv4a"]
+texture = ExtResource("3_2uf07")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wreud"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4uv4a"]
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l56im"]
+texture = ExtResource("3_2uf07")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2me2c"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nvx88"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2me2c"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g3mqe"]
+texture = ExtResource("3_2uf07")
 
 [node name="Load" type="Control" unique_id=1860916958]
 layout_mode = 3
@@ -131,7 +135,7 @@ focus_neighbor_top = NodePath("../Button_Close")
 focus_neighbor_right = NodePath("../Button_Load")
 focus_neighbor_bottom = NodePath("../Button_Back")
 theme_override_font_sizes/font_size = 28
-theme_override_styles/normal = SubResource("StyleBoxTexture_hisbj")
+theme_override_styles/normal = SubResource("StyleBoxTexture_4uv4a")
 text = "DELETE"
 
 [node name="Button_Close" type="Button" parent="Panel/Buttons" unique_id=322385550]
@@ -156,7 +160,7 @@ focus_neighbor_top = NodePath("../Button_Close")
 focus_neighbor_right = NodePath("../Button_Save")
 focus_neighbor_bottom = NodePath("../Button_Next")
 theme_override_font_sizes/font_size = 28
-theme_override_styles/normal = SubResource("StyleBoxTexture_4uv4a")
+theme_override_styles/normal = SubResource("StyleBoxTexture_l56im")
 text = "LOAD"
 
 [node name="Button_Back" type="Button" parent="Panel/Buttons" unique_id=2067161858]
@@ -170,7 +174,7 @@ focus_neighbor_top = NodePath("../Button_Load")
 focus_neighbor_right = NodePath("../Button_Next")
 focus_neighbor_bottom = NodePath("../Button_Close")
 theme_override_font_sizes/font_size = 28
-theme_override_styles/normal = SubResource("StyleBoxTexture_l56im")
+theme_override_styles/normal = SubResource("StyleBoxTexture_2me2c")
 text = "← Back"
 
 [node name="Button_Next" type="Button" parent="Panel/Buttons" unique_id=1925953485]
@@ -198,7 +202,7 @@ focus_neighbor_top = NodePath("../Button_Close")
 focus_neighbor_right = NodePath("../Button_Delete")
 focus_neighbor_bottom = NodePath("../Button_Next")
 theme_override_font_sizes/font_size = 28
-theme_override_styles/normal = SubResource("StyleBoxTexture_2me2c")
+theme_override_styles/normal = SubResource("StyleBoxTexture_g3mqe")
 text = "SAVE"
 
 [node name="Labels" type="Control" parent="Panel" unique_id=1688752644]
