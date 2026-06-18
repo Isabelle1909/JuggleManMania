@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drpiaialarbkh"
-path="res://.godot/imported/Mirror.png-34f6dc9030d44ea8764da7057d0144d7.ctex"
+uid="uid://blkjaxyyw2bti"
+path="res://.godot/imported/tut map 2.png-818a4f6ec09d2a9d4cac0dcdbd4a1d23.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/house_assets/Mirror.png"
-dest_files=["res://.godot/imported/Mirror.png-34f6dc9030d44ea8764da7057d0144d7.ctex"]
+source_file="res://scenes/juggling_level/tutorial/tut map 2.png"
+dest_files=["res://.godot/imported/tut map 2.png-818a4f6ec09d2a9d4cac0dcdbd4a1d23.ctex"]
 
 [params]
 

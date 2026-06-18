@@ -1,26 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://byuw47dct35aj"]
+[gd_scene format=3 uid="uid://byuw47dct35aj"]
 
-[ext_resource type="Texture2D" uid="uid://ca1mnxii2w5cm" path="res://assets/placeholder_assets/tilesets/FloorTest.png" id="1_bkchw"]
 [ext_resource type="Script" uid="uid://cr7fvmbm12rae" path="res://scripts/juggling_level/juggling_items/manual_physics_ball.gd" id="1_odxty"]
+[ext_resource type="Texture2D" uid="uid://dgy0xbxmkndy5" path="res://scripts/balcony_level/ball.png" id="2_ktgdt"]
 [ext_resource type="AudioStream" uid="uid://b7prspggfneav" path="res://assets/sound effect/ping-pong.mp3" id="3_ktgdt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bkchw"]
 size = Vector2(21, 20)
 
-[node name="manual_physics_ball" type="CharacterBody2D" groups=["ball", "juggling_items"]]
+[node name="manual_physics_ball" type="CharacterBody2D" unique_id=1514084133 groups=["ball", "juggling_items"]]
 collision_layer = 96
 collision_mask = 96
 script = ExtResource("1_odxty")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0.5, 2.38419e-07)
-scale = Vector2(0.0491803, 0.0461894)
-texture = ExtResource("1_bkchw")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1857669906]
+position = Vector2(1, -1)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_ktgdt")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=606828106]
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_bkchw")
 
-[node name="CatchSound" type="AudioStreamPlayer" parent="."]
+[node name="CatchSound" type="AudioStreamPlayer" parent="." unique_id=122962605]
 stream = ExtResource("3_ktgdt")
 volume_db = -8.0

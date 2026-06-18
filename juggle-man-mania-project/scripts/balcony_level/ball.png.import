@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drpiaialarbkh"
-path="res://.godot/imported/Mirror.png-34f6dc9030d44ea8764da7057d0144d7.ctex"
+uid="uid://dgy0xbxmkndy5"
+path="res://.godot/imported/ball.png-b7da69062df47a4c8dfe682955b2fcd7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/house_assets/Mirror.png"
-dest_files=["res://.godot/imported/Mirror.png-34f6dc9030d44ea8764da7057d0144d7.ctex"]
+source_file="res://scripts/balcony_level/ball.png"
+dest_files=["res://.godot/imported/ball.png-b7da69062df47a4c8dfe682955b2fcd7.ctex"]
 
 [params]
 
